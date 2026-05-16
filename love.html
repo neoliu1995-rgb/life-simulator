@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱情匹配测试_情侣缘分指数_星座配对测算 - 趣味测试</title>
+    <meta name="description" content="爱情匹配测试 - 输入双方姓名，测算缘分指数、默契度、激情度，获取相处建议和爱情运势">
+    <meta name="keywords" content="爱情匹配,缘分测试,情侣配对,爱情运势,默契度,缘分指数">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://quweiceshi.com/love.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://quweiceshi.com/love.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://quweiceshi.com/love.html">
+    <link rel="alternate" hreflang="x-default" href="https://quweiceshi.com/love.html">
+    
+    <meta property="og:title" content="爱情匹配 - 趣味测试">
+    <meta property="og:description" content="爱情匹配测试 - 输入双方姓名，测算缘分指数、默契度、激情度，获取相处建议和爱情运势">
+    <meta property="og:url" content="https://quweiceshi.com/love.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="趣味测试">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:image" content="https://quweiceshi.com/images/og-love.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="爱情匹配测试 - 趣味测试">
+    <link rel="preconnect" href="https://fonts.loli.net">
+    <link rel="preconnect" href="https://gstatic.loli.net" crossorigin>
+    <link rel="dns-prefetch" href="https://api.qrserver.com">
+    <link rel="dns-prefetch" href="https://hm.baidu.com">
+    <link href="https://fonts.loli.net/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <script src="js/storage.js" defer></script>
+    
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?edc404e2ae130a4255dabf98a08172ee";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    
+    <style>
+        .nav-logo, .intro-title, .match-score {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FD79A8 50%, #E84393 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .intro-section {
+            text-align: center;
+        }
+
+        .intro-icon {
+            font-size: 4rem;
+            margin-bottom: 16px;
+        }
+
+        .intro-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .intro-desc {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .person-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .person-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .person-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .person-avatar.a {
+            background: linear-gradient(135deg, #4ECDC4, #45B7D1);
+        }
+
+        .person-avatar.b {
+            background: linear-gradient(135deg, #FD79A8, #E84393);
+        }
+
+        .person-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .gender-selector {
+            display: flex;
+            gap: 12px;
+        }
+
+        .gender-btn {
+            flex: 1;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .gender-btn:hover {
+            border-color: rgba(253, 121, 168, 0.5);
+        }
+
+        .gender-btn.selected {
+            border-color: #FD79A8;
+            background: rgba(253, 121, 168, 0.15);
+            box-shadow: 0 0 0 3px rgba(253, 121, 168, 0.15);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FD79A8 50%, #E84393 100%);
+            box-shadow: 0 4px 20px rgba(253, 121, 168, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(253, 121, 168, 0.5);
+        }
+
+        .btn-secondary:hover {
+            border-color: rgba(253, 121, 168, 0.5);
+        }
+
+        select.form-control {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FD79A8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+
+        .form-control:focus {
+            border-color: #FD79A8;
+            box-shadow: 0 0 0 3px rgba(253, 121, 168, 0.15);
+        }
+
+        .form-control:hover {
+            border-color: rgba(253, 121, 168, 0.5);
+        }
+
+        .result-section {
+            text-align: center;
+        }
+
+        .result-icon {
+            font-size: 4rem;
+            margin-bottom: 16px;
+        }
+
+        .result-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .match-score {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .match-label {
+            font-size: 1.2rem;
+            color: #FD79A8;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .match-message {
+            margin-bottom: 24px;
+        }
+
+        .message-text {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .match-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .detail-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .detail-icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .detail-name {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .detail-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #FD79A8;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #FD79A8;
+            text-align: center;
+        }
+
+        .analysis-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 16px;
+        }
+
+        .analysis-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #FD79A8;
+            margin-bottom: 12px;
+        }
+
+        .analysis-text {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .compatibility-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            margin-top: 12px;
+            overflow: hidden;
+        }
+
+        .compatibility-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FD79A8 50%, #E84393 100%);
+            border-radius: 4px;
+            transition: width 0.8s ease;
+        }
+
+        .advice-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .advice-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .advice-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .advice-icon {
+            font-size: 1.2rem;
+        }
+
+        .advice-text {
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .fortune-timeline {
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .fortune-timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #FD79A8, transparent);
+        }
+
+        .fortune-item {
+            position: relative;
+            padding-bottom: 24px;
+        }
+
+        .fortune-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .fortune-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            background: #FD79A8;
+            border-radius: 50%;
+            border: 3px solid var(--bg-dark);
+        }
+
+        .fortune-year {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #FD79A8;
+            margin-bottom: 8px;
+        }
+
+        .fortune-desc {
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .nav-links a:hover {
+            background: rgba(253, 121, 168, 0.15);
+        }
+
+        .nav-links a.active {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FD79A8 50%, #E84393 100%);
+            color: white;
+            box-shadow: 0 4px 20px rgba(253, 121, 168, 0.4);
+        }
+
+        /* ===== 响应式适配 ===== */
+        @media (max-width: 768px) {
+            .intro-screen { padding: 30px 16px; }
+            .intro-icon { font-size: 3rem; }
+            .intro-title { font-size: 1.6rem; }
+            .form-row { flex-direction: column; gap: 12px; }
+            .form-group { width: 100%; }
+            .form-group input, .form-group select { width: 100%; padding: 11px; font-size: 0.92rem; }
+            .btn-calculate { width: 100%; padding: 12px 24px; font-size: 0.95rem; }
+            .match-details {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .detail-card { padding: 18px; border-radius: 14px; }
+            .detail-title { font-size: 1.05rem; margin-bottom: 10px; }
+            .score-display { font-size: 3rem; }
+            .result-title { font-size: 1.6rem; }
+            .result-subtitle { font-size: 0.9rem; }
+            .compatibility-bar { height: 8px; }
+            .fortune-section { padding: 16px; border-radius: 14px; }
+            .fortune-item { padding-bottom: 20px; }
+            .advice-section { padding: 16px; border-radius: 14px; }
+            .nav-links { gap: 6px; flex-wrap: wrap; justify-content: center; }
+            .nav-links a { padding: 7px 13px; font-size: 0.82rem; }
+        }
+
+        @media (max-width: 480px) {
+            .intro-screen { padding: 24px 14px; }
+            .intro-icon { font-size: 2.5rem; margin-bottom: 14px; }
+            .intro-title { font-size: 1.35rem; }
+            .intro-desc { font-size: 0.88rem; }
+            .form-group input, .form-group select { padding: 10px; font-size: 0.9rem; }
+            .btn-calculate { padding: 11px 22px; font-size: 0.9rem; }
+            .match-details { gap: 12px; }
+            .detail-card { padding: 14px 12px; border-radius: 12px; }
+            .detail-title { font-size: 0.95rem; margin-bottom: 8px; }
+            .detail-value { font-size: 0.85rem; line-height: 1.55; }
+            .score-display { font-size: 2.4rem; }
+            .result-title { font-size: 1.35rem; }
+            .result-subtitle { font-size: 0.82rem; }
+            .score-label { font-size: 0.8rem; }
+            .compatibility-bar { height: 6px; }
+            .bar-label { font-size: 0.78rem; }
+            .fortune-section { padding: 14px 12px; border-radius: 12px; margin-top: 16px; }
+            .fortune-title { font-size: 0.95rem; margin-bottom: 12px; }
+            .fortune-item { padding-bottom: 16px; }
+            .fortune-type { font-size: 0.88rem; }
+            .fortune-desc { font-size: 0.82rem; line-height: 1.6; }
+            .advice-section { padding: 14px 12px; border-radius: 12px; margin-top: 16px; }
+            .advice-text { font-size: 0.85rem; line-height: 1.65; }
+            .nav-links { gap: 5px; }
+            .nav-links a { padding: 6px 11px; font-size: 0.75rem; border-radius: 8px; }
+            .btn-back { margin-top: 20px; font-size: 0.9rem; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "爱情匹配测试",
+      "description": "爱情匹配测试 - 输入双方姓名，测算缘分指数、默契度、激情度，获取相处建议和爱情运势",
+      "url": "https://quweiceshi.com/love.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "趣味测试",
+        "url": "https://quweiceshi.com"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://quweiceshi.com"},
+    {"@type": "ListItem", "position": 2, "name": "爱情匹配", "item": "https://quweiceshi.com/love.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "爱情匹配测试准吗？", "acceptedAnswer": {"@type": "Answer", "text": "爱情匹配测试基于姓名学和星座配对理论，通过分析双方信息计算匹配度。测试结果仅供娱乐参考，真正的爱情需要双方共同经营和付出，不能仅凭测试结果判断一段感情的好坏。"}},
+    {"@type": "Question", "name": "星座配对可信吗？", "acceptedAnswer": {"@type": "Answer", "text": "星座配对是西方占星学的一部分，根据星座元素和特质分析两人之间的相性。虽然很多人觉得星座描述很准，但这更多是巴纳姆效应的体现。星座配对可以作为了解彼此的有趣话题，但不应作为感情决策的唯一依据。"}},
+    {"@type": "Question", "name": "如何提高情侣默契度？", "acceptedAnswer": {"@type": "Answer", "text": "提高情侣默契度的方法包括：1.多沟通交流，分享彼此的想法和感受；2.一起参与新活动，创造共同回忆；3.学会倾听和理解对方的观点；4.尊重彼此的个性和空间；5.定期进行深入对话，了解对方的内心世界；6.在日常生活中关注对方的小细节。"}},
+    {"@type": "Question", "name": "缘分指数怎么算？", "acceptedAnswer": {"@type": "Answer", "text": "缘分指数是根据双方姓名、星座、生日等信息，通过特定的算法综合计算得出的匹配分数。计算时会考虑姓名笔画、五行属性、星座相性等多个维度。需要注意的是，缘分指数仅供娱乐参考，真正的缘分需要双方用心经营。"}},
+    {"@type": "Question", "name": "情侣相处之道是什么？", "acceptedAnswer": {"@type": "Answer", "text": "情侣相处之道包括：1.坦诚沟通，不隐瞒真实想法；2.互相尊重，接纳对方的不同；3.保持独立，不过度依赖对方；4.共同成长，一起进步；5.学会包容，理解对方的不足；6.保持新鲜感，定期制造惊喜；7.遇到矛盾时冷静处理，避免伤害性言行。"}}
+  ]
+}
+</script>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header class="nav-header">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-icon">🎲</span>
+                <span>趣味测试</span>
+            </a>
+            <nav>
+                <button class="nav-toggle" id="nav-toggle">☰</button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="life/index.html">人生重开</a></li>
+                    <li><a href="mbti.html">MBTI测试</a></li>
+                    <li><a href="bazi.html">八字运势</a></li>
+                    <li><a href="love.html" class="active">爱情匹配</a></li>
+                    <li><a href="constellation.html">星座运势</a></li>
+                    <li><a href="tarot.html">塔罗占卜</a></li>
+                    <li><a href="zodiac.html">生肖运势</a></li>
+                    <li><a href="dream.html">解梦</a></li>
+                    <li><a href="namestat.html">姓名测试</a></li>
+                    <li><a href="psychology.html">心理测试</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div id="page-input" class="page active">
+            <div class="card intro-section">
+                <div class="intro-icon">💕</div>
+                <h1 class="intro-title">爱情匹配测试</h1>
+                <p class="intro-desc">输入你和TA的信息，测算你们的缘分指数。看看你们是不是天生一对！</p>
+                
+                <div class="person-section">
+                    <div class="person-header">
+                        <div class="person-avatar a">👤</div>
+                        <div class="person-title">你</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">你的名字</label>
+                        <input type="text" id="name-a" class="form-control" placeholder="请输入你的名字">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">你的性别</label>
+                        <div class="gender-selector">
+                            <button class="gender-btn" id="gender-a-male" onclick="selectGender('a', 'male')">👨 男</button>
+                            <button class="gender-btn" id="gender-a-female" onclick="selectGender('a', 'female')">👩 女</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">你的星座</label>
+                        <select id="star-a" class="form-control">
+                            <option value="">请选择星座</option>
+                            <option value="aries">♈ 白羊座</option>
+                            <option value="taurus">♉ 金牛座</option>
+                            <option value="gemini">♊ 双子座</option>
+                            <option value="cancer">♋ 巨蟹座</option>
+                            <option value="leo">♌ 狮子座</option>
+                            <option value="virgo">♍ 处女座</option>
+                            <option value="libra">♎ 天秤座</option>
+                            <option value="scorpio">♏ 天蝎座</option>
+                            <option value="sagittarius">♐ 射手座</option>
+                            <option value="capricorn">♑ 摩羯座</option>
+                            <option value="aquarius">♒ 水瓶座</option>
+                            <option value="pisces">♓ 双鱼座</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">你的生日</label>
+                        <input type="date" id="birthday-a" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="person-section">
+                    <div class="person-header">
+                        <div class="person-avatar b">👤</div>
+                        <div class="person-title">TA</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">TA的名字</label>
+                        <input type="text" id="name-b" class="form-control" placeholder="请输入TA的名字">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">TA的性别</label>
+                        <div class="gender-selector">
+                            <button class="gender-btn" id="gender-b-male" onclick="selectGender('b', 'male')">👨 男</button>
+                            <button class="gender-btn" id="gender-b-female" onclick="selectGender('b', 'female')">👩 女</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">TA的星座</label>
+                        <select id="star-b" class="form-control">
+                            <option value="">请选择星座</option>
+                            <option value="aries">♈ 白羊座</option>
+                            <option value="taurus">♉ 金牛座</option>
+                            <option value="gemini">♊ 双子座</option>
+                            <option value="cancer">♋ 巨蟹座</option>
+                            <option value="leo">♌ 狮子座</option>
+                            <option value="virgo">♍ 处女座</option>
+                            <option value="libra">♎ 天秤座</option>
+                            <option value="scorpio">♏ 天蝎座</option>
+                            <option value="sagittarius">♐ 射手座</option>
+                            <option value="capricorn">♑ 摩羯座</option>
+                            <option value="aquarius">♒ 水瓶座</option>
+                            <option value="pisces">♓ 双鱼座</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">TA的生日</label>
+                        <input type="date" id="birthday-b" class="form-control">
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary" onclick="calculateMatch()">测算缘分</button>
+            </div>
+        </div>
+
+        <div id="page-result" class="page">
+            <div class="card result-section">
+
+                <div class="result-icon" id="result-icon">💕</div>
+                <div class="result-title">爱情匹配度</div>
+
+                <div class="match-score" id="match-score">0%</div>
+                <div class="match-label" id="match-label"></div>
+
+                <div class="match-message">
+                    <p class="message-text" id="match-message"></p>
+                </div>
+
+                <div class="match-details">
+                    <div class="detail-item">
+                        <div class="detail-icon">❤️</div>
+                        <div class="detail-name">默契度</div>
+                        <div class="detail-value" id="tacit-value">0%</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">🔥</div>
+                        <div class="detail-name">激情度</div>
+                        <div class="detail-value" id="passion-value">0%</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">💑</div>
+                        <div class="detail-name">稳定度</div>
+                        <div class="detail-value" id="stable-value">0%</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">🌟</div>
+                        <div class="detail-name">未来感</div>
+                        <div class="detail-value" id="future-value">0%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="section-title">📊 匹配分析（基于算法）</div>
+                <div id="personality-analysis"></div>
+            </div>
+
+            <div class="card">
+                <div class="section-title">⭐ 星座配对参考</div>
+                <div id="constellation-info"></div>
+            </div>
+
+            <div class="card">
+                <div class="section-title">💡 通用建议</div>
+                <ul class="advice-list" id="advice-list"></ul>
+            </div>
+            
+            <div class="card">
+                <button class="btn btn-secondary" onclick="restartTest()">重新测算</button>
+
+                <div class="share-section">
+                    <h4>📤 分享我的爱情匹配</h4>
+                    <div class="share-buttons">
+                        <button class="share-btn" onclick="shareTo('wechat')">
+                            <span>💬</span>
+                            <span>微信</span>
+                        </button>
+                        <button class="share-btn" onclick="shareTo('weibo')">
+                            <span>📱</span>
+                            <span>微博</span>
+                        </button>
+                        <button class="share-btn" onclick="shareTo('qq')">
+                            <span>🐧</span>
+                            <span>QQ</span>
+                        </button>
+                        <button class="share-btn" onclick="shareTo('link')">
+                            <span>🔗</span>
+                            <span>复制</span>
+                        </button>
+                    </div>
+                    <div class="share-qr">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://quweiceshi.com/love.html" alt="二维码">
+                        <p>扫码测算缘分</p>
+                    </div>
+                    <div class="share-link">
+                        <span>https://quweiceshi.com/love.html</span>
+                        <button onclick="copyToClipboard('https://quweiceshi.com/love.html')">复制</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const matchMessages = {
+            excellent: '🎉 天作之合！你们是命中注定的一对，前世的缘分让你们相遇。好好珍惜彼此，这份感情将成为你们人生中最珍贵的财富。你们的灵魂深处有着深刻的共鸣，能够理解彼此最深处的想法和感受。',
+            good: '💖 非常般配！你们有很好的缘分基础，性格互补，相处融洽。只要用心经营，这段感情一定会开花结果。你们在很多方面都很合拍，是令人羡慕的一对。',
+            medium: '🤝 还不错！你们之间有一定的默契，但还需要更多的了解和磨合。多沟通交流，感情会越来越好。通过共同努力，可以建立深厚的感情基础。',
+            low: '💪 需要努力！你们的性格或观念存在一些差异，需要双方共同努力去理解和包容对方。但只要真心相爱，这些差异都可以转化为彼此成长的机会。',
+            poor: '😢 不太合适...也许你们更适合做朋友。如果想要发展感情，需要付出更多的耐心和努力。建议先从朋友开始，慢慢了解彼此。'
+        };
+        
+        const starCompat = {
+            aries: { aries: 70, taurus: 60, gemini: 80, cancer: 50, leo: 90, virgo: 60, libra: 70, scorpio: 50, sagittarius: 85, capricorn: 55, aquarius: 75, pisces: 65 },
+            taurus: { aries: 60, taurus: 85, gemini: 55, cancer: 80, leo: 65, virgo: 90, libra: 75, scorpio: 70, sagittarius: 50, capricorn: 85, aquarius: 55, pisces: 75 },
+            gemini: { aries: 80, taurus: 55, gemini: 75, cancer: 60, leo: 70, virgo: 65, libra: 85, scorpio: 55, sagittarius: 80, capricorn: 60, aquarius: 90, pisces: 65 },
+            cancer: { aries: 50, taurus: 80, gemini: 60, cancer: 90, leo: 65, virgo: 75, libra: 70, scorpio: 85, sagittarius: 55, capricorn: 70, aquarius: 60, pisces: 85 },
+            leo: { aries: 90, taurus: 65, gemini: 70, cancer: 65, leo: 80, virgo: 60, libra: 85, scorpio: 70, sagittarius: 85, capricorn: 65, aquarius: 70, pisces: 75 },
+            virgo: { aries: 60, taurus: 90, gemini: 65, cancer: 75, leo: 60, virgo: 85, libra: 70, scorpio: 75, sagittarius: 55, capricorn: 85, aquarius: 65, pisces: 70 },
+            libra: { aries: 70, taurus: 75, gemini: 85, cancer: 70, leo: 85, virgo: 70, libra: 80, scorpio: 65, sagittarius: 75, capricorn: 70, aquarius: 80, pisces: 85 },
+            scorpio: { aries: 50, taurus: 70, gemini: 55, cancer: 85, leo: 70, virgo: 75, libra: 65, scorpio: 90, sagittarius: 60, capricorn: 75, aquarius: 55, pisces: 95 },
+            sagittarius: { aries: 85, taurus: 50, gemini: 80, cancer: 55, leo: 85, virgo: 55, libra: 75, scorpio: 60, sagittarius: 80, capricorn: 50, aquarius: 70, pisces: 60 },
+            capricorn: { aries: 55, taurus: 85, gemini: 60, cancer: 70, leo: 65, virgo: 85, libra: 70, scorpio: 75, sagittarius: 50, capricorn: 90, aquarius: 65, pisces: 70 },
+            aquarius: { aries: 75, taurus: 55, gemini: 90, cancer: 60, leo: 70, virgo: 65, libra: 80, scorpio: 55, sagittarius: 70, capricorn: 65, aquarius: 85, pisces: 60 },
+            pisces: { aries: 65, taurus: 75, gemini: 65, cancer: 85, leo: 75, virgo: 70, libra: 85, scorpio: 95, sagittarius: 60, capricorn: 70, aquarius: 60, pisces: 85 }
+        };
+        
+        const starTraits = {
+            aries: { positive: ['热情勇敢', '充满活力', '敢于冒险'], negative: ['急躁冲动', '缺乏耐心', '过于自我'] },
+            taurus: { positive: ['稳重踏实', '忠诚可靠', '耐心细致'], negative: ['固执保守', '过于物质', '不愿改变'] },
+            gemini: { positive: ['聪明机智', '善于沟通', '多才多艺'], negative: ['善变不定', '缺乏专注', '不够踏实'] },
+            cancer: { positive: ['温柔体贴', '善解人意', '家庭观念强'], negative: ['多愁善感', '过于敏感', '缺乏安全感'] },
+            leo: { positive: ['自信大方', '热情慷慨', '领导能力强'], negative: ['骄傲自负', '爱面子', '控制欲强'] },
+            virgo: { positive: ['细心严谨', '勤奋努力', '追求完美'], negative: ['过于挑剔', '吹毛求疵', '缺乏自信'] },
+            libra: { positive: ['优雅大方', '善于协调', '追求公平'], negative: ['犹豫不决', '过于妥协', '害怕冲突'] },
+            scorpio: { positive: ['深情专一', '洞察力强', '意志坚定'], negative: ['占有欲强', '记仇报复', '过于神秘'] },
+            sagittarius: { positive: ['乐观开朗', '热爱自由', '心胸宽广'], negative: ['过于随性', '缺乏责任', '虎头蛇尾'] },
+            capricorn: { positive: ['踏实稳重', '有责任感', '目标明确'], negative: ['过于严肃', '缺乏情趣', '固执保守'] },
+            aquarius: { positive: ['独立思考', '创新前卫', '乐于助人'], negative: ['过于冷漠', '难以捉摸', '缺乏耐心'] },
+            pisces: { positive: ['善良慈悲', '富有创意', '善解人意'], negative: ['过于梦幻', '缺乏主见', '逃避现实'] }
+        };
+        
+        const adviceLists = {
+            excellent: [
+                { icon: '🎁', text: '珍惜彼此，定期安排浪漫约会，保持爱情的新鲜感。' },
+                { icon: '💬', text: '多沟通交流，分享彼此的想法和感受，加深感情。' },
+                { icon: '🎯', text: '共同设定目标，一起为未来努力奋斗。' },
+                { icon: '❤️', text: '互相支持，成为对方最坚实的后盾。' }
+            ],
+            good: [
+                { icon: '💪', text: '继续保持良好的沟通习惯，及时解决矛盾。' },
+                { icon: '🎨', text: '多了解对方的兴趣爱好，培养共同兴趣。' },
+                { icon: '⭐', text: '记住重要的纪念日，给对方惊喜和感动。' },
+                { icon: '🤝', text: '尊重彼此的个性和空间，保持适度的独立性。' }
+            ],
+            medium: [
+                { icon: '👂', text: '学会倾听对方的想法，不要急于表达自己的观点。' },
+                { icon: '💞', text: '多一些包容和理解，接受对方的不完美。' },
+                { icon: '🌱', text: '从小事做起，慢慢建立彼此的信任和默契。' },
+                { icon: '🎭', text: '尝试站在对方的角度思考问题，增进理解。' }
+            ],
+            low: [
+                { icon: '🔥', text: '需要付出更多努力去了解对方，建立共同话题。' },
+                { icon: '💎', text: '发现彼此的闪光点，学会欣赏对方的优点。' },
+                { icon: '🛤️', text: '一起经历一些挑战，增进彼此的感情。' },
+                { icon: '⏰', text: '给彼此一些时间和空间，不要急于求成。' }
+            ],
+            poor: [
+                { icon: '💡', text: '认真思考你们的关系，是否真的适合在一起。' },
+                { icon: '🔍', text: '深入了解彼此的价值观和人生目标是否一致。' },
+                { icon: '🤔', text: '考虑是否需要寻求专业的情感咨询帮助。' },
+                { icon: '🌈', text: '即使做不成恋人，也可以成为很好的朋友。' }
+            ]
+        };
+        
+        const fateReadings = {
+            excellent: '你们的缘分是上天注定的，前世的姻缘让你们在今生相遇。这段感情充满了甜蜜和幸福，只要彼此珍惜，一定能够白头偕老。你们的爱情故事将成为一段佳话，让身边的人都羡慕不已。',
+            good: '你们之间有着深厚的缘分基础，性格上也十分互补。只要用心经营，这段感情将会非常美满。记得多给对方一些惊喜和浪漫，让爱情之花常开不败。',
+            medium: '你们的缘分还需要进一步培养和发展。虽然现在可能存在一些小摩擦，但只要双方都愿意付出努力，一定能够克服困难，建立起深厚的感情。',
+            low: '你们的缘分需要更多的耐心和努力去培养。性格上的差异需要时间来磨合，但是只要真心相爱，一切困难都可以克服。',
+            poor: '你们的缘分可能比较薄弱，需要认真思考这段关系是否值得继续。如果决定在一起，需要付出比常人更多的努力和包容。'
+        };
+        
+        function selectGender(person, gender) {
+            document.querySelectorAll(`.gender-btn[id^="gender-${person}-"]`).forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            document.getElementById(`gender-${person}-${gender}`).classList.add('selected');
+        }
+        
+        function calculateMatch() {
+            const nameA = document.getElementById('name-a').value;
+            const nameB = document.getElementById('name-b').value;
+            const starA = document.getElementById('star-a').value;
+            const starB = document.getElementById('star-b').value;
+            
+            if (!nameA || !nameB) {
+                alert('请输入双方的名字');
+                return;
+            }
+            
+            let score = calculateNameScore(nameA, nameB);
+            if (starA && starB && starCompat[starA] && starCompat[starA][starB] !== undefined) {
+                const starScore = starCompat[starA][starB];
+                score = Math.round((score * 0.5 + starScore * 0.5));
+            }
+            
+            showResult(score, nameA, nameB, starA, starB);
+        }
+        
+        function calculateNameScore(nameA, nameB) {
+            const sorted = [nameA, nameB].sort();
+            const combined = sorted[0] + sorted[1];
+            let hash = 0;
+            for (let i = 0; i < combined.length; i++) {
+                hash = combined.charCodeAt(i) + ((hash << 5) - hash);
+            }
+            return Math.abs(hash % 101);
+        }
+        
+        // 基于分数的固定等级描述（非AI生成，同一分数永远相同）
+        const fixedMatchDescriptions = {
+            excellent: '天作之合！你们的组合在趣味测试中获得了最高评价。虽然这只是一个娱乐性测试，但高匹配度说明你们在某些方面确实有共同点或互补性。',
+            good: '缘分不错！你们有不少共同点。记住，真正的缘分需要双方用心经营，而不仅仅是一个数字。',
+            medium: '需要磨合，但潜力存在。每段关系都需要时间和努力来培养，差异也可以成为互相学习的机会。',
+            low: '差异较大，但 opposites attract（异性相吸）。有时候不同的个性和背景反而能带来新鲜感和成长机会。',
+            poor: '差异明显，但这不代表不能成为好伴侣。最重要的不是初始匹配分，而是双方是否愿意为关系付出努力。'
+        };
+
+        // 基于匹配等级的固定建议（非随机模板）
+        const fixedAdvice = {
+            excellent: [
+                { icon: '💝', text: '珍惜彼此，定期安排二人世界的时间' },
+                { icon: '🗣️', text: '保持开放和诚实的沟通习惯' },
+                { icon: '🎯', text: '一起设定共同目标，共同成长' },
+                { icon: '❤️', text: '在日常生活中表达关爱和感激' }
+            ],
+            good: [
+                { icon: '🔍', text: '多发现彼此的共同兴趣和爱好' },
+                { icon: '🤝', text: '尊重彼此的差异和个性特点' },
+                { icon: '💬', text: '建立良好的沟通模式，及时分享感受' },
+                { icon: '✨', text: '一起创造美好的共同回忆' }
+            ],
+            medium: [
+                { icon: '👂', text: '学会真正倾听对方的想法和需求' },
+                { icon: '🌱', text: '从小事做起，逐步建立信任和默契' },
+                { icon: '🎭', text: '尝试理解对方的行为背后的原因' },
+                { icon: '⏰', text: '给彼此一些时间和空间去适应' }
+            ],
+            low: [
+                { icon: '💡', text: '寻找你们都感兴趣的共同话题' },
+                { icon: '🎨', text: '尝试一起参与新的活动或学习新技能' },
+                { icon: '🛡️', text: '在冲突时保持冷静，避免伤害性的言语' },
+                { icon: '🤔', text: '思考什么对这段关系最重要' }
+            ],
+            poor: [
+                { icon: '🔍', text: '深入了解彼此的核心价值观是否一致' },
+                { icon: '💪', text: '如果决定继续，需要付出更多耐心和理解' },
+                { icon: '📚', text: '可以阅读一些关于健康关系的书籍' },
+                { icon: '🌈', text: '无论结果如何，这段经历都是宝贵的学习' }
+            ]
+        };
+
+        function showResult(score, nameA, nameB, starA, starB) {
+            document.getElementById('match-score').textContent = `${score}%`;
+
+            let label, message, icon, level;
+            if (score >= 90) {
+                label = '天作之合';
+                message = fixedMatchDescriptions.excellent;
+                icon = '💞';
+                level = 'excellent';
+            } else if (score >= 75) {
+                label = '缘分不错';
+                message = fixedMatchDescriptions.good;
+                icon = '💕';
+                level = 'good';
+            } else if (score >= 60) {
+                label = '还不错';
+                message = fixedMatchDescriptions.medium;
+                icon = '💗';
+                level = 'medium';
+            } else if (score >= 40) {
+                label = '需要努力';
+                message = fixedMatchDescriptions.low;
+                icon = '💔';
+                level = 'low';
+            } else {
+                label = '差异较大';
+                message = fixedMatchDescriptions.poor;
+                icon = '💔';
+                level = 'poor';
+            }
+
+            document.getElementById('match-label').textContent = label;
+            document.getElementById('result-icon').textContent = icon;
+
+            // 使用固定等级描述（不调用AI）
+            document.getElementById('match-message').textContent = message;
+
+            // 基于主分数和名字特征确定性计算子分数
+            const nameHashA = nameA.split('').reduce((h, c) => c.charCodeAt(0) + ((h << 5) - h), 0);
+            const nameHashB = nameB.split('').reduce((h, c) => c.charCodeAt(0) + ((h << 5) - h), 0);
+            const nameDelta = Math.abs(nameHashA - nameHashB);
+
+            const tacit = Math.min(100, Math.max(20, score + (nameDelta % 11) - 5));
+            const passion = Math.min(100, Math.max(20, score + (nameDelta % 9) - 4));
+            const stable = Math.min(100, Math.max(20, score - (nameDelta % 13) + 3));
+            const future = Math.min(100, Math.max(20, score + (nameDelta % 7) - 3));
+
+            document.getElementById('tacit-value').textContent = `${tacit}%`;
+            document.getElementById('passion-value').textContent = `${passion}%`;
+            document.getElementById('stable-value').textContent = `${stable}%`;
+            document.getElementById('future-value').textContent = `${future}%`;
+
+            // 匹配分析（基于算法说明）
+            document.getElementById('personality-analysis').innerHTML = `
+                <div class="analysis-card">
+                    <div class="analysis-title">📐 算法说明</div>
+                    <div class="analysis-text">
+                        <p><strong>匹配度 (${score}%)：</strong>基于双方姓名的Unicode码点哈希值计算得出（确定性算法，同名同结果）。</p>
+                        <p style="margin-top: 8px;"><strong>四维子分数：</strong></p>
+                        <ul style="padding-left: 20px; margin-top: 4px; line-height: 1.8;">
+                            <li>默契度 ${tacit}% — 基于姓名特征相似度的趣味评估</li>
+                            <li>激情度 ${passion}% — 基于姓名互补性的趣味映射</li>
+                            <li>稳定度 ${stable}% — 基于名字结构平衡的趣味计算</li>
+                            <li>未来感 ${future}% — 综合潜力评估</li>
+                        </ul>
+                        <p style="margin-top: 12px; color: var(--text-muted); font-size: 0.85rem;">注：以上所有数值均为趣味算法生成的娱乐性数据，不具备任何科学依据。</p>
+                    </div>
+                </div>
+            `;
+
+            // 星座配对参考（真实知识展示）
+            if (starA && starB && starCompat[starA] && starCompat[starA][starB] !== undefined) {
+                const starScore = starCompat[starA][starB];
+                const starNameMap = {
+                    aries: '白羊座 ♈', taurus: '金牛座 ♉', gemini: '双子座 ♊',
+                    cancer: '巨蟹座 ♋', leo: '狮子座 ♌', virgo: '处女座 ♍',
+                    libra: '天秤座 ♎', scorpio: '天蝎座 ♏', sagittarius: '射手座 ♐',
+                    capricorn: '摩羯座 ♑', aquarius: '水瓶座 ♒', pisces: '双鱼座 ♓'
+                };
+
+                document.getElementById('constellation-info').innerHTML = `
+                    <div class="analysis-card">
+                        <div class="analysis-title">⭐ ${starNameMap[starA]} & ${starNameMap[starB]}</div>
+                        <div class="analysis-text">
+                            <p><strong>星座配对指数：</strong>${starScore}/100</p>
+                            <div class="compatibility-bar" style="margin-top: 8px;">
+                                <div class="compatibility-fill" style="width: ${starScore}%"></div>
+                            </div>
+                            <p style="margin-top: 12px; color: var(--text-muted); font-size: 0.85rem;">
+                                注：星座配对表是西方占星学的传统内容，属于文化娱乐范畴，无科学验证。此处仅作为趣味参考展示。
+                            </p>
+                        </div>
+                    </div>
+                `;
+            } else {
+                document.getElementById('constellation-info').innerHTML = `
+                    <div class="analysis-card">
+                        <div class="analysis-text" style="color: var(--text-muted);">
+                            未提供星座信息。如需查看星座配对参考，请在输入页面选择双方的星座。
+                        </div>
+                    </div>
+                `;
+            }
+
+            // 使用固定建议（不使用AI生成的随机建议）
+            const advice = fixedAdvice[level];
+            document.getElementById('advice-list').innerHTML = advice.map(item => `
+                <li class="advice-item">
+                    <span class="advice-icon">${item.icon}</span>
+                    <span class="advice-text">${item.text}</span>
+                </li>
+            `).join('');
+
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('page-result').classList.add('active');
+
+            saveLoveResult(score, nameA, nameB, starA, starB);
+        }
+
+        function saveLoveResult(score, nameA, nameB, starA, starB) {
+            StorageManager.saveTestRecord('love', {
+                score: score,
+                nameA: nameA,
+                nameB: nameB,
+                starA: starA,
+                starB: starB,
+                timestamp: new Date().toLocaleString()
+            });
+
+            const records = StorageManager.getTestRecords('love');
+            if (records.length === 1) {
+                StorageManager.unlockAchievement('first_test');
+            }
+            if (records.length >= 5) {
+                StorageManager.unlockAchievement('love_matcher');
+            }
+            if (score >= 90) {
+                StorageManager.unlockAchievement('perfect_match');
+            }
+
+            checkCollectorAchievement();
+        }
+
+        function checkCollectorAchievement() {
+            const allAchievements = Object.values(ACHIEVEMENTS).filter(a => a.id !== 'collector').map(a => a.id);
+            const unlocked = StorageManager.getAchievements();
+            const allUnlocked = allAchievements.every(id => unlocked.includes(id));
+            if (allUnlocked) {
+                StorageManager.unlockAchievement('collector');
+            }
+        }
+        
+        function renderPersonalityAnalysis(starA, starB, nameA, nameB) {
+            let html = '';
+            
+            if (starA && starB) {
+                const traitsA = starTraits[starA];
+                const traitsB = starTraits[starB];
+                
+                // 基于星座匹配度确定性计算性格匹配度
+                const starMatchScore = (starCompat[starA] && starCompat[starA][starB] !== undefined) ? starCompat[starA][starB] : 50;
+                
+                html = `
+                    <div class="analysis-card">
+                        <div class="analysis-title">🌟 性格互补分析</div>
+                        <div class="analysis-text">
+                            <p><strong style="color: #4ECDC4;">你的优点：</strong>${traitsA.positive.join('、')}</p>
+                            <p><strong style="color: #4ECDC4;">你的需要改进：</strong>${traitsA.negative.join('、')}</p>
+                            <p><strong style="color: #FD79A8;">TA的优点：</strong>${traitsB.positive.join('、')}</p>
+                            <p><strong style="color: #FD79A8;">TA的需要改进：</strong>${traitsB.negative.join('、')}</p>
+                        </div>
+                    </div>
+                    <div class="analysis-card">
+                        <div class="analysis-title">🎯 性格匹配度</div>
+                        <div class="analysis-text">
+                            你们的性格组合${starA === starB ? '非常相似' : '互为补充'}，${starA === starB ? '更容易理解彼此' : '可以互相学习和成长'}。这种${starA === starB ? '相似性' : '互补性'}是你们感情发展的重要基础。
+                        </div>
+                        <div class="compatibility-bar"><div class="compatibility-fill" style="width: ${starMatchScore}%"></div></div>
+                    </div>
+                `;
+            } else if (nameA && nameB) {
+                // 无星座时基于名字特征计算性格匹配度
+                const nameHashA = nameA.split('').reduce((h, c) => c.charCodeAt(0) + ((h << 5) - h), 0);
+                const nameHashB = nameB.split('').reduce((h, c) => c.charCodeAt(0) + ((h << 5) - h), 0);
+                const personalityMatch = 50 + (Math.abs(nameHashA + nameHashB) % 40);
+                
+                html = `
+                    <div class="analysis-card">
+                        <div class="analysis-title">💝 性格匹配分析</div>
+                        <div class="analysis-text">
+                            根据你们的名字特征分析，你们的性格匹配度为${personalityMatch}%。建议提供双方的星座信息，以便进行更详细的性格匹配分析。星座可以反映一个人的基本性格特征，帮助我们了解彼此的相处模式和潜在的互补点。
+                        </div>
+                        <div class="compatibility-bar"><div class="compatibility-fill" style="width: ${personalityMatch}%"></div></div>
+                    </div>
+                `;
+            } else {
+                html = `
+                    <div class="analysis-card">
+                        <div class="analysis-title">💝 性格匹配分析</div>
+                        <div class="analysis-text">
+                            请提供双方的星座信息，以便进行更详细的性格匹配分析。星座可以反映一个人的基本性格特征，帮助我们了解彼此的相处模式和潜在的互补点。
+                        </div>
+                    </div>
+                `;
+            }
+            
+            document.getElementById('personality-analysis').innerHTML = html;
+        }
+        
+        function renderAdvice(level) {
+            const advice = adviceLists[level];
+            let html = advice.map(item => `
+                <li class="advice-item">
+                    <span class="advice-icon">${item.icon}</span>
+                    <span class="advice-text">${item.text}</span>
+                </li>
+            `).join('');
+            
+            document.getElementById('advice-list').innerHTML = html;
+        }
+        
+        function renderFortune(score, nameA, nameB) {
+            const currentYear = new Date().getFullYear();
+            
+            // 基于名字特征生成确定性偏移
+            const nameHashA = nameA.split('').reduce((h, c) => c.charCodeAt(0) + ((h << 5) - h), 0);
+            const nameHashB = nameB.split('').reduce((h, c) => c.charCodeAt(0) + ((h << 5) - h), 0);
+            const nameDelta = Math.abs(nameHashA - nameHashB);
+            
+            // 根据匹配分数选择不同的运势模板
+            const fortuneTemplates = {
+                high: [
+                    [
+                        '今年是你们感情升温的黄金期，彼此的默契会越来越深，有望迎来重要的关系进展。',
+                        '明年感情将更加稳定，适合共同规划未来，可以考虑更深层次的承诺。',
+                        '后年可能面临一些生活上的变化，但你们的感情基础足以应对一切挑战。',
+                        '三年后你们的关系将更加成熟，彼此成为对方最坚实的依靠。'
+                    ],
+                    [
+                        '今年你们的缘分将迎来甜蜜的收获期，珍惜在一起的每一刻。',
+                        '明年适合一起探索新的生活领域，旅行或共同学习会让感情更深厚。',
+                        '后年可能会有家庭方面的重要决定，双方都准备好了的话就勇敢迈出那一步。',
+                        '三年后你们的感情将如同美酒，越陈越香，成为彼此生命中不可或缺的存在。'
+                    ]
+                ],
+                medium: [
+                    [
+                        '今年是了解彼此的关键一年，多花时间沟通和交流，感情会稳步发展。',
+                        '明年感情运势平稳上升，适合一起经历更多事情来增进默契。',
+                        '后年可能会遇到一些考验，但只要坦诚相待，反而会让感情更加牢固。',
+                        '三年后如果一直用心经营，你们将建立起深厚的感情基础。'
+                    ],
+                    [
+                        '今年需要更多耐心去理解对方，学会欣赏彼此的不同之处。',
+                        '明年感情会有明显的进展，可能会经历一些让你们更亲近的事件。',
+                        '后年建议给彼此一些空间和新鲜感，避免感情陷入平淡。',
+                        '三年后如果持续努力，你们的感情将变得非常稳固。'
+                    ]
+                ],
+                low: [
+                    [
+                        '今年需要认真思考这段关系的方向，了解彼此的真实想法很重要。',
+                        '明年如果决定继续发展，需要付出更多的理解和包容。',
+                        '后年可能会面临一些选择，听从内心的声音做出最适合自己的决定。',
+                        '三年后无论结果如何，这段经历都会让你更加了解自己想要什么样的感情。'
+                    ],
+                    [
+                        '今年建议放慢脚步，先从朋友做起，慢慢了解彼此。',
+                        '明年可能会发现彼此更多的共同点，也可能意识到差异比想象中大。',
+                        '后年如果感情有进展，记得保持真诚和耐心。',
+                        '三年后回望这段旅程，你会感谢自己做出的每一个认真选择。'
+                    ]
+                ]
+            };
+            
+            // 根据分数选择模板组
+            let templateGroup;
+            if (score >= 70) {
+                templateGroup = fortuneTemplates.high[nameDelta % fortuneTemplates.high.length];
+            } else if (score >= 45) {
+                templateGroup = fortuneTemplates.medium[nameDelta % fortuneTemplates.medium.length];
+            } else {
+                templateGroup = fortuneTemplates.low[nameDelta % fortuneTemplates.low.length];
+            }
+            
+            const fortunes = [
+                { year: currentYear, desc: templateGroup[0] },
+                { year: currentYear + 1, desc: templateGroup[1] },
+                { year: currentYear + 2, desc: templateGroup[2] },
+                { year: currentYear + 3, desc: templateGroup[3] }
+            ];
+            
+            let html = fortunes.map(item => `
+                <div class="fortune-item">
+                    <div class="fortune-year">${item.year}年</div>
+                    <div class="fortune-desc">${item.desc}</div>
+                </div>
+            `).join('');
+            
+            document.getElementById('fortune-timeline').innerHTML = html;
+        }
+        
+        function renderFateReading(level) {
+            const reading = fateReadings[level];
+            let html = `
+                <div class="analysis-card">
+                    <div class="analysis-text">${reading}</div>
+                </div>
+            `;
+            
+            document.getElementById('fate-reading').innerHTML = html;
+        }
+        
+        function shareResult() {
+            const score = document.getElementById('match-score').textContent;
+            const label = document.getElementById('match-label').textContent;
+            copyToClipboard(`💕 我和TA的爱情匹配度是${score}(${label})！快来测算你们的缘分吧！`);
+            showToast('已复制到剪贴板');
+        }
+        
+        function restartTest() {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('page-input').classList.add('active');
+        }
+
+        function shareTo(platform) {
+            const score = document.getElementById('match-score')?.textContent || '';
+            const label = document.getElementById('match-label')?.textContent || '';
+            const url = encodeURIComponent('https://quweiceshi.com/love.html');
+            const shareTitle = encodeURIComponent(`💕 我和TA的爱情匹配度是${score}(${label})！快来测算你们的缘分吧！`);
+            
+            switch(platform) {
+                case 'wechat':
+                    showToast('请复制链接分享到微信');
+                    copyToClipboard('https://quweiceshi.com/love.html');
+                    break;
+                case 'weibo':
+                    window.open(`https://service.weibo.com/share/share.php?url=${url}&title=${shareTitle}`, '_blank');
+                    break;
+                case 'qq':
+                    window.open(`https://connect.qq.com/widget/shareqq/index.html?url=${url}&title=${shareTitle}`, '_blank');
+                    break;
+                case 'link':
+                    copyToClipboard('https://quweiceshi.com/love.html');
+                    showToast('链接已复制到剪贴板');
+                    break;
+            }
+        }
+
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    console.log('Copied to clipboard');
+                }).catch(function() {
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        }
+        function fallbackCopy(text) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch(e) {}
+            document.body.removeChild(ta);
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(toast);
+                }, 300);
+            }, 2000);
+        }
+        
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+        navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+    </script>
+
+
+<footer class="site-footer" style="max-width:600px;margin:40px auto 0;padding:20px;text-align:center;border-top:1px solid rgba(255,255,255,0.1);">
+    <nav aria-label="网站导航" style="margin-bottom:16px;">
+        <a href="index.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">首页</a>
+        <a href="mbti.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">MBTI测试</a>
+        <a href="bazi.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">八字运势</a>
+        <a href="love.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">爱情匹配</a>
+        <a href="constellation.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">星座运势</a>
+        <a href="tarot.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">塔罗占卜</a>
+        <a href="zodiac.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">生肖运势</a>
+        <a href="dream.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">解梦</a>
+        <a href="namestat.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">姓名测试</a>
+        <a href="psychology.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">心理测试</a>
+        <a href="life/index.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">人生重开</a>
+    </nav>
+    <p style="color:rgba(255,255,255,0.3);font-size:0.75rem;">&copy; 2026 趣味测试 quweiceshi.com - 仅供娱乐参考</p>
+</footer>
+</body>
+</html>

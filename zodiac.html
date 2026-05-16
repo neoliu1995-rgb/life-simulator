@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>十二生肖知识档案_生肖配对与五行 - 趣味测试</title>
+    <meta name="description" content="十二生肖知识档案 - 鼠牛虎兔龙蛇马羊猴鸡狗猪的基本信息、五行属性、方位季节、性格特点、六合三合相冲相害等传统文化知识整理">
+    <meta name="keywords" content="十二生肖,生肖,生肖配对,生肖运势,鼠,牛,虎,兔,龙,蛇,马,羊,猴,鸡,狗,猪,五行,六合,三合">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://quweiceshi.com/zodiac.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://quweiceshi.com/zodiac.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://quweiceshi.com/zodiac.html">
+    <link rel="alternate" hreflang="x-default" href="https://quweiceshi.com/zodiac.html">
+
+    <meta property="og:title" content="十二生肖知识档案 - 趣味测试">
+    <meta property="og:description" content="十二生肖基本信息、五行属性、方位季节、性格特点、六合三合配对关系等传统文化知识">
+    <meta property="og:url" content="https://quweiceshi.com/zodiac.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="趣味测试">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:image" content="https://quweiceshi.com/images/og-zodiac.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="十二生肖知识档案 - 趣味测试">
+
+    <link rel="preconnect" href="https://fonts.loli.net">
+    <link rel="preconnect" href="https://gstatic.loli.net" crossorigin>
+    <link rel="dns-prefetch" href="https://api.qrserver.com">
+    <link rel="dns-prefetch" href="https://hm.baidu.com">
+    <link href="https://fonts.loli.net/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/global.css">
+
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?edc404e2ae130a4255dabf98a08172ee";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .intro-screen {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .intro-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: twinkle 2s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.05); }
+        }
+
+        .intro-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #FFD700 0%, #FF6B6B 50%, #9B59B6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .intro-desc {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .zodiac-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .zodiac-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .zodiac-card:hover {
+            transform: translateY(-3px);
+            border-color: #FFD700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .zodiac-card.selected {
+            border-color: #FFD700;
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .zodiac-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .zodiac-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .zodiac-year {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .btn-confirm {
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border: none;
+            border-radius: 12px;
+            color: #000;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-confirm:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        /* ===== 结果页：知识卡片样式 ===== */
+        .result-screen {
+            padding: 16px;
+        }
+
+        .result-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .zodiac-badge {
+            font-size: 4rem;
+            margin-bottom: 12px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .zodiac-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .zodiac-info {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .knowledge-card {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.08), rgba(255, 165, 0, 0.08));
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            border-radius: 18px;
+            padding: 20px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .knowledge-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .knowledge-row:last-child {
+            border-bottom: none;
+        }
+
+        .knowledge-label {
+            color: #FFD700;
+            font-weight: 600;
+            white-space: nowrap;
+            min-width: 80px;
+        }
+
+        .knowledge-value {
+            color: var(--text-secondary);
+            flex: 1;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .trait-item {
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .trait-item.positive {
+            color: #4ECDC4;
+        }
+
+        .trait-item.negative {
+            color: #FF6B6B;
+        }
+
+        .compatibility-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #FFD700;
+        }
+
+        .compatibility-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        .compatibility-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .compatibility-item.high {
+            border-color: #4ECDC4;
+            background: rgba(78, 205, 196, 0.08);
+        }
+
+        .compatibility-item.medium {
+            border-color: #FFD700;
+            background: rgba(255, 215, 0, 0.08);
+        }
+
+        .compatibility-item.low {
+            border-color: #FF6B6B;
+            background: rgba(255, 107, 107, 0.08);
+        }
+
+        .compatibility-icon {
+            font-size: 1.5rem;
+            margin-bottom: 4px;
+        }
+
+        .compatibility-name {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .compatibility-rate {
+            font-size: 0.7rem;
+            margin-top: 2px;
+            color: var(--text-muted);
+        }
+
+        .character-desc-box {
+            background: linear-gradient(135deg, rgba(155, 89, 182, 0.08), rgba(108, 92, 231, 0.08));
+            border: 1px solid rgba(155, 89, 182, 0.25);
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 16px;
+        }
+
+        .character-desc-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #A78BFA;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .character-desc-content {
+            color: var(--text-secondary);
+            line-height: 1.65;
+            font-size: 0.92rem;
+        }
+
+        .lucky-tips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .lucky-tag {
+            padding: 7px 14px;
+            background: rgba(255, 215, 0, 0.12);
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            border-radius: 20px;
+            font-size: 0.82rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-back {
+            margin-top: 24px;
+            width: 100%;
+        }
+
+        /* ===== 响应式适配 ===== */
+        @media (max-width: 768px) {
+            .intro-screen { padding: 30px 16px; }
+            .intro-icon { font-size: 3rem; margin-bottom: 16px; }
+            .intro-title { font-size: 1.6rem; }
+            .zodiac-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+            }
+            .zodiac-card { padding: 14px 10px; border-radius: 12px; }
+            .zodiac-icon { font-size: 1.6rem; }
+            .zodiac-name { font-size: 0.85rem; }
+            .btn-confirm { padding: 12px 28px; font-size: 0.95rem; }
+            /* 结果页 */
+            .result-screen { padding: 14px; }
+            .zodiac-badge { font-size: 3rem; }
+            .zodiac-title { font-size: 1.5rem; }
+            .knowledge-card { padding: 18px; border-radius: 16px; margin-bottom: 14px; }
+            .knowledge-row { padding: 6px 0; font-size: 0.88rem; }
+            .knowledge-label { min-width: 70px; font-size: 0.85rem; }
+            .traits-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+            .trait-item { padding: 6px 10px; font-size: 0.8rem; }
+            .compatibility-section { padding: 14px; border-radius: 14px; margin-bottom: 14px; }
+            .section-title { font-size: 0.95rem; margin-bottom: 10px; }
+            .compatibility-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 6px;
+            }
+            .compatibility-item { padding: 10px 8px; border-radius: 10px; }
+            .compatibility-icon { font-size: 1.3rem; }
+            .compatibility-name { font-size: 0.75rem; }
+            .character-desc-box { padding: 16px; border-radius: 14px; margin-bottom: 14px; }
+        }
+
+        @media (max-width: 480px) {
+            .intro-screen { padding: 24px 14px; }
+            .intro-icon { font-size: 2.5rem; margin-bottom: 14px; }
+            .intro-title { font-size: 1.35rem; }
+            .intro-desc { font-size: 0.88rem; }
+            .zodiac-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+            }
+            .zodiac-card { padding: 12px 8px; border-radius: 10px; }
+            .zodiac-icon { font-size: 1.4rem; }
+            .zodiac-name { font-size: 0.78rem; }
+            .zodiac-year { font-size: 0.68rem; }
+            .btn-confirm { width: 100%; padding: 11px 24px; font-size: 0.9rem; }
+            /* 结果页 */
+            .result-screen { padding: 12px 10px; }
+            .zodiac-badge { font-size: 2.5rem; }
+            .zodiac-title { font-size: 1.3rem; }
+            .zodiac-info { font-size: 0.85rem; }
+            .knowledge-card { padding: 14px 12px; border-radius: 14px; margin-bottom: 12px; }
+            .knowledge-row { padding: 5px 0; font-size: 0.82rem; flex-direction: column; gap: 2px; align-items: flex-start; }
+            .knowledge-label { min-width: auto; white-space: normal; font-size: 0.82rem; }
+            .knowledge-value { font-size: 0.82rem; }
+            .traits-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+            .trait-item { padding: 6px 8px; font-size: 0.75rem; border-radius: 8px; }
+            .compatibility-section { padding: 12px 10px; border-radius: 12px; margin-bottom: 12px; }
+            .section-title { font-size: 0.88rem; margin-bottom: 8px; }
+            .compatibility-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 5px;
+            }
+            .compatibility-item { padding: 8px 4px; border-radius: 8px; }
+            .compatibility-icon { font-size: 1.1rem; margin-bottom: 2px; }
+            .compatibility-name { font-size: 0.68rem; }
+            .compatibility-rate { font-size: 0.62rem; }
+            .lucky-tag { padding: 5px 10px; font-size: 0.75rem; }
+            .character-desc-box { padding: 14px 12px; border-radius: 12px; margin-bottom: 12px; }
+            .character-desc-title { font-size: 0.9rem; }
+            .character-desc-content { font-size: 0.85rem; }
+            .btn-back { margin-top: 20px; font-size: 0.9rem; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "十二生肖知识档案",
+      "description": "十二生肖基本信息、五行属性、方位季节、性格特点、六合三合配对关系等传统文化知识",
+      "url": "https://quweiceshi.com/zodiac.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "趣味测试",
+        "url": "https://quweiceshi.com"
+      }
+    }
+    </script>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="bg-gradient"></div>
+        <div class="bg-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+    </div>
+
+    <header class="nav-header">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-icon">🎲</span>
+                <span>趣味测试</span>
+            </a>
+            <nav>
+                <button class="nav-toggle" id="nav-toggle">☰</button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="life/index.html">人生重开</a></li>
+                    <li><a href="mbti.html">MBTI测试</a></li>
+                    <li><a href="bazi.html">八字运势</a></li>
+                    <li><a href="love.html">爱情匹配</a></li>
+                    <li><a href="constellation.html">星座运势</a></li>
+                    <li><a href="tarot.html">塔罗占卜</a></li>
+                    <li><a href="zodiac.html" class="active">生肖运势</a></li>
+                    <li><a href="dream.html">解梦</a></li>
+                    <li><a href="namestat.html">姓名测试</a></li>
+                    <li><a href="psychology.html">心理测试</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div id="page-intro" class="page active">
+                <div class="card intro-screen">
+                    <div class="intro-icon">🐉</div>
+                    <h1 class="intro-title">十二生肖知识档案</h1>
+                    <p class="intro-desc">选择你的生肖，了解基于传统文化的生肖基本知识与配对关系</p>
+
+                    <div class="zodiac-grid" id="zodiac-grid"></div>
+
+                    <button class="btn-confirm" onclick="confirmZodiac()">🌟 查看档案</button>
+                </div>
+            </div>
+
+            <div id="page-result" class="page">
+                <div class="result-screen">
+                    <div class="result-header">
+                        <div class="zodiac-badge" id="zodiac-icon">🐭</div>
+                        <div class="zodiac-title" id="zodiac-name">鼠</div>
+                        <div class="zodiac-info" id="zodiac-info">子年 · 水性 · 北方</div>
+                    </div>
+
+                    <!-- 生肖知识卡片主体 -->
+                    <div class="knowledge-card" id="knowledge-card"></div>
+
+                    <!-- 性格特点 -->
+                    <div class="compatibility-section">
+                        <div class="section-title">&#x1F4A1; 性格关键词</div>
+                        <div class="traits-grid" id="traits-grid"></div>
+                    </div>
+
+                    <!-- 性格描述 -->
+                    <div class="character-desc-box">
+                        <div class="character-desc-title">&#x1F4DC; 性格详解</div>
+                        <div class="character-desc-content" id="character-desc"></div>
+                    </div>
+
+                    <!-- 配对关系 -->
+                    <div class="compatibility-section">
+                        <div class="section-title">&#x2764;&#xFE0F; 生肖配对</div>
+                        <div class="compatibility-grid" id="compatibility-grid"></div>
+                    </div>
+
+                    <!-- 幸运信息 -->
+                    <div class="compatibility-section">
+                        <div class="section-title">&#x2728; 幸运信息</div>
+                        <div class="lucky-tips" id="lucky-tips"></div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block btn-back" onclick="restart()">&#x1F504; 重新选择</button>
+
+                    <div class="share-section">
+                        <h4>&#128222; 分享我的生肖档案</h4>
+                        <div class="share-buttons">
+                            <button class="share-btn" onclick="shareTo('wechat')">
+                                <span>&#128172;</span>
+                                <span>微信</span>
+                            </button>
+                            <button class="share-btn" onclick="shareTo('weibo')">
+                                <span>&#128241;</span>
+                                <span>微博</span>
+                            </button>
+                            <button class="share-btn" onclick="shareTo('qq')">
+                                <span>&#128038;</span>
+                                <span>QQ</span>
+                            </button>
+                            <button class="share-btn" onclick="shareTo('link')">
+                                <span>&#128279;</span>
+                                <span>复制</span>
+                            </button>
+                        </div>
+                        <div class="share-qr">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://quweiceshi.com/zodiac.html" alt="二维码">
+                            <p>扫码查看生肖</p>
+                        </div>
+                        <div class="share-link">
+                            <span>https://quweiceshi.com/zodiac.html</span>
+                            <button onclick="copyToClipboard('https://quweiceshi.com/zodiac.html')">复制</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // ========== 中文生肖名到英文key的映射 ==========
+        const chineseToKey = {
+            '鼠': 'rat', '牛': 'ox', '虎': 'tiger', '兔': 'rabbit',
+            '龙': 'dragon', '蛇': 'snake', '马': 'horse', '羊': 'sheep',
+            '猴': 'monkey', '鸡': 'rooster', '狗': 'dog', '猪': 'pig'
+        };
+
+        // ========== 十二生肖知识数据库（固定传统文化知识）==========
+        const zodiacData = {
+            rat: {
+                name: 'rat',
+                chineseName: '鼠',
+                icon: '🐭',
+                element: '水',
+                elementEmoji: '💧',
+                direction: '北方',
+                season: '冬季',
+                years: ['1924', '1936', '1948', '1960', '1972', '1984', '1996', '2008', '2020'],
+                liuhe: ['牛'],
+                liuheName: '六合：牛',
+                sanhe: ['猴', '龙'],
+                sanheNames: '三合：猴、龙',
+                xiangchong: ['马'],
+                xianghai: ['羊'],
+                xiangxing: ['兔'],
+                benmingYears: ['2020', '2008', '1996', '1984', '1972', '1960', '1948', '1936', '1924'],
+                traits: [
+                    { text: '聪明机智', type: 'positive' },
+                    { text: '灵活应变', type: 'positive' },
+                    { text: '善于交际', type: 'positive' },
+                    { text: '勤俭节约', type: 'positive' },
+                    { text: '过于精明', type: 'negative' },
+                    { text: '多疑敏感', type: 'negative' },
+                    { text: '贪小便宜', type: 'negative' },
+                    { text: '优柔寡断', type: 'negative' }
+                ],
+                characterDesc: '属鼠的人天生聪明机智，反应敏捷，善于观察和分析。他们具有出色的适应能力，能够在各种环境中游刃有余。在人际交往方面，属鼠人通常很受欢迎，因为他们懂得察言观色，说话得体。他们理财观念强，懂得精打细算。但有时过于精明会让人感觉不够真诚，容易多疑，在做决定时可能犹豫不决。',
+                lucky: { number: ['4', '9'], color: '蓝色、金色', flower: '百合花', food: '绿色蔬菜' },
+                compatibility: { high: ['ox', 'monkey', 'dragon'], medium: ['rat', 'pig', 'dog'], low: ['horse', 'sheep', 'rabbit'] }
+            },
+            ox: {
+                name: 'ox',
+                chineseName: '牛',
+                icon: '🐮',
+                element: '土',
+                elementEmoji: '🌍',
+                direction: '中央偏东北',
+                season: '四季皆宜',
+                years: ['1925', '1937', '1949', '1961', '1973', '1985', '1997', '2009', '2021'],
+                liuhe: ['鼠'],
+                liuheName: '六合：鼠',
+                sanhe: ['蛇', '鸡'],
+                sanheNames: '三合：蛇、鸡',
+                xiangchong: ['羊'],
+                xianghai: ['马'],
+                xiangxing: ['龙'],
+                benmingYears: ['2021', '2009', '1997', '1985', '1973', '1961', '1949', '1937', '1925'],
+                traits: [
+                    { text: '踏实稳重', type: 'positive' },
+                    { text: '勤劳刻苦', type: 'positive' },
+                    { text: '有责任感', type: 'positive' },
+                    { text: '诚实守信', type: 'positive' },
+                    { text: '固执己见', type: 'negative' },
+                    { text: '缺乏变通', type: 'negative' },
+                    { text: '过于保守', type: 'negative' },
+                    { text: '脾气倔强', type: 'negative' }
+                ],
+                characterDesc: '属牛的人以稳重踏实著称，做事认真负责，有始有终。他们勤劳肯干，不怕吃苦，是值得信赖的伙伴和员工。属牛人通常很有耐心，能够长期坚持做一件事直到成功。他们重视承诺，言出必行。但有时过于固执，不善于变通，对新事物接受较慢。在感情中比较木讷，不太会表达情感。',
+                lucky: { number: ['1', '9'], color: '黄色、白色', flower: '牡丹花', food: '米饭、面食' },
+                compatibility: { high: ['rat', 'snake', 'rooster'], medium: ['ox', 'pig', 'rabbit'], low: ['sheep', 'horse', 'dragon'] }
+            },
+            tiger: {
+                name: 'tiger',
+                chineseName: '虎',
+                icon: '🐯',
+                element: '木',
+                elementEmoji: '🌳',
+                direction: '东方',
+                season: '春季',
+                years: ['1926', '1938', '1950', '1962', '1974', '1986', '1998', '2010', '2022'],
+                liuhe: ['猪'],
+                liuheName: '六合：猪',
+                sanhe: ['马', '狗'],
+                sanheNames: '三合：马、狗',
+                xiangchong: ['猴'],
+                xianghai: ['蛇'],
+                xiangxing: ['猴'],
+                benmingYears: ['2022', '2010', '1998', '1986', '1974', '1962', '1950', '1938', '1926'],
+                traits: [
+                    { text: '勇敢无畏', type: 'positive' },
+                    { text: '自信果断', type: 'positive' },
+                    { text: '领导力强', type: 'positive' },
+                    { text: '热情豪爽', type: 'positive' },
+                    { text: '冲动易怒', type: 'negative' },
+                    { text: '独断专行', type: 'negative' },
+                    { text: '缺乏耐心', type: 'negative' },
+                    { text: '过于自信', type: 'negative' }
+                ],
+                characterDesc: '属虎的人天生具有领袖气质，勇敢果断，敢于挑战权威和困难。他们充满活力和热情，喜欢冒险和刺激，不愿意过平淡无奇的生活。属虎人有很强的正义感，看到不公平的事情会挺身而出。他们独立性强，不喜欢被人管束。但有时过于冲动，做事欠考虑，容易与人发生冲突。在感情中比较强势，需要学会温柔体贴。',
+                lucky: { number: ['1', '3', '4'], color: '绿色、蓝色', flower: '桃花', food: '蔬菜水果' },
+                compatibility: { high: ['pig', 'horse', 'dog'], medium: ['tiger', 'dragon', 'rabbit'], low: ['monkey', 'snake'] }
+            },
+            rabbit: {
+                name: 'rabbit',
+                chineseName: '兔',
+                icon: '🐰',
+                element: '木',
+                elementEmoji: '🌳',
+                direction: '东方',
+                season: '春季',
+                years: ['1927', '1939', '1951', '1963', '1975', '1987', '1999', '2011', '2023'],
+                liuhe: ['狗'],
+                liuheName: '六合：狗',
+                sanhe: ['羊', '猪'],
+                sanheNames: '三合：羊、猪',
+                xiangchong: ['鸡'],
+                xianghai: ['龙'],
+                xiangxing: ['鼠'],
+                benmingYears: ['2023', '2011', '1999', '1987', '1975', '1963', '1951', '1939', '1927'],
+                traits: [
+                    { text: '温和文雅', type: 'positive' },
+                    { text: '善解人意', type: 'positive' },
+                    { text: '谨慎细心', type: 'positive' },
+                    { text: '艺术天赋', type: 'positive' },
+                    { text: '过于敏感', type: 'negative' },
+                    { text: '优柔寡断', type: 'negative' },
+                    { text: '逃避现实', type: 'negative' },
+                    { text: '情绪化', type: 'negative' }
+                ],
+                characterDesc: '属兔的人性格温和，举止优雅，待人友善。他们心思细腻，善于体察他人的感受，是很好的倾听者。属兔人有很强的审美能力和艺术气质，追求美好的事物。他们做事谨慎，不喜欢冒险，更愿意走稳妥的道路。但有时过于敏感多疑，遇到困难时倾向于逃避而不是面对。在感情中比较被动，需要对方主动。',
+                lucky: { number: ['3', '4', '9'], color: '粉色、紫色', flower: '茉莉花', food: '胡萝卜、青菜' },
+                compatibility: { high: ['dog', 'sheep', 'pig'], medium: ['rabbit', 'pig', 'dog'], low: ['rooster', 'dragon', 'rat'] }
+            },
+            dragon: {
+                name: 'dragon',
+                chineseName: '龙',
+                icon: '🐲',
+                element: '土',
+                elementEmoji: '🌍',
+                direction: '中央',
+                season: '四季皆宜',
+                years: ['1928', '1940', '1952', '1964', '1976', '1988', '2000', '2012', '2024'],
+                liuhe: ['鸡'],
+                liuheName: '六合：鸡',
+                sanhe: ['鼠', '猴'],
+                sanheNames: '三合：鼠、猴',
+                xiangchong: ['狗'],
+                xianghai: ['兔'],
+                xiangxing: ['牛'],
+                benmingYears: ['2024', '2012', '2000', '1988', '1976', '1964', '1952', '1940', '1928'],
+                traits: [
+                    { text: '气宇轩昂', type: 'positive' },
+                    { text: '志向远大', type: 'positive' },
+                    { text: '能力强悍', type: 'positive' },
+                    { text: '慷慨大方', type: 'positive' },
+                    { text: '骄傲自大', type: 'negative' },
+                    { text: '爱慕虚荣', type: 'negative' },
+                    { text: '脾气暴躁', type: 'negative' },
+                    { text: '过于理想化', type: 'negative' }
+                ],
+                characterDesc: '属龙的人天生具有王者风范，气度不凡，志向高远。他们能力出众，无论做什么事情都力求做到最好。属龙人慷慨仗义，乐于助人，在朋友圈中有很高的威望。他们有很强的创造力和领导才能，适合从事管理或创业工作。但有时过于骄傲自大，听不进别人的意见。在感情中比较霸道，需要学会尊重伴侣。',
+                lucky: { number: ['1', '6', '7'], color: '金色、银色', flower: '牡丹花', food: '海鲜、肉类' },
+                compatibility: { high: ['rooster', 'rat', 'monkey'], medium: ['dragon', 'snake', 'monkey'], low: ['dog', 'rabbit', 'ox'] }
+            },
+            snake: {
+                name: 'snake',
+                chineseName: '蛇',
+                icon: '🐍',
+                element: '火',
+                elementEmoji: '🔥',
+                direction: '东南方',
+                season: '夏季',
+                years: ['1929', '1941', '1953', '1965', '1977', '1989', '2001', '2013', '2025'],
+                liuhe: ['猴'],
+                liuheName: '六合：猴',
+                sanhe: ['牛', '鸡'],
+                sanheNames: '三合：牛、鸡',
+                xiangchong: ['猪'],
+                xianghai: ['虎'],
+                xiangxing: ['虎'],
+                benmingYears: ['2025', '2013', '2001', '1989', '1977', '1965', '1953', '1941', '1929'],
+                traits: [
+                    { text: '智慧深沉', type: 'positive' },
+                    { text: '洞察力强', type: 'positive' },
+                    { text: '冷静沉着', type: 'positive' },
+                    { text: '神秘迷人', type: 'positive' },
+                    { text: '多疑猜忌', type: 'negative' },
+                    { text: '城府太深', type: 'negative' },
+                    { text: '占有欲强', type: 'negative' },
+                    { text: '报复心强', type: 'negative' }
+                ],
+                characterDesc: '属蛇的人智慧超群，思维缜密，具有很强的洞察力。他们外表冷静沉稳，内心却波澜起伏，让人难以捉摸。属蛇人有很强的直觉力，往往能准确判断形势和人心。他们做事有计划有条理，不会鲁莽行事。但有时过于多疑，难以完全信任他人。在感情中比较神秘，不容易敞开心扉，需要时间建立信任。',
+                lucky: { number: ['2', '8', '9'], color: '红色、黄色', flower: '兰花', food: '蘑菇、菌类' },
+                compatibility: { high: ['monkey', 'ox', 'rooster'], medium: ['snake', 'dragon', 'rooster'], low: ['pig', 'tiger'] }
+            },
+            horse: {
+                name: 'horse',
+                chineseName: '马',
+                icon: '🐴',
+                element: '火',
+                elementEmoji: '🔥',
+                direction: '南方',
+                season: '夏季',
+                years: ['1930', '1942', '1954', '1966', '1978', '1990', '2002', '2014', '2026'],
+                liuhe: ['羊'],
+                liuheName: '六合：羊',
+                sanhe: ['虎', '狗'],
+                sanheNames: '三合：虎、狗',
+                xiangchong: ['鼠'],
+                xianghai: ['牛'],
+                xiangxing: ['鼠'],
+                benmingYears: ['2026', '2014', '2002', '1990', '1978', '1966', '1954', '1942', '1930'],
+                traits: [
+                    { text: '热情奔放', type: 'positive' },
+                    { text: '乐观开朗', type: 'positive' },
+                    { text: '行动迅速', type: 'positive' },
+                    { text: '善于交际', type: 'positive' },
+                    { text: '急躁冲动', type: 'negative' },
+                    { text: '缺乏耐心', type: 'negative' },
+                    { text: '喜新厌旧', type: 'negative' },
+                    { text: '不够专注', type: 'negative' }
+                ],
+                characterDesc: '属马的人热情洋溢，精力充沛，永远充满活力。他们向往自由，不喜欢被束缚，喜欢到处旅行和探索新鲜事物。属马人乐观开朗，善于社交，在人群中总是引人注目。他们行动力强，说干就干，效率很高。但有时过于急躁，缺乏耐心细致。在感情中比较浪漫但不够专一，需要学习如何经营长久的关系。',
+                lucky: { number: ['2', '3', '7'], color: '红色、紫色', flower: '桂花', food: '燕麦、谷物' },
+                compatibility: { high: ['sheep', 'tiger', 'dog'], medium: ['horse', 'tiger', 'dog'], low: ['rat', 'ox'] }
+            },
+            sheep: {
+                name: 'sheep',
+                chineseName: '羊',
+                icon: '🐑',
+                element: '土',
+                elementEmoji: '🌍',
+                direction: '西南方',
+                season: '四季皆宜',
+                years: ['1931', '1943', '1955', '1967', '1979', '1991', '2003', '2015', '2027'],
+                liuhe: ['马'],
+                liuheName: '六合：马',
+                sanhe: ['兔', '猪'],
+                sanheNames: '三合：兔、猪',
+                xiangchong: ['牛'],
+                xianghai: ['鼠'],
+                xiangxing: ['狗'],
+                benmingYears: ['2027', '2015', '2003', '1991', '1979', '1967', '1955', '1943', '1931'],
+                traits: [
+                    { text: '温顺善良', type: 'positive' },
+                    { text: '富有同情心', type: 'positive' },
+                    { text: '艺术气质', type: 'positive' },
+                    { text: '随遇而安', type: 'positive' },
+                    { text: '优柔寡断', type: 'negative' },
+                    { text: '依赖性强', type: 'negative' },
+                    { text: '悲观消极', type: 'negative' },
+                    { text: '缺乏主见', type: 'negative' }
+                ],
+                characterDesc: '属羊的人天性善良温和，富有同情心，总是为他人着想。他们有很高的艺术修养和审美情趣，喜欢美好的事物。属羊人性格随和，与人为善，很少与人发生冲突。他们适应能力强，能够安于现状。但有时过于依赖他人，缺乏独立性。在面对选择时常常犹豫不决，需要别人的帮助来做决定。在感情中比较温柔体贴，但需要对方的保护和支持。',
+                lucky: { number: ['3', '4', '9'], color: '绿色、棕色', flower: '康乃馨', food: '草类、素食' },
+                compatibility: { high: ['horse', 'rabbit', 'pig'], medium: ['sheep', 'rabbit', 'pig'], low: ['ox', 'rat', 'dog'] }
+            },
+            monkey: {
+                name: 'monkey',
+                chineseName: '猴',
+                icon: '🐵',
+                element: '金',
+                elementEmoji: '⚪',
+                direction: '西方',
+                season: '秋季',
+                years: ['1932', '1944', '1956', '1968', '1980', '1992', '2004', '2016', '2028'],
+                liuhe: ['蛇'],
+                liuheName: '六合：蛇',
+                sanhe: ['鼠', '龙'],
+                sanheNames: '三合：鼠、龙',
+                xiangchong: ['虎'],
+                xianghai: ['猪'],
+                xiangxing: ['虎'],
+                benmingYears: ['2028', '2016', '2004', '1992', '1980', '1968', '1956', '1944', '1932'],
+                traits: [
+                    { text: '聪明伶俐', type: 'positive' },
+                    { text: '机灵多变', type: 'positive' },
+                    { text: '幽默风趣', type: 'positive' },
+                    { text: '创新能力强', type: 'positive' },
+                    { text: '投机取巧', type: 'negative' },
+                    { text: '不够专注', type: 'negative' },
+                    { text: '爱捉弄人', type: 'negative' },
+                    { text: '缺乏恒心', type: 'negative' }
+                ],
+                characterDesc: '属猴的人天资聪颖，反应灵敏，学习能力极强。他们幽默风趣，善于活跃气氛，是聚会中的开心果。属猴人有很强的创新能力，思维跳跃，总能想出新点子。他们适应能力极强，在任何环境中都能如鱼得水。但有时过于聪明反被聪明误，喜欢走捷径。在感情中比较花心，需要学会专一和责任。',
+                lucky: { number: ['4', '9'], color: '白色、金色', flower: '菊花', food: '桃子、坚果' },
+                compatibility: { high: ['snake', 'rat', 'dragon'], medium: ['monkey', 'rat', 'dragon'], low: ['tiger', 'pig'] }
+            },
+            rooster: {
+                name: 'rooster',
+                chineseName: '鸡',
+                icon: '🐔',
+                element: '金',
+                elementEmoji: '⚪',
+                direction: '西方',
+                season: '秋季',
+                years: ['1933', '1945', '1957', '1969', '1981', '1993', '2005', '2017', '2029'],
+                liuhe: ['龙'],
+                liuheName: '六合：龙',
+                sanhe: ['牛', '蛇'],
+                sanheNames: '三合：牛、蛇',
+                xiangchong: ['兔'],
+                xianghai: ['狗'],
+                xiangxing: ['龙'],
+                benmingYears: ['2029', '2017', '2005', '1993', '1981', '1969', '1957', '1945', '1933'],
+                traits: [
+                    { text: '勤奋努力', type: 'positive' },
+                    { text: '守时守信', type: 'positive' },
+                    { text: '注重细节', type: 'positive' },
+                    { text: '善于表达', type: 'positive' },
+                    { text: '爱唠叨', type: 'negative' },
+                    { text: '虚荣心强', type: 'negative' },
+                    { text: '挑剔刻薄', type: 'negative' },
+                    { text: '过于直率', type: 'negative' }
+                ],
+                characterDesc: '属鸡的人勤奋认真，做事井井有条，注重细节和完美。他们守时守信，责任心强，是可靠的合作伙伴。属鸡人善于表达，口才好，喜欢发表自己的观点。他们外表光鲜，注重仪表和形象。但有时过于挑剔，对他人的错误不能容忍。爱唠叨的特点可能会让身边的人感到压力。在感情中比较实际，需要学会浪漫和包容。',
+                lucky: { number: ['5', '7'], color: '金色、棕色', flower: '鸡冠花', food: '米、谷类' },
+                compatibility: { high: ['dragon', 'ox', 'snake'], medium: ['rooster', 'ox', 'snake'], low: ['rabbit', 'dog', 'dragon'] }
+            },
+            dog: {
+                name: 'dog',
+                chineseName: '狗',
+                icon: '🐕',
+                element: '土',
+                elementEmoji: '🌍',
+                direction: '西北方',
+                season: '四季皆宜',
+                years: ['1934', '1946', '1958', '1970', '1982', '1994', '2006', '2018', '2030'],
+                liuhe: ['兔'],
+                liuheName: '六合：兔',
+                sanhe: ['虎', '马'],
+                sanheNames: '三合：虎、马',
+                xiangchong: ['龙'],
+                xianghai: ['鸡'],
+                xiangxing: ['羊'],
+                benmingYears: ['2030', '2018', '2006', '1994', '1982', '1970', '1958', '1946', '1934'],
+                traits: [
+                    { text: '忠诚可靠', type: 'positive' },
+                    { text: '正直公正', type: 'positive' },
+                    { text: '责任心强', type: 'positive' },
+                    { text: '乐于助人', type: 'positive' },
+                    { text: '固执己见', type: 'negative' },
+                    { text: '忧心忡忡', type: 'negative' },
+                    { text: '过于敏感', type: 'negative' },
+                    { text: '爱操心', type: 'negative' }
+                ],
+                characterDesc: '属狗的人忠诚正直，是最值得信赖的朋友和伙伴。他们有很强的正义感，看不惯不公平的事情。属狗人责任心强，一旦答应的事情一定会做到。他们乐于助人，热心公益，总是为他人着想。但有时过于固执，认死理不肯退让。容易焦虑担忧，把什么事情都放在心上。在感情中非常专一，但也容易因为过度关心而给对方压力。',
+                lucky: { number: ['3', '4', '9'], color: '红色、白色', flower: '玫瑰', food: '肉类、骨头类食物' },
+                compatibility: { high: ['rabbit', 'tiger', 'horse'], medium: ['dog', 'tiger', 'horse'], low: ['dragon', 'rooster', 'sheep'] }
+            },
+            pig: {
+                name: 'pig',
+                chineseName: '猪',
+                icon: '🐖',
+                element: '水',
+                elementEmoji: '💧',
+                direction: '北方',
+                season: '冬季',
+                years: ['1935', '1947', '1959', '1971', '1983', '1995', '2007', '2019', '2031'],
+                liuhe: ['虎'],
+                liuheName: '六合：虎',
+                sanhe: ['兔', '羊'],
+                sanheNames: '三合：兔、羊',
+                xiangchong: ['蛇'],
+                xianghai: ['猴'],
+                xiangxing: ['猴'],
+                benmingYears: ['2031', '2019', '2007', '1995', '1983', '1971', '1959', '1947', '1935'],
+                traits: [
+                    { text: '诚实憨厚', type: 'positive' },
+                    { text: '乐天知命', type: 'positive' },
+                    { text: '宽容大度', type: 'positive' },
+                    { text: '财运亨通', type: 'positive' },
+                    { text: '懒惰拖延', type: 'negative' },
+                    { text: '轻信他人', type: 'negative' },
+                    { text: '贪图享受', type: 'negative' },
+                    { text: '缺乏上进心', type: 'negative' }
+                ],
+                characterDesc: '属猪的人诚实憨厚，心地善良，从不耍心机。他们心态平和，知足常乐，不会被名利所累。属猪人宽容大度，能够原谅他人的过错，很少记仇。他们在财运方面通常不错，善于积累财富。但有时过于懒散，缺乏进取心和行动力。容易轻信别人而上当受骗。在感情中比较单纯专一，但也需要学会主动和表达。',
+                lucky: { number: ['2', '5', '8'], color: '黄色、灰色', flower: '绣球花', food: '甜食、水果' },
+                compatibility: { high: ['tiger', 'rabbit', 'sheep'], medium: ['pig', 'rabbit', 'sheep'], low: ['snake', 'monkey'] }
+            }
+        };
+
+        let selectedZodiac = null;
+
+        // ========== 初始化生肖网格 ==========
+        function renderZodiacGrid() {
+            const grid = document.getElementById('zodiac-grid');
+            const zodiacKeys = Object.keys(zodiacData);
+
+            grid.innerHTML = zodiacKeys.map(key => {
+                const z = zodiacData[key];
+                return `
+                    <div class="zodiac-card" onclick="selectZodiac('${key}', event)">
+                        <div class="zodiac-icon">${z.icon}</div>
+                        <div class="zodiac-name">${z.chineseName}</div>
+                        <div class="zodiac-year">${z.years[z.years.length - 1]}年</div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function selectZodiac(key, event) {
+            selectedZodiac = key;
+            document.querySelectorAll('.zodiac-card').forEach(card => card.classList.remove('selected'));
+            if (event && event.target) {
+                event.target.closest('.zodiac-card').classList.add('selected');
+            } else {
+                // 兼容直接调用的情况
+                const cards = document.querySelectorAll('.zodiac-card');
+                const index = Object.keys(zodiacData).indexOf(key);
+                if (cards[index]) cards[index].classList.add('selected');
+            }
+        }
+
+        function confirmZodiac() {
+            if (!selectedZodiac) {
+                alert('请选择你的生肖');
+                return;
+            }
+
+            document.getElementById('page-intro').classList.remove('active');
+            document.getElementById('page-result').classList.add('active');
+
+            showZodiac(selectedZodiac);
+        }
+
+        // ========== 显示生肖详情 ==========
+        function showZodiac(key) {
+            const zodiac = zodiacData[key];
+            if (!zodiac) return;
+
+            // 头部信息
+            document.getElementById('zodiac-icon').textContent = zodiac.icon;
+            document.getElementById('zodiac-name').textContent = zodiac.chineseName;
+            document.getElementById('zodiac-info').textContent =
+                `${zodiac.years[zodiac.years.length - 1]}年 · ${zodiac.element}性${zodiac.elementEmoji} · ${zodiac.direction}`;
+
+            // 知识卡片主体
+            const card = document.getElementById('knowledge-card');
+            card.innerHTML = `
+                <div class="knowledge-row">
+                    <span class="knowledge-label">${zodiac.elementEmoji} 五行属性</span>
+                    <span class="knowledge-value">${zodiac.element}</span>
+                </div>
+                <div class="knowledge-row">
+                    <span class="knowledge-label">&#x1F3AF; 方位</span>
+                    <span class="knowledge-value">${zodiac.direction}</span>
+                </div>
+                <div class="knowledge-row">
+                    <span class="knowledge-label">&#x1F31F; 季节</span>
+                    <span class="knowledge-value">${zodiac.season}</span>
+                </div>
+                <div class="knowledge-row">
+                    <span class="knowledge-label">&#x1F4C5; 本命年份</span>
+                    <span class="knowledge-value">${zodiac.benmingYears.join('、')}</span>
+                </div>
+                <div class="knowledge-row">
+                    <span class="knowledge-label">&#x2764;&#xFE0F; 六合</span>
+                    <span class="knowledge-value">${zodiac.liuheName} - 最吉配对，婚姻美满</span>
+                </div>
+                <div class="knowledge-row">
+                    <span class="knowledge-label">&#x2728; 三合</span>
+                    <span class="knowledge-value">${zodiac.sanheNames} - 关系和谐，互助互利</span>
+                </div>
+                <div class="knowledge-row">
+                    <span class="knowledge-label">&#x26A0;&#xFE0F; 相冲</span>
+                    <span class="knowledge-value">冲${zodiac.xiangchong.join('、')} - 易生冲突，需互相包容</span>
+                </div>
+                <div class="knowledge-row">
+                    <span class="knowledge-label">&#x1F6AB; 相害</span>
+                    <span class="knowledge-value">害${zodiac.xianghai.join('、')} - 易有误会，沟通很重要</span>
+                </div>
+                <div class="knowledge-row">
+                    <span class="knowledge-label">&#x2694;&#xFE0F; 相刑</span>
+                    <span class="knowledge-value">刑${zodiac.xiangxing.join('、')} - 需注意相处方式</span>
+                </div>
+            `;
+
+            // 性格特点
+            renderTraits(zodiac.traits);
+
+            // 性格描述
+            document.getElementById('character-desc').textContent = zodiac.characterDesc;
+
+            // 配对关系
+            renderCompatibility(key);
+
+            // 幸运信息
+            renderLuckyTips(zodiac.lucky);
+        }
+
+        // ========== 渲染性格特点 ==========
+        function renderTraits(traits) {
+            const grid = document.getElementById('traits-grid');
+            grid.innerHTML = traits.map(trait => `
+                <div class="trait-item ${trait.type}">
+                    <span>${trait.type === 'positive' ? '&#x2713;' : '&#x2717;'}</span>
+                    <span>${trait.text}</span>
+                </div>
+            `).join('');
+        }
+
+        // ========== 渲染配对关系 ==========
+        function renderCompatibility(key) {
+            const zodiac = zodiacData[key];
+            if (!zodiac || !zodiac.compatibility) return;
+
+            const grid = document.getElementById('compatibility-grid');
+            const allCompat = [];
+
+            // 高匹配度
+            zodiac.compatibility.high.forEach(k => {
+                const z = zodiacData[k];
+                if (z) {
+                    allCompat.push({ ...z, rate: '最佳', cls: 'high' });
+                }
+            });
+
+            // 中等匹配度
+            zodiac.compatibility.medium.forEach(k => {
+                const z = zodiacData[k];
+                if (z) {
+                    allCompat.push({ ...z, rate: '良好', cls: 'medium' });
+                }
+            });
+
+            // 低匹配度
+            zodiac.compatibility.low.forEach(k => {
+                const z = zodiacData[k];
+                if (z) {
+                    allCompat.push({ ...z, rate: '一般', cls: 'low' });
+                }
+            });
+
+            grid.innerHTML = allCompat.map(item => `
+                <div class="compatibility-item ${item.cls}">
+                    <div class="compatibility-icon">${item.icon}</div>
+                    <div class="compatibility-name">${item.chineseName}</div>
+                    <div class="compatibility-rate">${item.rate}</div>
+                </div>
+            `).join('');
+        }
+
+        // ========== 渲染幸运信息 ==========
+        function renderLuckyTips(lucky) {
+            const tips = document.getElementById('lucky-tips');
+            tips.innerHTML = `
+                <div class="lucky-tag">&#x1F522; 幸运数字：${lucky.number.join('、')}</div>
+                <div class="lucky-tag">&#x1F3A8; 幸运颜色：${lucky.color}</div>
+                <div class="lucky-tag">&#x1F338; 幸运花卉：${lucky.flower}</div>
+                <div class="lucky-tag">&#x1F37D; 宜食食物：${lucky.food}</div>
+            `;
+        }
+
+        // ========== 重新开始 ==========
+        function restart() {
+            selectedZodiac = null;
+            document.querySelectorAll('.zodiac-card').forEach(card => card.classList.remove('selected'));
+            document.getElementById('page-result').classList.remove('active');
+            document.getElementById('page-intro').classList.add('active');
+        }
+
+        // ========== 分享功能 ==========
+        function shareTo(platform) {
+            const url = encodeURIComponent('https://quweiceshi.com/zodiac.html');
+            const currentZodiac = zodiacData[selectedZodiac];
+            const shareTitle = encodeURIComponent(`✨ 我的${currentZodiac ? currentZodiac.chineseName : ''}生肖档案 - 趣味测试`);
+
+            switch(platform) {
+                case 'wechat':
+                    showToast('请复制链接分享到微信');
+                    copyToClipboard('https://quweiceshi.com/zodiac.html');
+                    break;
+                case 'weibo':
+                    window.open(`https://service.weibo.com/share/share.php?url=${url}&title=${shareTitle}`, '_blank');
+                    break;
+                case 'qq':
+                    window.open(`https://connect.qq.com/widget/shareqq/index.html?url=${url}&title=${shareTitle}`, '_blank');
+                    break;
+                case 'link':
+                    copyToClipboard('https://quweiceshi.com/zodiac.html');
+                    showToast('链接已复制到剪贴板');
+                    break;
+            }
+        }
+
+        // ========== 复制到剪贴板 ==========
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    console.log('Copied to clipboard');
+                }).catch(function() {
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        }
+
+        function fallbackCopy(text) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch(e) {}
+            document.body.removeChild(ta);
+        }
+
+        // ========== Toast提示 ==========
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(toast);
+                }, 300);
+            }, 2000);
+        }
+
+        // ========== 页面初始化 ==========
+        document.addEventListener('DOMContentLoaded', () => {
+            renderZodiacGrid();
+
+            const navToggle = document.getElementById('nav-toggle');
+            const navLinks = document.getElementById('nav-links');
+            navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+        });
+    </script>
+
+
+<footer class="site-footer" style="max-width:600px;margin:40px auto 0;padding:20px;text-align:center;border-top:1px solid rgba(255,255,255,0.1);">
+    <nav aria-label="网站导航" style="margin-bottom:16px;">
+        <a href="index.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">首页</a>
+        <a href="mbti.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">MBTI测试</a>
+        <a href="bazi.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">八字运势</a>
+        <a href="love.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">爱情匹配</a>
+        <a href="constellation.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">星座运势</a>
+        <a href="tarot.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">塔罗占卜</a>
+        <a href="zodiac.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">生肖运势</a>
+        <a href="dream.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">解梦</a>
+        <a href="namestat.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">姓名测试</a>
+        <a href="psychology.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">心理测试</a>
+        <a href="life/index.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">人生重开</a>
+    </nav>
+    <p style="color:rgba(255,255,255,0.3);font-size:0.75rem;">&copy; 2026 趣味测试 quweiceshi.com - 仅供娱乐参考</p>
+</footer>
+</body>
+</html>

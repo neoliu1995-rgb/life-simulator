@@ -1,0 +1,2158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>十二星座知识档案_星座性格与配对 - 趣味测试</title>
+    <meta name="description" content="探索十二星座的性格特点、配对指数、幸运指南、神话故事和名人堂。了解你的星座运势，包括今日、本周、本月和本年的详细预测。">
+    <meta name="keywords" content="星座,十二星座,星座运势,星座配对,白羊座,金牛座,双子座,巨蟹座,狮子座,处女座,天秤座,天蝎座,射手座,摩羯座,水瓶座,双鱼座">
+    <link rel="canonical" href="https://quweiceshi.com/constellation.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://quweiceshi.com/constellation.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://quweiceshi.com/constellation.html">
+    <link rel="alternate" hreflang="x-default" href="https://quweiceshi.com/constellation.html">
+    <meta property="og:title" content="十二星座知识档案_星座性格与配对 - 趣味测试">
+    <meta property="og:description" content="探索十二星座的性格特点、配对指数、幸运指南和运势预测。">
+    <meta property="og:url" content="https://quweiceshi.com/constellation.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="趣味测试">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:image" content="images/og-constellation.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-gradient {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle at 20% 80%, rgba(155, 89, 182, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(233, 30, 99, 0.12) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(52, 152, 219, 0.1) 0%, transparent 50%);
+            animation: bgFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes bgFloat {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.4;
+            animation: blobMove 25s ease-in-out infinite;
+        }
+
+        .blob-1 {
+            width: 300px;
+            height: 300px;
+            background: rgba(155, 89, 182, 0.3);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            width: 250px;
+            height: 250px;
+            background: rgba(233, 30, 99, 0.25);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .blob-3 {
+            width: 200px;
+            height: 200px;
+            background: rgba(52, 152, 219, 0.2);
+            bottom: 20%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes blobMove {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(50px, -30px) scale(1.1); }
+            50% { transform: translate(-30px, 50px) scale(0.9); }
+            75% { transform: translate(-50px, -20px) scale(1.05); }
+        }
+
+        .nav-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(26, 26, 46, 0.9);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: #9B59B6;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link.active {
+            color: #ffffff;
+            background: linear-gradient(135deg, #9B59B6, #E91E63);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Page Intro */
+        .page-intro {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .page-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #9B59B6, #E91E63, #3498DB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .zodiac-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .zodiac-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px 12px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-align: center;
+        }
+
+        .zodiac-card:hover {
+            transform: translateY(-8px) scale(1.05);
+            background: rgba(155, 89, 182, 0.15);
+            border-color: rgba(155, 89, 182, 0.4);
+            box-shadow: 0 20px 40px rgba(155, 89, 182, 0.3);
+        }
+
+        .zodiac-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .zodiac-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #ffffff;
+        }
+
+        .zodiac-date {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Page Result */
+        .result-header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(180deg, rgba(155, 89, 182, 0.1) 0%, transparent 100%);
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        .result-icon {
+            font-size: 72px;
+            margin-bottom: 16px;
+            display: block;
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .result-name {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #9B59B6, #E91E63);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .result-date {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Info Cards */
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(155, 89, 182, 0.3);
+        }
+
+        .info-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #9B59B6;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(180deg, #9B59B6, #E91E63);
+            border-radius: 2px;
+        }
+
+        .basic-info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .basic-info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+        }
+
+        .basic-info-label {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .basic-info-value {
+            font-size: 14px;
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .traits-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .trait-tag {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .trait-positive {
+            background: rgba(46, 204, 113, 0.15);
+            color: #2ECC71;
+            border: 1px solid rgba(46, 204, 113, 0.3);
+        }
+
+        .trait-negative {
+            background: rgba(231, 76, 60, 0.15);
+            color: #E74C3C;
+            border: 1px solid rgba(231, 76, 60, 0.3);
+        }
+
+        .compatibility-section {
+            margin-bottom: 16px;
+        }
+
+        .compatibility-label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .compatibility-level-high {
+            color: #2ECC71;
+        }
+
+        .compatibility-level-medium {
+            color: #F39C12;
+        }
+
+        .compatibility-level-low {
+            color: #E74C3C;
+        }
+
+        .compatibility-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .compatibility-item {
+            padding: 6px 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .lucky-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .lucky-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.15);
+        }
+
+        .lucky-icon {
+            font-size: 24px;
+        }
+
+        .lucky-text {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .myth-content {
+            font-size: 15px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            text-align: justify;
+        }
+
+        .celebrities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 12px;
+        }
+
+        .celebrity-item {
+            text-align: center;
+            padding: 16px 8px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .celebrity-item:hover {
+            background: rgba(155, 89, 182, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .celebrity-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #9B59B6, #E91E63);
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+        }
+
+        .celebrity-name {
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Fortune Module */
+        .fortune-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .fortune-tab {
+            flex: 1;
+            padding: 10px 12px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .fortune-tab:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .fortune-tab.active {
+            background: linear-gradient(135deg, #9B59B6, #E91E63);
+            color: white;
+            box-shadow: 0 4px 15px rgba(155, 89, 182, 0.4);
+        }
+
+        .fortune-content {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .fortune-scores {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .fortune-score-item {
+            text-align: center;
+            padding: 12px 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .fortune-score-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 8px;
+        }
+
+        .fortune-score-value {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #9B59B6, #E91E63);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .fortune-score-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .fortune-score-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: linear-gradient(90deg, #9B59B6, #E91E63);
+        }
+
+        .fortune-summary {
+            padding: 16px;
+            background: rgba(155, 89, 182, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid #9B59B6;
+            margin-bottom: 16px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .fortune-advice {
+            padding: 16px;
+            background: rgba(255, 215, 0, 0.08);
+            border-radius: 10px;
+            border-left: 4px solid #FFD700;
+            font-size: 14px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .fortune-advice::before {
+            content: '💡 ';
+            margin-right: 6px;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #9B59B6, #E91E63);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(155, 89, 182, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(155, 89, 182, 0.5);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 12px 28px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        /* Share Section */
+        .share-section {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 30px;
+        }
+
+        .share-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: white;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .share-btn-wechat {
+            background: #07C160;
+        }
+
+        .share-btn-weibo {
+            background: #E6162D;
+        }
+
+        .share-btn-qq {
+            background: #12B7F5;
+        }
+
+        .share-btn-copy {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 25px;
+            font-size: 14px;
+            z-index: 9999;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(22, 33, 62, 0.98);
+                flex-direction: column;
+                padding: 16px;
+                gap: 4px;
+                z-index: 100;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.4rem;
+                cursor: pointer;
+                padding: 8px;
+            }
+
+            .nav-link {
+                display: block;
+                font-size: 14px;
+                padding: 10px 16px;
+                border-radius: 8px;
+                text-align: center;
+            }
+
+            .zodiac-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+
+            .zodiac-card {
+                padding: 18px 10px;
+            }
+
+            .zodiac-icon {
+                font-size: 36px;
+            }
+
+            .zodiac-name {
+                font-size: 14px;
+            }
+
+            .zodiac-date {
+                font-size: 10px;
+            }
+
+            .page-title {
+                font-size: 26px;
+            }
+
+            .result-name {
+                font-size: 28px;
+            }
+
+            .result-icon {
+                font-size: 56px;
+            }
+
+            .fortune-scores {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-logo {
+                text-align: center;
+                padding: 8px 0;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .zodiac-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .zodiac-card {
+                padding: 14px 8px;
+            }
+
+            .zodiac-icon {
+                font-size: 32px;
+                margin-bottom: 8px;
+            }
+
+            .basic-info-grid,
+            .lucky-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fortune-scores {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info-card {
+                padding: 16px;
+            }
+
+            .info-title {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="bg-gradient"></div>
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="nav-header">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-icon">🎲</span>
+                <span>趣味测试</span>
+            </a>
+            <nav>
+                <button class="nav-toggle" id="nav-toggle">☰</button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="life/index.html">人生重开</a></li>
+                    <li><a href="mbti.html">MBTI测试</a></li>
+                    <li><a href="bazi.html">八字运势</a></li>
+                    <li><a href="love.html">爱情匹配</a></li>
+                    <li><a href="constellation.html" class="active">星座运势</a></li>
+                    <li><a href="tarot.html">塔罗占卜</a></li>
+                    <li><a href="zodiac.html">生肖运势</a></li>
+                    <li><a href="dream.html">解梦</a></li>
+                    <li><a href="namestat.html">姓名测试</a></li>
+                    <li><a href="psychology.html">心理测试</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Page Intro -->
+        <section id="page-intro" class="page page-intro active">
+            <h1 class="page-title">十二星座知识档案</h1>
+            <p class="page-subtitle">
+                探索宇宙的奥秘，了解每个星座独特的性格特点、配对指数、<br>
+                幸运指南与运势预测。选择你的星座，开启星空之旅。
+            </p>
+
+            <div class="zodiac-grid" id="zodiacGrid">
+                <!-- Zodiac cards will be rendered by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Page Result -->
+        <section id="page-result" class="page page-result">
+            <div class="result-header">
+                <span class="result-icon" id="resultIcon"></span>
+                <h2 class="result-name" id="resultName"></h2>
+                <p class="result-date" id="resultDate"></p>
+            </div>
+
+            <!-- Basic Info -->
+            <div class="info-card">
+                <h3 class="info-title">基本信息</h3>
+                <div class="basic-info-grid" id="basicInfo"></div>
+            </div>
+
+            <!-- Personality Traits -->
+            <div class="info-card">
+                <h3 class="info-title">性格关键词</h3>
+                <div class="traits-container" id="traitsContainer"></div>
+            </div>
+
+            <!-- Compatibility -->
+            <div class="info-card">
+                <h3 class="info-title">配对指数</h3>
+                <div id="compatibilityContainer"></div>
+            </div>
+
+            <!-- Lucky Guide -->
+            <div class="info-card">
+                <h3 class="info-title">幸运指南</h3>
+                <div class="lucky-grid" id="luckyGuide"></div>
+            </div>
+
+            <!-- Myth Story -->
+            <div class="info-card">
+                <h3 class="info-title">神话故事</h3>
+                <p class="myth-content" id="mythContent"></p>
+            </div>
+
+            <!-- Celebrities -->
+            <div class="info-card">
+                <h3 class="info-title">名人堂</h3>
+                <div class="celebrities-grid" id="celebritiesGrid"></div>
+            </div>
+
+            <!-- Fortune Module -->
+            <div class="info-card">
+                <h3 class="info-title">运势预测</h3>
+                <div class="fortune-tabs">
+                    <div class="fortune-tab active" data-type="daily" onclick="showFortune('daily')">今日</div>
+                    <div class="fortune-tab" data-type="weekly" onclick="showFortune('weekly')">本周</div>
+                    <div class="fortune-tab" data-type="monthly" onclick="showFortune('monthly')">本月</div>
+                    <div class="fortune-tab" data-type="yearly" onclick="showFortune('yearly')">本年</div>
+                </div>
+                <div class="fortune-content" id="fortuneContent">
+                    <!-- Fortune will be rendered here -->
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="button-group">
+                <button class="btn-secondary" onclick="restart()">返回重新选择</button>
+            </div>
+
+            <!-- Share Section -->
+            <div class="share-section">
+                <h3 class="share-title">分享给朋友</h3>
+                <div class="share-buttons">
+                    <button class="share-btn share-btn-copy" onclick="copyToClipboard()">
+                        复制链接
+                    </button>
+                    <button class="share-btn share-btn-weibo" onclick="shareTo('weibo')">
+                        微博
+                    </button>
+                    <button class="share-btn share-btn-qq" onclick="shareTo('qq')">
+                        QQ
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Baidu Analytics -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?edc404e2ae130a4255dabf98a08172ee";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    <!-- Main JavaScript -->
+    <script>
+        // Zodiac Knowledge Data
+        const zodiacKnowledge = {
+            aries: {
+                icon: '♈',
+                name: '白羊座',
+                dateRange: '3月21日 - 4月19日',
+                element: '火',
+                planet: '火星',
+                luckyNumber: [9, 18, 27],
+                direction: '东方',
+                traits: {
+                    positive: ['勇敢', '热情', '自信', '直率', '有领导力'],
+                    negative: ['冲动', '急躁', '缺乏耐心', '自我中心']
+                },
+                bestMatch: ['leo', 'sagittarius', 'aries'],
+                cautionMatch: ['cancer', 'capricorn', 'pisces'],
+                myth: '白羊座的传说源自希腊神话中的金羊毛故事。传说中，一只会飞的金色公羊救了菲里克索斯和赫勒兄妹，这只公羊就是白羊座的化身。后来这只公羊的皮毛被挂在了战神阿瑞斯的圣林中，成为了著名的金羊毛。白羊座象征着勇气、冒险精神和新的开始。',
+                celebrities: ['成龙', '林俊杰', '吴京', 'Lady Gaga', '艾玛·沃特森'],
+                compatibility: {
+                    high: ['leo', 'sagittarius', 'aries'],
+                    medium: ['gemini', 'aquarius', 'libra'],
+                    low: ['cancer', 'capricorn', 'pisces']
+                },
+                lucky: {
+                    number: ['9', '18', '27'],
+                    color: '红色',
+                    gem: '红宝石',
+                    flower: '玫瑰',
+                    food: '辣椒'
+                },
+                daily: {
+                    overall: 85,
+                    love: 78,
+                    career: 90,
+                    wealth: 82,
+                    health: 88,
+                    summary: '今日白羊座能量充沛，适合主动出击。事业上会有意外收获，感情方面容易遇到有趣的人。',
+                    advice: '大胆表达你的想法，机会就在眼前。注意控制情绪，避免冲动决策。'
+                },
+                weekly: {
+                    overall: 82,
+                    love: 75,
+                    career: 88,
+                    wealth: 78,
+                    health: 85,
+                    summary: '本周白羊座运势整体上扬。事业上有贵人相助，财运渐入佳境。感情方面单身者有望脱单。',
+                    advice: '抓住本周的好时机，积极拓展人脉。理财方面适合稳健投资。'
+                },
+                monthly: {
+                    overall: 80,
+                    love: 78,
+                    career: 85,
+                    wealth: 82,
+                    health: 88,
+                    summary: '本月白羊座整体运势平稳向好。事业上会有新的机遇出现，需要你主动争取。',
+                    advice: '保持积极心态，勇于尝试新事物。注意劳逸结合，照顾好身体。'
+                },
+                yearly: {
+                    overall: 85,
+                    love: 82,
+                    career: 90,
+                    wealth: 80,
+                    health: 88,
+                    summary: '2026年对于白羊座来说是充满机遇的一年。事业上会有重大突破，财运稳步增长。感情方面收获满满。',
+                    advice: '把握良机，勇敢追求梦想。注意与他人的沟通方式，避免误会。'
+                }
+            },
+            taurus: {
+                icon: '♉',
+                name: '金牛座',
+                dateRange: '4月20日 - 5月20日',
+                element: '土',
+                planet: '金星',
+                luckyNumber: [6, 15, 24],
+                direction: '东南',
+                traits: {
+                    positive: ['稳重', '踏实', '有耐心', '忠诚', '可靠'],
+                    negative: ['固执', '保守', '占有欲强', '不愿改变']
+                },
+                bestMatch: ['virgo', 'capricorn', 'taurus'],
+                cautionMatch: ['leo', 'aquarius', 'gemini'],
+                myth: '金牛座的传说与宙斯有关。宙斯化身为一头白色的公牛，引诱腓尼基公主欧罗巴骑上他的背，然后带着她游过大海来到克里特岛。金牛座象征着稳定、坚韧和对美好事物的欣赏。',
+                celebrities: ['周润发', '陈道明', '王力宏', '奥黛丽·赫本', '乔治·克鲁尼'],
+                compatibility: {
+                    high: ['virgo', 'capricorn', 'taurus'],
+                    medium: ['cancer', 'pisces', 'scorpio'],
+                    low: ['leo', 'aquarius', 'gemini']
+                },
+                lucky: {
+                    number: ['6', '15', '24'],
+                    color: '绿色',
+                    gem: '祖母绿',
+                    flower: '牡丹',
+                    food: '牛肉'
+                },
+                daily: {
+                    overall: 78,
+                    love: 82,
+                    career: 75,
+                    wealth: 88,
+                    health: 85,
+                    summary: '今日金牛座财运旺盛，适合处理财务事务。感情方面甜蜜温馨，与伴侣关系融洽。',
+                    advice: '理财有术，适合做长期规划。注意不要过于固执，灵活变通会有更好结果。'
+                },
+                weekly: {
+                    overall: 80,
+                    love: 85,
+                    career: 78,
+                    wealth: 90,
+                    health: 82,
+                    summary: '本周金牛座财运亨通，投资有望获得回报。感情生活丰富多彩，单身者有机会结识新朋友。',
+                    advice: '把握理财良机，谨慎投资。感情上主动一些，机会不等人。'
+                },
+                monthly: {
+                    overall: 82,
+                    love: 88,
+                    career: 80,
+                    wealth: 85,
+                    health: 82,
+                    summary: '本月金牛座整体运势不错。事业稳步发展，财运持续上升。感情方面甜蜜美满，家庭关系和睦。',
+                    advice: '保持稳健作风，不要急于求成。多陪伴家人，增进感情。'
+                },
+                yearly: {
+                    overall: 80,
+                    love: 85,
+                    career: 82,
+                    wealth: 88,
+                    health: 80,
+                    summary: '2026年对于金牛座来说是丰收的一年。财运颇佳，适合投资理财。感情方面稳定幸福，家庭和睦。',
+                    advice: '合理规划财务，避免盲目投资。注重身心健康，保持良好生活习惯。'
+                }
+            },
+            gemini: {
+                icon: '♊',
+                name: '双子座',
+                dateRange: '5月21日 - 6月21日',
+                element: '风',
+                planet: '水星',
+                luckyNumber: [5, 14, 23],
+                direction: '西方',
+                traits: {
+                    positive: ['聪明', '机智', '善于沟通', '适应力强', '好奇心强'],
+                    negative: ['善变', '浮躁', '缺乏深度', '三心二意']
+                },
+                bestMatch: ['libra', 'aquarius', 'gemini'],
+                cautionMatch: ['virgo', 'pisces', 'cancer'],
+                myth: '双子座代表着卡斯托尔和波吕克斯这对双胞胎兄弟。他们是宙斯与勒达的儿子，兄弟情深，形影不离。当卡斯托尔死后，波吕克斯请求宙斯让他们永远在一起，于是他们被升上天空成为双子座。象征着智慧、交流和多样性。',
+                celebrities: ['张柏芝', '莫文蔚', '柯南·奥布莱恩', '玛丽莲·梦露', '约翰尼·德普'],
+                compatibility: {
+                    high: ['libra', 'aquarius', 'gemini'],
+                    medium: ['aries', 'leo', 'sagittarius'],
+                    low: ['virgo', 'pisces', 'cancer']
+                },
+                lucky: {
+                    number: ['5', '14', '23'],
+                    color: '黄色',
+                    gem: '黄水晶',
+                    flower: '向日葵',
+                    food: '柠檬'
+                },
+                daily: {
+                    overall: 88,
+                    love: 85,
+                    career: 90,
+                    wealth: 78,
+                    health: 82,
+                    summary: '今日双子座思维活跃，适合学习和交流。事业上创意不断，容易获得认可。',
+                    advice: '多与人沟通，分享你的想法。注意时间管理，避免分心。'
+                },
+                weekly: {
+                    overall: 85,
+                    love: 80,
+                    career: 92,
+                    wealth: 75,
+                    health: 85,
+                    summary: '本周双子座事业运极佳，创意灵感源源不断。社交活动增多，人脉拓展顺利。',
+                    advice: '抓住事业机会，展示你的才华。感情上多些耐心，不要急于求成。'
+                },
+                monthly: {
+                    overall: 82,
+                    love: 85,
+                    career: 88,
+                    wealth: 80,
+                    health: 88,
+                    summary: '本月双子座整体运势良好。事业上有新的发展机会，需要你积极争取。',
+                    advice: '勇于尝试新事物，拓展视野。注意保持良好的生活习惯。'
+                },
+                yearly: {
+                    overall: 88,
+                    love: 82,
+                    career: 92,
+                    wealth: 80,
+                    health: 85,
+                    summary: '2026年对于双子座来说是充满机遇的一年。事业上会有重大突破，社交圈扩大。',
+                    advice: '把握机会，勇敢追求梦想。注意平衡工作与生活。'
+                }
+            },
+            cancer: {
+                icon: '♋',
+                name: '巨蟹座',
+                dateRange: '6月22日 - 7月22日',
+                element: '水',
+                planet: '月亮',
+                luckyNumber: [2, 11, 20],
+                direction: '北方',
+                traits: {
+                    positive: ['温柔', '体贴', '有同理心', '顾家', '直觉敏锐'],
+                    negative: ['情绪化', '敏感', '过度保护', '缺乏安全感']
+                },
+                bestMatch: ['scorpio', 'pisces', 'cancer'],
+                cautionMatch: ['aries', 'sagittarius', 'aquarius'],
+                myth: '巨蟹座的传说与阿尔戈英雄们寻找金羊毛有关。在战斗中，赫拉派来一只巨大的螃蟹帮助九头蛇攻击赫拉克勒斯，但最终被赫拉克勒斯踩碎。为了纪念它的忠诚，赫拉将它升上天空成为巨蟹座。象征着家庭、保护和情感深度。',
+                celebrities: ['梁朝伟', '李连杰', '林志玲', '汤姆·克鲁斯', '梅丽尔·斯特里普'],
+                compatibility: {
+                    high: ['scorpio', 'pisces', 'cancer'],
+                    medium: ['taurus', 'virgo', 'capricorn'],
+                    low: ['aries', 'sagittarius', 'aquarius']
+                },
+                lucky: {
+                    number: ['2', '11', '20'],
+                    color: '银色',
+                    gem: '珍珠',
+                    flower: '百合',
+                    food: '海鲜'
+                },
+                daily: {
+                    overall: 82,
+                    love: 90,
+                    career: 78,
+                    wealth: 80,
+                    health: 85,
+                    summary: '今日巨蟹座情感丰富，适合与家人朋友相聚。家庭氛围温馨，感情生活甜蜜。',
+                    advice: '多关心家人，享受温馨时光。注意情绪管理，保持平和心态。'
+                },
+                weekly: {
+                    overall: 85,
+                    love: 92,
+                    career: 80,
+                    wealth: 82,
+                    health: 88,
+                    summary: '本周巨蟹座家庭运旺盛，适合处理家庭事务。感情方面甜蜜美满，单身者桃花朵朵。',
+                    advice: '珍惜与家人相处的时光。感情上主动一些，把握机会。'
+                },
+                monthly: {
+                    overall: 80,
+                    love: 88,
+                    career: 78,
+                    wealth: 85,
+                    health: 90,
+                    summary: '本月巨蟹座整体运势平稳。家庭关系和睦，事业稳步发展。',
+                    advice: '保持良好心态，积极面对挑战。注重身体健康，适当运动。'
+                },
+                yearly: {
+                    overall: 82,
+                    love: 90,
+                    career: 80,
+                    wealth: 85,
+                    health: 88,
+                    summary: '2026年对于巨蟹座来说是家庭幸福的一年。感情生活丰富多彩，家庭关系和睦。',
+                    advice: '多陪伴家人，珍惜亲情。事业上稳扎稳打，逐步推进。'
+                }
+            },
+            leo: {
+                icon: '♌',
+                name: '狮子座',
+                dateRange: '7月23日 - 8月22日',
+                element: '火',
+                planet: '太阳',
+                luckyNumber: [1, 10, 19],
+                direction: '南方',
+                traits: {
+                    positive: ['自信', '热情', '大方', '有领导力', '慷慨'],
+                    negative: ['自负', '爱面子', '控制欲强', '需要关注']
+                },
+                bestMatch: ['aries', 'sagittarius', 'leo'],
+                cautionMatch: ['cancer', 'capricorn', 'virgo'],
+                myth: '狮子座代表着被赫拉克勒斯杀死的尼米亚狮子。这头狮子有着刀枪不入的皮毛，是众神的噩梦。赫拉克勒斯经过艰苦战斗终于将其制服。宙斯为纪念这场伟大的胜利，将狮子升上天空成为狮子座。象征着力量、荣耀和王者风范。',
+                celebrities: ['范冰冰', '王菲', '周杰伦', '威尔·史密斯', '麦当娜'],
+                compatibility: {
+                    high: ['aries', 'sagittarius', 'leo'],
+                    medium: ['gemini', 'libra', 'aquarius'],
+                    low: ['cancer', 'capricorn', 'virgo']
+                },
+                lucky: {
+                    number: ['1', '10', '19'],
+                    color: '金色',
+                    gem: '红宝石',
+                    flower: '向日葵',
+                    food: '牛肉'
+                },
+                daily: {
+                    overall: 88,
+                    love: 82,
+                    career: 92,
+                    wealth: 85,
+                    health: 80,
+                    summary: '今日狮子座魅力四射，适合社交活动。事业上表现出色，容易获得领导赏识。',
+                    advice: '展示你的才华，相信自己的能力。注意不要过于骄傲，保持谦逊。'
+                },
+                weekly: {
+                    overall: 85,
+                    love: 80,
+                    career: 90,
+                    wealth: 88,
+                    health: 82,
+                    summary: '本周狮子座事业运极佳，有机会展现领导才能。财运不错，适合投资理财。',
+                    advice: '抓住机会，勇于担当。感情上多些耐心，不要过于强势。'
+                },
+                monthly: {
+                    overall: 82,
+                    love: 85,
+                    career: 88,
+                    wealth: 82,
+                    health: 88,
+                    summary: '本月狮子座整体运势良好。事业稳步上升，人际关系和谐。',
+                    advice: '保持自信，继续努力。注意劳逸结合，照顾好身体。'
+                },
+                yearly: {
+                    overall: 88,
+                    love: 82,
+                    career: 92,
+                    wealth: 85,
+                    health: 85,
+                    summary: '2026年对于狮子座来说是事业腾飞的一年。领导力得到认可，机会多多。',
+                    advice: '把握良机，追求梦想。注意团队合作，不要独断专行。'
+                }
+            },
+            virgo: {
+                icon: '♍',
+                name: '处女座',
+                dateRange: '8月23日 - 9月22日',
+                element: '土',
+                planet: '水星',
+                luckyNumber: [7, 16, 25],
+                direction: '西南',
+                traits: {
+                    positive: ['细心', '有条理', '分析能力强', '勤奋', '追求完美'],
+                    negative: ['挑剔', '焦虑', '过于谨慎', '批评性强']
+                },
+                bestMatch: ['taurus', 'capricorn', 'virgo'],
+                cautionMatch: ['gemini', 'sagittarius', 'aquarius'],
+                myth: '处女座代表着农业女神得墨忒耳的女儿珀耳塞福涅。珀耳塞福涅被冥王哈迪斯掳走带到冥界，她的母亲悲痛万分，导致大地荒芜。最后达成协议，珀耳塞福涅每年在人间和冥界各待半年，这就解释了四季更替。处女座象征着纯洁、服务和奉献精神。',
+                celebrities: ['张国荣', '胡歌', '刘亦菲', '迈克尔·杰克逊', '碧昂丝'],
+                compatibility: {
+                    high: ['taurus', 'capricorn', 'virgo'],
+                    medium: ['cancer', 'scorpio', 'pisces'],
+                    low: ['gemini', 'sagittarius', 'aquarius']
+                },
+                lucky: {
+                    number: ['7', '16', '25'],
+                    color: '蓝色',
+                    gem: '蓝宝石',
+                    flower: '兰花',
+                    food: '蔬菜'
+                },
+                daily: {
+                    overall: 85,
+                    love: 78,
+                    career: 88,
+                    wealth: 82,
+                    health: 90,
+                    summary: '今日处女座思维清晰，适合处理细节工作。健康运不错，适合运动锻炼。',
+                    advice: '专注工作，注意细节。不要过于挑剔，给自己和他人一些空间。'
+                },
+                weekly: {
+                    overall: 82,
+                    love: 80,
+                    career: 85,
+                    wealth: 88,
+                    health: 88,
+                    summary: '本周处女座工作效率高，适合完成重要任务。财运稳定，理财有方。',
+                    advice: '合理安排时间，提高效率。感情上多些主动，不要过于被动。'
+                },
+                monthly: {
+                    overall: 80,
+                    love: 82,
+                    career: 85,
+                    wealth: 85,
+                    health: 92,
+                    summary: '本月处女座整体运势平稳。事业稳步发展，健康状况良好。',
+                    advice: '保持良好习惯，继续努力。多关心家人朋友，增进感情。'
+                },
+                yearly: {
+                    overall: 82,
+                    love: 80,
+                    career: 88,
+                    wealth: 85,
+                    health: 90,
+                    summary: '2026年对于处女座来说是事业发展的一年。工作表现出色，得到认可。',
+                    advice: '发挥你的优势，追求完美。注意放松心情，不要给自己太大压力。'
+                }
+            },
+            libra: {
+                icon: '♎',
+                name: '天秤座',
+                dateRange: '9月23日 - 10月23日',
+                element: '风',
+                planet: '金星',
+                luckyNumber: [6, 15, 24],
+                direction: '西方',
+                traits: {
+                    positive: ['优雅', '公正', '善于协调', '追求平衡', '有品味'],
+                    negative: ['优柔寡断', '依赖他人', '逃避冲突', '虚荣']
+                },
+                bestMatch: ['gemini', 'aquarius', 'libra'],
+                cautionMatch: ['virgo', 'pisces', 'scorpio'],
+                myth: '天秤座代表着正义女神忒弥斯手中的天平。忒弥斯是法律和正义的化身，她手持天平衡量世间的是非曲直。后来天平从女神手中独立出来，成为天秤座。象征着公正、平衡与和谐。',
+                celebrities: ['高圆圆', '周迅', '刘德华', '布拉德·皮特', '安吉丽娜·朱莉'],
+                compatibility: {
+                    high: ['gemini', 'aquarius', 'libra'],
+                    medium: ['leo', 'sagittarius', 'aries'],
+                    low: ['virgo', 'pisces', 'scorpio']
+                },
+                lucky: {
+                    number: ['6', '15', '24'],
+                    color: '粉色',
+                    gem: '粉晶',
+                    flower: '玫瑰',
+                    food: '甜食'
+                },
+                daily: {
+                    overall: 80,
+                    love: 88,
+                    career: 78,
+                    wealth: 82,
+                    health: 85,
+                    summary: '今日天秤座魅力十足，适合社交活动。感情方面桃花朵朵，容易遇到心仪的人。',
+                    advice: '展现你的优雅，享受社交乐趣。注意不要过于犹豫，果断一些。'
+                },
+                weekly: {
+                    overall: 82,
+                    love: 90,
+                    career: 80,
+                    wealth: 85,
+                    health: 88,
+                    summary: '本周天秤座感情运极佳，单身者有望脱单，有伴侣者感情升温。',
+                    advice: '把握感情机会，勇敢表达心意。事业上保持平衡，稳步推进。'
+                },
+                monthly: {
+                    overall: 85,
+                    love: 88,
+                    career: 82,
+                    wealth: 80,
+                    health: 85,
+                    summary: '本月天秤座整体运势良好。人际关系和谐，感情生活丰富多彩。',
+                    advice: '保持优雅风度，处理好人际关系。注意理财规划，量入为出。'
+                },
+                yearly: {
+                    overall: 82,
+                    love: 90,
+                    career: 82,
+                    wealth: 85,
+                    health: 88,
+                    summary: '2026年对于天秤座来说是感情丰收的一年。社交圈扩大，机会多多。',
+                    advice: '珍惜感情机会，不要错过缘分。注意平衡各方面的关系。'
+                }
+            },
+            scorpio: {
+                icon: '♏',
+                name: '天蝎座',
+                dateRange: '10月24日 - 11月22日',
+                element: '水',
+                planet: '冥王星',
+                luckyNumber: [8, 17, 26],
+                direction: '北方',
+                traits: {
+                    positive: ['神秘', '洞察力强', '意志坚定', '忠诚', '有魅力'],
+                    negative: ['嫉妒心强', '报复心重', '控制欲强', '多疑']
+                },
+                bestMatch: ['cancer', 'pisces', 'scorpio'],
+                cautionMatch: ['libra', 'aquarius', 'gemini'],
+                myth: '天蝎座的传说与猎户座有关。天蝎座代表着被猎户奥瑞恩追杀的蝎子。据说蝎子是为了保护大地女神才去刺杀傲慢的猎人奥瑞恩的。两者都被升上天空，但位置安排在天空的两端，永远不会同时出现。象征着神秘、转化和重生。',
+                celebrities: ['林青霞', '吴奇隆', '黄晓明', '莱昂纳多·迪卡普里奥', '泰勒·斯威夫特'],
+                compatibility: {
+                    high: ['cancer', 'pisces', 'scorpio'],
+                    medium: ['virgo', 'capricorn', 'taurus'],
+                    low: ['libra', 'aquarius', 'gemini']
+                },
+                lucky: {
+                    number: ['8', '17', '26'],
+                    color: '紫色',
+                    gem: '紫水晶',
+                    flower: '黑玫瑰',
+                    food: '巧克力'
+                },
+                daily: {
+                    overall: 85,
+                    love: 92,
+                    career: 80,
+                    wealth: 88,
+                    health: 78,
+                    summary: '今日天蝎座魅力独特，感情运势极佳。财运不错，适合投资理财。',
+                    advice: '展现你的魅力，吸引心仪的人。注意不要过于神秘，适当敞开心扉。'
+                },
+                weekly: {
+                    overall: 88,
+                    love: 95,
+                    career: 82,
+                    wealth: 85,
+                    health: 80,
+                    summary: '本周天蝎座感情运爆棚，单身者有望遇到真爱，有伴侣者感情更加深厚。',
+                    advice: '把握感情良机，珍惜缘分。事业上保持专注，稳步发展。'
+                },
+                monthly: {
+                    overall: 85,
+                    love: 90,
+                    career: 85,
+                    wealth: 82,
+                    health: 85,
+                    summary: '本月天蝎座整体运势良好。感情生活甜蜜，事业稳步上升。',
+                    advice: '保持神秘感，同时学会沟通。注意身体健康，适当休息。'
+                },
+                yearly: {
+                    overall: 88,
+                    love: 92,
+                    career: 85,
+                    wealth: 88,
+                    health: 82,
+                    summary: '2026年对于天蝎座来说是感情和财运双丰收的一年。',
+                    advice: '把握良机，追求真爱。注意控制情绪，保持平和心态。'
+                }
+            },
+            sagittarius: {
+                icon: '♐',
+                name: '射手座',
+                dateRange: '11月23日 - 12月21日',
+                element: '火',
+                planet: '木星',
+                luckyNumber: [3, 12, 21],
+                direction: '东南',
+                traits: {
+                    positive: ['乐观', '自由', '热爱冒险', '诚实', '有哲学思维'],
+                    negative: ['粗心大意', '承诺困难', '直言伤人', '缺乏计划性']
+                },
+                bestMatch: ['aries', 'leo', 'sagittarius'],
+                cautionMatch: ['virgo', 'pisces', 'cancer'],
+                myth: '射手座代表着半人马喀戎。喀戎是一位智慧的导师，他教导过许多英雄，包括阿喀琉斯、赫拉克勒斯等。在一次意外中，他被毒箭射中，因为是不死之身而痛苦不堪。宙斯怜悯他，将他升上天空成为射手座。象征着智慧、探索和自由精神。',
+                celebrities: ['那英', '周华健', '林志颖', '布拉德·皮特', '珍妮弗·劳伦斯'],
+                compatibility: {
+                    high: ['aries', 'leo', 'sagittarius'],
+                    medium: ['libra', 'aquarius', 'gemini'],
+                    low: ['virgo', 'pisces', 'cancer']
+                },
+                lucky: {
+                    number: ['3', '12', '21'],
+                    color: '橙色',
+                    gem: '黄玉',
+                    flower: '勿忘我',
+                    food: '异国料理'
+                },
+                daily: {
+                    overall: 88,
+                    love: 80,
+                    career: 85,
+                    wealth: 82,
+                    health: 90,
+                    summary: '今日射手座心情愉悦，适合户外活动。健康运不错，适合运动锻炼。',
+                    advice: '享受自由时光，放松身心。注意不要过于浮躁，保持专注。'
+                },
+                weekly: {
+                    overall: 85,
+                    love: 82,
+                    career: 88,
+                    wealth: 80,
+                    health: 92,
+                    summary: '本周射手座整体运势良好。事业上有新的机会，健康状况佳。',
+                    advice: '把握事业机会，勇于尝试。感情上多些耐心，不要急于求成。'
+                },
+                monthly: {
+                    overall: 82,
+                    love: 85,
+                    career: 80,
+                    wealth: 88,
+                    health: 88,
+                    summary: '本月射手座整体运势平稳。财运不错，适合投资理财。',
+                    advice: '合理规划财务，谨慎投资。注意与他人的沟通方式。'
+                },
+                yearly: {
+                    overall: 85,
+                    love: 82,
+                    career: 88,
+                    wealth: 85,
+                    health: 90,
+                    summary: '2026年对于射手座来说是充满机遇的一年。事业上会有新的发展。',
+                    advice: '勇敢追求梦想，不要畏惧挑战。注意劳逸结合。'
+                }
+            },
+            capricorn: {
+                icon: '♑',
+                name: '摩羯座',
+                dateRange: '12月22日 - 1月19日',
+                element: '土',
+                planet: '土星',
+                luckyNumber: [10, 19, 28],
+                direction: '西南',
+                traits: {
+                    positive: ['务实', '有野心', '自律', '责任感强', '可靠'],
+                    negative: ['悲观', '固执', '过于严肃', '压抑情感', '工作狂']
+                },
+                bestMatch: ['taurus', 'virgo', 'capricorn'],
+                cautionMatch: ['aries', 'leo', 'sagittarius'],
+                myth: '摩羯座代表着潘神，他是希腊神话中的牧神和森林之神。潘神上半身是人形，下半身是羊腿羊蹄，头上还有两只小角。在与怪兽提丰的战斗中，潘神跳入河中变成鱼尾，形成了摩羯座的奇特形象。象征着坚韧、毅力和成就。',
+                celebrities: ['周杰伦', '陈坤', '张韶涵', '裘德·洛', '凯特·布兰切特'],
+                compatibility: {
+                    high: ['taurus', 'virgo', 'capricorn'],
+                    medium: ['scorpio', 'pisces', 'cancer'],
+                    low: ['aries', 'leo', 'sagittarius']
+                },
+                lucky: {
+                    number: ['10', '19', '28'],
+                    color: '黑色',
+                    gem: '黑曜石',
+                    flower: '梅花',
+                    food: '黑豆'
+                },
+                daily: {
+                    overall: 82,
+                    love: 78,
+                    career: 88,
+                    wealth: 85,
+                    health: 85,
+                    summary: '今日摩羯座工作效率高，适合处理重要事务。事业上表现出色。',
+                    advice: '专注工作，追求目标。注意不要过于严肃，适当放松。'
+                },
+                weekly: {
+                    overall: 80,
+                    love: 80,
+                    career: 90,
+                    wealth: 88,
+                    health: 82,
+                    summary: '本周摩羯座事业运极佳，有机会展现领导才能。财运不错。',
+                    advice: '抓住事业机会，勇于担当。感情上多些浪漫，不要太务实。'
+                },
+                monthly: {
+                    overall: 85,
+                    love: 82,
+                    career: 88,
+                    wealth: 82,
+                    health: 88,
+                    summary: '本月摩羯座整体运势良好。事业稳步发展，人际关系和谐。',
+                    advice: '保持踏实作风，继续努力。多关心家人，增进感情。'
+                },
+                yearly: {
+                    overall: 82,
+                    love: 80,
+                    career: 90,
+                    wealth: 88,
+                    health: 85,
+                    summary: '2026年对于摩羯座来说是事业腾飞的一年。努力终将得到回报。',
+                    advice: '坚持目标，不懈努力。注意劳逸结合，保持身心健康。'
+                }
+            },
+            aquarius: {
+                icon: '♒',
+                name: '水瓶座',
+                dateRange: '1月20日 - 2月18日',
+                element: '风',
+                planet: '天王星',
+                luckyNumber: [4, 13, 22],
+                direction: '北方',
+                traits: {
+                    positive: ['独立创新', '人道主义', '思想开放', '友善', '独特'],
+                    negative: ['叛逆', '疏离', '固执己见', '不合群']
+                },
+                bestMatch: ['gemini', 'libra', 'aquarius'],
+                cautionMatch: ['taurus', 'scorpio', 'cancer'],
+                myth: '水瓶座代表着宙斯派来的使者伽倪墨得斯。伽倪墨得斯是特洛伊的美貌王子，宙斯化身为鹰将他带到奥林匹斯山，让他担任诸神的侍酒官。他倒水的形象成为了水瓶座的象征。象征着创新、人道主义和独立精神。',
+                celebrities: ['邓超', '章子怡', '王祖贤', '爱因斯坦', '达尔文'],
+                compatibility: {
+                    high: ['gemini', 'libra', 'aquarius'],
+                    medium: ['sagittarius', 'pisces', 'aries'],
+                    low: ['taurus', 'scorpio', 'cancer']
+                },
+                lucky: {
+                    number: ['4', '13', '22'],
+                    color: '青色',
+                    gem: '蓝宝石',
+                    flower: '风信子',
+                    food: '奇异果'
+                },
+                daily: {
+                    overall: 88,
+                    love: 82,
+                    career: 85,
+                    wealth: 80,
+                    health: 88,
+                    summary: '今日水瓶座思维活跃，适合创新和学习。社交运不错，容易结识新朋友。',
+                    advice: '发挥你的创造力，尝试新事物。注意不要过于叛逆，保持理性。'
+                },
+                weekly: {
+                    overall: 85,
+                    love: 85,
+                    career: 82,
+                    wealth: 88,
+                    health: 85,
+                    summary: '本周水瓶座整体运势良好。人际关系和谐，财运有所提升。',
+                    advice: '多与人交流，分享你的想法。感情上多些主动，不要太被动。'
+                },
+                monthly: {
+                    overall: 82,
+                    love: 88,
+                    career: 80,
+                    wealth: 85,
+                    health: 90,
+                    summary: '本月水瓶座整体运势平稳。感情生活丰富多彩，健康状况良好。',
+                    advice: '保持独立思考，坚持自我。注意与他人的沟通方式。'
+                },
+                yearly: {
+                    overall: 88,
+                    love: 85,
+                    career: 85,
+                    wealth: 82,
+                    health: 88,
+                    summary: '2026年对于水瓶座来说是充满创新的一年。思想更加开放，机会多多。',
+                    advice: '勇于创新，追求独特。注意平衡理想与现实。'
+                }
+            },
+            pisces: {
+                icon: '♓',
+                name: '双鱼座',
+                dateRange: '2月19日 - 3月20日',
+                element: '水',
+                planet: '海王星',
+                luckyNumber: [2, 11, 20],
+                direction: '东南',
+                traits: {
+                    positive: ['富有想象力', '同情心强', '艺术天赋', '直觉敏锐', '温柔'],
+                    negative: ['逃避现实', '过于敏感', '缺乏边界感', '易受影响']
+                },
+                bestMatch: ['cancer', 'scorpio', 'pisces'],
+                cautionMatch: ['gemini', 'sagittarius', 'aquarius'],
+                myth: '双鱼座代表着阿佛洛狄忒和她的儿子厄洛斯。为了躲避怪兽的袭击，他们化身为鱼跳入河中逃走。为了不分散，两人用一根绳子绑在一起。这成为了双鱼座的象征——两条向相反方向游动的鱼被绑在一起。象征着梦幻、灵性和无限可能。',
+                celebrities: ['赵薇', '李冰冰', '胡歌', '约翰尼·德普', '艾米·亚当斯'],
+                compatibility: {
+                    high: ['cancer', 'scorpio', 'pisces'],
+                    medium: ['taurus', 'capricorn', 'virgo'],
+                    low: ['gemini', 'sagittarius', 'aquarius']
+                },
+                lucky: {
+                    number: ['2', '11', '20'],
+                    color: '海蓝色',
+                    gem: '海蓝宝',
+                    flower: '水仙',
+                    food: '鱼'
+                },
+                daily: {
+                    overall: 82,
+                    love: 90,
+                    career: 78,
+                    wealth: 80,
+                    health: 85,
+                    summary: '今日双鱼座情感丰富，适合艺术创作。感情运势不错，容易感受到温暖。',
+                    advice: '发挥你的艺术天赋，创作美好作品。注意不要过于情绪化，保持理性。'
+                },
+                weekly: {
+                    overall: 85,
+                    love: 92,
+                    career: 80,
+                    wealth: 82,
+                    health: 88,
+                    summary: '本周双鱼座感情运极佳，单身者有望遇到心仪的人，有伴侣者感情升温。',
+                    advice: '珍惜感情机会，用心经营。事业上保持专注，稳步推进。'
+                },
+                monthly: {
+                    overall: 80,
+                    love: 88,
+                    career: 82,
+                    wealth: 85,
+                    health: 82,
+                    summary: '本月双鱼座整体运势平稳。感情生活甜蜜，事业稳步发展。',
+                    advice: '保持浪漫情怀，享受生活。注意身体健康，适当运动。'
+                },
+                yearly: {
+                    overall: 82,
+                    love: 90,
+                    career: 85,
+                    wealth: 82,
+                    health: 85,
+                    summary: '2026年对于双鱼座来说是充满浪漫的一年。感情生活丰富多彩。',
+                    advice: '相信直觉，追求梦想。注意平衡现实与幻想。'
+                }
+            }
+        };
+
+        // State
+        let selectedZodiac = null;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderZodiacGrid();
+            autoSelectZodiac();
+
+            const navToggle = document.getElementById('nav-toggle');
+            const navLinks = document.getElementById('nav-links');
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    navLinks.classList.toggle('active');
+                });
+                
+                navLinks.addEventListener('click', function(e) {
+                    if (e.target.tagName === 'A') {
+                        navLinks.classList.remove('active');
+                    }
+                });
+                
+                document.addEventListener('click', function(e) {
+                    if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+        // Render Zodiac Grid
+        function renderZodiacGrid() {
+            const grid = document.getElementById('zodiacGrid');
+            let html = '';
+
+            for (const key in zodiacKnowledge) {
+                const zodiac = zodiacKnowledge[key];
+                html += `
+                    <div class="zodiac-card" onclick="selectZodiac('${key}')">
+                        <span class="zodiac-icon">${zodiac.icon}</span>
+                        <div class="zodiac-name">${zodiac.name}</div>
+                        <div class="zodiac-date">${zodiac.dateRange}</div>
+                    </div>
+                `;
+            }
+
+            grid.innerHTML = html;
+        }
+
+        // Select Zodiac
+        function selectZodiac(key) {
+            selectedZodiac = key;
+            showResult();
+        }
+
+        // Show Result
+        function showResult() {
+            if (!selectedZodiac) return;
+
+            const zodiac = zodiacKnowledge[selectedZodiac];
+
+            // Update header
+            document.getElementById('resultIcon').textContent = zodiac.icon;
+            document.getElementById('resultName').textContent = zodiac.name;
+            document.getElementById('resultDate').textContent = zodiac.dateRange;
+
+            // Render basic info
+            document.getElementById('basicInfo').innerHTML = `
+                <div class="basic-info-item">
+                    <span class="basic-info-label">元素：</span>
+                    <span class="basic-info-value">${zodiac.element}</span>
+                </div>
+                <div class="basic-info-item">
+                    <span class="basic-info-label">守护星：</span>
+                    <span class="basic-info-value">${zodiac.planet}</span>
+                </div>
+                <div class="basic-info-item">
+                    <span class="basic-info-label">幸运数字：</span>
+                    <span class="basic-info-value">${zodiac.luckyNumber.join(', ')}</span>
+                </div>
+                <div class="basic-info-item">
+                    <span class="basic-info-label">方位：</span>
+                    <span class="basic-info-value">${zodiac.direction}</span>
+                </div>
+            `;
+
+            // Render traits
+            renderTraits(zodiac.traits);
+
+            // Render compatibility
+            renderCompatibility(selectedZodiac);
+
+            // Render lucky guide
+            renderLuckyTips(zodiac.lucky);
+
+            // Render myth
+            document.getElementById('mythContent').textContent = zodiac.myth;
+
+            // Render celebrities
+            renderCelebrities(zodiac.celebrities);
+
+            // Show fortune (default to daily)
+            showFortune('daily');
+
+            // Switch page
+            switchPage('page-result');
+        }
+
+        // Switch Page
+        function switchPage(pageId) {
+            document.querySelectorAll('.page').forEach(function(page) {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Render Traits
+        function renderTraits(traits) {
+            let html = '';
+
+            traits.positive.forEach(function(trait) {
+                html += `<span class="trait-tag trait-positive">${trait}</span>`;
+            });
+
+            traits.negative.forEach(function(trait) {
+                html += `<span class="trait-tag trait-negative">${trait}</span>`;
+            });
+
+            document.getElementById('traitsContainer').innerHTML = html;
+        }
+
+        // Render Compatibility
+        function renderCompatibility(key) {
+            const zodiac = zodiacKnowledge[key];
+            const comp = zodiac.compatibility;
+
+            const getZodiacName = function(k) {
+                return zodiacKnowledge[k] ? zodiacKnowledge[k].name : k;
+            };
+
+            let html = `
+                <div class="compatibility-section">
+                    <div class="compatibility-label compatibility-level-high">最佳配对</div>
+                    <div class="compatibility-list">
+                        ${comp.high.map(function(k) { return `<span class="compatibility-item">${getZodiacName(k)}</span>`; }).join('')}
+                    </div>
+                </div>
+                <div class="compatibility-section">
+                    <div class="compatibility-label compatibility-level-medium">良好配对</div>
+                    <div class="compatibility-list">
+                        ${comp.medium.map(function(k) { return `<span class="compatibility-item">${getZodiacName(k)}</span>`; }).join('')}
+                    </div>
+                </div>
+                <div class="compatibility-section">
+                    <div class="compatibility-label compatibility-level-low">一般配对</div>
+                    <div class="compatibility-list">
+                        ${comp.low.map(function(k) { return `<span class="compatibility-item">${getZodiacName(k)}</span>`; }).join('')}
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('compatibilityContainer').innerHTML = html;
+        }
+
+        // Render Lucky Tips
+        function renderLuckyTips(lucky) {
+            const icons = ['🔢', '🎨', '💎', '🌸', '🍽️'];
+            const labels = ['幸运数字', '幸运颜色', '幸运宝石', '幸运花卉', '幸运食物'];
+            const values = [lucky.number.join(', '), lucky.color, lucky.gem, lucky.flower, lucky.food];
+
+            let html = '';
+            for (let i = 0; i < labels.length; i++) {
+                html += `
+                    <div class="lucky-item">
+                        <span class="lucky-icon">${icons[i]}</span>
+                        <span class="lucky-text"><strong>${labels[i]}:</strong> ${values[i]}</span>
+                    </div>
+                `;
+            }
+
+            document.getElementById('luckyGuide').innerHTML = html;
+        }
+
+        // Render Celebrities
+        function renderCelebrities(list) {
+            let html = '';
+
+            list.forEach(function(name) {
+                html += `
+                    <div class="celebrity-item">
+                        <div class="celebrity-avatar">${name.charAt(0)}</div>
+                        <div class="celebrity-name">${name}</div>
+                    </div>
+                `;
+            });
+
+            document.getElementById('celebritiesGrid').innerHTML = html;
+        }
+
+        // Auto Select Zodiac based on current date
+        function autoSelectZodiac() {
+            const now = new Date();
+            const month = now.getMonth() + 1;
+            const day = now.getDate();
+
+            let zodiacKey = '';
+
+            if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
+                zodiacKey = 'aries';
+            } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
+                zodiacKey = 'taurus';
+            } else if ((month === 5 && day >= 21) || (month === 6 && day <= 21)) {
+                zodiacKey = 'gemini';
+            } else if ((month === 6 && day >= 22) || (month === 7 && day <= 22)) {
+                zodiacKey = 'cancer';
+            } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
+                zodiacKey = 'leo';
+            } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
+                zodiacKey = 'virgo';
+            } else if ((month === 9 && day >= 23) || (month === 10 && day <= 23)) {
+                zodiacKey = 'libra';
+            } else if ((month === 10 && day >= 24) || (month === 11 && day <= 22)) {
+                zodiacKey = 'scorpio';
+            } else if ((month === 11 && day >= 23) || (month === 12 && day <= 21)) {
+                zodiacKey = 'sagittarius';
+            } else if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
+                zodiacKey = 'capricorn';
+            } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
+                zodiacKey = 'aquarius';
+            } else {
+                zodiacKey = 'pisces';
+            }
+
+            // Highlight the current zodiac card
+            setTimeout(function() {
+                const cards = document.querySelectorAll('.zodiac-card');
+                const keys = Object.keys(zodiacKnowledge);
+                const index = keys.indexOf(zodiacKey);
+                if (index !== -1 && cards[index]) {
+                    cards[index].style.borderColor = 'rgba(155, 89, 182, 0.6)';
+                    cards[index].style.background = 'rgba(155, 89, 182, 0.15)';
+                }
+            }, 100);
+        }
+
+        // Show Fortune (Core Function)
+        function showFortune(type, zodiacId) {
+            if (!zodiacId) {
+                zodiacId = selectedZodiac;
+            }
+
+            if (!zodiacId) return;
+
+            const zodiac = zodiacKnowledge[zodiacId];
+            const fortune = zodiac[type];
+
+            if (!fortune) return;
+
+            // Update tab states
+            document.querySelectorAll('.fortune-tab').forEach(function(tab) {
+                tab.classList.remove('active');
+                if (tab.dataset.type === type) {
+                    tab.classList.add('active');
+                }
+            });
+
+            // Get score color based on value
+            const getScoreColor = function(value) {
+                if (value >= 85) return '#2ECC71';
+                if (value >= 70) return '#F39C12';
+                return '#E74C3C';
+            };
+
+            // Render fortune content
+            const labels = ['综合', '爱情', '事业', '财富', '健康'];
+            const values = [fortune.overall, fortune.love, fortune.career, fortune.wealth, fortune.health];
+
+            let scoresHtml = '';
+            for (let i = 0; i < labels.length; i++) {
+                scoresHtml += `
+                    <div class="fortune-score-item">
+                        <div class="fortune-score-label">${labels[i]}</div>
+                        <div class="fortune-score-value">${values[i]}</div>
+                        <div class="fortune-score-bar">
+                            <div class="fortune-score-fill" style="width: ${values[i]}%; background: ${getScoreColor(values[i])};"></div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            const contentHtml = `
+                <div class="fortune-scores">
+                    ${scoresHtml}
+                </div>
+                <div class="fortune-summary">
+                    ${fortune.summary}
+                </div>
+                <div class="fortune-advice">
+                    ${fortune.advice}
+                </div>
+            `;
+
+            document.getElementById('fortuneContent').innerHTML = contentHtml;
+
+            // Animate score bars
+            setTimeout(function() {
+                document.querySelectorAll('.fortune-score-fill').forEach(function(fill) {
+                    fill.style.width = fill.style.width;
+                });
+            }, 100);
+        }
+
+        // Restart
+        function restart() {
+            selectedZodiac = null;
+            switchPage('page-intro');
+        }
+
+        // Share Functions
+        function shareTo(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent('我的星座档案 - 趣味测试');
+            const zodiac = selectedZodiac ? zodiacKnowledge[selectedZodiac].name : '星座';
+
+            let shareUrl = '';
+
+            switch (platform) {
+                case 'weibo':
+                    shareUrl = `http://service.weibo.com/share/share.php?url=${url}&title=${title}`;
+                    break;
+                case 'qq':
+                    shareUrl = `https://connect.qq.com/widget/shareqq/index.html?url=${url}&title=${title}`;
+                    break;
+                default:
+                    showToast('分享功能开发中...');
+                    return;
+            }
+
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+
+        function copyToClipboard() {
+            const text = `我发现了一个超有趣的星座测试网站！快来查看你的星座档案吧：${window.location.href}`;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showToast('链接已复制到剪贴板！');
+                }).catch(function() {
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        }
+
+        function fallbackCopy(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.left = '-9999px';
+            document.body.appendChild(textarea);
+            textarea.select();
+
+            try {
+                document.execCommand('copy');
+                showToast('链接已复制到剪贴板！');
+            } catch (err) {
+                showToast('复制失败，请手动复制');
+            }
+
+            document.body.removeChild(textarea);
+        }
+
+        // Toast Notification
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+
+            setTimeout(function() {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

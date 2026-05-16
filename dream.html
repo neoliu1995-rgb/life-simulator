@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>周公解梦_在线梦境解析_梦见这些代表什么？ - 趣味测试</title>
+    <meta name="description" content="梦境解析 - 输入梦境内容，解读梦境含义、心理暗示、潜意识信息">
+    <meta name="keywords" content="解梦,梦境解析,周公解梦,梦境含义,心理暗示,潜意识">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://quweiceshi.com/dream.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://quweiceshi.com/dream.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://quweiceshi.com/dream.html">
+    <link rel="alternate" hreflang="x-default" href="https://quweiceshi.com/dream.html">
+    
+    <meta property="og:title" content="解梦 - 趣味测试">
+    <meta property="og:description" content="梦境解析 - 输入梦境内容，解读梦境含义、心理暗示、潜意识信息">
+    <meta property="og:url" content="https://quweiceshi.com/dream.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="趣味测试">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:image" content="https://quweiceshi.com/images/og-dream.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="梦境解析 - 趣味测试">
+    
+    <link rel="preconnect" href="https://fonts.loli.net">
+    <link rel="preconnect" href="https://gstatic.loli.net" crossorigin>
+    <link rel="dns-prefetch" href="https://api.qrserver.com">
+    <link rel="dns-prefetch" href="https://hm.baidu.com">
+    <link href="https://fonts.loli.net/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/global.css">
+    
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?edc404e2ae130a4255dabf98a08172ee";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .intro-screen {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .intro-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .intro-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #9B59B6 0%, #E91E63 50%, #673AB7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .intro-desc {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .dream-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .form-textarea {
+            width: 100%;
+            height: 150px;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            resize: none;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-textarea:focus {
+            outline: none;
+            border-color: #9B59B6;
+            box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.2);
+        }
+
+        .form-textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .dream-type {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .type-btn {
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .type-btn.active {
+            background: linear-gradient(135deg, #9B59B6, #E91E63);
+            border-color: transparent;
+            color: white;
+        }
+
+        .clarity-selector {
+            display: flex;
+            gap: 12px;
+        }
+
+        .clarity-btn {
+            flex: 1;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .clarity-btn.active {
+            background: rgba(155, 89, 182, 0.2);
+            border-color: #9B59B6;
+            color: #9B59B6;
+        }
+
+        .btn-submit {
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .result-section {
+            padding: 20px;
+        }
+
+        .result-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .result-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #9B59B6;
+        }
+
+        .result-content {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .result-content ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .result-content li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-text {
+            color: #9B59B6;
+            font-weight: 600;
+        }
+
+        .common-dreams-section {
+            margin-top: 32px;
+        }
+
+        .common-dreams-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .common-dream-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .common-dream-item:hover {
+            border-color: #9B59B6;
+            background: rgba(155, 89, 182, 0.1);
+        }
+
+        .common-dream-icon {
+            font-size: 1.5rem;
+            margin-bottom: 6px;
+        }
+
+        .common-dream-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .btn-back {
+            margin-top: 24px;
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            background: linear-gradient(135deg, #9B59B6, #E91E63);
+            color: white;
+        }
+
+        /* ===== 响应式适配 ===== */
+        @media (max-width: 768px) {
+            .intro-screen { padding: 30px 16px; }
+            .intro-icon { font-size: 3rem; }
+            .intro-title { font-size: 1.6rem; }
+            .clarity-selector { flex-wrap: wrap; gap: 10px; justify-content: center; }
+            .clarity-btn { padding: 8px 16px; font-size: 0.85rem; }
+            .common-dreams-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .common-dream-card { padding: 14px; border-radius: 14px; }
+            .dream-icon { font-size: 2.2rem; margin-bottom: 8px; }
+            .common-dream-title { font-size: 0.85rem; }
+            .result-screen { max-width: 100%; padding: 16px; }
+            .result-icon { font-size: 3rem; }
+            .result-title { font-size: 1.5rem; }
+            .interpretation-box { padding: 18px; border-radius: 18px; }
+            .advice-section { padding: 16px; border-radius: 16px; }
+            .nav-links { gap: 6px; flex-wrap: wrap; justify-content: center; }
+            .nav-links a { padding: 7px 13px; font-size: 0.82rem; }
+        }
+
+        @media (max-width: 480px) {
+            .intro-screen { padding: 24px 14px; }
+            .intro-icon { font-size: 2.5rem; margin-bottom: 14px; }
+            .intro-title { font-size: 1.35rem; }
+            .intro-desc { font-size: 0.88rem; }
+            .clarity-selector { gap: 8px; }
+            .clarity-btn { padding: 7px 13px; font-size: 0.78rem; border-radius: 8px; }
+            .common-dreams-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            .common-dream-card { padding: 12px 10px; border-radius: 12px; }
+            .dream-icon { font-size: 1.9rem; margin-bottom: 6px; }
+            .common-dream-title { font-size: 0.82rem; }
+            .input-group input { width: 100%; max-width: 280px; font-size: 0.92rem; }
+            .btn-search { width: 100%; max-width: 280px; margin-top: 10px; }
+            .result-screen { max-width: 100%; padding: 12px 10px; }
+            .result-icon { font-size: 2.5rem; }
+            .result-title { font-size: 1.3rem; }
+            .result-subtitle { font-size: 0.85rem; }
+            .interpretation-box { padding: 14px 12px; border-radius: 14px; }
+            .interpretation-text { font-size: 0.9rem; line-height: 1.65; }
+            .advice-section { padding: 14px 12px; border-radius: 14px; margin-top: 20px; }
+            .advice-text { font-size: 0.88rem; line-height: 1.65; }
+            .nav-links { gap: 5px; }
+            .nav-links a { padding: 6px 11px; font-size: 0.75rem; border-radius: 8px; }
+            .btn-back { margin-top: 20px; font-size: 0.9rem; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "梦境解析",
+      "description": "梦境解析 - 输入梦境内容，解读梦境含义、心理暗示、潜意识信息",
+      "url": "https://quweiceshi.com/dream.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "趣味测试",
+        "url": "https://quweiceshi.com"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://quweiceshi.com"},
+    {"@type": "ListItem", "position": 2, "name": "梦境解析", "item": "https://quweiceshi.com/dream.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "做梦是什么原因？", "acceptedAnswer": {"@type": "Answer", "text": "做梦是睡眠期间大脑活动的自然现象。主要发生在REM（快速眼动）睡眠阶段，大脑会处理白天积累的信息和情感。压力、焦虑、药物、饮食、睡眠质量等都可能影响梦境的内容和频率。做梦有助于记忆巩固和情绪调节。"}},
+    {"@type": "Question", "name": "周公解梦准吗？", "acceptedAnswer": {"@type": "Answer", "text": "周公解梦是中国传统的解梦方法，具有一定的文化参考价值。但从科学角度看，梦境更多是潜意识活动的反映，而非预兆。周公解梦可以作为了解传统文化和自我反思的工具，但不应过度依赖其预测性。"}},
+    {"@type": "Question", "name": "经常做噩梦怎么办？", "acceptedAnswer": {"@type": "Answer", "text": "经常做噩梦可能与压力、焦虑、创伤经历或睡眠环境有关。建议：1.保持规律作息；2.睡前避免恐怖刺激的内容；3.学习放松技巧如深呼吸、冥想；4.改善睡眠环境；5.如噩梦持续严重影响生活，建议咨询专业心理医生。"}},
+    {"@type": "Question", "name": "梦境能预测未来吗？", "acceptedAnswer": {"@type": "Answer", "text": "目前没有科学证据表明梦境能预测未来。梦境更多是大脑在睡眠中整理和处理信息的方式，反映了我们的潜意识想法、情感和日常经历。有时梦境与未来事件巧合相似，但这更多是概率事件而非预知能力。"}},
+    {"@type": "Question", "name": "为什么会梦到被追赶？", "acceptedAnswer": {"@type": "Answer", "text": "梦到被追赶是最常见的梦境之一，通常反映了你在现实生活中正在逃避某些问题或压力。追赶者可能代表你不愿面对的困难、焦虑或责任。这类梦境提示你需要勇敢面对问题，而不是一味逃避。"}}
+  ]
+}
+</script>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="bg-gradient"></div>
+        <div class="bg-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+    </div>
+
+    <header class="nav-header">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-icon">🎲</span>
+                <span>趣味测试</span>
+            </a>
+            <nav>
+                <button class="nav-toggle" id="nav-toggle">☰</button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="life/index.html">人生重开</a></li>
+                    <li><a href="mbti.html">MBTI测试</a></li>
+                    <li><a href="bazi.html">八字运势</a></li>
+                    <li><a href="love.html">爱情匹配</a></li>
+                    <li><a href="constellation.html">星座运势</a></li>
+                    <li><a href="tarot.html">塔罗占卜</a></li>
+                    <li><a href="zodiac.html">生肖运势</a></li>
+                    <li><a href="dream.html" class="active">解梦</a></li>
+                    <li><a href="namestat.html">姓名测试</a></li>
+                    <li><a href="psychology.html">心理测试</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div id="page-intro" class="page active">
+                <div class="card intro-screen">
+                    <div class="intro-icon">💭</div>
+                    <h1 class="intro-title">梦境解析</h1>
+                    <p class="intro-desc">描述你的梦境，为你解读其中的含义。梦是通往潜意识的窗口，让我们一起探索！</p>
+
+                    <div class="dream-form">
+                        <div class="form-group">
+                            <label class="form-label">描述你的梦境</label>
+                            <textarea id="dream-input" class="form-textarea" placeholder="请详细描述你做的梦，包括梦中出现的人物、场景、情节等..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">梦境类型</label>
+                            <div class="dream-type" id="dream-types">
+                                <button class="type-btn" onclick="selectDreamType('fantasy')">奇幻</button>
+                                <button class="type-btn" onclick="selectDreamType('scary')">恐怖</button>
+                                <button class="type-btn" onclick="selectDreamType('romantic')">浪漫</button>
+                                <button class="type-btn" onclick="selectDreamType('daily')">日常</button>
+                                <button class="type-btn" onclick="selectDreamType('adventure')">冒险</button>
+                                <button class="type-btn" onclick="selectDreamType('other')">其他</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">梦境清晰度</label>
+                            <div class="clarity-selector" id="clarity-selector">
+                                <button class="clarity-btn" onclick="selectClarity('模糊')">模糊</button>
+                                <button class="clarity-btn" onclick="selectClarity('一般')">一般</button>
+                                <button class="clarity-btn" onclick="selectClarity('清晰')">清晰</button>
+                                <button class="clarity-btn" onclick="selectClarity('非常清晰')">非常清晰</button>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-block btn-submit" onclick="analyzeDream()">🔮 开始解梦</button>
+                    </div>
+
+                    <div class="common-dreams-section">
+                        <h3 class="section-title" style="margin-top: 32px; margin-bottom: 16px; font-size: 1.1rem;">常见梦境</h3>
+                        <div class="common-dreams-grid" id="common-dreams"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-result" class="page">
+                <div class="result-section">
+                    <div class="result-card">
+                        <div class="result-title">🔮 梦境概述</div>
+                        <div class="result-content" id="dream-summary"></div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-title">🌟 象征解析</div>
+                        <div class="result-content" id="symbol-analysis"></div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-title">💭 心理分析</div>
+                        <div class="result-content" id="psychology-analysis"></div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-title">📝 行动建议</div>
+                        <div class="result-content" id="action-advice"></div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block btn-back" onclick="restart()">🔄 返回</button>
+
+                    <div class="share-section">
+                        <h4>📤 分享我的梦境解析</h4>
+                        <div class="share-buttons">
+                            <button class="share-btn" onclick="shareTo('wechat')">
+                                <span>💬</span>
+                                <span>微信</span>
+                            </button>
+                            <button class="share-btn" onclick="shareTo('weibo')">
+                                <span>📱</span>
+                                <span>微博</span>
+                            </button>
+                            <button class="share-btn" onclick="shareTo('qq')">
+                                <span>🐧</span>
+                                <span>QQ</span>
+                            </button>
+                            <button class="share-btn" onclick="shareTo('link')">
+                                <span>🔗</span>
+                                <span>复制</span>
+                            </button>
+                        </div>
+                        <div class="share-qr">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://quweiceshi.com/dream.html" alt="二维码">
+                            <p>扫码解梦</p>
+                        </div>
+                        <div class="share-link">
+                            <span>https://quweiceshi.com/dream.html</span>
+                            <button onclick="copyToClipboard('https://quweiceshi.com/dream.html')">复制</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const dreamTypes = ['fantasy', 'scary', 'romantic', 'daily', 'adventure', 'other'];
+        const dreamTypeNames = {
+            fantasy: '奇幻',
+            scary: '恐怖',
+            romantic: '浪漫',
+            daily: '日常',
+            adventure: '冒险',
+            other: '其他'
+        };
+
+        // 基于荣格心理学和弗洛伊德《梦的解析》的经典梦境符号释义
+        // 参考来源: 荣格《人与象征》、弗洛伊德《梦的解析》等经典著作
+        const symbolMeanings = {
+            fly: {
+                icon: '🦅',
+                name: '飞翔',
+                meaning: '渴望自由、摆脱束缚、自信心提升',
+                psychology: '反映内心对现状的不满和对突破的渴望，可能代表近期自信心增强或渴望摆脱某种限制',
+                source: '荣格《人与象征》、弗洛伊德《梦的解析》'
+            },
+            fall: {
+                icon: '⬇️',
+                name: '坠落',
+                meaning: '焦虑、失控感或对未来的担忧',
+                psychology: '通常与生活中的不安全感有关，可能反映对失去控制或失败的恐惧',
+                source: '荣格《人与象征》、弗洛伊德《梦的解析》'
+            },
+            chase: {
+                icon: '👻',
+                name: '被追赶',
+                meaning: '逃避某些问题或压力',
+                psychology: '追赶者往往象征你正在回避的问题、责任或情感，提示需要直面而非逃避',
+                source: '弗洛伊德《梦的解析》'
+            },
+            exam: {
+                icon: '📝',
+                name: '考试',
+                meaning: '压力、自我评估或准备不足',
+                psychology: '即使已离开学校的人也常做此梦，反映对被评价的焦虑和自我价值的担忧',
+                source: '荣格分析心理学'
+            },
+            late: {
+                icon: '⏰',
+                name: '迟到',
+                meaning: '对时间的焦虑或感觉落后',
+                psychology: '可能反映担心错过机会或在某方面落后于他人的焦虑情绪',
+                source: '现代梦境研究'
+            },
+            water: {
+                icon: '🌊',
+                name: '水相关',
+                meaning: '情感状态、潜意识、生命的流动',
+                psychology: '水的状态往往映射当前情绪：平静的水代表平和，汹涌的水暗示情绪波动',
+                source: '荣格《人与象征》'
+            },
+            snake: {
+                icon: '🐍',
+                name: '蛇',
+                meaning: '转变、潜意识恐惧、智慧或诱惑',
+                psychology: '蛇在多种文化中都是重要的原型符号，常象征转化、治愈或潜在的威胁',
+                source: '荣格原型理论、弗洛伊德《梦的解析》'
+            },
+            wedding: {
+                icon: '💒',
+                name: '婚礼',
+                meaning: '新的开始、承诺或关系变化',
+                psychology: '不一定代表真实婚姻愿望，更多象征人生新阶段的开始或对承诺的思考',
+                source: '荣格分析心理学'
+            },
+            lost: {
+                icon: '🏠',
+                name: '迷路/找不到钥匙',
+                meaning: '迷茫、找不到方向或无法解决问题',
+                psychology: '反映当前可能缺乏清晰目标，或感觉无法找到解决某个问题的方法',
+                source: '现代梦境心理学研究'
+            },
+            fire: {
+                icon: '🔥',
+                name: '火相关',
+                meaning: '愤怒、激情、净化或需要改变',
+                psychology: '火是强烈的能量象征，可能代表压抑的情感需要释放或生活中急需改变',
+                source: '荣格《人与象征》'
+            },
+            money: {
+                icon: '💰',
+                name: '钱财相关',
+                meaning: '自我价值感、能力认可或物质安全感',
+                psychology: '往往与自我价值认同有关，而非真实的财务状况',
+                source: '现代梦境研究'
+            },
+            death: {
+                icon: '💀',
+                name: '死亡/离别',
+                meaning: '结束、转变、新的开始或放下过去',
+                psychology: '通常不预示真实死亡，而是象征旧阶段的结束和个人成长转变的开始',
+                source: '荣格《人与象征》、弗洛伊德《梦的解析》'
+            }
+        };
+
+        // 通用心理健康建议（基于科学研究和APA美国心理学会指南）
+        const generalAdvice = [
+            '记录梦境日记有助于理解潜意识模式，建议醒来后立即记录',
+            '规律睡眠（7-8小时）可减少噩梦发生频率',
+            '高压状态下更容易做焦虑类梦境，注意劳逸结合',
+            '睡前避免刺激性内容（恐怖片、激烈争论等）',
+            '适度运动和放松练习（如冥想、深呼吸）有助于改善睡眠质量',
+            '如噩梦频繁且严重影响生活，建议咨询专业心理咨询师'
+        ];
+
+        const commonDreams = [
+            { icon: '🦅', title: '飞翔', key: 'fly' },
+            { icon: '⬇️', title: '坠落', key: 'fall' },
+            { icon: '👻', title: '被追赶', key: 'chase' },
+            { icon: '📝', title: '考试', key: 'exam' },
+            { icon: '⏰', title: '迟到', key: 'late' },
+            { icon: '💒', title: '婚礼', key: 'wedding' },
+            { icon: '🗝️', title: '找不到钥匙', key: 'lost' },
+            { icon: '🏠', title: '迷路', key: 'lost' },
+            { icon: '💰', title: '捡钱', key: 'money' },
+            { icon: '🌊', title: '洪水', key: 'water' },
+            { icon: '🔥', title: '火灾', key: 'fire' },
+            { icon: '🐍', title: '遇到蛇', key: 'snake' }
+        ];
+
+        let selectedType = '';
+        let selectedClarity = '一般';
+
+        function selectDreamType(type) {
+            selectedType = type;
+            document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.type-btn:nth-child(${dreamTypes.indexOf(type) + 1})`).classList.add('active');
+        }
+
+        function selectClarity(clarity) {
+            selectedClarity = clarity;
+            document.querySelectorAll('.clarity-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.clarity-btn').forEach(btn => {
+                if (btn.textContent === clarity) btn.classList.add('active');
+            });
+        }
+
+        function renderCommonDreams() {
+            const grid = document.getElementById('common-dreams');
+            grid.innerHTML = commonDreams.map(dream => `
+                <div class="common-dream-item" onclick="showCommonDream('${dream.key}')">
+                    <div class="common-dream-icon">${dream.icon}</div>
+                    <div class="common-dream-title">${dream.title}</div>
+                </div>
+            `).join('');
+        }
+
+        function getSymbolKey(dreamText) {
+            if (dreamText.includes('飞') || dreamText.includes('飞翔') || dreamText.includes('翱翔')) return 'fly';
+            if (dreamText.includes('掉') || dreamText.includes('坠落') || dreamText.includes('摔') || dreamText.includes('跌')) return 'fall';
+            if (dreamText.includes('追') || dreamText.includes('跑') || dreamText.includes('逃') || dreamText.includes('赶')) return 'chase';
+            if (dreamText.includes('考试') || dreamText.includes('做题') || dreamText.includes('学校') || dreamText.includes('试卷')) return 'exam';
+            if (dreamText.includes('迟到') || dreamText.includes('来不及') || dreamText.includes('赶不上') || dreamText.includes('错过')) return 'late';
+            if (dreamText.includes('水') || dreamText.includes('洪水') || dreamText.includes('淹') || dreamText.includes('海') || dreamText.includes('河') || dreamText.includes('湖')) return 'water';
+            if (dreamText.includes('蛇') || dreamText.includes('虫') || dreamText.includes('爬')) return 'snake';
+            if (dreamText.includes('婚礼') || dreamText.includes('结婚') || dreamText.includes('婚') || dreamText.includes('新娘') || dreamText.includes('新郎')) return 'wedding';
+            if (dreamText.includes('迷路') || dreamText.includes('找不到') || dreamText.includes('迷失') || dreamText.includes('钥匙')) return 'lost';
+            if (dreamText.includes('火') || dreamText.includes('烧') || dreamText.includes('着火') || dreamText.includes('燃烧')) return 'fire';
+            if (dreamText.includes('钱') || dreamText.includes('捡') || dreamText.includes('财') || dreamText.includes('金')) return 'money';
+            if (dreamText.includes('死') || dreamText.includes('去世') || dreamText.includes('丧') || dreamText.includes('分手') || dreamText.includes('离别')) return 'death';
+            return null; // 返回null表示未识别到特定符号
+        }
+
+        function analyzeDream() {
+            const dreamText = document.getElementById('dream-input').value;
+
+            if (!dreamText.trim()) {
+                alert('请描述你的梦境');
+                return;
+            }
+
+            const typeName = selectedType ? dreamTypeNames[selectedType] : '未知类型';
+            const symbolKey = getSymbolKey(dreamText);
+            const symbol = symbolKey ? symbolMeanings[symbolKey] : null;
+
+            // 构建结果页面（不含任何AI生成内容）
+            let resultHTML = `
+                <p><span class="highlight-text">📝 梦境描述：</span>${dreamText}</p>
+                <p><span class="highlight-text">🎭 梦境类型：</span>${typeName}</p>
+                <p><span class="highlight-text">👁️ 清晰度：</span>${selectedClarity}</p>
+            `;
+
+            // 根据梦境类型添加说明
+            if (selectedType === 'scary') {
+                resultHTML += `<p style="margin-top: 12px; padding: 12px; background: rgba(255, 107, 107, 0.1); border-radius: 8px; color: var(--text-secondary);"><span class="highlight-text">📌 科学提示：</span>恐怖/噩梦类梦境通常与压力、焦虑或睡眠质量有关。研究表明，高压状态下更容易做此类梦境。建议关注白天的压力源，保持规律作息。（来源：睡眠医学研究）</p>`;
+            } else if (selectedType === 'romantic') {
+                resultHTML += `<p style="margin-top: 12px; padding: 12px; background: rgba(253, 121, 168, 0.1); border-radius: 8px; color: var(--text-secondary);"><span class="highlight-text">📌 心理学视角：</span>浪漫梦境反映了情感需求和亲密关系的心理状态，这是内心情感需求的自然表达。（来源：荣格分析心理学）</p>`;
+            } else if (selectedType === 'fantasy') {
+                resultHTML += `<p style="margin-top: 12px; padding: 12px; background: rgba(155, 89, 182, 0.1); border-radius: 8px; color: var(--text-secondary);"><span class="highlight-text">📌 心理学视角：</span>奇幻梦境展现了想象力和创造力，可能暗示对突破现实束缚的渴望。（来源：荣格《人与象征》）</p>`;
+            }
+
+            document.getElementById('dream-summary').innerHTML = resultHTML;
+
+            // 显示符号解析（基于经典心理学知识）
+            if (symbol) {
+                document.getElementById('symbol-analysis').innerHTML = `
+                    <div style="margin-bottom: 16px;">
+                        <p style="font-size: 1.2rem; margin-bottom: 8px;"><span class="highlight-text">${symbol.icon} ${symbol.name}</span></p>
+                        <div style="background: rgba(155, 89, 182, 0.05); border-radius: 12px; padding: 16px;">
+                            <p style="margin-bottom: 8px;"><strong>象征意义：</strong>${symbol.meaning}</p>
+                            <p style="margin-bottom: 8px;"><strong>心理学视角：</strong>${symbol.psychology}</p>
+                            <p style="color: var(--text-muted); font-size: 0.85rem;"><strong>参考来源：</strong>${symbol.source}</p>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">注：以上释义为学术界公认的经典解读，不同学派可能有不同见解。梦中的元素都具有象征意义，它们可能代表你现实生活中的某些方面。</p>
+                `;
+            } else {
+                document.getElementById('symbol-analysis').innerHTML = `
+                    <p>未识别到特定的经典梦境符号。梦境中的每个元素都可能具有个人化的象征意义，建议关注梦中反复出现的主题或情绪。</p>
+                    <p style="margin-top: 12px; color: var(--text-muted); font-size: 0.9rem;">提示：尝试描述梦中具体的物体、人物或场景，可以获得更精准的符号匹配。</p>
+                `;
+            }
+
+            // 心理分析部分 - 基于科学知识而非AI生成
+            document.getElementById('psychology-analysis').innerHTML = `
+                <h4 style="color: #9B59B6; margin-bottom: 12px;">关于梦境的科学认知</h4>
+                <ul style="padding-left: 20px; color: var(--text-secondary); line-height: 1.8;">
+                    <li>梦主要发生在REM（快速眼动）睡眠阶段，是大脑处理信息和巩固记忆的自然过程</li>
+                    <li>弗洛伊德认为梦是"通往潜意识的皇家之路"，反映被压抑的欲望和冲突</li>
+                    <li>荣格认为梦具有补偿功能，平衡意识态度，并通过原型符号传递信息</li>
+                    <li>现代神经科学研究显示，梦与情绪调节、学习记忆和创造力密切相关</li>
+                    <li>梦境内容往往与近期经历、情绪状态和深层关切有关</li>
+                </ul>
+                <p style="margin-top: 12px; color: var(--text-muted); font-size: 0.85rem;">来源：《梦的解析》（弗洛伊德）、《人与象征》（荣格）、现代睡眠医学研究</p>
+            `;
+
+            // 通用建议（基于APA指南的固定建议）
+            document.getElementById('action-advice').innerHTML = `
+                <h4 style="color: #9B59B6; margin-bottom: 12px;">💡 通用心理健康建议</h4>
+                <ul style="padding-left: 20px; color: var(--text-secondary); line-height: 2;">
+                    ${generalAdvice.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+                <p style="margin-top: 16px; padding: 12px; background: rgba(78, 205, 196, 0.1); border-radius: 8px; color: var(--text-secondary); font-size: 0.9rem;">
+                    <strong>专业资源：</strong>如需专业帮助，可咨询持证心理咨询师或访问美国心理学会（APA）官网获取更多心理健康资源。
+                </p>
+            `;
+
+            document.getElementById('page-intro').classList.remove('active');
+            document.getElementById('page-result').classList.add('active');
+        }
+
+        function showCommonDream(key) {
+            const dream = commonDreams.find(d => d.key === key);
+            if (dream && symbolMeanings[key]) {
+                const symbol = symbolMeanings[key];
+                document.getElementById('dream-input').value = `我梦见${symbol.name}：${symbol.meaning}`;
+            }
+        }
+
+        function restart() {
+            document.getElementById('page-result').classList.remove('active');
+            document.getElementById('page-intro').classList.add('active');
+            document.getElementById('dream-input').value = '';
+            document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.clarity-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector('.clarity-btn:nth-child(2)').classList.add('active');
+            selectedType = '';
+            selectedClarity = '一般';
+        }
+
+        function shareTo(platform) {
+            const url = encodeURIComponent('https://quweiceshi.com/dream.html');
+            const shareTitle = encodeURIComponent('💤 梦境解析 - 探索你梦中的秘密！');
+            
+            switch(platform) {
+                case 'wechat':
+                    showToast('请复制链接分享到微信');
+                    copyToClipboard('https://quweiceshi.com/dream.html');
+                    break;
+                case 'weibo':
+                    window.open(`https://service.weibo.com/share/share.php?url=${url}&title=${shareTitle}`, '_blank');
+                    break;
+                case 'qq':
+                    window.open(`https://connect.qq.com/widget/shareqq/index.html?url=${url}&title=${shareTitle}`, '_blank');
+                    break;
+                case 'link':
+                    copyToClipboard('https://quweiceshi.com/dream.html');
+                    showToast('链接已复制到剪贴板');
+                    break;
+            }
+        }
+
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    console.log('Copied to clipboard');
+                }).catch(function() {
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        }
+        function fallbackCopy(text) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch(e) {}
+            document.body.removeChild(ta);
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(toast);
+                }, 300);
+            }, 2000);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCommonDreams();
+            document.querySelector('.clarity-btn:nth-child(2)').classList.add('active');
+            
+            const navToggle = document.getElementById('nav-toggle');
+            const navLinks = document.getElementById('nav-links');
+            navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+        });
+    </script>
+
+
+<footer class="site-footer" style="max-width:600px;margin:40px auto 0;padding:20px;text-align:center;border-top:1px solid rgba(255,255,255,0.1);">
+    <nav aria-label="网站导航" style="margin-bottom:16px;">
+        <a href="index.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">首页</a>
+        <a href="mbti.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">MBTI测试</a>
+        <a href="bazi.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">八字运势</a>
+        <a href="love.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">爱情匹配</a>
+        <a href="constellation.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">星座运势</a>
+        <a href="tarot.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">塔罗占卜</a>
+        <a href="zodiac.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">生肖运势</a>
+        <a href="dream.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">解梦</a>
+        <a href="namestat.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">姓名测试</a>
+        <a href="psychology.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">心理测试</a>
+        <a href="life/index.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">人生重开</a>
+    </nav>
+    <p style="color:rgba(255,255,255,0.3);font-size:0.75rem;">&copy; 2026 趣味测试 quweiceshi.com - 仅供娱乐参考</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,798 @@
+/**
+ * 动画样式
+ * 页面切换、元素动画等
+ * 优化版 - 增强交互反馈
+ */
+
+/* ==================== 页面切换动画 ==================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-24px);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+/* ==================== 元素动画 ==================== */
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-8px);
+    }
+    40% {
+        transform: translateX(8px);
+    }
+    60% {
+        transform: translateX(-4px);
+    }
+    80% {
+        transform: translateX(4px);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* 成就庆祝动画 */
+@keyframes achievement-pop {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes achievement-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(108, 92, 231, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(108, 92, 231, 0.8), 0 0 60px rgba(162, 155, 254, 0.5);
+    }
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.achievement-celebration {
+    animation: achievement-pop 0.6s ease forwards, achievement-glow 2s ease-in-out infinite;
+}
+
+.confetti-particle {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: confetti-fall 3s ease-out forwards;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-4px) rotate(1deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-4px) rotate(-1deg);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 8px rgba(108, 92, 231, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 24px rgba(108, 92, 231, 0.6);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* ==================== 打字机效果 ==================== */
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ==================== 进度条动画 ==================== */
+
+@keyframes progressFill {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes progressPulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* ==================== 数字滚动动画 ==================== */
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== 结局展示动画 ==================== */
+
+@keyframes revealEnding {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(-10deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(2deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes revealScore {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ==================== 星星动画 ==================== */
+
+@keyframes starTwinkle {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}
+
+@keyframes starBurst {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+/* ==================== 烟花动画 ==================== */
+
+@keyframes firework {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120px) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes fireworkParticle {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(0);
+        opacity: 0;
+    }
+}
+
+/* ==================== 心跳动画 ==================== */
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    14% {
+        transform: scale(1.1);
+    }
+    28% {
+        transform: scale(1);
+    }
+    42% {
+        transform: scale(1.1);
+    }
+    70% {
+        transform: scale(1);
+    }
+}
+
+/* ==================== 波浪动画 ==================== */
+
+@keyframes wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1);
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.8);
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1);
+    }
+}
+
+/* ==================== 渐变流动动画 ==================== */
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ==================== 轨迹图动画 ==================== */
+
+@keyframes drawLine {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* ==================== 动画类 ==================== */
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-fadeOut {
+    animation: fadeOut 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-slideInRight {
+    animation: slideInRight 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-slideInLeft {
+    animation: slideInLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-slideDown {
+    animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-slideUp {
+    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-scaleIn {
+    animation: scaleIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-scaleOut {
+    animation: scaleOut 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-shake {
+    animation: shake 0.5s ease;
+}
+
+.animate-bounce {
+    animation: bounce 1.5s ease-in-out infinite;
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+.animate-glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+.animate-heartbeat {
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* ==================== 延迟动画 ==================== */
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+.delay-900 { animation-delay: 0.9s; }
+.delay-1000 { animation-delay: 1s; }
+
+/* ==================== 事件出现动画 ==================== */
+
+.event-appear {
+    opacity: 0;
+    transform: translateX(-24px);
+    animation: slideInRight 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.event-appear:nth-child(1) { animation-delay: 0.05s; }
+.event-appear:nth-child(2) { animation-delay: 0.1s; }
+.event-appear:nth-child(3) { animation-delay: 0.15s; }
+.event-appear:nth-child(4) { animation-delay: 0.2s; }
+.event-appear:nth-child(5) { animation-delay: 0.25s; }
+.event-appear:nth-child(6) { animation-delay: 0.3s; }
+.event-appear:nth-child(7) { animation-delay: 0.35s; }
+.event-appear:nth-child(8) { animation-delay: 0.4s; }
+
+/* ==================== 天赋卡片动画 ==================== */
+
+.talent-card-appear {
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+.talent-card-appear.visible {
+    animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.talent-card-appear:nth-child(1) { animation-delay: 0.1s; }
+.talent-card-appear:nth-child(2) { animation-delay: 0.2s; }
+.talent-card-appear:nth-child(3) { animation-delay: 0.3s; }
+
+/* ==================== 数字滚动动画 ==================== */
+
+.count-up {
+    animation: countUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ==================== 轨迹图动画 ==================== */
+
+.trajectory-line {
+    stroke-dasharray: 1000;
+    animation: drawLine 2s ease forwards;
+}
+
+/* ==================== 结局展示动画 ==================== */
+
+.ending-reveal {
+    animation: revealEnding 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.score-reveal {
+    animation: revealScore 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* ==================== 星星动画 ==================== */
+
+.star {
+    animation: starTwinkle 2s ease-in-out infinite;
+}
+
+.star-burst {
+    animation: starBurst 0.8s ease-out forwards;
+}
+
+/* ==================== 烟花动画 ==================== */
+
+.firework {
+    animation: firework 1.2s ease-out forwards;
+}
+
+/* ==================== 闪烁效果 ==================== */
+
+.shimmer {
+    background: linear-gradient(
+        90deg, 
+        var(--bg-secondary) 25%, 
+        var(--border-color) 50%, 
+        var(--bg-secondary) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* ==================== 渐变文字动画 ==================== */
+
+.gradient-text-animated {
+    background: linear-gradient(
+        135deg, 
+        #6C5CE7, 
+        #A29BFE, 
+        #FD79A8, 
+        #A29BFE, 
+        #6C5CE7
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientFlow 4s ease infinite;
+}
+
+/* ==================== 抖动动画 ==================== */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+    20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* ==================== 波浪背景动画 ==================== */
+
+.wave-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.wave-bg::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%236C5CE7' opacity='0.1'/%3E%3C/svg%3E");
+    background-size: 1200px 100%;
+    animation: wave 10s linear infinite;
+}
+
+/* ==================== 按钮点击反馈 ==================== */
+
+.btn-press {
+    transition: transform 0.1s ease;
+}
+
+.btn-press:active {
+    transform: scale(0.95);
+}
+
+/* ==================== 卡片悬停效果 ==================== */
+
+.card-hover-lift {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ==================== 聚焦环动画 ==================== */
+
+@keyframes focusRing {
+    0% {
+        box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.1);
+    }
+}
+
+.focus-ring:focus {
+    animation: focusRing 0.3s ease forwards;
+}
+
+/* ==================== 加载骨架屏 ==================== */
+
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--bg-secondary) 25%,
+        var(--bg-tertiary) 50%,
+        var(--bg-secondary) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: var(--radius-md);
+}
+
+.skeleton-text {
+    height: 16px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.skeleton-text:last-child {
+    width: 60%;
+}
+
+.skeleton-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+}
+
+.skeleton-card {
+    height: 120px;
+}
+
+/* ==================== 页面入场动画序列 ==================== */
+
+.page-enter-active {
+    animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.page-enter-active > * {
+    opacity: 0;
+    animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.page-enter-active > *:nth-child(1) { animation-delay: 0.1s; }
+.page-enter-active > *:nth-child(2) { animation-delay: 0.2s; }
+.page-enter-active > *:nth-child(3) { animation-delay: 0.3s; }
+.page-enter-active > *:nth-child(4) { animation-delay: 0.4s; }
+.page-enter-active > *:nth-child(5) { animation-delay: 0.5s; }
+
+/* ==================== 成功动画 ==================== */
+
+@keyframes successCheck {
+    0% {
+        stroke-dashoffset: 100;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.success-check {
+    stroke-dasharray: 100;
+    animation: successCheck 0.5s ease forwards;
+}
+
+/* ==================== 错误抖动动画 ==================== */
+
+.error-shake {
+    animation: shake 0.5s ease;
+}
+
+/* ==================== 减少动画偏好 ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .animate-float,
+    .animate-bounce,
+    .animate-pulse,
+    .animate-glow,
+    .animate-heartbeat,
+    .animate-spin {
+        animation: none;
+    }
+}
+
+/* ==================== 触摸反馈 ==================== */
+
+@media (hover: none) and (pointer: coarse) {
+    .btn:active {
+        transform: scale(0.98);
+    }
+    
+    .talent-card:active,
+    .choice-card:active {
+        transform: scale(0.98);
+    }
+    
+    .event-card:active {
+        transform: scale(0.99);
+    }
+    
+    .history-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* ==================== 高性能动画优化 ==================== */
+
+.gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+/* ==================== 滚动显示动画 ==================== */
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

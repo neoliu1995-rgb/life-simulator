@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quweiceshi.com/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1

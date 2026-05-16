@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>姓名测试打分_五行八字分析_笔画吉凶测算 - 趣味测试</title>
+    <meta name="description" content="姓名测试打分 - 输入姓名和出生日期，分析五行八字、笔画吉凶、姓名评分">
+    <meta name="keywords" content="姓名测试,姓名打分,五行八字,笔画吉凶,姓名评分,姓名分析">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://quweiceshi.com/namestat.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://quweiceshi.com/namestat.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://quweiceshi.com/namestat.html">
+    <link rel="alternate" hreflang="x-default" href="https://quweiceshi.com/namestat.html">
+    
+    <meta property="og:title" content="姓名测试 - 趣味测试">
+    <meta property="og:description" content="姓名测试打分 - 输入姓名和出生日期，分析五行八字、笔画吉凶、姓名评分">
+    <meta property="og:url" content="https://quweiceshi.com/namestat.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="趣味测试">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:image" content="https://quweiceshi.com/images/og-namestat.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="姓名测试打分 - 趣味测试">
+    
+    <link rel="preconnect" href="https://fonts.loli.net">
+    <link rel="preconnect" href="https://gstatic.loli.net" crossorigin>
+    <link rel="dns-prefetch" href="https://api.qrserver.com">
+    <link rel="dns-prefetch" href="https://hm.baidu.com">
+    <link href="https://fonts.loli.net/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/global.css">
+    <script src="js/ai-generator.js" defer></script>
+    
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?edc404e2ae130a4255dabf98a08172ee";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .intro-screen {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .intro-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .intro-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #FFD700 0%, #FF6B6B 50%, #FF8C00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .intro-desc {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .name-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+        }
+
+        .form-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .gender-selector {
+            display: flex;
+            gap: 12px;
+        }
+
+        .gender-btn {
+            flex: 1;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .gender-btn.active {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: #FFD700;
+            color: #FFD700;
+        }
+
+        .btn-submit {
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .result-section {
+            padding: 20px;
+        }
+
+        .score-card {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 107, 107, 0.1));
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .score-value {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFD700, #FF6B6B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .score-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .score-desc {
+            color: var(--text-secondary);
+            margin-top: 12px;
+            font-size: 0.95rem;
+        }
+
+        .result-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .result-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #FFD700;
+        }
+
+        .result-content {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .result-content ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .result-content li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-text {
+            color: #FFD700;
+            font-weight: 600;
+        }
+
+        .wuxing-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .wuxing-item {
+            text-align: center;
+            padding: 12px 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+        }
+
+        .wuxing-icon {
+            font-size: 1.5rem;
+            margin-bottom: 4px;
+        }
+
+        .wuxing-name {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .wuxing-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #FFD700;
+        }
+
+        .btn-back {
+            margin-top: 24px;
+            width: 100%;
+        }
+
+        .san-cai-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin: 16px 0;
+        }
+
+        .san-cai-cell {
+            text-align: center;
+            padding: 14px 8px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .san-cai-cell.ji {
+            border-color: rgba(78, 205, 196, 0.4);
+            background: rgba(78, 205, 196, 0.08);
+        }
+
+        .san-cai-cell.xiong {
+            border-color: rgba(255, 107, 107, 0.3);
+            background: rgba(255, 107, 107, 0.05);
+        }
+
+        .san-cai-cell-name {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .san-cai-cell-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .san-cai-cell-label {
+            font-size: 0.7rem;
+            margin-top: 2px;
+        }
+
+        .san-cai-cell.ji .san-cai-cell-label { color: #4ECDC4; }
+        .san-cai-cell.xiong .san-cai-cell-label { color: #FF6B6B; }
+
+        .wuge-wuxing-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .wuge-wuxing-tag {
+            padding: 6px 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .shuli-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            font-size: 0.85rem;
+        }
+
+        .shuli-table th {
+            padding: 8px 6px;
+            text-align: left;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.78rem;
+        }
+
+        .shuli-table td {
+            padding: 8px 6px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .shuli-table .ji-badge { color: #4ECDC4; font-weight: 600; }
+        .shuli-table .xiong-badge { color: #FF6B6B; font-weight: 600; }
+
+        .structure-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 16px;
+            font-size: 0.82rem;
+            color: #FFD700;
+            margin: 3px 4px;
+        }
+
+        .meaning-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-top: 8px;
+        }
+
+        .meaning-box .char-highlight {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #FFD700;
+        }
+
+        .trait-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .trait-tag {
+            padding: 5px 12px;
+            border-radius: 16px;
+            font-size: 0.82rem;
+            background: rgba(78, 205, 196, 0.1);
+            color: #4ECDC4;
+            border: 1px solid rgba(78, 205, 196, 0.2);
+        }
+
+        .trait-tag.warning {
+            background: rgba(255, 107, 107, 0.1);
+            color: #FF6B6B;
+            border-color: rgba(255, 107, 107, 0.2);
+        }
+
+        .nav-links a.active {
+            background: linear-gradient(135deg, #FFD700, #FF6B6B);
+            color: white;
+        }
+
+        /* ===== 响应式适配 ===== */
+        @media (max-width: 768px) {
+            .intro-screen { padding: 30px 16px; }
+            .intro-icon { font-size: 3rem; }
+            .intro-title { font-size: 1.6rem; }
+            .input-group { flex-direction: column; align-items: stretch; }
+            .input-group input { width: 100%; }
+            .btn-calculate { width: 100%; margin-top: 12px; }
+            /* 5列五行格 -> 3列 */
+            .wuxing-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+            .wuxing-item { padding: 14px; border-radius: 12px; }
+            .wuxing-icon { font-size: 2rem; }
+            .result-screen { max-width: 100%; padding: 16px; }
+            .result-icon { font-size: 3rem; }
+            .result-title { font-size: 1.5rem; }
+            .score-display { font-size: 2.8rem; }
+            .analysis-section { padding: 18px; border-radius: 16px; margin-bottom: 14px; }
+            .nav-links { gap: 6px; flex-wrap: wrap; justify-content: center; }
+            .nav-links a { padding: 7px 13px; font-size: 0.82rem; }
+            .san-cai-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+            .san-cai-cell { padding: 10px 6px; }
+            .san-cai-cell-value { font-size: 1rem; }
+            .shuli-table { font-size: 0.75rem; }
+            .shuli-table th, .shuli-table td { padding: 6px 4px; }
+        }
+
+        @media (max-width: 480px) {
+            .intro-screen { padding: 24px 14px; }
+            .intro-icon { font-size: 2.5rem; margin-bottom: 14px; }
+            .intro-title { font-size: 1.35rem; }
+            .intro-desc { font-size: 0.88rem; }
+            .input-group input { width: 100%; font-size: 0.92rem; padding: 11px; }
+            .btn-calculate { width: 100%; padding: 11px 24px; font-size: 0.9rem; }
+            /* 5列五行格 -> 2列 */
+            .wuxing-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            .wuxing-item { padding: 12px 8px; border-radius: 10px; }
+            .wuxing-icon { font-size: 1.7rem; margin-bottom: 4px; }
+            .wuxing-name { font-size: 0.82rem; }
+            .result-screen { max-width: 100%; padding: 12px 10px; }
+            .result-icon { font-size: 2.5rem; }
+            .result-title { font-size: 1.3rem; }
+            .result-subtitle { font-size: 0.85rem; }
+            .score-display { font-size: 2.2rem; }
+            .analysis-section { padding: 14px 12px; border-radius: 14px; margin-bottom: 12px; }
+            .analysis-title { font-size: 0.95rem; }
+            .analysis-text { font-size: 0.85rem; line-height: 1.65; }
+            .nav-links { gap: 5px; }
+            .nav-links a { padding: 6px 11px; font-size: 0.75rem; border-radius: 8px; }
+            .btn-back { margin-top: 20px; font-size: 0.9rem; }
+            .san-cai-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+            .san-cai-cell { padding: 8px 4px; }
+            .san-cai-cell-value { font-size: 0.9rem; }
+            .shuli-table { font-size: 0.7rem; }
+            .shuli-table th, .shuli-table td { padding: 4px 2px; }
+            .wuge-wuxing-row { gap: 6px; }
+            .wuge-wuxing-tag { padding: 4px 10px; font-size: 0.78rem; }
+            .structure-tag { font-size: 0.75rem; padding: 3px 8px; }
+            .trait-tag { font-size: 0.75rem; padding: 4px 10px; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "姓名测试打分",
+      "description": "姓名测试打分 - 输入姓名和出生日期，分析五行八字、笔画吉凶、姓名评分",
+      "url": "https://quweiceshi.com/namestat.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "趣味测试",
+        "url": "https://quweiceshi.com"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://quweiceshi.com"},
+    {"@type": "ListItem", "position": 2, "name": "姓名测试", "item": "https://quweiceshi.com/namestat.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "姓名测试打分准吗？", "acceptedAnswer": {"@type": "Answer", "text": "姓名测试基于传统姓名学理论，通过分析笔画数、五行属性等因素进行评分。评分结果仅供娱乐参考，一个人的命运更多取决于自身努力和选择，不必过于在意评分高低。"}},
+    {"@type": "Question", "name": "五行缺什么怎么补？", "acceptedAnswer": {"@type": "Answer", "text": "五行缺失可以通过名字中的字来补充。例如缺金可以用带金偏旁的字（如铭、锋），缺木可以用带木偏旁的字（如林、森），缺水可以用水偏旁的字（如浩、泽），缺火可以用火偏旁的字（如烨、焕），缺土可以用土偏旁的字（如坤、培）。"}},
+    {"@type": "Question", "name": "姓名笔画怎么算？", "acceptedAnswer": {"@type": "Answer", "text": "传统姓名学中的笔画计算以康熙字典为准，与日常书写笔画可能不同。建议使用专业康熙字典查询确认笔画数。"}},
+    {"@type": "Question", "name": "改名真的能改运吗？", "acceptedAnswer": {"@type": "Answer", "text": "改名是传统文化中改善运势的一种方法，其效果因人而异。从心理学角度看，一个好名字可以带来自信心和积极暗示，间接影响人的行为和决策。但真正的运势改变还是要靠自身努力。"}},
+    {"@type": "Question", "name": "什么样的名字是好名字？", "acceptedAnswer": {"@type": "Answer", "text": "传统认为好名字应具备：1.五行平衡，与生辰八字相合；2.笔画吉祥，三才五格配置佳；3.音韵优美，朗朗上口；4.寓意美好，积极向上；5.避免谐音不雅或生僻字。"}}
+  ]
+}
+</script>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="bg-gradient"></div>
+        <div class="bg-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+    </div>
+
+    <header class="nav-header">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-icon">🎲</span>
+                <span>趣味测试</span>
+            </a>
+            <nav>
+                <button class="nav-toggle" id="nav-toggle">☰</button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="life/index.html">人生重开</a></li>
+                    <li><a href="mbti.html">MBTI测试</a></li>
+                    <li><a href="bazi.html">八字运势</a></li>
+                    <li><a href="love.html">爱情匹配</a></li>
+                    <li><a href="constellation.html">星座运势</a></li>
+                    <li><a href="tarot.html">塔罗占卜</a></li>
+                    <li><a href="zodiac.html">生肖运势</a></li>
+                    <li><a href="dream.html">解梦</a></li>
+                    <li><a href="namestat.html" class="active">姓名测试</a></li>
+                    <li><a href="psychology.html">心理测试</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div id="page-intro" class="page active">
+                <div class="card intro-screen">
+                    <div class="intro-icon">✏️</div>
+                    <h1 class="intro-title">姓名测试</h1>
+                    <p class="intro-desc">输入您的姓名，AI将为您分析姓名的含义、五行属性和运势预测！</p>
+
+                    <div class="name-form">
+                        <div class="form-group">
+                            <label class="form-label">姓名</label>
+                            <input type="text" id="name-input" class="form-input" placeholder="请输入您的姓名" maxlength="10">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">性别</label>
+                            <div class="gender-selector" id="gender-selector">
+                                <button class="gender-btn active" onclick="selectGender('男')">👨 男</button>
+                                <button class="gender-btn" onclick="selectGender('女')">👩 女</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">出生日期（选填）</label>
+                            <input type="date" id="birth-date" class="form-input">
+                        </div>
+
+                        <button class="btn btn-primary btn-block btn-submit" onclick="analyzeName()">🔮 开始测试</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-result" class="page">
+                <div class="result-section">
+                    <!-- 基本信息卡片 -->
+                    <div class="result-card">
+                        <div class="result-title">✍️ 您的姓名信息</div>
+                        <div class="result-content" id="basic-info"></div>
+                    </div>
+
+                    <!-- 三才五格分析 -->
+                    <div class="result-card">
+                        <div class="result-title">🏛️ 三才五格分析</div>
+                        <div class="result-content">
+                            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px;">
+                                五格剖象法是传统姓名学的核心理论，通过天格、人格、地格、外格、总格五个维度分析姓名吉凶。
+                                注：笔画为模拟值，与康熙字典笔画可能有差异。
+                            </p>
+                            <div class="san-cai-grid" id="san-cai-grid"></div>
+                            <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 8px;">
+                                ⚠️ 注：天格=姓氏笔画+1，人格=姓末笔画+名首笔画，地格=名字笔画和，总格=全部笔画和，外格=总格-人格+1
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 81数理吉凶 -->
+                    <div class="result-card">
+                        <div class="result-title">🔢 81数理吉凶</div>
+                        <div class="result-content" id="shuli-analysis"></div>
+                    </div>
+
+                    <!-- 五格五行配置 -->
+                    <div class="result-card">
+                        <div class="result-title">🌊 五格五行配置</div>
+                        <div class="result-content" id="wuge-wuxing"></div>
+                    </div>
+
+                    <!-- 五行属性 -->
+                    <div class="result-card">
+                        <div class="result-title">⚡ 五行属性分析</div>
+                        <div class="result-content">
+                            <div class="wuxing-grid" id="wuxing-grid"></div>
+                            <div id="wuxing-desc" style="margin-top: 12px;"></div>
+                        </div>
+                    </div>
+
+                    <!-- 音律分析 -->
+                    <div class="result-card">
+                        <div class="result-title">🎵 音律分析</div>
+                        <div class="result-content" id="yinlv-analysis"></div>
+                    </div>
+
+                    <!-- 字形结构 -->
+                    <div class="result-card">
+                        <div class="result-title">📐 字形结构</div>
+                        <div class="result-content" id="structure-analysis"></div>
+                    </div>
+
+                    <!-- 字义寓意 -->
+                    <div class="result-card">
+                        <div class="result-title">📖 字义寓意</div>
+                        <div class="result-content" id="meaning-analysis"></div>
+                    </div>
+
+                    <!-- 性格特质 -->
+                    <div class="result-card">
+                        <div class="result-title">🌟 性格特质</div>
+                        <div class="result-content" id="personality-analysis"></div>
+                    </div>
+
+                    <!-- 运程建议 -->
+                    <div class="result-card">
+                        <div class="result-title">💼 事业与感情</div>
+                        <div class="result-content" id="career-love-analysis"></div>
+                    </div>
+
+                    <!-- 专业提示 -->
+                    <div class="result-card" style="background: rgba(78, 205, 196, 0.05);">
+                        <div class="result-title" style="color: #4ECDC4;">💡 专业提示</div>
+                        <div class="result-content">
+                            <p>如需专业的姓名学分析，请咨询专业命名师或查阅权威的康熙字典。传统姓名学涉及复杂的理论体系，本工具使用模拟笔画进行趣味分析，仅供娱乐和科普用途。</p>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block btn-back" onclick="restart()">🔄 返回</button>
+
+                    <div class="share-section">
+                        <h4>📤 分享我的姓名分析</h4>
+                        <div class="share-buttons">
+                            <button class="share-btn" onclick="shareTo('wechat')">
+                                <span>💬</span>
+                                <span>微信</span>
+                            </button>
+                            <button class="share-btn" onclick="shareTo('weibo')">
+                                <span>📱</span>
+                                <span>微博</span>
+                            </button>
+                            <button class="share-btn" onclick="shareTo('qq')">
+                                <span>🐧</span>
+                                <span>QQ</span>
+                            </button>
+                            <button class="share-btn" onclick="shareTo('link')">
+                                <span>🔗</span>
+                                <span>复制</span>
+                            </button>
+                        </div>
+                        <div class="share-qr">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://quweiceshi.com/namestat.html" alt="二维码">
+                            <p>扫码测试姓名</p>
+                        </div>
+                        <div class="share-link">
+                            <span>https://quweiceshi.com/namestat.html</span>
+                            <button onclick="copyToClipboard('https://quweiceshi.com/namestat.html')">复制</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const strokeData = {
+            '一':1, '二':2, '三':3, '四':4, '五':4, '六':4, '七':2, '八':2, '九':2, '十':2,
+            '人':2, '大':3, '天':4, '上':3, '下':3, '中':4, '山':3, '水':4, '火':4, '土':3,
+            '金':8, '木':4, '日':4, '月':4, '口':3, '手':4, '心':4, '目':5, '耳':6, '舌':6,
+            '王':4, '土':3, '玉':5, '立':5, '生':5, '世':5, '石':5, '白':5, '田':5, '由':5,
+            '甲':5, '申':5, '电':5, '巴':4, '本':5, '末':5, '未':5, '甘':5, '古':5, '可':5,
+            '左':5, '右':5, '巧':5, '正':5, '用':5, '永':5, '民':5, '发':5, '台':5, '平':5,
+            '东':5, '北':5, '占':5, '业':5, '出':5, '对':5, '母':5, '幼':5, '央':5, '加':5,
+            '可':5, '主':5, '半':5, '头':5, '司':5, '弗':5, '必':5, '尼':5, '皮':5, '边':5,
+            '民':5, '玄':5, '记':5, '它':5, '礼':5, '永':5, '玉':5, '立':5, '生':5, '世':5,
+            '张':11, '李':7, '王':4, '刘':6, '陈':7, '杨':7, '黄':11, '赵':9, '周':8, '吴':7,
+            '徐':10, '孙':6, '马':10, '朱':6, '胡':9, '郭':10, '何':7, '林':8, '罗':19, '高':10,
+            '郑':8, '梁':11, '谢':17, '宋':7, '唐':10, '许':6, '韩':12, '冯':5, '邓':4, '曹':11,
+            '彭':12, '曾':12, '肖':7, '田':5, '董':12, '袁':10, '潘':15, '于':3, '蒋':12, '蔡':17,
+            '余':7, '杜':7, '叶':5, '程':12, '苏':7, '魏':17, '吕':6, '丁':2, '任':6, '沈':7,
+            '姚':9, '卢':5, '姜':9, '崔':11, '钟':9, '谭':19, '陆':7, '汪':7, '范':8, '金':8,
+            '石':5, '廖':14, '贾':10, '夏':10, '韦':9, '付':5, '方':4, '白':5, '邹':12, '孟':8,
+            '熊':14, '秦':10, '邱':7, '江':6, '尹':4, '薛':19, '闫':6, '段':9, '雷':13, '侯':9,
+            '龙':16, '史':5, '陶':10, '黎':15, '贺':12, '顾':21, '毛':4, '郝':9, '龚':22, '邵':7,
+            '万':3, '钱':16, '严':7, '赖':13, '覃':12, '洪':10, '武':8, '莫':10, '孔':4, '汤':6,
+            '向':6, '常':11, '温':12, '康':11, '施':9, '文':4, '胡':9, '郭':10, '何':7, '林':8,
+            '明':8, '华':6, '伟':6, '强':12, '军':9, '磊':15, '鹏':19, '杰':12, '敏':11, '静':16,
+            '娜':10, '丽':7, '芳':7, '婷':12, '燕':16, '涛':18, '勇':9, '艳':10, '峰':10, '超':12,
+            '洋':9, '杰':12, '兵':7, '华':6, '伟':6, '磊':15, '敏':11, '强':12, '军':9, '鹏':19,
+            '婷':12, '娜':10, '丽':7, '芳':7, '静':16, '燕':16, '艳':10, '雪':11, '梅':11, '红':6,
+            '亮':9, '明':8, '辉':15, '光':6, '波':8, '宁':5, '平':5, '荣':9, '健':10, '欣':8,
+            '玲':10, '丹':4, '琪':12, '琳':13, '琴':12, '慧':15, '颖':16, '璇':16, '珊':10, '瑶':15,
+            '怡':8, '倩':10, '雯':12, '涵':12, '梦':11, '雅':12, '诗':8, '雨':8, '欣':8, '怡':8,
+            '宇':6, '浩':10, '轩':10, '博':12, '涵':12, '哲':10, '豪':14, '宸':10, '瑞':13, '泽':16,
+            '凯':12, '铭':14, '晨':11, '昊':8, '宇':6, '轩':10, '泽':16, '宸':10, '浩':10, '博':12
+        };
+
+        const wuxingData = {
+            '金': ['金', '银', '铜', '铁', '钢', '钱', '锋', '铭', '鑫', '钧', '钰', '钟', '锦', '锋', '铭'],
+            '木': ['木', '林', '森', '树', '杨', '柳', '松', '梅', '桂', '桃', '李', '柯', '栋', '梁', '森'],
+            '水': ['水', '江', '河', '海', '波', '涛', '浩', '泽', '清', '泉', '洋', '湖', '流', '洪', '鸿'],
+            '火': ['火', '炎', '焱', '烈', '焰', '炜', '烨', '焕', '煜', '烁', '熙', '煦', '炳', '烽', '焕'],
+            '土': ['土', '地', '山', '石', '城', '坤', '均', '培', '坦', '坚', '基', '堂', '域', '疆', '坤']
+        };
+
+        const wuxingIcons = { '金': '⚔️', '木': '🌲', '水': '💧', '火': '🔥', '土': '🏔️' };
+
+        function getStrokeCount(char) {
+            return strokeData[char] || (char.charCodeAt(0) % 20) + 3;
+        }
+
+        function calculateBazi(birthDate) {
+            const date = new Date(birthDate); // Note: date input has no time, default to noon
+            const year = date.getFullYear();
+            const month = date.getMonth() + 1;
+            const day = date.getDate();
+            const hour = date.getHours();
+
+            const tianGan = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
+            const diZhi = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
+            
+            const tianGanWuxing = { '甲':'木', '乙':'木', '丙':'火', '丁':'火', '戊':'土', '己':'土', '庚':'金', '辛':'金', '壬':'水', '癸':'水' };
+            const diZhiWuxing = { '子':'水', '丑':'土', '寅':'木', '卯':'木', '辰':'土', '巳':'火', '午':'火', '未':'土', '申':'金', '酉':'金', '戌':'土', '亥':'水' };
+
+            const yearGanIndex = (year - 4) % 10;
+            const yearZhiIndex = (year - 4) % 12;
+            const yearGan = tianGan[yearGanIndex];
+            const yearZhi = diZhi[yearZhiIndex];
+
+            let trueMonth = month;
+            let trueYear = year;
+            const solarTerms = getSolarTerm(year, month);
+            if (month === 1 && solarTerms[0] > day) {
+                trueMonth = 12;
+                trueYear = year - 1;
+            } else if (month === 2 && solarTerms[1] > day) {
+                trueMonth = 1;
+            }
+
+            const yearGanForMonth = tianGan[(trueYear - 4) % 10];
+            const monthGanIndex = getMonthGanIndex(yearGanForMonth, trueMonth);
+            const monthGan = tianGan[monthGanIndex];
+            const monthZhi = diZhi[trueMonth - 1];
+
+            const dayGanZhi = getDayGanZhi(year, month, day);
+            const dayGan = dayGanZhi[0];
+            const dayZhi = dayGanZhi[1];
+
+            const dayGanIndex = tianGan.indexOf(dayGan);
+            const hourGanIndex = (dayGanIndex * 2 + Math.floor(hour / 2)) % 10;
+            const hourZhiIndex = Math.floor(hour / 2);
+            const hourGan = tianGan[hourGanIndex];
+            const hourZhi = diZhi[hourZhiIndex];
+
+            const wuxing = [
+                tianGanWuxing[yearGan], diZhiWuxing[yearZhi],
+                tianGanWuxing[monthGan], diZhiWuxing[monthZhi],
+                tianGanWuxing[dayGan], diZhiWuxing[dayZhi],
+                tianGanWuxing[hourGan], diZhiWuxing[hourZhi]
+            ];
+
+            return {
+                year: yearGan + yearZhi,
+                month: monthGan + monthZhi,
+                day: dayGan + dayZhi,
+                hour: hourGan + hourZhi,
+                wuxing: wuxing,
+                rizhu: dayGan + dayZhi,
+                rizhuGan: dayGan
+            };
+        }
+
+        function getSolarTerm(year, month) {
+            const terms = {
+                1: [6, 21], 2: [4, 19], 3: [6, 21], 4: [5, 21], 5: [6, 22], 6: [6, 22],
+                7: [7, 23], 8: [8, 23], 9: [8, 23], 10: [8, 24], 11: [7, 22], 12: [7, 22]
+            };
+            return terms[month] || [1, 15];
+        }
+
+        function getMonthGanIndex(yearGan, month) {
+            const yangIndex = { '甲': 0, '丙': 2, '戊': 4, '庚': 6, '壬': 8 };
+            const yinIndex = { '乙': 1, '丁': 3, '己': 5, '辛': 7, '癸': 9 };
+            
+            let base = yangIndex[yearGan] !== undefined ? yangIndex[yearGan] : yinIndex[yearGan];
+            if (base === undefined) base = 0;
+            
+            const offsets = [0, 2, 4, 6, 8, 10, 1, 3, 5, 7, 9, 0];
+            return (base + offsets[month - 1]) % 10;
+        }
+
+        function getDayGanZhi(year, month, day) {
+            const tianGan = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
+            const diZhi = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
+            
+            let totalDays = 0;
+            for (let y = 1900; y < year; y++) {
+                totalDays += isLeapYear(y) ? 366 : 365;
+            }
+            
+            const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            for (let m = 0; m < month - 1; m++) {
+                totalDays += daysInMonth[m];
+                if (m === 1 && isLeapYear(year)) totalDays++;
+            }
+            totalDays += day - 1;
+
+            const ganIndex = (totalDays + 9) % 10;
+            const zhiIndex = (totalDays + 1) % 12;
+
+            return [tianGan[ganIndex], diZhi[zhiIndex]];
+        }
+
+        function isLeapYear(year) {
+            return year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
+        }
+
+        function getWuxing(char) {
+            for (let [element, chars] of Object.entries(wuxingData)) {
+                if (chars.includes(char)) return element;
+            }
+            const elements = ['金', '木', '水', '火', '土'];
+            return elements[char.charCodeAt(0) % 5];
+        }
+
+        function selectGender(gender) {
+            document.querySelectorAll('.gender-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.gender-btn').forEach(btn => {
+                if (btn.textContent.includes(gender)) btn.classList.add('active');
+            });
+        }
+
+        const shuLi81 = {
+            1: { jx: 'ji', hint: '太极之数，万物开泰，生发无穷，利禄亨通', desc: '根基稳固，长辈庇荫，安康自在' },
+            2: { jx: 'xiong', hint: '混沌未定，分离破败', desc: '多变动荡，需谨慎行事' },
+            3: { jx: 'ji', hint: '进取如意，百事顺遂', desc: '才艺多能，智谋出奇，进取心强' },
+            4: { jx: 'xiong', hint: '四象不全，破坏之数', desc: '处境艰难，凡事需忍耐' },
+            5: { jx: 'ji', hint: '五行俱权，福寿双全', desc: '温和平顺，多受长上爱护' },
+            6: { jx: 'ji', hint: '六爻安稳，天德地祥', desc: '性情温和，人缘极佳' },
+            7: { jx: 'ji', hint: '七政齐备，精悍刚毅', desc: '独立刚强，魄力十足' },
+            8: { jx: 'ji', hint: '八卦之数，坚刚意志', desc: '意志坚定，勤勉有成' },
+            9: { jx: 'xiong', hint: '九转功亏，大成之数，暗含凶象', desc: '兴尽悲来，需防盛极而衰' },
+            10: { jx: 'xiong', hint: '十全空泛，万事终局', desc: '暗淡无光，宜守不宜进' },
+            11: { jx: 'ji', hint: '挽回运气，稳健着实', desc: '草木逢春，顺风扬帆' },
+            12: { jx: 'xiong', hint: '意志薄弱，无理之数', desc: '孤独无援，宜培养独立性' },
+            13: { jx: 'ji', hint: '智略超凡，艺能成功', desc: '智勇双全，多才多艺' },
+            14: { jx: 'xiong', hint: '浮沉不定，六亲缘薄', desc: '忍耐自励，可转危为安' },
+            15: { jx: 'ji', hint: '福寿拱照，德望高重', desc: '慈祥有德，一生尊荣' },
+            16: { jx: 'ji', hint: '贵人得助，名利双收', desc: '逢凶化吉，人缘助力强' },
+            17: { jx: 'ji', hint: '刚强不屈，突破万难', desc: '权威刚强，可成大事' },
+            18: { jx: 'ji', hint: '有志竟成，百事隆昌', desc: '智谋奋进，名利有望' },
+            19: { jx: 'xiong', hint: '风云蔽月，辛苦重来', desc: '辛苦劳碌，需坚持方可突破' },
+            20: { jx: 'xiong', hint: '非业空名，泥身进海', desc: '宜守不宜攻，低调蓄力' },
+            21: { jx: 'ji', hint: '明月中天，光耀万物', desc: '独立权威，首领风范' },
+            22: { jx: 'xiong', hint: '秋草逢霜，怀才不遇', desc: '逆境中成长，终有所成' },
+            23: { jx: 'ji', hint: '旭日东升，名显四方', desc: '气势磅礴，事业有成' },
+            24: { jx: 'ji', hint: '掘藏得金，家门余庆', desc: '才智卓绝，白手起家' },
+            25: { jx: 'ji', hint: '资性英敏，奇特非凡', desc: '才华横溢，但有刚愎之倾向' },
+            26: { jx: 'xiong', hint: '波澜重叠，英雄多难', desc: '先苦后甘，坚持即有转机' },
+            27: { jx: 'xiong', hint: '成功虽早，慎防亏空', desc: '宜保持谦逊，防盛极而衰' },
+            28: { jx: 'xiong', hint: '鱼临旱地，难逃厄运', desc: '宜谨言慎行，多积善缘' },
+            29: { jx: 'ji', hint: '智谋超群，成就大业', desc: '才智出众，但防刚愎自用' },
+            30: { jx: 'xiong', hint: '沉浮不定，吉凶难测', desc: '起伏不定，宜稳健行事' },
+            31: { jx: 'ji', hint: '春日花开，智勇得志', desc: '博得名利，统率众人' },
+            32: { jx: 'ji', hint: '池中之龙，风云际会', desc: '温良亲和，贵人相助' },
+            33: { jx: 'ji', hint: '旭日升天，名闻天下', desc: '鸾凤相会，才艺多能' },
+            34: { jx: 'xiong', hint: '破家亡身，见识浅薄', desc: '需不断学习，厚积薄发' },
+            35: { jx: 'ji', hint: '高楼望月，优雅发展', desc: '温和儒雅，平顺安康' },
+            36: { jx: 'xiong', hint: '波澜万状，英雄落难', desc: '宜低调务实，积蓄力量' },
+            37: { jx: 'ji', hint: '权威显达，忠肝义胆', desc: '独立自主，领袖气质' },
+            38: { jx: 'xiong', hint: '意志薄弱，难望成功', desc: '需借助他人之力，不可独行' },
+            39: { jx: 'ji', hint: '云开月明，富贵荣华', desc: '权威旺盛，福泽深厚' },
+            40: { jx: 'xiong', hint: '谨慎保安，豪胆进凶', desc: '宜保守慎行，退守为安' },
+            41: { jx: 'ji', hint: '德望高大，事事如意', desc: '受人敬重，贵人扶持' },
+            42: { jx: 'xiong', hint: '寒蝉在柳，博艺不精', desc: '宜专注一业，精益求精' },
+            43: { jx: 'xiong', hint: '散财破产，外观幸福', desc: '外表光鲜，内心多虑' },
+            44: { jx: 'xiong', hint: '愁眉难展，逆境困苦', desc: '忍耐等待，时机终会到来' },
+            45: { jx: 'ji', hint: '顺风扬帆，新生泰和', desc: '智谋超群，一帆风顺' },
+            46: { jx: 'xiong', hint: '浪里淘金，历尽艰难', desc: '历经磨难，终有所获' },
+            47: { jx: 'ji', hint: '点石成金，开花结果', desc: '贵人相助，名利双收' },
+            48: { jx: 'ji', hint: '古松立鹤，德智兼备', desc: '才德兼备，为师为范' },
+            49: { jx: 'xiong', hint: '吉临则吉，凶来则凶', desc: '转凶为吉，需配良善之人' },
+            50: { jx: 'xiong', hint: '一成一败，吉凶参半', desc: '先得后失，宜稳健勿贪' },
+            51: { jx: 'xiong', hint: '浮沉不定，盛衰交加', desc: '顺境不懈，逆境不馁' },
+            52: { jx: 'ji', hint: '卓尔不群，先见之明', desc: '眼光独到，理想崇高' },
+            53: { jx: 'xiong', hint: '外祥内忧，家运缘薄', desc: '外表风光，内心孤独' },
+            54: { jx: 'xiong', hint: '石上栽花，多难少成', desc: '宜借助团队力量' },
+            55: { jx: 'xiong', hint: '外美内苦，吉凶无常', desc: '表面光耀，内里辛劳' },
+            56: { jx: 'xiong', hint: '晚景凄凉，事与愿违', desc: '需早做规划，未雨绸缪' },
+            57: { jx: 'ji', hint: '寒雪青松，春来转旺', desc: '先苦后甘，终得成功' },
+            58: { jx: 'xiong', hint: '浮沉多端，祸福无常', desc: '宜沉着冷静应对变化' },
+            59: { jx: 'xiong', hint: '寒蝉悲风，缺乏耐力', desc: '需培养耐心和毅力' },
+            60: { jx: 'xiong', hint: '心迷意乱，漂泊不定', desc: '方向迷茫，需明确目标' },
+            61: { jx: 'ji', hint: '名利双收，荣达富贵', desc: '才德兼备，花开富贵' },
+            62: { jx: 'xiong', hint: '根基不固，衰落辛苦', desc: '宜稳固基础，重新出发' },
+            63: { jx: 'ji', hint: '舟归平海，万事如意', desc: '富贵荣华，享受天福' },
+            64: { jx: 'xiong', hint: '骨肉分离，徒劳无功', desc: '宜修身养性，等待时机' },
+            65: { jx: 'ji', hint: '富贵长寿，事事如意', desc: '福泽深厚，名利双收' },
+            66: { jx: 'xiong', hint: '进退失据，内外不和', desc: '宜求稳为主，先安内' },
+            67: { jx: 'ji', hint: '万商云集，名利双收', desc: '天赋幸运，通达亨通' },
+            68: { jx: 'ji', hint: '发明创造，立业兴家', desc: '独立思考，创新有成' },
+            69: { jx: 'xiong', hint: '坐立不安，病弱短命', desc: '宜修身养性，关注健康' },
+            70: { jx: 'xiong', hint: '废物灭亡，惨淡经营', desc: '宜转换方向，另寻出路' },
+            71: { jx: 'xiong', hint: '养虎为患，石中隐玉', desc: '外表平静，暗藏危机' },
+            72: { jx: 'xiong', hint: '雨夜之花，零落离散', desc: '宜随遇而安，知足常乐' },
+            73: { jx: 'xiong', hint: '盛衰交加，志高力薄', desc: '宜量力而行，稳步前进' },
+            74: { jx: 'xiong', hint: '残菊经霜，智能有限', desc: '宜勤能补拙，愚公移山' },
+            75: { jx: 'xiong', hint: '退守可保，妄进生灾', desc: '宜以退为进，守成为上' },
+            76: { jx: 'xiong', hint: '骨肉分离，内外不和', desc: '宜多沟通，和谐相处' },
+            77: { jx: 'ji', hint: '家庭和睦，先苦后甘', desc: '乐天知命，安稳度日' },
+            78: { jx: 'xiong', hint: '晚景凄凉，功德渐损', desc: '宜及早积福，行善积德' },
+            79: { jx: 'xiong', hint: '云头望月，身疲力尽', desc: '宜调整步调，劳逸结合' },
+            80: { jx: 'xiong', hint: '星沉大海，一世辛劳', desc: '宜放低期望，知足常乐' },
+            81: { jx: 'ji', hint: '万物回春，还原复始', desc: '最极之数，还本归元' }
+        };
+
+        function getShuLiNumber(num) {
+            let n = ((num - 1) % 81) + 1;
+            return shuLi81[n] || { jx: 'xiong', hint: '数理未收录', desc: '请参考其他数理' };
+        }
+
+        function getShuLiWuxing(num) {
+            const tail = num % 10;
+            if (tail === 1 || tail === 2) return '木';
+            if (tail === 3 || tail === 4) return '火';
+            if (tail === 5 || tail === 6) return '土';
+            if (tail === 7 || tail === 8) return '金';
+            return '水';
+        }
+
+        function getCharPinyin(char) {
+            const py = charPinyin[char];
+            if (py) return py;
+            const code = char.charCodeAt(0);
+            const tones = ['yīnpíng', 'yángpíng', 'shǎngshēng', 'qùshēng'];
+            const toneIdx = code % 4;
+            const initials = ['b', 'p', 'm', 'f', 'd', 't', 'n', 'l', 'g', 'k', 'h', 'j', 'q', 'x', 'zh', 'ch', 'sh', 'r', 'z', 'c', 's', 'y', 'w'];
+            const finals = ['a', 'o', 'e', 'i', 'u', 'ai', 'ei', 'ao', 'ou', 'an', 'en', 'ang', 'eng', 'ong', 'ia', 'ie', 'iu', 'in', 'ing', 'ian'];
+            const init = initials[code % initials.length];
+            const fin = finals[(code >> 2) % finals.length];
+            return { pinyin: init + fin, tone: tones[toneIdx] };
+        }
+
+        function getCharStructure(char) {
+            if (charStructure[char]) return charStructure[char];
+            const code = char.charCodeAt(0);
+            const types = ['左右结构', '上下结构', '独体结构', '包围结构', '品字结构'];
+            return types[code % 5];
+        }
+
+        function getCharMeaning(char) {
+            if (charMeaning[char]) return charMeaning[char];
+            return { meaning: '寓意深远', implication: '内涵丰富，值得品味' };
+        }
+
+        function getWuge(name, strokes) {
+            const surnameStrokes = strokes[0].stroke;
+            const givenStrokes = strokes.slice(1);
+            const givenSum = givenStrokes.reduce((s, c) => s + c.stroke, 0);
+
+            const tianGe = surnameStrokes + 1;
+            const renGe = surnameStrokes + (givenStrokes.length > 0 ? givenStrokes[0].stroke : 0);
+            const diGe = givenSum;
+            const zongGe = surnameStrokes + givenSum;
+            const waiGe = zongGe - renGe + 1;
+
+            return { tianGe, renGe, diGe, zongGe, waiGe };
+        }
+
+        const charMeaning = {
+            '明': { meaning: '光明、智慧、清楚', implication: '寓意光明磊落、前途明亮' },
+            '华': { meaning: '光彩、繁盛、精华', implication: '寓意才华横溢、繁荣昌盛' },
+            '伟': { meaning: '伟大、壮美、卓越', implication: '寓意胸怀大志、成就非凡' },
+            '强': { meaning: '强大、有力、坚强', implication: '寓意意志坚定、自强不息' },
+            '磊': { meaning: '众石累积，坦荡光明', implication: '寓意光明磊落、心胸坦荡' },
+            '涛': { meaning: '大波浪，气势磅礴', implication: '寓意胸怀宽广、气势宏阔' },
+            '军': { meaning: '军队、军人、纪律', implication: '寓意英勇果断、纪律严明' },
+            '勇': { meaning: '勇敢、勇气、果敢', implication: '寓意勇往直前、敢于担当' },
+            '艳': { meaning: '鲜艳、美丽、光彩', implication: '寓意光彩照人、美丽出众' },
+            '峰': { meaning: '山峰、高峰、顶端', implication: '寓意攀登高峰、志向远大' },
+            '超': { meaning: '超越、优胜、高出', implication: '寓意超凡脱俗、出类拔萃' },
+            '洋': { meaning: '海洋、广大、丰富', implication: '寓意胸怀宽广、学识渊博' },
+            '杰': { meaning: '杰出、优秀、豪杰', implication: '寓意出类拔萃、人中豪杰' },
+            '兵': { meaning: '士兵、兵器、力量', implication: '寓意刚强有力、勇猛果敢' },
+            '敏': { meaning: '敏捷、聪敏、勤勉', implication: '寓意才思敏捷、勤奋聪慧' },
+            '静': { meaning: '安静、宁静、稳重', implication: '寓意沉静稳重、内心安宁' },
+            '娜': { meaning: '婀娜、优美、柔美', implication: '寓意姿态优美、气质优雅' },
+            '丽': { meaning: '美丽、秀丽、光彩', implication: '寓意美丽动人、光彩照人' },
+            '芳': { meaning: '芳香、美好、芬芳', implication: '寓意品德高尚、美名远扬' },
+            '婷': { meaning: '优美、婷婷玉立', implication: '寓意优雅端庄、亭亭玉立' },
+            '燕': { meaning: '燕子、春天、吉祥', implication: '寓意活泼灵动、吉祥如意' },
+            '雪': { meaning: '白雪、纯洁、高洁', implication: '寓意纯洁无瑕、品格高尚' },
+            '梅': { meaning: '梅花、坚毅、高洁', implication: '寓意坚韧不拔、傲雪凌霜' },
+            '红': { meaning: '红色、热烈、喜庆', implication: '寓意热情奔放、吉祥喜庆' },
+            '亮': { meaning: '明亮、光亮、响亮', implication: '寓意前途光明、声名远播' },
+            '辉': { meaning: '光辉、辉煌、闪耀', implication: '寓意光辉灿烂、事业辉煌' },
+            '光': { meaning: '光明、光芒、荣耀', implication: '寓意光彩照人、前程光明' },
+            '波': { meaning: '波浪、水波、影响', implication: '寓意生命力强、影响广泛' },
+            '宁': { meaning: '安宁、宁静、平和', implication: '寓意心境安宁、一生平顺' },
+            '平': { meaning: '平安、公平、平正', implication: '寓意平安顺遂、公正无私' },
+            '荣': { meaning: '光荣、繁荣、荣耀', implication: '寓意繁荣兴旺、荣耀加身' },
+            '健': { meaning: '健康、刚健、强壮', implication: '寓意身体健康、意志刚健' },
+            '欣': { meaning: '欣喜、欣然、欢欣', implication: '寓意心境愉悦、生活欢欣' },
+            '玲': { meaning: '玲珑、清脆、精巧', implication: '寓意聪慧灵巧、精致优雅' },
+            '丹': { meaning: '丹心、赤诚、红色', implication: '寓意赤诚忠心、热情真挚' },
+            '琪': { meaning: '美玉、珍贵、美好', implication: '寓意珍贵如玉、美好高洁' },
+            '琳': { meaning: '美玉、琳琅、珍贵', implication: '寓意才华出众、琳琅满目' },
+            '琴': { meaning: '琴瑟、音乐、和谐', implication: '寓意才艺双全、和谐优雅' },
+            '慧': { meaning: '智慧、聪慧、慧心', implication: '寓意聪慧过人、心地善良' },
+            '颖': { meaning: '聪颖、锋芒、突出', implication: '寓意聪颖出众、锋芒毕露' },
+            '璇': { meaning: '美玉、璇玑、星辰', implication: '寓意珍贵如玉、璀璨如星' },
+            '珊': { meaning: '珊瑚、珍贵、美好', implication: '寓意珍贵美丽、优雅动人' },
+            '瑶': { meaning: '美玉、瑶池、仙境', implication: '寓意美好如玉、仙姿玉质' },
+            '怡': { meaning: '怡然、愉悦、和悦', implication: '寓意心境愉悦、怡然自得' },
+            '倩': { meaning: '倩影、美丽、笑靥', implication: '寓意美丽动人、笑容可掬' },
+            '雯': { meaning: '彩云、文彩、美好', implication: '寓意文彩斐然、气质高雅' },
+            '涵': { meaning: '涵养、包容、内涵', implication: '寓意有涵养、包容大度' },
+            '梦': { meaning: '梦想、梦幻、理想', implication: '寓意心怀梦想、追求理想' },
+            '雅': { meaning: '优雅、典雅、高尚', implication: '寓意优雅大方、品格高尚' },
+            '诗': { meaning: '诗歌、文艺、才情', implication: '寓意才情横溢、诗意人生' },
+            '雨': { meaning: '雨水、滋润、灵动', implication: '寓意润物无声、灵动自然' },
+            '宇': { meaning: '宇宙、广阔、气度', implication: '寓意胸怀宇宙、气度恢宏' },
+            '浩': { meaning: '浩瀚、广大、浩荡', implication: '寓意心胸浩瀚、气魄宏大' },
+            '轩': { meaning: '气宇轩昂、高大', implication: '寓意气宇不凡、风度翩翩' },
+            '博': { meaning: '博学、博大、丰富', implication: '寓意博学多才、胸襟博大' },
+            '哲': { meaning: '哲学、智慧、明理', implication: '寓意明理睿智、富有哲思' },
+            '豪': { meaning: '豪迈、豪杰、豪气', implication: '寓意豪情壮志、气概非凡' },
+            '宸': { meaning: '帝王居所、尊贵', implication: '寓意尊贵不凡、志向高远' },
+            '瑞': { meaning: '瑞气、吉祥、祥瑞', implication: '寓意祥瑞安康、好运连连' },
+            '泽': { meaning: '恩泽、润泽、福泽', implication: '寓意恩泽广被、福泽深厚' },
+            '凯': { meaning: '凯旋、胜利、欢歌', implication: '寓意凯旋而归、胜利在望' },
+            '铭': { meaning: '铭记、铭刻、永志', implication: '寓意铭记于心、永志不忘' },
+            '晨': { meaning: '早晨、晨光、希望', implication: '寓意朝气蓬勃、充满希望' },
+            '昊': { meaning: '昊天、广阔、高远', implication: '寓意心胸广阔、志存高远' }
+        };
+
+        const charPinyin = {
+            '明': { pinyin: 'míng', tone: 'yángpíng' },
+            '华': { pinyin: 'huá', tone: 'yángpíng' },
+            '伟': { pinyin: 'wěi', tone: 'shǎngshēng' },
+            '强': { pinyin: 'qiáng', tone: 'yángpíng' },
+            '磊': { pinyin: 'lěi', tone: 'shǎngshēng' },
+            '涛': { pinyin: 'tāo', tone: 'yīnpíng' },
+            '军': { pinyin: 'jūn', tone: 'yīnpíng' },
+            '勇': { pinyin: 'yǒng', tone: 'shǎngshēng' },
+            '艳': { pinyin: 'yàn', tone: 'qùshēng' },
+            '峰': { pinyin: 'fēng', tone: 'yīnpíng' },
+            '超': { pinyin: 'chāo', tone: 'yīnpíng' },
+            '洋': { pinyin: 'yáng', tone: 'yángpíng' },
+            '杰': { pinyin: 'jié', tone: 'yángpíng' },
+            '兵': { pinyin: 'bīng', tone: 'yīnpíng' },
+            '敏': { pinyin: 'mǐn', tone: 'shǎngshēng' },
+            '静': { pinyin: 'jìng', tone: 'qùshēng' },
+            '娜': { pinyin: 'nà', tone: 'qùshēng' },
+            '丽': { pinyin: 'lì', tone: 'qùshēng' },
+            '芳': { pinyin: 'fāng', tone: 'yīnpíng' },
+            '婷': { pinyin: 'tíng', tone: 'yángpíng' },
+            '燕': { pinyin: 'yàn', tone: 'qùshēng' },
+            '雪': { pinyin: 'xuě', tone: 'shǎngshēng' },
+            '梅': { pinyin: 'méi', tone: 'yángpíng' },
+            '红': { pinyin: 'hóng', tone: 'yángpíng' },
+            '亮': { pinyin: 'liàng', tone: 'qùshēng' },
+            '辉': { pinyin: 'huī', tone: 'yīnpíng' },
+            '光': { pinyin: 'guāng', tone: 'yīnpíng' },
+            '波': { pinyin: 'bō', tone: 'yīnpíng' },
+            '宁': { pinyin: 'níng', tone: 'yángpíng' },
+            '平': { pinyin: 'píng', tone: 'yángpíng' },
+            '荣': { pinyin: 'róng', tone: 'yángpíng' },
+            '健': { pinyin: 'jiàn', tone: 'qùshēng' },
+            '欣': { pinyin: 'xīn', tone: 'yīnpíng' },
+            '玲': { pinyin: 'líng', tone: 'yángpíng' },
+            '丹': { pinyin: 'dān', tone: 'yīnpíng' },
+            '琪': { pinyin: 'qí', tone: 'yángpíng' },
+            '琳': { pinyin: 'lín', tone: 'yángpíng' },
+            '琴': { pinyin: 'qín', tone: 'yángpíng' },
+            '慧': { pinyin: 'huì', tone: 'qùshēng' },
+            '颖': { pinyin: 'yǐng', tone: 'shǎngshēng' },
+            '璇': { pinyin: 'xuán', tone: 'yángpíng' },
+            '珊': { pinyin: 'shān', tone: 'yīnpíng' },
+            '瑶': { pinyin: 'yáo', tone: 'yángpíng' },
+            '怡': { pinyin: 'yí', tone: 'yángpíng' },
+            '倩': { pinyin: 'qiàn', tone: 'qùshēng' },
+            '雯': { pinyin: 'wén', tone: 'yángpíng' },
+            '涵': { pinyin: 'hán', tone: 'yángpíng' },
+            '梦': { pinyin: 'mèng', tone: 'qùshēng' },
+            '雅': { pinyin: 'yǎ', tone: 'shǎngshēng' },
+            '诗': { pinyin: 'shī', tone: 'yīnpíng' },
+            '雨': { pinyin: 'yǔ', tone: 'shǎngshēng' },
+            '宇': { pinyin: 'yǔ', tone: 'shǎngshēng' },
+            '浩': { pinyin: 'hào', tone: 'qùshēng' },
+            '轩': { pinyin: 'xuān', tone: 'yīnpíng' },
+            '博': { pinyin: 'bó', tone: 'yángpíng' },
+            '哲': { pinyin: 'zhé', tone: 'yángpíng' },
+            '豪': { pinyin: 'háo', tone: 'yángpíng' },
+            '宸': { pinyin: 'chén', tone: 'yángpíng' },
+            '瑞': { pinyin: 'ruì', tone: 'qùshēng' },
+            '泽': { pinyin: 'zé', tone: 'yángpíng' },
+            '凯': { pinyin: 'kǎi', tone: 'shǎngshēng' },
+            '铭': { pinyin: 'míng', tone: 'yángpíng' },
+            '晨': { pinyin: 'chén', tone: 'yángpíng' },
+            '昊': { pinyin: 'hào', tone: 'qùshēng' }
+        };
+
+        const charStructure = {
+            '明': '左右结构', '华': '上下结构', '伟': '左右结构', '强': '左右结构',
+            '磊': '品字结构', '涛': '左右结构', '军': '上下结构', '勇': '上下结构',
+            '艳': '左右结构', '峰': '左右结构', '超': '包围结构', '洋': '左右结构',
+            '杰': '上下结构', '兵': '上下结构', '敏': '左右结构', '静': '左右结构',
+            '娜': '左右结构', '丽': '上下结构', '芳': '上下结构', '婷': '左右结构',
+            '燕': '上下结构', '雪': '上下结构', '梅': '左右结构', '红': '左右结构',
+            '亮': '上下结构', '辉': '左右结构', '光': '上下结构', '波': '左右结构',
+            '宁': '上下结构', '平': '独体结构', '荣': '上下结构', '健': '左右结构',
+            '欣': '左右结构', '玲': '左右结构', '丹': '独体结构', '琪': '左右结构',
+            '琳': '左右结构', '琴': '上下结构', '慧': '上下结构', '颖': '左右结构',
+            '璇': '左右结构', '珊': '左右结构', '瑶': '左右结构', '怡': '左右结构',
+            '倩': '左右结构', '雯': '上下结构', '涵': '左右结构', '梦': '上下结构',
+            '雅': '左右结构', '诗': '左右结构', '雨': '独体结构', '宇': '上下结构',
+            '浩': '左右结构', '轩': '左右结构', '博': '左右结构', '哲': '上下结构',
+            '豪': '上下结构', '宸': '上下结构', '瑞': '左右结构', '泽': '左右结构',
+            '凯': '左右结构', '铭': '左右结构', '晨': '上下结构', '昊': '上下结构'
+        };
+
+        function analyzeName() {
+            const name = document.getElementById('name-input').value.trim();
+            const gender = document.querySelector('.gender-btn.active').textContent.includes('男') ? '男' : '女';
+            const birthDate = document.getElementById('birth-date').value;
+
+            if (!name) {
+                alert('请输入姓名');
+                return;
+            }
+
+            let totalStrokes = 0;
+            const strokes = [];
+            const wuxingCounts = { '金': 0, '木': 0, '水': 0, '火': 0, '土': 0 };
+            const nameWuxing = [];
+
+            for (let char of name) {
+                const stroke = getStrokeCount(char);
+                totalStrokes += stroke;
+                strokes.push({ char, stroke });
+                const element = getWuxing(char);
+                wuxingCounts[element]++;
+                nameWuxing.push({ char, element });
+            }
+
+            // 根据出生日期计算八字五行（更完整的命理分析）
+            let baziInfo = null;
+            if (birthDate) {
+                baziInfo = calculateBazi(birthDate);
+                // 将八字五行加入姓名五行分析（权重更高）
+                baziInfo.wuxing.forEach(wx => {
+                    wuxingCounts[wx] += 1.5; // 八字五行权重1.5倍
+                });
+            }
+
+            // ====== 姓名学分析 ======
+
+            // 计算三才五格
+            const wuge = getWuge(name, strokes);
+            const wugeNames = { tianGe: '天格', renGe: '人格', diGe: '地格', zongGe: '总格', waiGe: '外格' };
+            const wugeOrder = ['tianGe', 'renGe', 'diGe', 'waiGe', 'zongGe'];
+
+            // 基本信息
+            document.getElementById('basic-info').innerHTML = `
+                <p><span class="highlight-text">姓名：</span>${name}</p>
+                <p><span class="highlight-text">字数：</span>${name.length}字（${name.length === 1 ? '单名' : name.length === 2 ? '双字名' : name.length === 3 ? '三字名' : '多字名'}）</p>
+                <p><span class="highlight-text">性别：</span>${gender}</p>
+                ${birthDate ? `<p><span class="highlight-text">出生日期：</span>${birthDate}</p>` : ''}
+                <p style="margin-top: 10px;"><span class="highlight-text">各字笔画（模拟值）：</span>${strokes.map(s => `${s.char}(<strong>${s.stroke}画</strong>)`).join('、')}，总笔画：<strong>${totalStrokes}画</strong></p>
+            `;
+
+            // 三才五格
+            document.getElementById('san-cai-grid').innerHTML = wugeOrder.map(key => {
+                const val = wuge[key];
+                const sl = getShuLiNumber(val);
+                const cls = sl.jx === 'ji' ? 'ji' : 'xiong';
+                const label = sl.jx === 'ji' ? '✅ 吉' : '⚠️ 凶';
+                return `<div class="san-cai-cell ${cls}">
+                    <div class="san-cai-cell-name">${wugeNames[key]}</div>
+                    <div class="san-cai-cell-value">${val}</div>
+                    <div class="san-cai-cell-label">${label}</div>
+                </div>`;
+            }).join('');
+
+            // 81数理吉凶
+            let shuliHtml = '<table class="shuli-table"><tr><th>格名</th><th>数理</th><th>吉凶</th><th>数理暗示</th></tr>';
+            wugeOrder.forEach(key => {
+                const val = wuge[key];
+                const sl = getShuLiNumber(val);
+                const jxLabel = sl.jx === 'ji' ? '<span class="ji-badge">✅ 吉</span>' : '<span class="xiong-badge">⚠️ 凶</span>';
+                shuliHtml += `<tr><td><strong>${wugeNames[key]}</strong></td><td>${val}</td><td>${jxLabel}</td><td>${sl.hint}</td></tr>`;
+            });
+            shuliHtml += '</table>';
+            shuliHtml += `<p style="margin-top:12px;font-size:0.85rem;color:var(--text-secondary);"><strong>综合解读：</strong>五格中<span style="color:#4ECDC4;">吉数${wugeOrder.filter(k => getShuLiNumber(wuge[k]).jx==='ji').length}个</span>，<span style="color:#FF6B6B;">凶数${wugeOrder.filter(k => getShuLiNumber(wuge[k]).jx==='xiong').length}个</span>。人格数${wuge.renGe}为${getShuLiNumber(wuge.renGe).desc}。</p>`;
+            document.getElementById('shuli-analysis').innerHTML = shuliHtml;
+
+            // 五格五行
+            const wugeWxHtml = wugeOrder.map(key => {
+                const val = wuge[key];
+                const wx = getShuLiWuxing(val);
+                return `<span class="wuge-wuxing-tag">${wugeNames[key]}：${val} → <strong>${wx}</strong> ${wuxingIcons[wx]}</span>`;
+            }).join('');
+            const tianWx = getShuLiWuxing(wuge.tianGe);
+            const renWx = getShuLiWuxing(wuge.renGe);
+            const diWx = getShuLiWuxing(wuge.diGe);
+            const scwxDesc = (tianWx === renWx) ? '天地同气，根基稳固' :
+                ((tianWx === '木' && renWx === '火') || (tianWx === '火' && renWx === '土') || (tianWx === '土' && renWx === '金') || (tianWx === '金' && renWx === '水') || (tianWx === '水' && renWx === '木')) ? '天生地养，运势顺遂' :
+                ((renWx === '木' && tianWx === '火') || (renWx === '火' && tianWx === '土') || (renWx === '土' && tianWx === '金') || (renWx === '金' && tianWx === '水') || (renWx === '水' && tianWx === '木')) ? '地助天生，基础良好' : '五行相制，需要调和';
+            document.getElementById('wuge-wuxing').innerHTML = `
+                <div class="wuge-wuxing-row">${wugeWxHtml}</div>
+                <p style="margin-top:12px;color:var(--text-secondary);"><strong>三才配置：</strong>${tianWx}${wuxingIcons[tianWx]}（天）→ ${renWx}${wuxingIcons[renWx]}（人）→ ${diWx}${wuxingIcons[diWx]}（地）</p>
+                <p style="margin-top:6px;color:var(--text-secondary);font-size:0.9rem;">${scwxDesc}</p>
+                <p style="margin-top:4px;color:var(--text-muted);font-size:0.78rem;">注：五格五行按个位数尾数分配（1-2木、3-4火、5-6土、7-8金、9-0水），为传统姓名学常用方法</p>
+            `;
+
+            // 五行属性
+            document.getElementById('wuxing-grid').innerHTML = Object.entries(wuxingCounts).map(([element, count]) => `
+                <div class="wuxing-item">
+                    <div class="wuxing-icon">${wuxingIcons[element]}</div>
+                    <div class="wuxing-name">${element}</div>
+                    <div class="wuxing-value">${count}</div>
+                </div>
+            `).join('');
+
+            // 五行平衡分析
+            const maxWx = Object.entries(wuxingCounts).sort((a,b) => b[1]-a[1])[0];
+            const minWx = Object.entries(wuxingCounts).sort((a,b) => a[1]-b[1])[0];
+            const wxKeys = ['金','木','水','火','土'];
+            
+            let baziDisplay = '';
+            let wxAdvice = '';
+            if (baziInfo) {
+                const rizhuWx = { '甲':'木', '乙':'木', '丙':'火', '丁':'火', '戊':'土', '己':'土', '庚':'金', '辛':'金', '壬':'水', '癸':'水' }[baziInfo.rizhuGan];
+                const baziWxCounts = { '金':0, '木':0, '水':0, '火':0, '土':0 };
+                baziInfo.wuxing.forEach(wx => baziWxCounts[wx]++);
+                
+                baziDisplay = `
+                    <div style="background:rgba(255,215,0,0.05);padding:12px;border-radius:10px;margin-bottom:12px;">
+                        <p style="font-weight:600;color:#FFD700;margin-bottom:8px;">📅 八字信息</p>
+                        <div style="display:flex;gap:8px;font-size:0.9rem;">
+                            <span style="background:rgba(255,255,255,0.1);padding:4px 8px;border-radius:6px;">年 ${baziInfo.year}</span>
+                            <span style="background:rgba(255,255,255,0.1);padding:4px 8px;border-radius:6px;">月 ${baziInfo.month}</span>
+                            <span style="background:rgba(255,255,255,0.1);padding:4px 8px;border-radius:6px;">日 ${baziInfo.day}</span>
+                            <span style="background:rgba(255,255,255,0.1);padding:4px 8px;border-radius:6px;">时 ${baziInfo.hour}</span>
+                        </div>
+                        <p style="margin-top:8px;color:var(--text-secondary);font-size:0.85rem;">
+                            <strong>日主：</strong>${baziInfo.rizhu}（${rizhuWx}${wuxingIcons[rizhuWx]}）
+                            <br>八字五行：金${baziWxCounts['金']} 木${baziWxCounts['木']} 水${baziWxCounts['水']} 火${baziWxCounts['火']} 土${baziWxCounts['土']}
+                        </p>
+                    </div>
+                `;
+                
+                const shengMap = { '木':'火', '火':'土', '土':'金', '金':'水', '水':'木' };
+                const keMap = { '木':'土', '土':'水', '水':'火', '火':'金', '金':'木' };
+                
+                const needSupplement = wxKeys.filter(k => baziWxCounts[k] === 0);
+                const needReduce = wxKeys.filter(k => baziWxCounts[k] >= 3);
+                
+                let adviceParts = [];
+                if (needSupplement.length > 0) {
+                    adviceParts.push(`${needSupplement.join('、')}偏弱，名字中宜补充`);
+                }
+                if (needReduce.length > 0) {
+                    adviceParts.push(`${needReduce.join('、')}偏旺，名字中宜调和`);
+                }
+                
+                const nameWx = nameWuxing.map(nw => nw.element);
+                const rizhuWxName = nameWx.includes(rizhuWx) ? '名字与日主五行相符，有助身强' : '名字与日主五行不同';
+                
+                wxAdvice = `<p style="margin-top:8px;color:var(--text-secondary);"><strong>五行建议：</strong>${adviceParts.length > 0 ? adviceParts.join('；') : '八字五行相对均衡'}。${rizhuWxName}。</p>`;
+            }
+            
+            document.getElementById('wuxing-desc').innerHTML = `
+                ${baziDisplay}
+                <p style="color:var(--text-secondary);"><strong>最强五行（姓名+八字）：</strong>${maxWx[0]}${wuxingIcons[maxWx[0]]}（权重${maxWx[1].toFixed(1)}）— ${maxWx[0]}主${maxWx[0]==='金'?'义':maxWx[0]==='木'?'仁':maxWx[0]==='水'?'智':maxWx[0]==='火'?'礼':'信'}，${maxWx[0]==='金'?'刚强果断':maxWx[0]==='木'?'仁慈温和':maxWx[0]==='水'?'聪慧灵动':maxWx[0]==='火'?'热情积极':'稳重踏实'}</p>
+                <p style="color:var(--text-secondary);"><strong>最弱五行（姓名+八字）：</strong>${minWx[0]}${wuxingIcons[minWx[0]]}（权重${minWx[1].toFixed(1)}）</p>
+                ${wxAdvice}
+                <p style="margin-top:6px;color:var(--text-muted);font-size:0.8rem;">注：姓名五行基于Unicode码点映射，八字五行权重1.5倍于姓名五行</p>
+            `;
+
+            // 音律分析
+            const yinlvData = name.split('').map(c => {
+                const py = getCharPinyin(c);
+                const toneName = { 'yīnpíng':'阴平(ˉ)', 'yángpíng':'阳平(ˊ)', 'shǎngshēng':'上声(ˇ)', 'qùshēng':'去声(ˋ)' };
+                const isPing = py.tone === 'yīnpíng' || py.tone === 'yángpíng';
+                return { char: c, pinyin: py.pinyin, tone: py.tone, toneLabel: toneName[py.tone] || py.tone, isPing };
+            });
+            const pingCount = yinlvData.filter(d => d.isPing).length;
+            const zeCount = yinlvData.length - pingCount;
+            const lastTone = yinlvData[yinlvData.length - 1].tone;
+            const lastIsOpen = ['a','o','e'].some(v => yinlvData[yinlvData.length - 1].pinyin.endsWith(v));
+            document.getElementById('yinlv-analysis').innerHTML = `
+                <div style="display:grid;gap:8px;">
+                    ${yinlvData.map(d => `<div class="meaning-box">
+                        <span class="char-highlight">${d.char}</span>
+                        <span style="color:var(--text-secondary);margin-left:8px;">${d.pinyin}</span>
+                        <span style="color:var(--text-muted);margin-left:6px;font-size:0.85rem;">${d.toneLabel}</span>
+                    </div>`).join('')}
+                </div>
+                <p style="margin-top:12px;color:var(--text-secondary);">
+                    <strong>平仄分布：</strong>平声${pingCount}字，仄声${zeCount}字。
+                    ${pingCount > 0 && zeCount > 0 ? '平仄相间，抑扬顿挫，听起来富有韵律感。' :
+                      pingCount === yinlvData.length ? '全为平声，音调平和流畅，但缺少起伏变化。' :
+                      '全为仄声，音调铿锵有力，但可能略显生硬。'}
+                </p>
+                <p style="margin-top:6px;color:var(--text-secondary);">
+                    <strong>尾音分析：</strong>以"${yinlvData[yinlvData.length-1].pinyin}"收尾，
+                    ${lastIsOpen ? '开口音结尾，声音响亮大气。' : '闭口音结尾，声音内敛含蓄。'}
+                    声调为${yinlvData[yinlvData.length-1].toneLabel}，${lastTone==='yīnpíng'?'收尾平稳':lastTone==='yángpíng'?'收尾上扬':lastTone==='shǎngshēng'?'收尾婉转':'收尾有力'}。
+                </p>
+                <p style="margin-top:4px;color:var(--text-muted);font-size:0.78rem;">注：拼音数据来源于常用汉字读音库，生僻字基于Unicode模拟生成</p>
+            `;
+
+            // 字形结构
+            const structData = name.split('').map(c => ({ char: c, structure: getCharStructure(c) }));
+            const structTypes = [...new Set(structData.map(d => d.structure))];
+            document.getElementById('structure-analysis').innerHTML = `
+                <div style="display:grid;gap:8px;">
+                    ${structData.map(d => `<div class="meaning-box">
+                        <span class="char-highlight">${d.char}</span>
+                        <span class="structure-tag">${d.structure}</span>
+                    </div>`).join('')}
+                </div>
+                <p style="margin-top:12px;color:var(--text-secondary);">
+                    <strong>结构多样性：</strong>包含${structTypes.length}种字形结构（${structTypes.join('、')}）。
+                    ${structTypes.length >= 2 ? '字形结构丰富多样，视觉上层次分明，书写美观。' : '字形结构统一，风格协调一致。'}
+                    ${structData.some(d => d.structure === '独体结构') ? '包含独体字，简洁有力。' : ''}
+                    ${structData.some(d => d.structure === '品字结构') ? '包含品字结构，形态稳重独特。' : ''}
+                </p>
+                <p style="margin-top:4px;color:var(--text-muted);font-size:0.78rem;">注：字形结构为汉字客观属性，基于实际汉字结构分类</p>
+            `;
+
+            // 字义寓意
+            const meaningData = name.split('').map(c => ({ char: c, ...getCharMeaning(c) }));
+            document.getElementById('meaning-analysis').innerHTML = `
+                ${meaningData.map(d => `<div class="meaning-box" style="margin-bottom:10px;">
+                    <span class="char-highlight">${d.char}</span>
+                    <span style="color:var(--text-secondary);margin-left:8px;">— ${d.meaning}</span>
+                    <p style="margin-top:4px;color:var(--text-muted);font-size:0.85rem;">${d.implication}</p>
+                </div>`).join('')}
+                <p style="margin-top:8px;color:var(--text-secondary);">
+                    <strong>综合评价：</strong>${meaningData.map(d => d.char).join('')}，
+                    ${meaningData.map(d => d.implication).join('；')}。整体而言，这个名字寓意
+                    ${meaningData.every(d => d.implication.includes('光明') || d.implication.includes('积极') || d.implication.includes('美好')) ? '积极向上、充满正能量。' : '丰富多元、内涵深刻。'}
+                </p>
+                <p style="margin-top:4px;color:var(--text-muted);font-size:0.78rem;">注：字义来源于常用汉字释义，为客观文字学知识</p>
+            `;
+
+            // 性格特质（基于人格数和主五行）
+            const renShuLi = getShuLiNumber(wuge.renGe);
+            const mainWx = maxWx[0];
+            const wxTraits = {
+                '金': { pos: ['刚毅果断', '意志坚定', '讲求原则', '执行力强'], neg: ['有时固执', '过于严肃'] },
+                '木': { pos: ['仁慈温和', '积极向上', '富有同情心', '成长力强'], neg: ['有时优柔寡断', '过于理想化'] },
+                '水': { pos: ['聪慧灵动', '适应力强', '足智多谋', '沟通力好'], neg: ['有时情绪化', '缺乏恒心'] },
+                '火': { pos: ['热情积极', '充满活力', '行动力强', '感染力强'], neg: ['有时急躁', '容易冲动'] },
+                '土': { pos: ['稳重踏实', '诚实守信', '包容大度', '责任感强'], neg: ['有时保守', '缺乏变通'] }
+            };
+            const wxTrait = wxTraits[mainWx] || wxTraits['土'];
+            document.getElementById('personality-analysis').innerHTML = `
+                <p style="color:var(--text-secondary);"><strong>人格数理暗示：</strong>${renShuLi.desc}</p>
+                <p style="color:var(--text-secondary);margin-top:8px;"><strong>主导五行特质（${mainWx}${wuxingIcons[mainWx]}）：</strong></p>
+                <div class="trait-tags">
+                    ${wxTrait.pos.map(t => `<span class="trait-tag">${t}</span>`).join('')}
+                    ${wxTrait.neg.map(t => `<span class="trait-tag warning">${t}</span>`).join('')}
+                </div>
+                <p style="margin-top:12px;color:var(--text-muted);font-size:0.85rem;">
+                    五格中吉数${wugeOrder.filter(k => getShuLiNumber(wuge[k]).jx==='ji').length}/5个 — 
+                    ${wugeOrder.filter(k => getShuLiNumber(wuge[k]).jx==='ji').length >= 3 ? '整体运势较为顺遂' : '需注意某些领域的挑战'}
+                </p>
+            `;
+
+            // 事业与感情
+            const zongShuLi = getShuLiNumber(wuge.zongGe);
+            const waiShuLi = getShuLiNumber(wuge.waiGe);
+            const careerFields = {
+                '金': ['金融管理', '工程技术', '法律行政', '精密制造', '数据分析'],
+                '木': ['教育培训', '文化创意', '医疗健康', '生态环保', '人力资源'],
+                '水': ['媒体传播', '贸易物流', '咨询服务', '旅游行业', '艺术设计'],
+                '火': ['市场营销', '科技创新', '演艺娱乐', '餐饮服务', '能源电力'],
+                '土': ['房地产', '建筑规划', '农业种植', '公共服务', '财务管理']
+            };
+            const fields = careerFields[mainWx] || careerFields['土'];
+            const nameHash2 = name.split('').reduce((h, c) => c.charCodeAt(0) + ((h << 5) - h), 0);
+            const pickedFields = [fields[Math.abs(nameHash2) % 5], fields[(Math.abs(nameHash2) + 2) % 5]];
+            document.getElementById('career-love-analysis').innerHTML = `
+                <div style="background:rgba(78,205,196,0.05);padding:16px;border-radius:12px;margin-bottom:12px;">
+                    <p style="font-weight:600;color:#4ECDC4;margin-bottom:8px;">💼 事业方向</p>
+                    <p style="color:var(--text-secondary);"><strong>总格数理暗示：</strong>${zongShuLi.desc}</p>
+                    <p style="color:var(--text-secondary);margin-top:6px;"><strong>五行适配领域（${mainWx}）：</strong>${pickedFields.join('、')}等</p>
+                </div>
+                <div style="background:rgba(255,107,107,0.05);padding:16px;border-radius:12px;">
+                    <p style="font-weight:600;color:#FF6B6B;margin-bottom:8px;">💕 感情特质</p>
+                    <p style="color:var(--text-secondary);"><strong>外格数理暗示：</strong>${waiShuLi.desc}</p>
+                    <p style="color:var(--text-secondary);margin-top:6px;">${gender === '男' ?
+                        (mainWx === '火' || mainWx === '金' ? '性格较为主动，在感情中倾向于主导和付出。' :
+                         mainWx === '水' || mainWx === '木' ? '情感细腻温和，善于体贴和关心伴侣。' :
+                         '稳重可靠，是值得信赖的伴侣类型。') :
+                        (mainWx === '水' || mainWx === '木' ? '温柔体贴，情感丰富，善解人意。' :
+                         mainWx === '火' || mainWx === '金' ? '热情大方，独立自主，在感情中不卑不亢。' :
+                         '踏实专一，是理想的终身伴侣类型。')
+                    }</p>
+                </div>
+                <p style="margin-top:8px;color:var(--text-muted);font-size:0.78rem;">注：事业和感情分析基于五格数理和五行属性推断，仅供娱乐参考</p>
+            `;
+
+            document.getElementById('page-intro').classList.remove('active');
+            document.getElementById('page-result').classList.add('active');
+        }
+
+        function restart() {
+            document.getElementById('page-result').classList.remove('active');
+            document.getElementById('page-intro').classList.add('active');
+            document.getElementById('name-input').value = '';
+            document.getElementById('birth-date').value = '';
+            document.querySelector('.gender-btn').click();
+        }
+
+        function shareTo(platform) {
+            const name = document.getElementById('name-input')?.value || '';
+            const url = encodeURIComponent('https://quweiceshi.com/namestat.html');
+            const shareTitle = encodeURIComponent(`✏️ 我的姓名是${name}，快来测试你的姓名运势吧！`);
+            
+            switch(platform) {
+                case 'wechat':
+                    showToast('请复制链接分享到微信');
+                    copyToClipboard('https://quweiceshi.com/namestat.html');
+                    break;
+                case 'weibo':
+                    window.open(`https://service.weibo.com/share/share.php?url=${url}&title=${shareTitle}`, '_blank');
+                    break;
+                case 'qq':
+                    window.open(`https://connect.qq.com/widget/shareqq/index.html?url=${url}&title=${shareTitle}`, '_blank');
+                    break;
+                case 'link':
+                    copyToClipboard('https://quweiceshi.com/namestat.html');
+                    showToast('链接已复制到剪贴板');
+                    break;
+            }
+        }
+
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    console.log('Copied to clipboard');
+                }).catch(function() {
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        }
+        function fallbackCopy(text) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch(e) {}
+            document.body.removeChild(ta);
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(toast);
+                }, 300);
+            }, 2000);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.getElementById('nav-toggle');
+            const navLinks = document.getElementById('nav-links');
+            navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+        });
+    </script>
+
+
+<footer class="site-footer" style="max-width:600px;margin:40px auto 0;padding:20px;text-align:center;border-top:1px solid rgba(255,255,255,0.1);">
+    <nav aria-label="网站导航" style="margin-bottom:16px;">
+        <a href="index.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">首页</a>
+        <a href="mbti.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">MBTI测试</a>
+        <a href="bazi.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">八字运势</a>
+        <a href="love.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">爱情匹配</a>
+        <a href="constellation.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">星座运势</a>
+        <a href="tarot.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">塔罗占卜</a>
+        <a href="zodiac.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">生肖运势</a>
+        <a href="dream.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">解梦</a>
+        <a href="namestat.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">姓名测试</a>
+        <a href="psychology.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">心理测试</a>
+        <a href="life/index.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">人生重开</a>
+    </nav>
+    <p style="color:rgba(255,255,255,0.3);font-size:0.75rem;">&copy; 2026 趣味测试 quweiceshi.com - 仅供娱乐参考</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>塔罗牌知识解读_大阿卡纳经典韦特含义 - 趣味测试</title>
+    <meta name="description" content="探索22张大阿卡纳塔罗牌的深层含义，了解正位与逆位解读，开启你的塔罗之旅。">
+    <meta name="keywords" content="塔罗牌,大阿卡纳,韦特塔罗,塔罗解读,塔罗占卜,趣味测试">
+    <meta property="og:title" content="塔罗牌知识解读_大阿卡纳经典韦特含义 - 趣味测试">
+    <meta property="og:description" content="探索22张大阿卡纳塔罗牌的深层含义，了解正位与逆位解读。">
+    <meta property="og:type" content="website">
+    <link rel="alternate" hreflang="zh-CN" href="">
+    <link rel="stylesheet" href="css/global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #0d0d2b 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(75, 0, 130, 0.12) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(25, 25, 112, 0.1) 0%, transparent 40%);
+            animation: bgFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes bgFloat {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(1deg); }
+            66% { transform: translate(-20px, 20px) rotate(-1deg); }
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.7), transparent),
+                radial-gradient(2px 2px at 130px 80px, rgba(255,255,255,0.5), transparent),
+                radial-gradient(1px 1px at 160px 120px, rgba(255,255,255,0.6), transparent);
+            background-size: 200px 200px;
+            animation: twinkle 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        main.container {
+            position: relative;
+            z-index: 5;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1.page-title {
+            font-family: 'Noto Serif SC', serif;
+            text-align: center;
+            font-size: 2.2rem;
+            color: #d4af37;
+            margin-bottom: 16px;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+
+        p.page-desc {
+            text-align: center;
+            color: #a0a0b8;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 36px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Spread Selection */
+        .spread-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .spread-card {
+            background: rgba(26, 26, 62, 0.8);
+            border: 1px solid rgba(138, 43, 226, 0.25);
+            border-radius: 14px;
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.35s ease;
+            text-align: center;
+        }
+
+        .spread-card:hover {
+            border-color: #d4af37;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+        }
+
+        .spread-card.selected {
+            border-color: #d4af37;
+            background: rgba(212, 175, 55, 0.08);
+            box-shadow: 0 0 24px rgba(212, 175, 55, 0.2);
+        }
+
+        .spread-card .spread-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .spread-card h3 {
+            font-family: 'Noto Serif SC', serif;
+            color: #e0d5c0;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .spread-card p {
+            color: #8888a0;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .btn-primary {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #a78bfa, #7c3aed);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(139, 92, 246, 0.4);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 10px 24px;
+            background: rgba(138, 43, 226, 0.2);
+            color: #c0b0e0;
+            border: 1px solid rgba(138, 43, 226, 0.4);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(138, 43, 226, 0.35);
+            color: #fff;
+        }
+
+        /* Draw Page */
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+            min-height: 260px;
+            align-items: center;
+        }
+
+        .tarot-card {
+            width: 140px;
+            height: 220px;
+            position: relative;
+            cursor: pointer;
+            perspective: 800px;
+        }
+
+        .tarot-card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .tarot-card-front,
+        .tarot-card-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease;
+            backface-visibility: hidden;
+        }
+
+        .tarot-card-front {
+            background: linear-gradient(145deg, #1a1a3e, #2d1f5e);
+            border: 2px solid rgba(138, 43, 226, 0.5);
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .tarot-card-front .card-back-icon {
+            font-size: 3.5rem;
+            filter: drop-shadow(0 0 12px rgba(138, 43, 226, 0.5));
+        }
+
+        .tarot-card-front .card-hint {
+            margin-top: 10px;
+            color: #8888a0;
+            font-size: 0.78rem;
+        }
+
+        .tarot-card-back {
+            background: linear-gradient(145deg, #1e1e42, #2a2058);
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            opacity: 0;
+            z-index: 1;
+            padding: 12px;
+        }
+
+        .tarot-card.revealed .tarot-card-front {
+            opacity: 0;
+        }
+
+        .tarot-card.revealed .tarot-card-back {
+            opacity: 1;
+        }
+
+        .tarot-card-back .card-icon-lg {
+            font-size: 2.8rem;
+            margin-bottom: 6px;
+        }
+
+        .tarot-card-back .card-name {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1rem;
+            color: #d4af37;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .tarot-card-back .card-numeral {
+            font-size: 0.75rem;
+            color: #8888a0;
+            margin-top: 2px;
+        }
+
+        .draw-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* Result Page */
+        .spread-info {
+            background: rgba(26, 26, 62, 0.7);
+            border: 1px solid rgba(138, 43, 226, 0.25);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 28px;
+            text-align: center;
+        }
+
+        .spread-info h3 {
+            font-family: 'Noto Serif SC', serif;
+            color: #d4af37;
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+        }
+
+        .spread-info p {
+            color: #9998b0;
+            font-size: 0.9rem;
+        }
+
+        .card-readings {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .card-reading-item {
+            background: rgba(26, 26, 62, 0.75);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            border-radius: 14px;
+            padding: 24px;
+            animation: slideUp 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reading-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        .reading-position {
+            background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .reading-card-name {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.15rem;
+            color: #e0d5c0;
+        }
+
+        .reading-card-icon {
+            font-size: 1.6rem;
+        }
+
+        .reading-meaning {
+            color: #c0c0d4;
+            line-height: 1.85;
+            font-size: 0.94rem;
+        }
+
+        .reading-meaning strong {
+            color: #d4af37;
+        }
+
+        .result-actions {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        /* Share Section */
+        .share-section {
+            text-align: center;
+            padding: 24px;
+            background: rgba(26, 26, 62, 0.5);
+            border-radius: 12px;
+            border: 1px solid rgba(138, 43, 226, 0.15);
+        }
+
+        .share-section h4 {
+            color: #c0b0e0;
+            font-size: 1rem;
+            margin-bottom: 14px;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            padding: 8px 18px;
+            border-radius: 8px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            background: rgba(138, 43, 226, 0.15);
+            color: #c0b0e0;
+            cursor: pointer;
+            font-size: 0.88rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .share-btn:hover {
+            background: rgba(138, 43, 226, 0.3);
+            color: #fff;
+            border-color: #8b5cf6;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(80px);
+            background: rgba(45, 35, 80, 0.95);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-size: 0.92rem;
+            z-index: 1000;
+            opacity: 0;
+            transition: all 0.35s ease;
+            border: 1px solid rgba(138, 43, 226, 0.4);
+            backdrop-filter: blur(8px);
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            h1.page-title { font-size: 1.7rem; }
+            .tarot-card { width: 115px; height: 180px; }
+            .tarot-card-front .card-back-icon { font-size: 2.8rem; }
+            .tarot-card-back .card-icon-lg { font-size: 2.2rem; }
+            main.container { padding: 24px 16px 48px; }
+            .spread-options { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            h1.page-title { font-size: 1.4rem; }
+            .tarot-card { width: 100px; height: 158px; }
+            .tarot-card-front .card-back-icon { font-size: 2.4rem; }
+            .tarot-card-back .card-icon-lg { font-size: 1.9rem; }
+            .tarot-card-back .card-name { font-size: 0.88rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"><div class="stars"></div></div>
+
+    <header class="nav-header">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-icon">🎲</span>
+                <span>趣味测试</span>
+            </a>
+            <nav>
+                <button class="nav-toggle" id="nav-toggle">☰</button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="life/index.html">人生重开</a></li>
+                    <li><a href="mbti.html">MBTI测试</a></li>
+                    <li><a href="bazi.html">八字运势</a></li>
+                    <li><a href="love.html">爱情匹配</a></li>
+                    <li><a href="constellation.html">星座运势</a></li>
+                    <li><a href="tarot.html" class="active">塔罗占卜</a></li>
+                    <li><a href="zodiac.html">生肖运势</a></li>
+                    <li><a href="dream.html">解梦</a></li>
+                    <li><a href="namestat.html">姓名测试</a></li>
+                    <li><a href="psychology.html">心理测试</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Page 1: Introduction -->
+        <div id="page-intro" class="page active">
+            <h1 class="page-title">塔罗牌占卜</h1>
+            <p class="page-desc">塔罗牌是一套蕴含古老智慧的象征性卡牌系统。大阿卡纳（Major Arcana）由22张牌组成，每张牌都承载着深刻的生命课题与精神启示。选择一个牌阵，让塔罗为你揭示内心的指引。</p>
+
+            <div class="spread-options">
+                <div class="spread-card selected" onclick="selectSpread('three-card')" id="spread-three-card">
+                    <div class="spread-icon">🎴</div>
+                    <h3>三张牌阵</h3>
+                    <p>过去、现在、未来 — 最经典的牌阵，适合探索问题的全貌与发展趋势。</p>
+                </div>
+                <div class="spread-card" onclick="selectSpread('celtic-cross')" id="spread-celtic-cross">
+                    <div class="spread-icon">✝️</div>
+                    <h3>凯尔特十字</h3>
+                    <p>全面深入的十张牌阵，从多个角度剖析复杂问题。</p>
+                </div>
+                <div class="spread-card" onclick="selectSpread('single-card')" id="spread-single-card">
+                    <div class="spread-icon">🃏</div>
+                    <h3>单张指引</h3>
+                    <p>抽取一张牌作为今日灵感或简单问题的直接指引。</p>
+                </div>
+            </div>
+
+            <button class="btn-primary" onclick="startDraw()">开始抽牌</button>
+        </div>
+
+        <!-- Page 2: Drawing -->
+        <div id="page-draw" class="page">
+            <h1 class="page-title">抽选你的塔罗牌</h1>
+            <p class="page-desc">点击每张牌来翻开它，感受内心的直觉引导。</p>
+
+            <div class="cards-container" id="cards-container"></div>
+
+            <div class="draw-actions">
+                <button class="btn-secondary" onclick="reshuffleCards()">重新洗牌</button>
+                <button class="btn-primary" style="width:auto;" onclick="showReading()">查看解读</button>
+            </div>
+        </div>
+
+        <!-- Page 3: Result -->
+        <div id="page-result" class="page">
+            <h1 class="page-title">塔罗牌解读</h1>
+
+            <div class="spread-info" id="spread-info"></div>
+
+            <div class="card-readings" id="card-readings"></div>
+
+            <div class="result-actions">
+                <button class="btn-secondary" onclick="restart()">重新开始</button>
+            </div>
+
+            <div class="share-section">
+                <h4>分享你的塔罗结果</h4>
+                <div class="share-buttons">
+                    <button class="share-btn" onclick="shareTo('wechat')">微信</button>
+                    <button class="share-btn" onclick="shareTo('weibo')">微博</button>
+                    <button class="share-btn" onclick="shareTo('qq')">QQ</button>
+                    <button class="share-btn" onclick="copyToClipboard(getShareText())">复制链接</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // 22张大阿卡纳塔罗牌数据
+        const majorArcana = [
+            { romanNumeral: '0', name: '愚人', icon: '🃏', meaning: '新的开始、自由精神、冒险、纯真、信任直觉。代表踏上充满信心的心路历程，勇于探索未知，不受传统束缚。', reversedMeaning: '轻率、冒失、不考虑后果、流于表面、缺乏责任感。可能因过于冲动而招致挫折，需谨慎行事。' },
+            { romanNumeral: 'I', name: '魔术师', icon: '🎩', meaning: '创造力、技能、自信、明智、把握机会。代表你有足够的能力去实现目标，只要你愿意行动。', reversedMeaning: '欺骗、欺诈自己、滥用技能、缺乏自信、错过机会。警惕不要被虚假的外表所迷惑。' },
+            { romanNumeral: 'II', name: '女祭司', icon: '👑', meaning: '直观、内在智慧、神秘、潜意识、耐心等待。暗示需要倾听内心的声音，信任直觉而不是理性分析。', reversedMeaning: '忽视直觉、过度理性、秘密被揭露、内心矛盾。可能有些事情被隐瞒，需要更多的自我反思。' },
+            { romanNumeral: 'III', name: '女皇', icon: '👸', meaning: '丰盛、温柔、感性、创造力、母性光辉。代表物质与精神的丰盛，舒适的环境和人际关系，创造力充满。', reversedMeaning: '依赖性过强、情感溢出、创造力受阻、家庭问题。警告不要过度依赖外界，养成独立人格。' },
+            { romanNumeral: 'IV', name: '皇帝', icon: '🤴', meaning: '权威、稳定、结构、控制、父性原则。代表社会制度与规则的建立，通过程序和结构获得成功。', reversedMeaning: '专制、僵化、滥用权力、抗拒变化、父权主义。警告不要过度控制他人，学会放手和信任。' },
+            { romanNumeral: 'V', name: '教皇', icon: '⛪', meaning: '传统、信仰、精神引导、契约、社会认可。代表精神上的指引，通过传统和信仰获得内心平静。', reversedMeaning: '反叛、为了传统而传统、精神上的困惑、假善、规则滥用。警告不要盲目跟随权威，保持独立思考。' },
+            { romanNumeral: 'VI', name: '恋人', icon: '💑', meaning: '选择、和谐、爱情、价值观、联结。代表面临重要选择，需要均衡理性与感情，往往与人际关系有关。', reversedMeaning: '错误的选择、内心矛盾、不和谐、分离、价值观混乱。需要重新评估当前的决定和关系。' },
+            { romanNumeral: 'VII', name: '战车', icon: '⚔️', meaning: '意志力、胜利、控制、决心、前进。代表通过坚定的意志和自我控制取得成功，勇往直前，不受外界干扰。', reversedMeaning: '失控、方向错误、抑制、失败、内心冲突。警告不要过度强迫自己，需要更多的耐心和内在平衡。' },
+            { romanNumeral: 'VIII', name: '力量', icon: '🦁', meaning: '勇气、耐心、内在力量、忍耐、慈悲。代表真正的力量来自内心的平静和忍耐，而不是外在的强力。', reversedMeaning: '自我弱点、容易放弃、缺乏自信、内心弱、被压制。需要重新找回内在的力量，培养自尊。' },
+            { romanNumeral: 'IX', name: '隐者', icon: '🏔️', meaning: '孤独、内省、智慧、寻找真理、精神成长。代表需要暂时远离世俗，在孤独中找到真正的自我。', reversedMeaning: '孤立、接连不断、拒绝帮助、过度思考、与社会脱节。警告不要过度隔离自己，适当敞开心扉。' },
+            { romanNumeral: 'X', name: '命运之轮', icon: '🎡', meaning: '转折点、命运、变化、新的开始、循环。代表生活中的重要转折点，旧的结束带来新的开始。', reversedMeaning: '抗拒变化、命运不幸、失去控制、不幸的偶然、倾向于负面。需要接受变化，相信一切都有其意义。' },
+            { romanNumeral: 'XI', name: '正义', icon: '⚖️', meaning: '公正、真相、责任、平衡、因果报应。代表需要公正地对待每件事，承担自己的责任，做出明智的判断。', reversedMeaning: '不公、偏见、视而不见真相、逃避责任、不平衡。警告不要被个人感情所蒙蔽，尽量公正。' },
+            { romanNumeral: 'XII', name: '吊人', icon: '🙃', meaning: '牺牲、等待、新的视角、精神视角、投入。代表需要暂时放下防备，从不同的角度看问题，精神上的成长。', reversedMeaning: '无意义的牺牲、固执、抵制变化、执拗、境遇恶化。需要学会接受不完美，找到内在的平静。' },
+            { romanNumeral: 'XIII', name: '死神', icon: '💀', meaning: '结束、转变、重生、放下、新生。代表一个阶段的结束和另一个阶段的开始，放下过去，迎接新生。', reversedMeaning: '抗拒结束、对变化的恐惧、执着、停滞不前、旧模式难以打破。需要勇敢地放下过去，接受新的可能性。' },
+            { romanNumeral: 'XIV', name: '节制', icon: '🌊', meaning: '平衡、中和、调和、耐心、自我控制。代表在极端之间找到平衡点，通过调和与节制获得内在的和谐。', reversedMeaning: '失衡、极端、流于感情、缺乏自我控制、过度或不足。需要重新找回生活中的平衡。' },
+            { romanNumeral: 'XV', name: '恶魔', icon: '😈', meaning: '诱惑、物质、欲望、束缚、内欲。代表需要面对内心深处的欲望和束缚，识别并超越这些限制。', reversedMeaning: '打破束缚、摆脱诱惑、释放、觉醒、重获自由。代表正在摆脱负面影响，释放内心的束缚。' },
+            { romanNumeral: 'XVI', name: '高塔', icon: '⚡', meaning: '突变、崩塌、觉醒、重建、破坏性事件。代表突然的变化将打破现有的结构，这是一个觉醒和重建的机会。', reversedMeaning: '抗拒变化、命运不可挽回、不可避免的事、内在崩溃、恐惧改变。需要接受现实，认识到有些事情的终局是不可避免的。' },
+            { romanNumeral: 'XVII', name: '星星', icon: '⭐', meaning: '希望、灵感、宁静、治愈、信心。代表黑暗后的光明，带来希望和心灵疗愈，保持对未来的乐观态度。', reversedMeaning: '失望、缺乏信心、绝望、信心丧失、与希望脱节。即使在最困难的时刻也不要放弃希望。' },
+            { romanNumeral: 'XVIII', name: '月亮', icon: '🌙', meaning: '幻觉、潜意识、不安、直觉、情绪波动。代表潜意识的波动和不确定性，需要倾听内心的声音并保持清醒。', reversedMeaning: '释放恐惧、清晰、克服幻觉、平复情绪、内心平静。直面内心的恐惧，将其转化为成长的力量。' },
+            { romanNumeral: 'XIX', name: '太阳', icon: '☀️', meaning: '成功、活力、快乐、积极、成就。代表一切顺利，充满正能量，享受成功和快乐的时光。', reversedMeaning: '暂时挫折、过度乐观导致失望、成功延迟、孩子气的问题。保持积极但也要脚踏实地。' },
+            { romanNumeral: 'XX', name: '审判', icon: '📯', meaning: '复活、决定、召唤、重生、觉醒。代表重要的决定或召唤，迎来精神上的觉醒和重生。', reversedMeaning: '自我怀疑、害怕决定、优柔寡断、拒绝召唤、迟疑不决。听从内心的呼唤，做出重要的选择。' },
+            { romanNumeral: 'XXI', name: '世界', icon: '🌍', meaning: '完成、整合、成就、满足、圆满。代表一个周期的圆满完成，达成目标，获得满足感和成就感。', reversedMeaning: '未完成的工作、缺少收尾、延迟奖励、目标未达、感到不完整。努力完成手头的工作，迈向最终的圆满。' }
+        ];
+
+        let selectedSpread = 'three-card';
+        let drawnCards = [];
+        let revealedCount = 0;
+
+        const spreadConfig = {
+            'three-card': { name: '三张牌阵', positions: ['过去', '现在', '未来'], count: 3 },
+            'celtic-cross': { name: '凯尔特十字', positions: ['核心问题', '影响因素', '意识层面', '潜意识层', '过去基础', '近期未来', '自身态度', '外部环境', '内心期望', '最终结果'], count: 10 },
+            'single-card': { name: '单张指引', positions: ['今日指引'], count: 1 }
+        };
+
+        function selectSpread(type) {
+            selectedSpread = type;
+            document.querySelectorAll('.spread-card').forEach(function(card) {
+                card.classList.remove('selected');
+            });
+            document.getElementById('spread-' + type).classList.add('selected');
+        }
+
+        function startDraw() {
+            drawnCards = [];
+            revealedCount = 0;
+            drawCards();
+            switchPage('page-draw');
+        }
+
+        function shuffleArray(array) {
+            var shuffled = array.slice();
+            for (var i = shuffled.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = shuffled[i];
+                shuffled[i] = shuffled[j];
+                shuffled[j] = temp;
+            }
+            return shuffled;
+        }
+
+        function drawCards() {
+            var config = spreadConfig[selectedSpread];
+            var shuffled = shuffleArray(majorArcana);
+            drawnCards = shuffled.slice(0, config.count);
+            renderCards();
+        }
+
+        function reshuffleCards() {
+            revealedCount = 0;
+            drawCards();
+            showToast('已重新洗牌');
+        }
+
+        function renderCards() {
+            var container = document.getElementById('cards-container');
+            var html = '';
+            for (var i = 0; i < drawnCards.length; i++) {
+                html += '<div class="tarot-card" id="card-' + i + '" onclick="revealCard(' + i + ')">';
+                html += '<div class="tarot-card-inner">';
+                html += '<div class="tarot-card-front">';
+                html += '<span class="card-back-icon">&#x1F52E;</span>';
+                html += '<span class="card-hint">点击翻开</span>';
+                html += '</div>';
+                html += '<div class="tarot-card-back">';
+                html += '<span class="card-icon-lg">' + drawnCards[i].icon + '</span>';
+                html += '<div class="card-name">' + drawnCards[i].name + '</div>';
+                html += '<div class="card-numeral">' + drawnCards[i].romanNumeral + '</div>';
+                html += '</div>';
+                html += '</div>';
+                html += '</div>';
+            }
+            container.innerHTML = html;
+        }
+
+        function revealCard(index) {
+            var cardEl = document.getElementById('card-' + index);
+            if (cardEl && !cardEl.classList.contains('revealed')) {
+                cardEl.classList.add('revealed');
+                revealedCount++;
+            }
+        }
+
+        function showReading() {
+            for (var i = 0; i < drawnCards.length; i++) {
+                revealCard(i);
+            }
+            setTimeout(function() {
+                renderSpreadInfo();
+                renderCardReadings();
+                switchPage('page-result');
+            }, 600);
+        }
+
+        function renderSpreadInfo() {
+            var config = spreadConfig[selectedSpread];
+            var infoEl = document.getElementById('spread-info');
+            infoEl.innerHTML = '<h3>' + config.name + '</h3><p>共抽取 ' + config.count + ' 张牌</p>';
+        }
+
+        function renderCardReadings() {
+            var container = document.getElementById('card-readings');
+            var config = spreadConfig[selectedSpread];
+            var isReversed;
+            var html = '';
+            for (var i = 0; i < drawnCards.length; i++) {
+                isReversed = Math.random() > 0.65;
+                html += '<div class="card-reading-item" style="animation-delay:' + (i * 0.12) + 's">';
+                html += '<div class="reading-header">';
+                html += '<span class="reading-position">' + config.positions[i] + '</span>';
+                html += '<span class="reading-card-icon">' + drawnCards[i].icon + '</span>';
+                html += '<span class="reading-card-name">' + drawnCards[i].name;
+                if (isReversed) { html += '（逆位）'; }
+                html += '</span>';
+                html += '</div>';
+                html += '<div class="reading-meaning">';
+                html += '<strong>正位：</strong>' + drawnCards[i].meaning + '<br><br>';
+                html += '<strong>逆位：</strong>' + drawnCards[i].reversedMeaning;
+                html += '</div>';
+                html += '</div>';
+            }
+            container.innerHTML = html;
+        }
+
+        function switchPage(pageId) {
+            document.querySelectorAll('.page').forEach(function(p) {
+                p.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function restart() {
+            selectedSpread = 'three-card';
+            drawnCards = [];
+            revealedCount = 0;
+            document.querySelectorAll('.spread-card').forEach(function(card) {
+                card.classList.remove('selected');
+            });
+            document.getElementById('spread-three-card').classList.add('selected');
+            switchPage('page-intro');
+        }
+
+        function shareTo(platform) {
+            var text = getShareText();
+            var url = window.location.href;
+            var shareUrl = '';
+            if (platform === 'weibo') {
+                shareUrl = 'https://service.weibo.com/share/share.php?url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(text);
+            } else if (platform === 'qq') {
+                shareUrl = 'https://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(text);
+            } else if (platform === 'wechat') {
+                copyToClipboard(text);
+                showToast('已复制到剪贴板，请粘贴到微信中分享');
+                return;
+            }
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=480');
+            }
+        }
+
+        function getShareText() {
+            var config = spreadConfig[selectedSpread];
+            var names = drawnCards.map(function(c) { return c.name; }).join('、');
+            return '我在【趣味测试】进行了塔罗牌占卜（' + config.name + '），抽到了：' + names + '。快来试试吧！';
+        }
+
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showToast('已复制到剪贴板');
+                }).catch(function() {
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        }
+
+        function fallbackCopy(text) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try {
+                document.execCommand('copy');
+                showToast('已复制到剪贴板');
+            } catch (e) {
+                showToast('复制失败，请手动复制');
+            }
+            document.body.removeChild(ta);
+        }
+
+        function showToast(msg) {
+            var toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(function() {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('nav-toggle');
+            const navLinks = document.getElementById('nav-links');
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?edc404e2ae130a4255dabf98a08172ee";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

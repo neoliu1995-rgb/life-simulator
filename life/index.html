@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI人生重开模拟器_随机天赋_100+种结局 - 趣味测试</title>
+    <meta name="description" content="人生重开模拟器 - 随机天赋属性分配，体验不同人生轨迹，探索人生无限可能">
+    <meta name="keywords" content="人生重开模拟器,人生模拟器,人生游戏,随机天赋,人生轨迹">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://quweiceshi.com/life/index.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://quweiceshi.com/life/index.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://quweiceshi.com/life/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://quweiceshi.com/life/index.html">
+    
+    <meta property="og:title" content="AI人生重开模拟器 - 趣味测试">
+    <meta property="og:description" content="人生重开模拟器 - 随机天赋属性分配，体验不同人生轨迹，探索人生无限可能">
+    <meta property="og:url" content="https://quweiceshi.com/life/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="趣味测试">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:image" content="https://quweiceshi.com/images/og-life.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="人生重开模拟器 - 趣味测试">
+    
+    <link rel="preconnect" href="https://fonts.loli.net">
+    <link rel="preconnect" href="https://gstatic.loli.net" crossorigin>
+    <link rel="dns-prefetch" href="https://api.qrserver.com">
+    <link rel="dns-prefetch" href="https://hm.baidu.com">
+    <link href="https://fonts.loli.net/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/global.css">
+    <script src="../js/storage.js" defer></script>
+    
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?edc404e2ae130a4255dabf98a08172ee";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    
+    <style>
+        .game-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .start-screen {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .start-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .start-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .start-desc {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .attributes-section {
+            margin-bottom: 32px;
+        }
+
+        .attributes-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .attributes-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .points-left {
+            color: #4ECDC4;
+            font-weight: 600;
+        }
+
+        .slider-attributes {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .slider-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .slider-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .slider-icon {
+            font-size: 1.25rem;
+            margin-right: 8px;
+        }
+
+        .slider-name {
+            flex: 1;
+            font-weight: 600;
+        }
+
+        .slider-value {
+            background: linear-gradient(135deg, #4ECDC4, #45B7D1);
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .attr-slider {
+            width: 100%;
+            height: 8px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .attr-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #4ECDC4, #45B7D1);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .attr-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        .attr-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #4ECDC4, #45B7D1);
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .attributes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .attr-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .attr-item:hover {
+            border-color: var(--border-hover);
+        }
+
+        .attr-icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .attr-name {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .attr-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .attr-controls {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .attr-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .attr-btn:hover {
+            background: rgba(78, 205, 196, 0.3);
+        }
+
+        .attr-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .talents-section {
+            margin-bottom: 32px;
+        }
+
+        .talents-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .talents-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .talent-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .talent-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--border-hover);
+        }
+
+        .talent-card.selected {
+            border-color: #4ECDC4;
+            background: rgba(78, 205, 196, 0.1);
+        }
+
+        .talent-card.locked {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .talent-rarity {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 8px;
+        }
+
+        .rarity-common { background: rgba(100, 100, 100, 0.3); color: #AAA; }
+        .rarity-rare { background: rgba(59, 130, 246, 0.3); color: #60A5FA; }
+        .rarity-epic { background: rgba(168, 85, 247, 0.3); color: #A78BFA; }
+        .rarity-legendary { background: rgba(251, 191, 36, 0.3); color: #FBBF24; }
+
+        .talent-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .talent-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .talent-effect {
+            font-size: 0.8rem;
+            color: #4ECDC4;
+            margin-top: 8px;
+        }
+
+        .game-screen {
+            padding: 20px;
+        }
+
+        .game-stats {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            padding: 12px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-icon {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .stat-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4ECDC4;
+        }
+
+        .stat-label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .age-badge {
+            background: var(--primary-gradient);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .btn-fast-forward {
+            padding: 8px 16px;
+            background: rgba(78, 205, 196, 0.2);
+            border: 1px solid #4ECDC4;
+            border-radius: 8px;
+            color: #4ECDC4;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-fast-forward:hover {
+            background: rgba(78, 205, 196, 0.3);
+            transform: scale(1.05);
+        }
+
+        .game-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .timeline {
+            padding: 16px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid var(--border-color);
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            padding: 4px 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .timeline-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4ECDC4;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+
+        .timeline-dot.past {
+            background: var(--text-muted);
+        }
+
+        .timeline-dot.current {
+            box-shadow: 0 0 10px #4ECDC4;
+        }
+
+        .event-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 32px;
+            margin-bottom: 20px;
+            animation: fadeIn 0.5s ease-out;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .event-age {
+            font-size: 0.9rem;
+            color: #4ECDC4;
+            font-weight: 600;
+            margin-bottom: 16px;
+            padding: 6px 14px;
+            background: rgba(78, 205, 196, 0.15);
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .event-content {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        .event-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-btn {
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .option-btn:hover {
+            border-color: #4ECDC4;
+            background: rgba(78, 205, 196, 0.1);
+        }
+
+        .result-screen {
+            padding: 20px;
+        }
+
+        .result-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .result-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .result-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .result-score {
+            font-size: 4rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .summary-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .summary-title {
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #4ECDC4;
+        }
+
+        .summary-text {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .story-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .story-title {
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #4ECDC4;
+        }
+
+        .story-phases {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            overflow-x: auto;
+        }
+
+        .phase-tag {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+
+        .story-content {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .achievements-section {
+            margin-bottom: 24px;
+        }
+
+        .achievements-title {
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .achievement-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .achievement-icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .achievement-name {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .attribute-bars {
+            margin-bottom: 24px;
+        }
+
+        .attribute-bar-item {
+            margin-bottom: 12px;
+        }
+
+        .attribute-bar-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+
+        .attribute-bar-name {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .attribute-bar-fill {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .attribute-bar-fill div {
+            height: 100%;
+            background: var(--primary-gradient);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .history-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .history-title {
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #4ECDC4;
+        }
+
+        .history-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .history-item {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 12px;
+            transition: background 0.3s ease;
+        }
+
+        .history-item:last-child {
+            border-bottom: none;
+        }
+
+        .history-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .history-age {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            min-width: 40px;
+        }
+
+        .history-event {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .history-event.positive { color: #4ECDC4; }
+        .history-event.negative { color: #FF6B6B; }
+
+        @media (max-width: 768px) {
+            .age-badge {
+                top: 75px;
+                right: 15px;
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+            .start-screen { padding: 30px 16px; }
+            .start-icon { font-size: 3rem; }
+            .start-title { font-size: 1.6rem; margin-bottom: 12px; }
+            .start-desc { font-size: 0.92rem; margin-bottom: 24px; }
+            .slider-item { padding: 14px; }
+            .talents-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .talent-card { padding: 14px; border-radius: 12px; }
+            .game-stats {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 4px;
+                padding: 8px 12px;
+            }
+            .stat-value { font-size: 0.8rem; }
+            .stat-label { font-size: 0.6rem; }
+            .stat-icon { font-size: 0.85rem; }
+            .game-header { padding: 10px 14px; }
+            .timeline { padding: 12px 14px; max-height: 120px; }
+            .event-card { padding: 24px 18px; border-radius: 18px; }
+            .event-content { font-size: 1.1rem; }
+            .option-btn { padding: 12px 16px; font-size: 0.9rem; }
+            .result-screen { padding: 16px; }
+            .result-title { font-size: 1.6rem; }
+            .result-score { font-size: 3rem; }
+            .result-header { margin-bottom: 24px; }
+            .stats-grid { gap: 10px; }
+            .stat-card { padding: 14px; }
+            .summary-section, .story-section,
+            .history-section { padding: 16px; border-radius: 14px; }
+            .achievements-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+            .achievement-item { padding: 12px 8px; }
+            .btn-fast-forward { padding: 6px 12px; font-size: 0.8rem; }
+        }
+
+        @media (max-width: 480px) {
+            .start-screen { padding: 24px 14px; }
+            .start-icon { font-size: 2.5rem; margin-bottom: 16px; }
+            .start-title { font-size: 1.35rem; }
+            .start-desc { font-size: 0.88rem; }
+            /* 5列属性栏：超小屏缩小字体和间距 */
+            .game-stats {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 2px;
+                padding: 6px 8px;
+            }
+            .stat-icon { font-size: 0.75rem; margin-bottom: 2px; }
+            .stat-value { font-size: 0.72rem; }
+            .stat-label { font-size: 0.55rem; }
+            .game-header { padding: 8px 10px; }
+            .age-badge { padding: 4px 10px; font-size: 0.78rem; }
+            .btn-fast-forward { padding: 5px 10px; font-size: 0.75rem; }
+            .timeline { padding: 10px; max-height: 100px; }
+            .timeline-item { font-size: 0.78rem; }
+            .event-card { padding: 18px 14px; border-radius: 16px; margin-bottom: 16px; }
+            .event-age { font-size: 0.82rem; padding: 4px 10px; }
+            .event-content { font-size: 1rem; margin-bottom: 18px; }
+            .option-btn { padding: 11px 14px; font-size: 0.85rem; border-radius: 10px; }
+            .result-screen { padding: 14px 10px; }
+            .result-title { font-size: 1.35rem; }
+            .result-subtitle { font-size: 0.85rem; }
+            .result-score { font-size: 2.5rem; }
+            .result-header { margin-bottom: 20px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .stat-card { padding: 12px 8px; border-radius: 12px; }
+            .stat-label { font-size: 0.78rem; }
+            .stat-value { font-size: 1.2rem; }
+            .summary-section, .story-section,
+            .history-section { padding: 14px; border-radius: 12px; margin-bottom: 16px; }
+            .summary-title, .story-title, .history-title { font-size: 0.9rem; margin-bottom: 10px; }
+            .story-content { font-size: 0.85rem; }
+            .phase-tag { padding: 4px 10px; font-size: 0.72rem; }
+            .attribute-bar-header { font-size: 0.82rem; }
+            .achievements-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+            .achievement-item { padding: 10px 6px; border-radius: 10px; }
+            .achievement-icon { font-size: 1.2rem; }
+            .achievement-name { font-size: 0.7rem; }
+            .history-item { padding: 10px 8px; }
+            .history-age { font-size: 0.78rem; min-width: 32px; }
+            .history-event { font-size: 0.82rem; }
+            .attributes-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .attr-item { padding: 12px; border-radius: 12px; }
+            .attr-value { font-size: 1.3rem; }
+            .attr-controls { gap: 8px; }
+            .attr-btn { width: 32px; height: 32px; font-size: 1rem; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "人生重开模拟器",
+      "description": "人生重开模拟器 - 随机天赋属性分配，体验不同人生轨迹，探索人生无限可能",
+      "url": "https://quweiceshi.com/life/index.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "趣味测试",
+        "url": "https://quweiceshi.com"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://quweiceshi.com"},
+    {"@type": "ListItem", "position": 2, "name": "人生重开", "item": "https://quweiceshi.com/life/index.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "人生重开模拟器怎么玩？", "acceptedAnswer": {"@type": "Answer", "text": "人生重开模拟器的玩法很简单：首先分配你的初始属性点（颜值、智力、体质、家境、运气），然后选择最多3个天赋，点击开始人生即可。游戏会自动生成你从出生到老去的人生经历，期间会遇到各种选择事件，你的选择会影响人生走向。"}},
+    {"@type": "Question", "name": "人生重开有多少种结局？", "acceptedAnswer": {"@type": "Answer", "text": "人生重开模拟器拥有100+种不同的结局，包括人生赢家、创业大亨、科技先锋、艺术大师、幸福人生等多种结局类型。结局取决于你的初始属性、天赋选择和游戏中的决策，每次重开都可能获得不同的人生结局。"}},
+    {"@type": "Question", "name": "天赋怎么选最好？", "acceptedAnswer": {"@type": "Answer", "text": "天赋选择建议：1.优先选择稀有和传说级天赋，效果更强；2.注意天赋之间的搭配，形成属性互补；3.避免选择过多负面天赋，会影响人生质量；4.根据你想要的人生方向选择天赋，比如追求财富就选家境富裕，追求智力就选旷世奇才。"}},
+    {"@type": "Question", "name": "属性点怎么分配？", "acceptedAnswer": {"@type": "Answer", "text": "属性点分配建议：1.均衡分配可以体验较为平稳的人生；2.集中投资某一属性可以获得特定方向的精彩人生；3.运气属性影响遇到好事的概率，建议适当投入；4.体质影响寿命，太低可能导致早逝；5.家境影响前期发展，智力影响学业和事业，颜值影响社交和婚姻。"}},
+    {"@type": "Question", "name": "人生重开模拟器有攻略吗？", "acceptedAnswer": {"@type": "Answer", "text": "人生重开模拟器的攻略技巧：1.初始属性建议运气不低于5，体质不低于4；2.选择天赋时优先考虑幸运之子、天生丽质等通用型天赋；3.遇到选择事件时，考虑对长远发展的影响；4.多尝试不同的属性和天赋组合，体验多样化人生；5.注意健康属性的变化，及时做出有利于健康的选择。"}}
+  ]
+}
+</script>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="bg-gradient"></div>
+        <div class="bg-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+    </div>
+
+    <header class="nav-header">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="nav-logo-icon">🎲</span>
+                <span>趣味测试</span>
+            </a>
+            <nav>
+                <button class="nav-toggle" id="nav-toggle">☰</button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../life/index.html" class="active">人生重开</a></li>
+                    <li><a href="../mbti.html">MBTI测试</a></li>
+                    <li><a href="../bazi.html">八字运势</a></li>
+                    <li><a href="../love.html">爱情匹配</a></li>
+                    <li><a href="../constellation.html">星座运势</a></li>
+                    <li><a href="../tarot.html">塔罗占卜</a></li>
+                    <li><a href="../zodiac.html">生肖运势</a></li>
+                    <li><a href="../dream.html">解梦</a></li>
+                    <li><a href="../namestat.html">姓名测试</a></li>
+                    <li><a href="../psychology.html">心理测试</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="game-container">
+            <div id="page-start" class="page active">
+                <div class="card start-screen">
+                    <div class="start-icon">🎭</div>
+                    <h1 class="start-title">AI人生重开</h1>
+                    <p class="start-desc">分配你的属性点，选择天赋，开启一段全新的人生旅程！</p>
+
+                    <div class="attributes-section">
+                        <div class="attributes-header">
+                            <span class="attributes-title">分配属性</span>
+                            <span class="points-left">剩余点数: <span id="points-left">20</span></span>
+                        </div>
+                        <div class="slider-attributes" id="slider-attributes"></div>
+                    </div>
+
+                    <div class="talents-section">
+                        <div class="talents-header">
+                            <span class="talents-title">选择天赋（选3个）</span>
+                            <span class="points-left">已选: <span id="talents-selected">0</span>/3</span>
+                        </div>
+                        <div class="talents-grid" id="talents-grid"></div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block" id="start-game-btn">开始人生</button>
+                    <button class="btn btn-secondary btn-block" onclick="resetGame();">重置属性</button>
+                </div>
+            </div>
+
+            <div id="page-game" class="page">
+                <div class="game-header">
+                    <div class="age-badge" id="age-badge">0岁</div>
+                    <button class="btn btn-fast-forward" onclick="fastForward()">⏩ 快进</button>
+                </div>
+                <div class="game-stats" id="game-stats"></div>
+                <div class="game-content">
+                    <div class="timeline" id="timeline"></div>
+                    <div class="game-screen" id="game-screen"></div>
+                </div>
+            </div>
+
+            <div id="page-result" class="page">
+                <div class="result-screen">
+                    <div class="result-header">
+                        <div class="result-title" id="result-title">人生总结</div>
+                        <div class="result-subtitle" id="result-subtitle"></div>
+                        <div class="result-score" id="result-score">0</div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-label">享年</div>
+                            <div class="stat-value" id="stat-age">0岁</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">好事</div>
+                            <div class="stat-value" id="stat-good">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">坏事</div>
+                            <div class="stat-value" id="stat-bad">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">幸福度</div>
+                            <div class="stat-value" id="stat-happiness">0</div>
+                        </div>
+                    </div>
+
+                    <div class="summary-section">
+                        <div class="summary-title">📖 一生简介</div>
+                        <div class="summary-text" id="summary-text"></div>
+                    </div>
+
+                    <div class="story-section">
+                        <div class="story-title">📝 人生回忆录</div>
+                        <div class="story-phases" id="story-phases"></div>
+                        <div class="story-content" id="story-content"></div>
+                    </div>
+
+                    <div class="attribute-bars" id="attribute-bars"></div>
+
+                    <div class="achievements-section">
+                        <div class="achievements-title">🏆 获得成就</div>
+                        <div class="achievements-grid" id="achievements-grid"></div>
+                    </div>
+
+                    <div class="history-section">
+                        <div class="history-title">📅 人生历程</div>
+                        <ul class="history-list" id="history-list"></ul>
+                    </div>
+
+                    <button class="btn btn-primary btn-block" onclick="restartGame()">再活一次</button>
+                    <button class="btn btn-secondary btn-block" onclick="goHome()">返回首页</button>
+
+                    <div class="share-section">
+                        <h4>📤 分享我的人生</h4>
+                        <div class="share-buttons">
+                            <button class="share-btn" onclick="shareTo('wechat')">
+                                <span>💬</span>
+                                <span>微信</span>
+                            </button>
+                            <button class="share-btn" onclick="shareTo('weibo')">
+                                <span>📱</span>
+                                <span>微博</span>
+                            </button>
+                            <button class="share-btn" onclick="shareTo('qq')">
+                                <span>🐧</span>
+                                <span>QQ</span>
+                            </button>
+                            <button class="share-btn" onclick="shareTo('link')">
+                                <span>🔗</span>
+                                <span>复制</span>
+                            </button>
+                        </div>
+                        <div class="share-qr">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://quweiceshi.com/life/index.html" alt="二维码">
+                            <p>扫码体验人生重开</p>
+                        </div>
+                        <div class="share-link">
+                            <span>https://quweiceshi.com/life/index.html</span>
+                            <button onclick="copyToClipboard('https://quweiceshi.com/life/index.html')">复制</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const talents = [
+            { id: 'beauty', name: '天生丽质', description: '颜值出众，从小就是焦点', type: 'positive', rarity: 'common', effect: { appearance: 3 } },
+            { id: 'smart', name: '聪明伶俐', description: '智商超群，学习能力强', type: 'positive', rarity: 'common', effect: { intelligence: 3 } },
+            { id: 'strong', name: '力大无穷', description: '体质强壮，精力充沛', type: 'positive', rarity: 'common', effect: { strength: 3 } },
+            { id: 'rich', name: '家境富裕', description: '出生豪门，衣食无忧', type: 'positive', rarity: 'rare', effect: { wealth: 3 } },
+            { id: 'lucky', name: '幸运之子', description: '好运常伴，逢凶化吉', type: 'positive', rarity: 'rare', effect: { luck: 3 } },
+            { id: 'charisma', name: '魅力四射', description: '社交达人，人脉广阔', type: 'positive', rarity: 'common', effect: { charm: 3 } },
+            { id: 'genius', name: '旷世奇才', description: '百年难遇的天才', type: 'positive', rarity: 'legendary', effect: { intelligence: 5, creativity: 3 } },
+            { id: 'healer', name: '治愈之心', description: '天生医者，救死扶伤', type: 'positive', rarity: 'epic', effect: { health: 3, kindness: 2 } },
+            { id: 'leader', name: '天生领袖', description: '领导能力出众', type: 'positive', rarity: 'epic', effect: { leadership: 3, charm: 2 } },
+            { id: 'artist', name: '艺术天赋', description: '艺术细胞丰富', type: 'positive', rarity: 'rare', effect: { creativity: 3, charm: 1 } },
+            { id: 'optimist', name: '乐天派', description: '永远保持乐观', type: 'positive', rarity: 'common', effect: { happiness: 2 } },
+            { id: 'hardworker', name: '勤奋刻苦', description: '天生勤劳努力', type: 'positive', rarity: 'common', effect: { diligence: 3 } },
+            { id: 'poor', name: '家徒四壁', description: '家境贫寒，白手起家', type: 'negative', rarity: 'common', effect: { wealth: -2 } },
+            { id: 'sickly', name: '体弱多病', description: '从小体弱多病', type: 'negative', rarity: 'common', effect: { health: -2 } },
+            { id: 'ugly', name: '相貌平平', description: '长相普通', type: 'negative', rarity: 'common', effect: { appearance: -2 } }
+        ];
+
+        const events = {
+            childhood: [
+                { age: 1, text: '你出生了，是个健康的宝宝', type: 'positive', effect: {} },
+                { age: 2, text: '你学会了走路', type: 'positive', effect: { strength: 1 } },
+                { age: 3, text: '你第一次开口说话', type: 'positive', effect: { intelligence: 1 } },
+                { age: 4, text: '你上了幼儿园', type: 'positive', effect: { intelligence: 1 } },
+                { age: 5, text: '你交到了第一个朋友', type: 'positive', effect: { charm: 1 } },
+                { age: 6, text: '你开始上小学', type: 'positive', effect: { intelligence: 1 } },
+                { age: 7, text: '你第一次考试得了满分', type: 'positive', effect: { intelligence: 2 } },
+                { age: 8, text: '你参加了学校的运动会', type: 'positive', effect: { strength: 1 } },
+                { age: 9, text: '你学会了骑自行车', type: 'positive', effect: { strength: 1 } },
+                { age: 10, text: '你读了第一本课外书', type: 'positive', effect: { intelligence: 1 } },
+                { age: 11, text: '你参加了夏令营', type: 'positive', effect: { charm: 1 } },
+                { age: 12, text: '你小学毕业了', type: 'positive', effect: {} }
+            ],
+            youth: [
+                { age: 13, text: '你进入了初中', type: 'positive', effect: { intelligence: 1 } },
+                { age: 14, text: '你开始对异性产生好奇', type: 'positive', effect: { charm: 1 } },
+                { age: 15, text: '你参加了第一次军训', type: 'positive', effect: { strength: 2 } },
+                { age: 16, text: '你迎来了人生中的第一次告白', type: 'positive', effect: { charm: 2 } },
+                { age: 17, text: '你面临中考的压力', type: 'negative', effect: { happiness: -2 } },
+                { age: 18, text: '你考上了理想的高中', type: 'positive', effect: { intelligence: 2, happiness: 2 } }
+            ],
+            young: [
+                { age: 19, text: '你进入了大学', type: 'positive', effect: { intelligence: 1 } },
+                { age: 20, text: '你加入了学生会', type: 'positive', effect: { leadership: 2 } },
+                { age: 21, text: '你获得了奖学金', type: 'positive', effect: { intelligence: 2, wealth: 1 } },
+                { age: 22, text: '你谈了第一次恋爱', type: 'positive', effect: { charm: 2, happiness: 2 } },
+                { age: 23, text: '你开始实习', type: 'positive', effect: { wealth: 2 } },
+                { age: 24, text: '你大学毕业了', type: 'positive', effect: { intelligence: 1 } },
+                { age: 25, text: '你找到了第一份工作', type: 'positive', effect: { wealth: 3 } },
+                { age: 26, text: '你晋升为部门主管', type: 'positive', effect: { leadership: 2, wealth: 2 } },
+                { age: 27, text: '你买了人生第一辆车', type: 'positive', effect: { wealth: 3 } },
+                { age: 28, text: '你结婚了', type: 'positive', effect: { happiness: 3, charm: 1 } },
+                { age: 29, text: '你有了第一个孩子', type: 'positive', effect: { happiness: 3 } },
+                { age: 30, text: '你买了第一套房子', type: 'positive', effect: { wealth: 5 } }
+            ],
+            middle: [
+                { age: 31, text: '你事业蒸蒸日上', type: 'positive', effect: { wealth: 3, leadership: 1 } },
+                { age: 32, text: '你考取了专业证书', type: 'positive', effect: { intelligence: 2 } },
+                { age: 33, text: '你带家人去旅行', type: 'positive', effect: { happiness: 2 } },
+                { age: 34, text: '你升职为总监', type: 'positive', effect: { leadership: 3, wealth: 4 } },
+                { age: 35, text: '你创业成功', type: 'positive', effect: { wealth: 10, leadership: 2 } },
+                { age: 36, text: '你成为了公司CEO', type: 'positive', effect: { leadership: 3, wealth: 5 } },
+                { age: 37, text: '你获得行业大奖', type: 'positive', effect: { intelligence: 2, charm: 2 } },
+                { age: 38, text: '你开始健身养生', type: 'positive', effect: { strength: 2, health: 1 } },
+                { age: 39, text: '你送孩子上小学', type: 'positive', effect: { happiness: 2 } },
+                { age: 40, text: '你迎来了不惑之年', type: 'positive', effect: { intelligence: 1 } },
+                { age: 41, text: '你投资成功', type: 'positive', effect: { wealth: 8 } },
+                { age: 42, text: '你出版了自己的书', type: 'positive', effect: { creativity: 3, wealth: 3 } },
+                { age: 43, text: '你成为行业专家', type: 'positive', effect: { intelligence: 3, charm: 1 } },
+                { age: 44, text: '你帮助年轻人创业', type: 'positive', effect: { leadership: 2, happiness: 2 } },
+                { age: 45, text: '你开始学一门新语言', type: 'positive', effect: { intelligence: 2 } },
+                { age: 46, text: '你参加了同学聚会', type: 'positive', effect: { charm: 2, happiness: 1 } },
+                { age: 47, text: '你开始做慈善', type: 'positive', effect: { happiness: 3, charm: 2 } },
+                { age: 48, text: '你孩子考上了大学', type: 'positive', effect: { happiness: 3, intelligence: 1 } },
+                { age: 49, text: '你环游世界', type: 'positive', effect: { happiness: 4, wealth: -5 } },
+                { age: 50, text: '你半退休了', type: 'positive', effect: { happiness: 2 } }
+            ],
+            old: [
+                { age: 51, text: '你开始写回忆录', type: 'positive', effect: { creativity: 2 } },
+                { age: 52, text: '你带孙子孙女玩耍', type: 'positive', effect: { happiness: 3 } },
+                { age: 53, text: '你参加老年大学', type: 'positive', effect: { intelligence: 2, happiness: 1 } },
+                { age: 54, text: '你学会了使用智能手机', type: 'positive', effect: { intelligence: 1 } },
+                { age: 55, text: '你和老伴庆祝金婚', type: 'positive', effect: { happiness: 4, charm: 2 } },
+                { age: 56, text: '你身体依然硬朗', type: 'positive', effect: { health: 2, strength: 1 } },
+                { age: 57, text: '你开始练习书法', type: 'positive', effect: { creativity: 2 } },
+                { age: 58, text: '你参加广场舞比赛', type: 'positive', effect: { strength: 2, happiness: 2 } },
+                { age: 59, text: '你回忆往事感慨万千', type: 'positive', effect: { happiness: 2 } },
+                { age: 60, text: '你迎来了六十大寿', type: 'positive', effect: { happiness: 3 } },
+                { age: 61, text: '你开始养花种草', type: 'positive', effect: { happiness: 2 } },
+                { age: 62, text: '你开始练习太极', type: 'positive', effect: { health: 2, strength: 1 } },
+                { age: 63, text: '你参加老年合唱团', type: 'positive', effect: { charm: 2, happiness: 2 } },
+                { age: 64, text: '你孙子考上了大学', type: 'positive', effect: { happiness: 3 } },
+                { age: 65, text: '你正式退休了', type: 'positive', effect: { happiness: 2 } },
+                { age: 66, text: '你开始学习国画', type: 'positive', effect: { creativity: 3 } },
+                { age: 67, text: '你参加老年书法班', type: 'positive', effect: { creativity: 2 } },
+                { age: 68, text: '你和老伴重游蜜月地', type: 'positive', effect: { happiness: 4, charm: 2 } },
+                { age: 69, text: '你重新联系上了初恋', type: 'positive', effect: { happiness: 2, charm: 1 } },
+                { age: 70, text: '你迎来了七十大寿', type: 'positive', effect: { happiness: 3 } },
+                { age: 71, text: '你身体有些不适', type: 'negative', effect: { health: -2 } },
+                { age: 72, text: '你开始养生调理', type: 'positive', effect: { health: 2 } },
+                { age: 73, text: '你和老伴庆祝钻石婚', type: 'positive', effect: { happiness: 4 } },
+                { age: 74, text: '你回忆青春岁月', type: 'positive', effect: { happiness: 2 } },
+                { age: 75, text: '你开始整理家族相册', type: 'positive', effect: { happiness: 2 } },
+                { age: 76, text: '你学会了使用电脑', type: 'positive', effect: { intelligence: 1 } },
+                { age: 77, text: '你身体越来越差', type: 'negative', effect: { health: -3 } },
+                { age: 78, text: '你回忆一生感慨万千', type: 'positive', effect: { happiness: 1 } },
+                { age: 79, text: '你和家人共度最后时光', type: 'positive', effect: { happiness: 2 } },
+                { age: 80, text: '你安详地离开了这个世界', type: 'neutral', effect: {} }
+            ]
+        };
+
+        const choiceEvents = [
+            { age: 4, text: '幼儿园老师问你喜欢什么颜色', choices: [
+                { text: '红色', effect: { creativity: 1, happiness: 1 } },
+                { text: '蓝色', effect: { intelligence: 1 } },
+                { text: '绿色', effect: { health: 1 } }
+            ]},
+            { age: 8, text: '学校组织兴趣班，你选择', choices: [
+                { text: '绘画班', effect: { creativity: 2 } },
+                { text: '围棋班', effect: { intelligence: 2 } },
+                { text: '足球班', effect: { strength: 2 } }
+            ]},
+            { age: 14, text: '你发现父母偷看你的日记', choices: [
+                { text: '生气地质问他们', effect: { happiness: -2, charm: -1 } },
+                { text: '理解他们的关心', effect: { happiness: 1, charm: 2 } },
+                { text: '写一篇假日记误导他们', effect: { intelligence: 1, happiness: 1 } }
+            ]},
+            { age: 18, text: '高考结束，你选择', choices: [
+                { text: '报考热门专业', effect: { wealth: 3, happiness: 1 } },
+                { text: '报考自己喜欢的专业', effect: { happiness: 3, creativity: 2 } },
+                { text: '复读一年', effect: { intelligence: 2, happiness: -2 } }
+            ]},
+            { age: 22, text: '大学毕业，你选择', choices: [
+                { text: '考研深造', effect: { intelligence: 3, wealth: -2 } },
+                { text: '直接工作', effect: { wealth: 4 } },
+                { text: '创业', effect: { leadership: 3, wealth: -3 } }
+            ]},
+            { age: 25, text: '你收到两份工作offer', choices: [
+                { text: '大公司稳定工作', effect: { wealth: 3, happiness: 1 } },
+                { text: '创业公司有挑战性', effect: { leadership: 2, happiness: 2, wealth: 1 } },
+                { text: '继续寻找更好的机会', effect: { happiness: -1 } }
+            ]},
+            { age: 30, text: '你面临职业瓶颈', choices: [
+                { text: '跳槽到更好的公司', effect: { wealth: 5, happiness: 1 } },
+                { text: '在公司内部争取晋升', effect: { leadership: 2, wealth: 3 } },
+                { text: '转行做自己喜欢的事', effect: { happiness: 3, creativity: 2, wealth: -2 } }
+            ]},
+            { age: 35, text: '你有机会移民', choices: [
+                { text: '移民国外', effect: { wealth: 5, happiness: -1 } },
+                { text: '留在国内发展', effect: { leadership: 2, happiness: 2 } },
+                { text: '先去国外工作几年', effect: { intelligence: 2, wealth: 3 } }
+            ]},
+            { age: 40, text: '你发现身体出现问题', choices: [
+                { text: '积极治疗，注重养生', effect: { health: 3, wealth: -2 } },
+                { text: '继续工作，忽视健康', effect: { wealth: 3, health: -3 } },
+                { text: '提前退休，享受生活', effect: { happiness: 3, health: 2, wealth: -1 } }
+            ]},
+            { age: 50, text: '你考虑人生意义', choices: [
+                { text: '继续奋斗，创造更多财富', effect: { wealth: 5, happiness: 1 } },
+                { text: '投身公益事业', effect: { happiness: 4, charm: 3 } },
+                { text: '回归家庭，享受天伦之乐', effect: { happiness: 4 } }
+            ]},
+            { age: 60, text: '你开始规划退休生活', choices: [
+                { text: '环游世界', effect: { happiness: 4, wealth: -5 } },
+                { text: '含饴弄孙', effect: { happiness: 3 } },
+                { text: '培养新爱好', effect: { creativity: 3, happiness: 2 } }
+            ]},
+            { age: 70, text: '你回顾一生', choices: [
+                { text: '觉得人生很圆满', effect: { happiness: 3 } },
+                { text: '有些遗憾但知足', effect: { happiness: 2 } },
+                { text: '如果重来会不一样', effect: { happiness: -1, intelligence: 1 } }
+            ]}
+        ];
+
+        const endings = [
+            { score: 95, title: '人生赢家', desc: '你的人生堪称完美，事业有成，家庭幸福，健康长寿。' },
+            { score: 90, title: '创业大亨', desc: '你白手起家，创造了商业帝国，成为一代传奇。' },
+            { score: 85, title: '科技先锋', desc: '你在科技领域做出了卓越贡献，改变了世界。' },
+            { score: 80, title: '艺术大师', desc: '你在艺术领域造诣深厚，留下了传世之作。' },
+            { score: 75, title: '幸福人生', desc: '你拥有一个幸福美满的家庭，平凡而温馨。' },
+            { score: 70, title: '成功人士', desc: '你在自己的领域取得了不错的成就。' },
+            { score: 65, title: '平凡人生', desc: '你的一生平淡但充实，知足常乐。' },
+            { score: 60, title: '小有成就', desc: '你在事业上小有成就，生活安稳。' },
+            { score: 55, title: '普通人生', desc: '你的人生普普通通，但也有自己的精彩。' },
+            { score: 50, title: '知足常乐', desc: '你懂得知足，生活简单而快乐。' },
+            { score: 45, title: '奋斗人生', desc: '你一生都在奋斗，虽然不算成功，但很充实。' },
+            { score: 40, title: '平淡一生', desc: '你的一生平平淡淡，没有太多起伏。' },
+            { score: 35, title: '略有遗憾', desc: '你的人生有些遗憾，但也有美好的回忆。' },
+            { score: 30, title: '遗憾人生', desc: '你的人生充满了遗憾，很多梦想没有实现。' },
+            { score: 25, title: '迷茫一生', desc: '你一生都在迷茫中度过，从未找到方向。' },
+            { score: 0, title: '堕落人生', desc: '你误入歧途，一事无成。' }
+        ];
+
+        const achievements = [
+            { id: 'first', name: '初次体验', icon: '🌟', desc: '完成第一次人生' },
+            { id: 'winner', name: '人生赢家', icon: '🏆', desc: '达成人生赢家结局' },
+            { id: 'longlife', name: '长寿之星', icon: '👴', desc: '活到90岁以上' },
+            { id: 'perfect', name: '完美属性', icon: '💎', desc: '所有属性达到10' },
+            { id: 'rich', name: '亿万富翁', icon: '💰', desc: '财富达到100' },
+            { id: 'happy', name: '幸福使者', icon: '😊', desc: '幸福度达到100' },
+            { id: 'lucky', name: '幸运儿', icon: '🍀', desc: '连续10年遇到好事' },
+            { id: 'tough', name: '坚强不屈', icon: '💪', desc: '经历10次以上坏事仍不放弃' },
+            { id: 'lover', name: '浪漫情人', icon: '💘', desc: '结婚并拥有美满家庭' },
+            { id: 'leader', name: '领导者', icon: '👑', desc: '领导力达到10' },
+            { id: 'genius', name: '天才', icon: '🧠', desc: '智力达到10' },
+            { id: 'artist', name: '艺术家', icon: '🎨', desc: '创造力达到10' },
+            { id: 'healthy', name: '健康达人', icon: '❤️', desc: '健康达到10' },
+            { id: 'charmer', name: '魅力四射', icon: '✨', desc: '魅力达到10' },
+            { id: 'diligent', name: '勤奋努力', icon: '📚', desc: '勤奋达到10' },
+            { id: 'wealthy', name: '富二代', icon: '🚀', desc: '初始家境为富裕' },
+            { id: 'beautiful', name: '颜值担当', icon: '💄', desc: '颜值达到10' },
+            { id: 'strong', name: '肌肉男', icon: '🏋️', desc: '体质达到10' },
+            { id: 'kind', name: '善良天使', icon: '👼', desc: '善良达到10' },
+            { id: 'creative', name: '创意无限', icon: '💡', desc: '创造力达到10' }
+        ];
+
+        const storyTemplates = [
+            {
+                title: '传奇一生',
+                content: '玩家的一生堪称传奇。从年轻时就展现出非凡的才华与魄力，凭借过人的智慧和不懈的努力，在事业上取得了辉煌的成就。玩家不仅积累了巨额财富，更赢得了世人的尊敬与爱戴。家庭美满，儿孙满堂，晚年尽享天伦之乐，成为真正的人生赢家。'
+            },
+            {
+                title: '平凡幸福',
+                content: '玩家的一生平凡而幸福。虽然没有惊天动地的成就，但拥有一个温馨的家庭和一群真心的朋友。工作稳定，生活充实，懂得知足常乐。晚年回首往事，心中充满感恩和满足，这就是最幸福的人生。'
+            },
+            {
+                title: '艺术人生',
+                content: '玩家一生都在追求艺术的真谛。无论是绘画、音乐还是文学，都展现出非凡的天赋。作品感动了无数人，成为一代艺术大师。虽然人生道路并不平坦，但对艺术的热爱始终未曾改变，最终留下了不朽的传世之作。'
+            },
+            {
+                title: '奋斗人生',
+                content: '玩家的一生充满了奋斗和拼搏。从平凡出身开始，一步一个脚印，克服了无数困难和挑战。虽然经历了很多挫折，但始终没有放弃，最终实现了自己的人生目标。这种不屈不挠的精神，值得所有人学习。'
+            },
+            {
+                title: '幸福家庭',
+                content: '玩家将家庭视为人生最重要的财富。与伴侣相濡以沫，共同抚养孩子长大成人。虽然事业上没有取得巨大成功，但家庭的温暖和幸福弥补了一切。儿孙绕膝，共享天伦，这就是最珍贵的人生。'
+            },
+            {
+                title: '探索人生',
+                content: '玩家一生都在探索未知。去过很多地方，体验过不同的文化，结交了各种各样的朋友。虽然没有固定的居所，但心灵永远在路上。这种自由自在的生活方式，让人生充满了无限可能。'
+            }
+        ];
+
+        let gameState = {
+            attributes: {
+                appearance: 5,
+                intelligence: 5,
+                strength: 5,
+                wealth: 5,
+                luck: 5,
+                charm: 0,
+                health: 10,
+                happiness: 50,
+                leadership: 0,
+                creativity: 0,
+                diligence: 0,
+                kindness: 0
+            },
+            selectedTalents: [],
+            currentAge: 0,
+            events: [],
+            achievements: [],
+            goodEvents: 0,
+            badEvents: 0,
+            initialWealth: 5
+        };
+
+        let remainingPoints = 5;
+        let selectedTalentCount = 0;
+
+        function initAttributes() {
+            const container = document.getElementById('slider-attributes');
+            const attrs = [
+                { key: 'appearance', name: '颜值', icon: '💅', max: 10 },
+                { key: 'intelligence', name: '智力', icon: '🧠', max: 10 },
+                { key: 'strength', name: '体质', icon: '💪', max: 10 },
+                { key: 'wealth', name: '家境', icon: '💰', max: 10 },
+                { key: 'luck', name: '运气', icon: '🍀', max: 10 }
+            ];
+
+            container.innerHTML = attrs.map(attr => `
+                <div class="slider-item">
+                    <div class="slider-header">
+                        <span class="slider-icon">${attr.icon}</span>
+                        <span class="slider-name">${attr.name}</span>
+                        <span class="slider-value" id="attr-${attr.key}">${gameState.attributes[attr.key]}</span>
+                    </div>
+                    <input type="range" 
+                           id="slider-${attr.key}"
+                           class="attr-slider"
+                           min="1" 
+                           max="${attr.max}" 
+                           value="${gameState.attributes[attr.key]}"
+                           oninput="updateAttribute('${attr.key}', this.value)">
+                    <div class="slider-labels">
+                        <span>1</span>
+                        <span>${attr.max}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateAttribute(key, newValue) {
+            newValue = parseInt(newValue);
+            const oldValue = gameState.attributes[key];
+            const diff = newValue - oldValue;
+
+            if (diff > 0) {
+                if (remainingPoints >= diff) {
+                    gameState.attributes[key] = newValue;
+                    remainingPoints -= diff;
+                } else {
+                    newValue = oldValue + remainingPoints;
+                    gameState.attributes[key] = newValue;
+                    remainingPoints = 0;
+                    document.getElementById(`slider-${key}`).value = newValue;
+                }
+            } else {
+                gameState.attributes[key] = newValue;
+                remainingPoints += Math.abs(diff);
+            }
+
+            updateUI();
+        }
+
+        function initTalents() {
+            const grid = document.getElementById('talents-grid');
+            grid.innerHTML = talents.map(talent => `
+                <div class="talent-card ${gameState.selectedTalents.includes(talent.id) ? 'selected' : ''}" 
+                     onclick="selectTalent('${talent.id}')"
+                     ${talent.type === 'negative' && selectedTalentCount >= 3 ? 'disabled' : ''}>
+                    <div class="talent-rarity rarity-${talent.rarity}">${talent.rarity === 'common' ? '普通' : talent.rarity === 'rare' ? '稀有' : talent.rarity === 'epic' ? '史诗' : '传说'}</div>
+                    <div class="talent-name">${talent.name}</div>
+                    <div class="talent-desc">${talent.description}</div>
+                    <div class="talent-effect">${talent.type === 'positive' ? '+' : '-'}${Object.entries(talent.effect).map(([k, v]) => `${getAttrName(k)}${v > 0 ? '+' : ''}${v}`).join(' ')}</div>
+                </div>
+            `).join('');
+        }
+
+        function getAttrName(key) {
+            const names = {
+                appearance: '颜值', intelligence: '智力', strength: '体质', wealth: '家境',
+                luck: '运气', charm: '魅力', health: '健康', happiness: '幸福',
+                leadership: '领导', creativity: '创意', diligence: '勤奋', kindness: '善良'
+            };
+            return names[key] || key;
+        }
+
+        function changeAttribute(key, delta) {
+            const current = gameState.attributes[key];
+            const newValue = current + delta;
+            
+            if (newValue >= 1 && newValue <= 10) {
+                const pointsNeeded = delta;
+                
+                if (pointsNeeded > 0) {
+                    if (remainingPoints >= pointsNeeded) {
+                        gameState.attributes[key] = newValue;
+                        remainingPoints -= pointsNeeded;
+                    }
+                } else {
+                    gameState.attributes[key] = newValue;
+                    remainingPoints += Math.abs(pointsNeeded);
+                }
+                
+                document.getElementById(`slider-${key}`).value = gameState.attributes[key];
+            }
+            updateUI();
+        }
+
+        function selectTalent(id) {
+            const talent = talents.find(t => t.id === id);
+            if (!talent) return;
+
+            if (gameState.selectedTalents.includes(id)) {
+                gameState.selectedTalents = gameState.selectedTalents.filter(t => t !== id);
+                selectedTalentCount--;
+                Object.entries(talent.effect).forEach(([k, v]) => {
+                    gameState.attributes[k] -= v;
+                });
+            } else {
+                if (selectedTalentCount >= 3) {
+                    alert('最多选择3个天赋');
+                    return;
+                }
+                gameState.selectedTalents.push(id);
+                selectedTalentCount++;
+                Object.entries(talent.effect).forEach(([k, v]) => {
+                    gameState.attributes[k] += v;
+                });
+            }
+            updateUI();
+        }
+
+        function updateUI() {
+            document.getElementById('points-left').textContent = remainingPoints;
+            document.getElementById('talents-selected').textContent = selectedTalentCount;
+            
+            ['appearance', 'intelligence', 'strength', 'wealth', 'luck'].forEach(key => {
+                document.getElementById(`attr-${key}`).textContent = gameState.attributes[key];
+            });
+
+            initTalents();
+
+            document.getElementById('start-game-btn').disabled = false;
+        }
+
+        function startGame() {
+            gameState.initialWealth = gameState.attributes.wealth;
+            document.getElementById('page-start').classList.remove('active');
+            document.getElementById('page-game').classList.add('active');
+            generateLifeEvents();
+            showNextEvent();
+        }
+
+        let currentEvents = [];
+        let eventIndex = 0;
+
+        function generateLifeEvents() {
+            currentEvents = [];
+            const maxAge = 65 + gameState.attributes.health * 1.5 + gameState.attributes.luck + Math.floor(Math.random() * 15);
+            
+            const usedEvents = new Set();
+            
+            for (let age = 1; age <= Math.min(maxAge, 95); age++) {
+                let availableEvents = [];
+                
+                if (age <= 12) {
+                    availableEvents = events.childhood.filter(e => e.age === age);
+                } else if (age <= 18) {
+                    availableEvents = events.youth.filter(e => e.age === age);
+                } else if (age <= 35) {
+                    availableEvents = events.young.filter(e => e.age === age);
+                } else if (age <= 50) {
+                    availableEvents = events.middle.filter(e => e.age === age);
+                } else {
+                    availableEvents = events.old.filter(e => e.age === age);
+                }
+
+                const choiceEvent = choiceEvents.find(e => e.age === age);
+                if (choiceEvent && !usedEvents.has(`choice-${age}`)) {
+                    currentEvents.push({ ...choiceEvent, isChoice: true });
+                    usedEvents.add(`choice-${age}`);
+                } else if (availableEvents.length > 0) {
+                    const availableUnused = availableEvents.filter(e => !usedEvents.has(`${e.age}-${e.text}`));
+                    if (availableUnused.length > 0) {
+                        const randomEvent = availableUnused[Math.floor(Math.random() * availableUnused.length)];
+                        const probability = randomEvent.type === 'positive' 
+                            ? 0.35 + gameState.attributes.luck * 0.02 
+                            : 0.75 - gameState.attributes.luck * 0.02;
+                        
+                        if (Math.random() < probability) {
+                            currentEvents.push(randomEvent);
+                            usedEvents.add(`${randomEvent.age}-${randomEvent.text}`);
+                        }
+                    }
+                }
+            }
+
+            if (!currentEvents.find(e => e.text.includes('离开'))) {
+                currentEvents.push({ 
+                    age: Math.min(maxAge + 1, 95), 
+                    text: '你安详地离开了这个世界', 
+                    type: 'neutral', 
+                    effect: {} 
+                });
+            }
+        }
+
+        function updateTimeline() {
+            const timeline = document.getElementById('timeline');
+            let timelineHTML = '';
+            for (let idx = 0; idx <= eventIndex && idx < currentEvents.length; idx++) {
+                const e = currentEvents[idx];
+                const dotClass = idx < eventIndex ? 'past' : 'current';
+                const text = e.text.length > 15 ? e.text.substring(0, 15) + '...' : e.text;
+                timelineHTML += `<div class="timeline-item"><div class="timeline-dot ${dotClass}"></div><span>${e.age}岁: ${text}</span></div>`;
+            }
+            timeline.innerHTML = timelineHTML;
+            timeline.scrollTop = timeline.scrollHeight;
+        }
+
+        window.fastForward = function() {
+            while (eventIndex < currentEvents.length) {
+                const event = currentEvents[eventIndex];
+                
+                gameState.events.push({ age: event.age, text: event.text, type: event.type });
+                if (event.type === 'positive') gameState.goodEvents++;
+                else if (event.type === 'negative') gameState.badEvents++;
+                
+                if (event.isChoice) {
+                    const randomChoice = event.choices[Math.floor(Math.random() * event.choices.length)];
+                    gameState.events[gameState.events.length - 1].text += ' - 选择: ' + randomChoice.text;
+                    Object.entries(randomChoice.effect).forEach(([k, v]) => {
+                        if (gameState.attributes[k] !== undefined) {
+                            gameState.attributes[k] = Math.max(0, Math.min(100, gameState.attributes[k] + v));
+                        }
+                    });
+                } else {
+                    Object.entries(event.effect).forEach(([k, v]) => {
+                        if (gameState.attributes[k] !== undefined) {
+                            gameState.attributes[k] = Math.max(0, Math.min(100, gameState.attributes[k] + v));
+                        }
+                    });
+                }
+                
+                eventIndex++;
+                gameState.currentAge = event.age;
+            }
+            showResult();
+        }
+
+        function showNextEvent() {
+            if (eventIndex >= currentEvents.length) {
+                showResult();
+                return;
+            }
+
+            const event = currentEvents[eventIndex];
+            gameState.currentAge = event.age;
+            document.getElementById('age-badge').textContent = `${event.age}岁`;
+
+            const statsPanel = document.getElementById('game-stats');
+            statsPanel.innerHTML = `
+                <div class="stat-item"><div class="stat-icon">💅</div><div class="stat-value">${gameState.attributes.appearance}</div><div class="stat-label">颜值</div></div>
+                <div class="stat-item"><div class="stat-icon">🧠</div><div class="stat-value">${gameState.attributes.intelligence}</div><div class="stat-label">智力</div></div>
+                <div class="stat-item"><div class="stat-icon">💪</div><div class="stat-value">${gameState.attributes.strength}</div><div class="stat-label">体质</div></div>
+                <div class="stat-item"><div class="stat-icon">💰</div><div class="stat-value">${gameState.attributes.wealth}</div><div class="stat-label">家境</div></div>
+                <div class="stat-item"><div class="stat-icon">🍀</div><div class="stat-value">${gameState.attributes.luck}</div><div class="stat-label">运气</div></div>
+            `;
+
+            updateTimeline();
+
+            const gameScreen = document.getElementById('game-screen');
+            
+            if (event.isChoice) {
+                gameScreen.innerHTML = `
+                    <div class="event-card">
+                        <div class="event-age">${event.age}岁</div>
+                        <div class="event-content">${event.text}</div>
+                        <div class="event-options">
+                            ${event.choices.map((choice, idx) => `
+                                <button class="option-btn" onclick="makeChoice(${idx})">${choice.text}</button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            } else {
+                gameScreen.innerHTML = `
+                    <div class="event-card">
+                        <div class="event-age">${event.age}岁</div>
+                        <div class="event-content">${event.text}</div>
+                        <button class="btn btn-primary btn-block" onclick="handleEvent()">继续</button>
+                    </div>
+                `;
+                
+                gameState.events.push({ age: event.age, text: event.text, type: event.type });
+                if (event.type === 'positive') gameState.goodEvents++;
+                else if (event.type === 'negative') gameState.badEvents++;
+                
+                Object.entries(event.effect).forEach(([k, v]) => {
+                    if (gameState.attributes[k] !== undefined) {
+                        gameState.attributes[k] = Math.max(0, Math.min(100, gameState.attributes[k] + v));
+                    }
+                });
+            }
+        }
+
+        function makeChoice(idx) {
+            const event = currentEvents[eventIndex];
+            const choice = event.choices[idx];
+            
+            var isPositive = Object.values(choice.effect || {}).reduce(function(s, v) { return s + v; }, 0) >= 0;
+            gameState.events.push({ age: event.age, text: event.text + ' - 选择: ' + choice.text, type: isPositive ? 'positive' : 'negative' });
+            if (isPositive) { gameState.goodEvents++; } else { gameState.badEvents++; }
+            
+            Object.entries(choice.effect).forEach(([k, v]) => {
+                if (gameState.attributes[k] !== undefined) {
+                    gameState.attributes[k] = Math.max(0, Math.min(100, gameState.attributes[k] + v));
+                }
+            });
+            
+            eventIndex++;
+            showNextEvent();
+        }
+
+        function handleEvent() {
+            eventIndex++;
+            showNextEvent();
+        }
+
+        function calculateScore() {
+            const attrScore = (gameState.attributes.intelligence + gameState.attributes.appearance + 
+                              gameState.attributes.strength + gameState.attributes.wealth + 
+                              gameState.attributes.luck) / 5;
+            const happinessScore = gameState.attributes.happiness / 10;
+            const eventScore = (gameState.goodEvents - gameState.badEvents) * 2;
+            const ageBonus = gameState.currentAge / 2;
+            const talentPenalty = gameState.selectedTalents.filter(t => talents.find(x => x.id === t)?.type === 'negative').length * 12;
+            
+            let score = attrScore * 1.2 + happinessScore * 0.25 + eventScore + ageBonus / 4 - talentPenalty;
+            score = Math.max(0, Math.min(100, score + (Math.random() * 20 - 10)));
+            
+            if (score >= 90 && Math.random() < 0.4) {
+                score -= Math.random() * 15 + 5;
+            }
+            
+            return Math.round(score);
+        }
+
+        function getEnding(score) {
+            return endings.find(e => score >= e.score) || endings[endings.length - 1];
+        }
+
+        function showResult() {
+            document.getElementById('page-game').classList.remove('active');
+            document.getElementById('page-result').classList.add('active');
+
+            const score = calculateScore();
+            const ending = getEnding(score);
+
+            document.getElementById('result-title').textContent = ending.title;
+            document.getElementById('result-subtitle').textContent = ending.desc;
+            document.getElementById('result-score').textContent = score;
+            
+            document.getElementById('stat-age').textContent = `${gameState.currentAge}岁`;
+            document.getElementById('stat-good').textContent = gameState.goodEvents;
+            document.getElementById('stat-bad').textContent = gameState.badEvents;
+            document.getElementById('stat-happiness').textContent = Math.round(gameState.attributes.happiness);
+
+            const story = storyTemplates[Math.floor(Math.random() * storyTemplates.length)];
+            document.getElementById('summary-text').textContent = story.content;
+
+            renderStoryPhases();
+            renderAttributeBars();
+            renderAchievements();
+            renderHistory();
+
+            saveGameResult(score, ending, gameState);
+        }
+
+        function saveGameResult(score, ending, state) {
+            StorageManager.saveTestRecord('life', {
+                score: score,
+                ending: ending.title,
+                age: state.currentAge,
+                talents: state.selectedTalents,
+                goodEvents: state.goodEvents,
+                badEvents: state.badEvents,
+                timestamp: new Date().toLocaleString()
+            });
+
+            const records = StorageManager.getTestRecords('life');
+            if (records.length === 1) {
+                StorageManager.unlockAchievement('first_test');
+            }
+            if (records.length >= 10) {
+                StorageManager.unlockAchievement('life_simulator');
+            }
+
+            checkCollectorAchievement();
+        }
+
+        function checkCollectorAchievement() {
+            const allAchievements = Object.values(ACHIEVEMENTS).filter(a => a.id !== 'collector').map(a => a.id);
+            const unlocked = StorageManager.getAchievements();
+            const allUnlocked = allAchievements.every(id => unlocked.includes(id));
+            if (allUnlocked) {
+                StorageManager.unlockAchievement('collector');
+            }
+        }
+
+        function renderStoryPhases() {
+            const phases = [
+                { age: '0-12', name: '👶 童年时光', desc: '无忧无虑的童年，是人生最美好的开端。' },
+                { age: '13-18', name: '🎒 青涩少年', desc: '阳光灿烂的青春期，充满梦想和憧憬。' },
+                { age: '19-35', name: '🌟 青春绽放', desc: '激情燃烧的岁月，追逐梦想的年华。' },
+                { age: '36-55', name: '💼 中年奋斗', desc: '事业家庭并重，人生最成熟的阶段。' },
+                { age: '56+', name: '👴 悠然晚年', desc: '回首往事，笑看人生。' }
+            ];
+
+            document.getElementById('story-phases').innerHTML = phases.map(p => 
+                `<div class="phase-tag">${p.name}</div>`
+            ).join('');
+
+            const phaseEvents = {
+                childhood: gameState.events.filter(e => e.age <= 12).slice(-3),
+                youth: gameState.events.filter(e => e.age > 12 && e.age <= 18).slice(-3),
+                young: gameState.events.filter(e => e.age > 18 && e.age <= 35).slice(-3),
+                middle: gameState.events.filter(e => e.age > 35 && e.age <= 55).slice(-3),
+                old: gameState.events.filter(e => e.age > 55).slice(-3)
+            };
+
+            let storyContent = '';
+            if (phaseEvents.childhood.length > 0) {
+                storyContent += '童年时光：' + phaseEvents.childhood.map(e => e.text).join('；') + '<br><br>';
+            }
+            if (phaseEvents.youth.length > 0) {
+                storyContent += '青涩少年：' + phaseEvents.youth.map(e => e.text).join('；') + '<br><br>';
+            }
+            if (phaseEvents.young.length > 0) {
+                storyContent += '青春绽放：' + phaseEvents.young.map(e => e.text).join('；') + '<br><br>';
+            }
+            if (phaseEvents.middle.length > 0) {
+                storyContent += '中年奋斗：' + phaseEvents.middle.map(e => e.text).join('；') + '<br><br>';
+            }
+            if (phaseEvents.old.length > 0) {
+                storyContent += '悠然晚年：' + phaseEvents.old.map(e => e.text).join('；');
+            }
+
+            document.getElementById('story-content').innerHTML = storyContent;
+        }
+
+        function renderAttributeBars() {
+            const attrs = [
+                { key: 'appearance', name: '💅 颜值' },
+                { key: 'intelligence', name: '🧠 智力' },
+                { key: 'strength', name: '💪 体质' },
+                { key: 'wealth', name: '💰 家境' },
+                { key: 'luck', name: '🍀 运气' }
+            ];
+
+            document.getElementById('attribute-bars').innerHTML = attrs.map(attr => `
+                <div class="attribute-bar-item">
+                    <div class="attribute-bar-header">
+                        <span class="attribute-bar-name">${attr.name}</span>
+                        <span>${gameState.attributes[attr.key]}/10</span>
+                    </div>
+                    <div class="attribute-bar-fill">
+                        <div style="width: ${gameState.attributes[attr.key] * 10}%"></div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderAchievements() {
+            const unlocked = [];
+            
+            if (gameState.currentAge >= 90) unlocked.push('longlife');
+            if (gameState.attributes.appearance >= 10) unlocked.push('beautiful');
+            if (gameState.attributes.intelligence >= 10) unlocked.push('genius');
+            if (gameState.attributes.strength >= 10) unlocked.push('strong');
+            if (gameState.initialWealth >= 10) unlocked.push('wealthy');
+            if (gameState.goodEvents >= 10) unlocked.push('lucky');
+            if (gameState.attributes.happiness >= 95) unlocked.push('happy');
+            if (gameState.badEvents >= 10) unlocked.push('tough');
+            if (gameState.events.some(e => e.text.includes('结婚') || e.text.includes('婚姻'))) unlocked.push('lover');
+            if (gameState.attributes.leadership >= 10) unlocked.push('leader');
+            if (gameState.attributes.creativity >= 10) unlocked.push('artist');
+            if (gameState.attributes.health >= 10) unlocked.push('healthy');
+            if (gameState.attributes.charm >= 10) unlocked.push('charmer');
+            if (gameState.attributes.diligence >= 10) unlocked.push('diligent');
+            if (gameState.attributes.creativity >= 8) unlocked.push('creative');
+            if (gameState.attributes.happiness >= 80 && gameState.attributes.wealth >= 8) unlocked.push('winner');
+            if (Object.values(gameState.attributes).every(v => v >= 8)) unlocked.push('perfect');
+            
+            gameState.achievements = unlocked;
+
+            document.getElementById('achievements-grid').innerHTML = unlocked.map(id => {
+                const ach = achievements.find(a => a.id === id);
+                return ach ? `
+                    <div class="achievement-item">
+                        <div class="achievement-icon">${ach.icon}</div>
+                        <div class="achievement-name">${ach.name}</div>
+                    </div>
+                ` : '';
+            }).join('');
+        }
+
+        function renderHistory() {
+            document.getElementById('history-list').innerHTML = gameState.events.map(e => `
+                <li class="history-item">
+                    <span class="history-age">${e.age}岁</span>
+                    <span class="history-event ${e.type}">${e.text}</span>
+                </li>
+            `).join('');
+        }
+
+        function restartGame() {
+            gameState = {
+                attributes: { appearance: 5, intelligence: 5, strength: 5, wealth: 5, luck: 5,
+                             charm: 0, health: 10, happiness: 50, leadership: 0, creativity: 0, diligence: 0, kindness: 0 },
+                selectedTalents: [],
+                currentAge: 0,
+                events: [],
+                achievements: [],
+                goodEvents: 0,
+                badEvents: 0,
+                initialWealth: 5
+            };
+            remainingPoints = 5;
+            selectedTalentCount = 0;
+            eventIndex = 0;
+            currentEvents = [];
+
+            document.getElementById('page-result').classList.remove('active');
+            document.getElementById('page-start').classList.add('active');
+            initAttributes();
+            initTalents();
+            updateUI();
+        }
+
+        function goHome() {
+            window.location.href = '../index.html';
+        }
+
+        function resetGameState() {
+            gameState = {
+                attributes: {
+                    appearance: 5,
+                    intelligence: 5,
+                    strength: 5,
+                    wealth: 5,
+                    luck: 5,
+                    charm: 0,
+                    health: 10,
+                    happiness: 50,
+                    leadership: 0,
+                    creativity: 0,
+                    diligence: 0,
+                    kindness: 0
+                },
+                selectedTalents: [],
+                currentAge: 0,
+                events: [],
+                achievements: [],
+                goodEvents: 0,
+                badEvents: 0,
+                initialWealth: 5
+            };
+            remainingPoints = 5;
+            selectedTalentCount = 0;
+            console.log('Game state reset:', {
+                appearance: gameState.attributes.appearance,
+                remainingPoints: remainingPoints,
+                selectedTalentCount: selectedTalentCount
+            });
+        }
+
+        function resetGame() {
+            resetGameState();
+            initAttributes();
+            initTalents();
+            updateUI();
+        }
+
+        function shareTo(platform) {
+            const url = encodeURIComponent('https://quweiceshi.com/life/index.html');
+            const title = encodeURIComponent(`我在人生重开模拟器中活到了${gameState.currentAge}岁！快来试试你的人生吧！`);
+            
+            switch(platform) {
+                case 'wechat':
+                    showToast('请复制链接分享到微信');
+                    copyToClipboard('https://quweiceshi.com/life/index.html');
+                    break;
+                case 'weibo':
+                    window.open(`https://service.weibo.com/share/share.php?url=${url}&title=${title}`, '_blank');
+                    break;
+                case 'qq':
+                    window.open(`https://connect.qq.com/widget/shareqq/index.html?url=${url}&title=${title}`, '_blank');
+                    break;
+                case 'link':
+                    copyToClipboard('https://quweiceshi.com/life/index.html');
+                    showToast('链接已复制到剪贴板');
+                    break;
+            }
+        }
+
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    console.log('Copied to clipboard');
+                }).catch(function() {
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        }
+        function fallbackCopy(text) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch(e) {}
+            document.body.removeChild(ta);
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(toast);
+                }, 300);
+            }, 2000);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            resetGameState();
+            initAttributes();
+            initTalents();
+            updateUI();
+            document.getElementById('start-game-btn').addEventListener('click', startGame);
+
+            const navToggle = document.getElementById('nav-toggle');
+            const navLinks = document.getElementById('nav-links');
+            navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+        });
+    </script>
+
+
+<footer class="site-footer" style="max-width:600px;margin:40px auto 0;padding:20px;text-align:center;border-top:1px solid rgba(255,255,255,0.1);">
+    <nav aria-label="网站导航" style="margin-bottom:16px;">
+        <a href="../index.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">首页</a>
+        <a href="../mbti.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">MBTI测试</a>
+        <a href="../bazi.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">八字运势</a>
+        <a href="../love.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">爱情匹配</a>
+        <a href="../constellation.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">星座运势</a>
+        <a href="../tarot.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">塔罗占卜</a>
+        <a href="../zodiac.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">生肖运势</a>
+        <a href="../dream.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">解梦</a>
+        <a href="../namestat.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">姓名测试</a>
+        <a href="../psychology.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">心理测试</a>
+        <a href="../life/index.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">人生重开</a>
+    </nav>
+    <p style="color:rgba(255,255,255,0.3);font-size:0.75rem;">&copy; 2026 趣味测试 quweiceshi.com - 仅供娱乐参考</p>
+</footer>
+</body>
+</html>
