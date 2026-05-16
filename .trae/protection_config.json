@@ -1,0 +1,61 @@
+{
+  "protection": {
+    "enabled": true,
+    "mode": "strict",
+    "auto_backup": true,
+    "snapshot_before_task": true
+  },
+  "risk_levels": {
+    "high": ["rm", "reset --hard", "clean -f", "push --force", "Remove-Item.*-Recurse"],
+    "medium": ["checkout", "install", "npm", "pip", "git add .", "git commit"],
+    "low": ["status", "diff", "log", "show", "branch"]
+  },
+  "whitelist": {
+    "commands": [
+      "git status",
+      "git diff",
+      "git log",
+      "git branch",
+      "git show",
+      "git reflog",
+      "Get-Content",
+      "Select-String",
+      "Test-Path"
+    ],
+    "file_patterns": [
+      "*.md",
+      "*.json",
+      "*.js",
+      "*.html",
+      "*.css",
+      "*.txt"
+    ]
+  },
+  "backup": {
+    "strategy": "snapshot",
+    "branches": {
+      "safe_backup": "backup-before-work",
+      "snapshots": "backup/snapshot-*",
+      "stable": "backup/stable-*"
+    },
+    "retention": {
+      "snapshots": "30days",
+      "stable": "forever"
+    }
+  },
+  "auto_protect": {
+    "before_dangerous": true,
+    "after_completion": true,
+    "periodic": "1hour"
+  },
+  "verification": {
+    "auto_test": false,
+    "syntax_check": true,
+    "git_integrity_check": true
+  },
+  "notifications": {
+    "on_backup": true,
+    "on_recovery": true,
+    "on_danger": true
+  }
+}
