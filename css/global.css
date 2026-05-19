@@ -247,6 +247,15 @@ body {
     .nav-toggle {
         display: block;
     }
+    
+    .main-content {
+        margin-top: 70px;
+        min-height: calc(100vh - 70px);
+    }
+    
+    .container {
+        margin-top: 70px;
+    }
 }
 
 /* 主内容 */
@@ -258,7 +267,7 @@ body {
 
 .container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 70px auto 0;
 }
 
 /* 卡片样式 */

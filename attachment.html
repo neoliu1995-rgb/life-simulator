@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>依恋类型测试_成人依恋风格测评_情境式35题 - 趣味测试</title>
+    <meta name="description" content="免费依恋类型测试 - 35道情境式行为选择题，模拟真实亲密关系场景，测出你的成人依恋风格（安全型、焦虑型、回避型、恐惧型）">
+    <meta name="keywords" content="依恋类型测试,成人依恋,依恋风格,亲密关系,安全型依恋,焦虑型依恋,回避型依恋">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://quweiceshi.com/attachment.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://quweiceshi.com/attachment.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://quweiceshi.com/attachment.html">
+    <link rel="alternate" hreflang="x-default" href="https://quweiceshi.com/attachment.html">
+
+    <meta property="og:title" content="依恋类型测试(情境式) - 了解你的亲密关系模式">
+    <meta property="og:description" content="35道情境式行为选择题，模拟真实亲密关系场景，测出你的成人依恋风格">
+    <meta property="og:url" content="https://quweiceshi.com/attachment.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="趣味测试">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:image" content="https://quweiceshi.com/images/og-psychology.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="依恋类型测试 - 趣味测试">
+
+    <link rel="preconnect" href="https://fonts.loli.net">
+    <link rel="preconnect" href="https://gstatic.loli.net" crossorigin>
+    <link rel="dns-prefetch" href="https://api.qrserver.com">
+    <link rel="dns-prefetch" href="https://hm.baidu.com">
+    <link href="https://fonts.loli.net/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/global.css">
+
+    <script async>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.async = true;
+        hm.src = "https://hm.baidu.com/hm.js?edc404e2ae130a4255dabf98a08172ee";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+    <style>
+        .page { display: none; }
+        .page.active { display: block; }
+
+        .intro-section { text-align: center; }
+
+        .intro-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+
+        .intro-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .intro-desc {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 24px;
+            font-size: 1.05rem;
+        }
+
+        .intro-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-icon {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .feature-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .start-btn {
+            width: 100%;
+            padding: 16px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: 0 4px 20px rgba(78, 205, 196, 0.4);
+        }
+
+        .start-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(78, 205, 196, 0.5);
+        }
+
+        .resume-hint {
+            display: none;
+            text-align: center;
+            margin-top: 12px;
+            padding: 12px;
+            background: rgba(78, 205, 196, 0.1);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            border-radius: 10px;
+            color: #4ECDC4;
+            font-size: 0.9rem;
+        }
+
+        .resume-hint.show { display: block; }
+
+        .question-progress {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .question-number {
+            font-weight: 600;
+            color: #4ECDC4;
+            font-size: 1.1rem;
+        }
+
+        .question-text {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 28px;
+            color: var(--text-primary);
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option-item {
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .option-item:hover {
+            background: rgba(78, 205, 196, 0.1);
+            border-color: rgba(78, 205, 196, 0.3);
+        }
+
+        .option-item.selected {
+            background: rgba(78, 205, 196, 0.15);
+            border-color: #4ECDC4;
+            box-shadow: 0 0 20px rgba(78, 205, 196, 0.1);
+        }
+
+        .option-label {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .option-item.selected .option-label {
+            background: #4ECDC4;
+            color: #0a0a0f;
+        }
+
+        .option-text {
+            font-size: 1rem;
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        .question-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 28px;
+            gap: 12px;
+        }
+
+        .btn-prev {
+            padding: 14px 28px;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-prev:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--border-hover);
+        }
+
+        .btn-prev:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .btn-next {
+            flex: 1;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-next:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(78, 205, 196, 0.3);
+        }
+
+        .btn-next:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .result-section { text-align: center; }
+
+        .result-icon {
+            font-size: 5rem;
+            margin-bottom: 16px;
+        }
+
+        .result-type {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .result-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .result-desc {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 28px;
+            font-size: 1.05rem;
+        }
+
+        .dimension-section {
+            margin-top: 32px;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .dimension-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #4ECDC4;
+            text-align: center;
+        }
+
+        .dimension-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .dim-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 60px;
+        }
+
+        .dim-letter {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #4ECDC4;
+        }
+
+        .dim-name {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .dim-bar-container {
+            flex: 1;
+            height: 16px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .dim-bar-fill {
+            height: 100%;
+            border-radius: 8px;
+            transition: width 1s ease;
+        }
+
+        .dim-bar-fill.anxiety {
+            background: linear-gradient(90deg, #FF6B6B, #FF8E8E);
+        }
+
+        .dim-bar-fill.avoidance {
+            background: linear-gradient(90deg, #45B7D1, #4ECDC4);
+        }
+
+        .dim-percent {
+            font-size: 0.95rem;
+            font-weight: 600;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .trait-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .trait-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 24px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .trait-item:hover {
+            transform: translateY(-3px);
+            border-color: #4ECDC4;
+        }
+
+        .trait-icon {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .trait-name {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+
+        .trait-desc {
+            font-size: 0.825rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .strengths-section { margin-top: 32px; }
+
+        .strengths-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #4ECDC4;
+            text-align: center;
+        }
+
+        .strengths-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .strength-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .strength-item:hover {
+            border-color: #00B894;
+            background: rgba(0, 184, 148, 0.1);
+        }
+
+        .weaknesses-section { margin-top: 32px; }
+
+        .weaknesses-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #FF6B6B;
+            text-align: center;
+        }
+
+        .weaknesses-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .weakness-item {
+            background: rgba(255, 107, 107, 0.1);
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #FF6B6B;
+            border: 1px solid rgba(255, 107, 107, 0.2);
+            transition: all 0.3s;
+        }
+
+        .weakness-item:hover {
+            background: rgba(255, 107, 107, 0.15);
+        }
+
+        .relationship-section { margin-top: 32px; }
+
+        .relationship-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #4ECDC4;
+            text-align: center;
+        }
+
+        .relationship-content {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .relationship-advice {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+
+        .compatibility-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .compatibility-tag {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .compatibility-high {
+            background: rgba(0, 184, 148, 0.2);
+            color: #00B894;
+        }
+
+        .compatibility-medium {
+            background: rgba(255, 215, 0, 0.2);
+            color: #FFD700;
+        }
+
+        .compatibility-low {
+            background: rgba(255, 107, 107, 0.2);
+            color: #FF6B6B;
+        }
+
+        .growth-section { margin-top: 32px; }
+
+        .growth-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #4ECDC4;
+            text-align: center;
+        }
+
+        .growth-tips {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .growth-tip {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 16px;
+            border-left: 4px solid #4ECDC4;
+        }
+
+        .growth-tip-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #4ECDC4;
+        }
+
+        .growth-tip-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-text {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 32px;
+            padding-bottom: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .intro-icon { font-size: 3.5rem; }
+            .intro-title { font-size: 1.6rem; }
+            .intro-desc { font-size: 0.95rem; }
+            .intro-features { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .feature-item { padding: 16px 12px; }
+            .question-text { font-size: 1.15rem; }
+            .result-type { font-size: 2.8rem; }
+            .result-title { font-size: 1.5rem; }
+            .result-desc { font-size: 1rem; }
+            .result-icon { font-size: 4rem; }
+            .trait-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .trait-item { padding: 18px; }
+            .strengths-list { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .weaknesses-list { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .dimension-section, .relationship-content, .growth-tip { padding: 16px; border-radius: 16px; }
+            .share-buttons { flex-wrap: wrap; gap: 8px; }
+        }
+
+        @media (max-width: 480px) {
+            .intro-icon { font-size: 3rem; margin-bottom: 16px; }
+            .intro-title { font-size: 1.4rem; }
+            .intro-features { gap: 8px; }
+            .feature-item { padding: 14px 10px; border-radius: 12px; }
+            .feature-icon { font-size: 1.5rem; }
+            .feature-title { font-size: 0.85rem; }
+            .feature-desc { font-size: 0.7rem; }
+            .start-btn { padding: 14px 18px; font-size: 0.9rem; }
+            .question-text { font-size: 1.05rem; margin-bottom: 20px; }
+            .option-item { padding: 12px 14px; border-radius: 10px; }
+            .option-text { font-size: 0.9rem; }
+            .result-type { font-size: 2.2rem; }
+            .result-title { font-size: 1.3rem; }
+            .result-icon { font-size: 3rem; }
+            .result-desc { font-size: 0.92rem; }
+            .trait-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .trait-item { padding: 14px 10px; border-radius: 12px; }
+            .trait-name { font-size: 0.9rem; }
+            .trait-desc { font-size: 0.78rem; }
+            .trait-icon { font-size: 1.5rem; }
+            .strengths-list, .weaknesses-list { grid-template-columns: 1fr 1fr; gap: 8px; }
+            .strength-item, .weakness-item { padding: 12px 8px; font-size: 0.82rem; }
+            .dimension-section, .relationship-content, .growth-tip { padding: 16px; border-radius: 16px; }
+            .dimension-title, .strengths-title, .weaknesses-title, .relationship-title, .growth-title { font-size: 1.05rem; margin-bottom: 16px; }
+            .share-btn { padding: 8px 12px; font-size: 0.78rem; }
+            .footer-text { font-size: 0.78rem; padding-bottom: 24px; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "依恋类型测试",
+      "description": "35道情境式行为选择题，模拟真实亲密关系场景，测出你的成人依恋风格，了解你的亲密关系模式",
+      "url": "https://quweiceshi.com/attachment.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "趣味测试",
+        "url": "https://quweiceshi.com"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://quweiceshi.com"},
+        {"@type": "ListItem", "position": 2, "name": "依恋类型测试", "item": "https://quweiceshi.com/attachment.html"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "依恋类型测试是什么？", "acceptedAnswer": {"@type": "Answer", "text": "依恋类型测试基于成人依恋理论，通过评估你在亲密关系中的焦虑和回避两个维度，将你的依恋风格分为安全型、焦虑型、回避型和恐惧型四种类型。了解自己的依恋类型有助于改善亲密关系。"}},
+        {"@type": "Question", "name": "四种依恋类型分别是什么？", "acceptedAnswer": {"@type": "Answer", "text": "安全型：对亲密关系感到舒适，既不担心被抛弃也不害怕过于亲近。焦虑型：渴望亲密但担心被抛弃，需要大量安全感确认。回避型：重视独立性，对过于亲密感到不适。恐惧型：既渴望亲密又害怕受伤，内心矛盾。"}},
+        {"@type": "Question", "name": "依恋类型可以改变吗？", "acceptedAnswer": {"@type": "Answer", "text": "依恋类型虽然相对稳定，但并非一成不变。通过自我觉察、与安全型伴侣的关系体验、心理咨询等方式，依恋类型可以逐渐向安全型转变。研究表明，约30%的人依恋类型会在数年内发生变化。"}},
+        {"@type": "Question", "name": "如何向安全型依恋发展？", "acceptedAnswer": {"@type": "Answer", "text": "向安全型依恋发展的方法包括：1.增强自我觉察，了解自己的依恋模式；2.建立稳定的支持系统；3.学习健康的沟通方式；4.在关系中练习信任和脆弱；5.必要时寻求专业心理咨询帮助。"}},
+        {"@type": "Question", "name": "依恋类型如何影响恋爱关系？", "acceptedAnswer": {"@type": "Answer", "text": "依恋类型深刻影响恋爱关系。安全型能建立稳定亲密的关系；焦虑型容易过度依赖和焦虑；回避型倾向于保持距离和独立；恐惧型在亲密与独立之间反复挣扎。了解彼此的依恋类型有助于改善沟通和增进理解。"}}
+      ]
+    }
+    </script>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="bg-gradient"></div>
+        <div class="bg-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+    </div>
+
+    <header class="nav-header">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-icon">🎲</span>
+                <span>趣味测试</span>
+            </a>
+            <nav>
+                <button class="nav-toggle" id="nav-toggle">☰</button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="life/index.html">人生重开</a></li>
+                    <li><a href="mbti.html">MBTI测试</a></li>
+                    <li><a href="bazi.html">八字运势</a></li>
+                    <li><a href="love.html">爱情匹配</a></li>
+                    <li><a href="constellation.html">星座运势</a></li>
+                    <li><a href="tarot.html">塔罗占卜</a></li>
+                    <li><a href="zodiac.html">生肖运势</a></li>
+                    <li><a href="dream.html">解梦</a></li>
+                    <li><a href="namestat.html">姓名测试</a></li>
+                    <li><a href="psychology.html">心理测试</a></li>
+                    <li><a href="attachment.html">依恋测试</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div id="page-intro" class="page active">
+                <div class="card intro-section">
+                    <div class="intro-icon">💞</div>
+                    <h1 class="intro-title">依恋类型测试</h1>
+                    <p class="intro-desc">通过35道情境式题目，模拟亲密关系中的真实场景，分析你在不同情境下的本能反应。基于成人依恋理论四分类模型，帮你识别自己的依恋类型。</p>
+
+                    <div class="intro-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">📊</div>
+                            <div class="feature-title">情境模拟</div>
+                            <div class="feature-desc">真实关系场景</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">⏱️</div>
+                            <div class="feature-title">快速测评</div>
+                            <div class="feature-desc">约5-8分钟完成</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🎯</div>
+                            <div class="feature-title">四种类型</div>
+                            <div class="feature-desc">安全/焦虑/回避/恐惧</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">💡</div>
+                            <div class="feature-title">成长建议</div>
+                            <div class="feature-desc">改善亲密关系</div>
+                        </div>
+                    </div>
+
+                    <button class="start-btn" onclick="startTest()">开始测试</button>
+                    <div class="resume-hint" id="resume-hint">
+                        检测到上次未完成的测试进度，点击"开始测试"将继续上次进度
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-question" class="page">
+                <div class="card">
+                    <div class="question-progress">
+                        <span class="question-number" id="question-current">1/35</span>
+                        <div class="progress-bar" style="flex:1;margin:0 16px;">
+                            <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+                        </div>
+                        <span class="question-number" id="question-percent">0%</span>
+                    </div>
+
+                    <div class="question-text" id="question-text"></div>
+
+                    <div class="options-list" id="options-list"></div>
+
+                    <div class="question-actions">
+                        <button class="btn-prev" id="btn-prev" onclick="prevQuestion()" disabled>上一题</button>
+                        <button class="btn-next" id="btn-next" onclick="nextQuestion()" disabled>下一题</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-result" class="page">
+                <div class="card result-section">
+                    <div class="result-icon" id="result-icon"></div>
+                    <div class="result-type" id="result-type"></div>
+                    <div class="result-title" id="result-title"></div>
+                    <p class="result-desc" id="result-desc"></p>
+
+                    <div class="dimension-section">
+                        <div class="dimension-title">📊 依恋维度得分</div>
+                        <div class="dimension-bar">
+                            <div class="dim-label">
+                                <span class="dim-letter">焦虑</span>
+                                <span class="dim-name">Anxiety</span>
+                            </div>
+                            <div class="dim-bar-container">
+                                <div class="dim-bar-fill anxiety" id="anxiety-bar" style="width:0%"></div>
+                            </div>
+                            <span class="dim-percent" id="anxiety-percent">0%</span>
+                        </div>
+                        <div class="dimension-bar">
+                            <div class="dim-label">
+                                <span class="dim-letter">回避</span>
+                                <span class="dim-name">Avoidance</span>
+                            </div>
+                            <div class="dim-bar-container">
+                                <div class="dim-bar-fill avoidance" id="avoidance-bar" style="width:0%"></div>
+                            </div>
+                            <span class="dim-percent" id="avoidance-percent">0%</span>
+                        </div>
+                        <div id="type-distribution" style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.05);"></div>
+                    </div>
+
+                    <div class="trait-grid" id="trait-grid"></div>
+
+                    <div class="strengths-section">
+                        <div class="strengths-title">✨ 你的优势</div>
+                        <div class="strengths-list" id="strengths-list"></div>
+                    </div>
+
+                    <div class="weaknesses-section">
+                        <div class="weaknesses-title">⚠️ 需要注意</div>
+                        <div class="weaknesses-list" id="weaknesses-list"></div>
+                    </div>
+
+                    <div class="relationship-section">
+                        <div class="relationship-title">❤️ 亲密关系建议</div>
+                        <div class="relationship-content" id="relationship-content"></div>
+                    </div>
+
+                    <div class="growth-section">
+                        <div class="growth-title">📈 个人成长建议</div>
+                        <div class="growth-tips" id="growth-tips"></div>
+                    </div>
+
+                    <button class="btn btn-secondary" onclick="restartTest()" style="margin-top:12px;width:100%;">重新测试</button>
+
+                    <div class="share-section">
+                        <h4>📤 分享我的依恋类型</h4>
+                        <div class="share-buttons">
+                            <button class="share-btn" onclick="shareTo('wechat')">
+                                <span>💬</span>
+                                <span>微信</span>
+                            </button>
+                            <button class="share-btn" onclick="shareTo('weibo')">
+                                <span>📱</span>
+                                <span>微博</span>
+                            </button>
+                            <button class="share-btn" onclick="shareTo('qq')">
+                                <span>🐧</span>
+                                <span>QQ</span>
+                            </button>
+                            <button class="share-btn" onclick="shareTo('link')">
+                                <span>🔗</span>
+                                <span>复制</span>
+                            </button>
+                        </div>
+                        <div class="share-qr">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://quweiceshi.com/attachment.html" alt="二维码">
+                            <p>扫码测试依恋类型</p>
+                        </div>
+                        <div class="share-link">
+                            <span>https://quweiceshi.com/attachment.html</span>
+                            <button onclick="copyToClipboard('https://quweiceshi.com/attachment.html')">复制</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-text">依恋类型测试仅供参考，真正的自我了解需要持续探索</div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer" style="max-width:600px;margin:40px auto 0;padding:20px;text-align:center;border-top:1px solid rgba(255,255,255,0.1);">
+        <nav aria-label="网站导航" style="margin-bottom:16px;">
+            <a href="index.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">首页</a>
+            <a href="mbti.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">MBTI测试</a>
+            <a href="bazi.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">八字运势</a>
+            <a href="love.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">爱情匹配</a>
+            <a href="constellation.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">星座运势</a>
+            <a href="tarot.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">塔罗占卜</a>
+            <a href="zodiac.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">生肖运势</a>
+            <a href="dream.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">解梦</a>
+            <a href="namestat.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">姓名测试</a>
+            <a href="psychology.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">心理测试</a>
+            <a href="attachment.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">依恋测试</a>
+            <a href="life/index.html" style="color:rgba(255,255,255,0.5);margin:0 8px;font-size:0.85rem;">人生重开</a>
+        </nav>
+        <p style="color:rgba(255,255,255,0.3);font-size:0.75rem;">&copy; 2026 趣味测试 quweiceshi.com - 仅供娱乐参考</p>
+    </footer>
+
+    <script>
+    (function() {
+        var STORAGE_KEY = 'attachment_test_progress';
+
+        var questions = [
+            { q: '当我需要情感支持时，我会：',
+              options: ['主动向亲密的人寻求帮助', '犹豫很久才会开口求助', '倾向于自己解决问题', '感到混乱，不知道该怎么办'] },
+            { q: '伴侣说"我需要一些独处的时间"，我的第一反应是：',
+              options: ['表示理解，做自己的事情', '担心是不是自己做错了什么', '正好我也想一个人待着', '既想追问原因又怕对方反感'] },
+            { q: '和伴侣发生争吵后，对方沉默不语，我会：',
+              options: ['主动沟通，尝试解决问题', '不断反思是不是自己的错', '觉得冷静一下也好，各自处理', '内心很矛盾，想靠近又想逃离'] },
+            { q: '伴侣没有及时回复我的消息时，我会：',
+              options: ['可能在忙，等会儿再看', '开始焦虑，反复检查手机', '无所谓，我也经常不回', '既生气又担心，情绪起伏很大'] },
+            { q: '当伴侣想要更加亲密（如拥抱、深聊）时，我会：',
+              options: ['自然地回应，享受亲密时刻', '开心但有点担心自己表现不够好', '感到有些不自在，想保持距离', '既渴望又害怕，身体会僵硬'] },
+            { q: '如果伴侣提出要深入了解我的内心世界，我会：',
+              options: ['愿意分享，觉得被理解很舒服', '希望分享但又害怕对方不喜欢真实的我', '不太习惯暴露太多内心想法', '不知道该说什么，感到紧张混乱'] },
+            { q: '当伴侣表达对我的爱意时，我的感受是：',
+              options: ['温暖安心，也回馈爱意', '开心但怀疑能持续多久', '有些不自在，不太习惯这种表达', '既感动又怀疑，不敢完全相信'] },
+            { q: '想到未来可能和伴侣分开，我会：',
+              options: ['虽然不舍但相信能面对', '非常焦虑，无法停止担忧', '觉得每个人最终都是独立的', '既恐惧孤独又害怕太依赖'] },
+            { q: '在关系中遇到问题时，我通常：',
+              options: ['坦诚沟通，一起寻找解决方案', '常常自责，觉得是自己不够好', '倾向于独自消化，不想麻烦对方', '想解决但不知从何下手'] },
+            { q: '伴侣和其他异性正常交往时，我会：',
+              options: ['信任对方，不会多想', '忍不住会比较和担心', '觉得这很正常，我也一样', '嘴上说不在意心里却很难受'] },
+            { q: '当伴侣情绪低落需要安慰时，我会：',
+              options: ['主动陪伴倾听，给予支持', '很想帮忙但担心自己做得不好', '不太确定该怎么安慰，有些手足无措', '想靠近又怕说错话，左右为难'] },
+            { q: '如果伴侣因为忙碌而减少了陪伴时间，我会：',
+              options: ['理解对方，利用时间做自己的事', '感到不安，怀疑对方是否还爱我', '其实挺享受有更多自由时间的', '既想念又生气，情绪反复波动'] },
+            { q: '当关系进入稳定期后，我对亲密感的需求是：',
+              options: ['保持适度的亲密，既有连接也有空间', '希望比以前更亲密，担心关系变淡', '觉得现在的距离刚好，不需要更多', '时而渴望更亲密时而又害怕被束缚'] },
+            { q: '伴侣对我表达了不满或批评，我的反应是：',
+              options: ['认真倾听，思考如何改进', '深受打击，觉得自己很糟糕', '表面平静但内心有些抗拒', '既想解释又觉得无力，陷入混乱'] },
+            { q: '当我在外面受了委屈，回到家会：',
+              options: ['自然地和伴侣倾诉', '想倾诉但又怕给对方添麻烦', '倾向于自己消化，不愿展示脆弱', '非常想说但又害怕被评判'] },
+            { q: '对于依赖伴侣这件事，我的态度是：',
+              options: ['适度依赖是健康关系的一部分', '我很想依赖但又怕成为负担', '我更习惯靠自己，不太想依赖别人', '既渴望被照顾又害怕失去独立性'] },
+            { q: '如果伴侣说要出差一周，我会：',
+              options: ['祝旅途愉快，期间保持联系', '已经开始担心和不安了', '挺好的，可以好好享受独处', '既期待独处又会感到莫名的焦虑'] },
+            { q: '当伴侣做了让我失望的事情，我会：',
+              options: ['直接但温和地表达感受', '忍住不说，怕影响关系', '默默接受，不太在意', '想说又不敢说，内心很纠结'] },
+            { q: '在社交场合中，伴侣和别人聊得很投机，我会：',
+              options: ['为伴侣感到高兴，也加入交流', '有些失落，感觉被忽略了', '正好可以和别人聊聊', '既为对方开心又感到被冷落'] },
+            { q: '关于向伴侣表达"我爱你"或类似情感：',
+              options: ['能够自然地表达', '想说但总是开不了口', '不太习惯说这种话', '想说又怕对方不领情'] },
+            { q: '当伴侣提出想要更多个人空间时，我觉得：',
+              options: ['合理的需求，尊重对方的选择', '是不是我做错了什么让对方想逃避', '正合我意，我也需要空间', '既理解又害怕对方因此疏远'] },
+            { q: '如果发现伴侣在隐瞒什么事情，我会：',
+              options: ['等合适时机坦诚询问', '立刻焦虑，不停猜测最坏结果', '每个人都有隐私，不必过问', '想知道又怕知道真相后无法承受'] },
+            { q: '伴侣夸奖我时，我的反应通常是：',
+              options: ['真诚感谢，欣然接受', '开心但不相信自己真的那么好', '有些不好意思，不太习惯被夸', '高兴但又怀疑对方是否真心'] },
+            { q: '当我和伴侣意见不一致时：',
+              options: ['尊重差异，寻找共同点', '容易妥协以避免冲突', '坚持己见，不太愿意让步', '想让步又觉得委屈，很矛盾'] },
+            { q: '对于在伴侣面前展现脆弱（如哭泣）：',
+              options: ['可以在对方面前真实地表达情绪', '想哭但怕被认为太软弱', '几乎不会在任何人面前哭', '既想被安慰又害怕被看到软弱'] },
+            { q: '伴侣突然改变计划取消了我们的约会，我会：',
+              options: ['理解突发情况，重新安排时间', '虽然理解但还是感到失落和不安', '无所谓，正好可以做别的事', '既理解又难过，情绪复杂'] },
+            { q: '当伴侣和我谈论前任的话题时：',
+              options: ['愿意倾听，了解对方的过去', '会很在意，忍不住比较', '过去的事不重要，不太关心', '想听又怕听到不想知道的内容'] },
+            { q: '我认为理想的关系状态是：',
+              options: ['彼此独立又能深度连接', '时刻在一起，形影不离', '各自精彩，偶尔相聚', '想要亲密但又害怕失去自我'] },
+            { q: '如果伴侣说我"太敏感了"，我会：',
+              options: ['会思考对方为什么这么说', '觉得自己确实有问题，很自责', '觉得对方不理解我，有些生气', '既认同又抗拒，很困惑'] },
+            { q: '在做重要决定时，我通常会：',
+              options: ['会和伴侣商量，参考对方的意见', '很依赖伴侣的想法，怕自己选错', '习惯自己做决定，不太问别人', '想商量又怕被影响，犹豫不决'] },
+            { q: '当伴侣生病或遇到困难时，我想：',
+              options: ['尽我所能去照顾和支持', '很想帮忙但担心自己能力不够', '对方应该能自己处理好', '想照顾又怕做不好，手忙脚乱'] },
+            { q: '关于承诺（如结婚、长期规划），我的态度是：',
+              options: ['顺其自然，水到渠成', '非常期待但又害怕承诺后被抛弃', '不太喜欢被承诺束缚', '既向往稳定的承诺又恐惧被锁定'] },
+            { q: '当伴侣的朋友不太喜欢我时，我会：',
+              options: ['努力改善关系，但也尊重对方的社交圈', '很在意，觉得是自己不够好', '不在乎别人的看法', '既想融入又害怕被拒绝'] },
+            { q: '深夜感到孤独时，我会：',
+              options: ['可能会联系亲近的人聊聊', '想联系但又怕打扰对方', '习惯了，自己待着也行', '极度想联系却又不敢迈出那一步'] },
+            { q: '如果伴侣说"我们需要谈谈"，我的第一反应是：',
+              options: ['好的，是什么事情呢', '心跳加速，担心是坏消息', '谈就谈吧，没什么大不了的', '既想知道又害怕面对'] }
+        ];
+
+        var optionLabels = ['A', 'B', 'C', 'D'];
+
+        var attachmentTypes = {
+            secure: {
+                name: '安全型依恋',
+                icon: '🌟',
+                desc: '你在亲密关系中表现出高度的信任和安全感。你既能够享受与伴侣的亲密，也能保持健康的独立性。你相信自己值得被爱，也相信他人是可靠的。在面对关系中的挑战时，你倾向于积极沟通和解决问题，而不是逃避或过度焦虑。',
+                traits: [
+                    { icon: '🤝', name: '信任他人', desc: '相信伴侣的忠诚和善意' },
+                    { icon: '💬', name: '善于沟通', desc: '能坦诚表达自己的需求' },
+                    { icon: '⚖️', name: '平衡独立', desc: '亲密与自主兼顾' },
+                    { icon: '🛡️', name: '情绪稳定', desc: '面对冲突不易失控' }
+                ],
+                strengths: ['信任伴侣', '善于沟通', '情绪稳定', '独立自主', '解决冲突', '安全基地'],
+                weaknesses: ['可能忽视潜在问题', '过度信任可能受伤', '偶尔缺乏警觉', '对不安全型伴侣缺乏理解'],
+                relationship: {
+                    style: '你在关系中是稳定和温暖的，能够给予伴侣安全感，也能从关系中获得满足。你不会因为伴侣的短暂缺席而焦虑，也不会因为亲密而感到窒息。',
+                    tips: ['继续保持健康的沟通方式', '理解不同依恋类型伴侣的需求', '在关系中保持自我成长', '帮助不安全型伴侣建立安全感'],
+                    compatibility: { high: ['安全型', '焦虑型'], medium: ['回避型'], low: ['恐惧型'] }
+                },
+                growth: [
+                    { title: '保持觉察', desc: '虽然你是安全型，也要持续关注关系中的细微变化，不要因为安全感而忽视问题。' },
+                    { title: '理解差异', desc: '学习理解不同依恋类型的人，你的安全感可以帮助伴侣成长。' },
+                    { title: '深化连接', desc: '尝试更深层次的自我表露，让亲密关系更加丰富和深刻。' },
+                    { title: '持续成长', desc: '安全型也需要不断学习和成长，保持对关系的好奇心。' }
+                ]
+            },
+            anxious: {
+                name: '焦虑型依恋',
+                icon: '💗',
+                desc: '你在亲密关系中渴望高度的情感亲密，但常常担心伴侣不够爱你或会离开你。你对关系中的细微变化非常敏感，容易将伴侣的正常行为解读为拒绝或不爱的信号。你可能需要更多的安全感和确认来感到安心。',
+                traits: [
+                    { icon: '❤️', name: '渴望亲密', desc: '极度需要情感连接' },
+                    { icon: '🔍', name: '敏感警觉', desc: '对关系变化高度敏感' },
+                    { icon: '😟', name: '害怕被弃', desc: '担心伴侣会离开' },
+                    { icon: '🎯', name: '全心投入', desc: '对关系非常认真' }
+                ],
+                strengths: ['感情丰富', '全心投入', '善于察觉', '忠诚专一', '关心伴侣', '热情温暖'],
+                weaknesses: ['过度依赖', '容易焦虑', '患得患失', '情绪波动', '需要确认'],
+                relationship: {
+                    style: '你在关系中非常投入和忠诚，但可能因为过度担心而做出一些适得其反的行为，比如频繁查岗、过度黏人或因小事争吵。这些行为源于对失去的恐惧，而非不信任。',
+                    tips: ['学会自我安抚，不要完全依赖伴侣来调节情绪', '给伴侣适当的空间和信任', '区分想象中的威胁和真实的问题', '建立自我价值感，不把自我价值建立在关系上'],
+                    compatibility: { high: ['安全型'], medium: ['焦虑型', '恐惧型'], low: ['回避型'] }
+                },
+                growth: [
+                    { title: '自我安抚', desc: '学会在不依赖他人的情况下安抚自己的焦虑情绪，如冥想、运动或写日记。' },
+                    { title: '建立自信', desc: '培养独立的自我价值感，认识到自己的价值不依赖于他人的认可。' },
+                    { title: '信任练习', desc: '尝试给伴侣更多的信任和空间，观察事情并不像你担心的那样发展。' },
+                    { title: '有效沟通', desc: '学会用"我需要"代替"你总是"，表达需求而非指责。' }
+                ]
+            },
+            avoidant: {
+                name: '回避型依恋',
+                icon: '🏔️',
+                desc: '你在亲密关系中重视独立性和自主性，对过于亲密的情感连接感到不适。你倾向于保持情感距离，在关系遇到压力时可能选择退缩。你相信自己，不太依赖他人，可能认为过度依赖是软弱的表现。',
+                traits: [
+                    { icon: '🦅', name: '重视独立', desc: '强调自主和自给自足' },
+                    { icon: '🧊', name: '情感疏离', desc: '对亲密感到不自在' },
+                    { icon: '🏃', name: '回避冲突', desc: '遇到压力倾向退缩' },
+                    { icon: '💪', name: '自我依靠', desc: '相信自己胜过依赖他人' }
+                ],
+                strengths: ['独立自主', '理性冷静', '自我管理', '抗压能力', '目标导向', '适应力强'],
+                weaknesses: ['情感疏离', '回避亲密', '难以信任', '压抑感受', '忽视需求'],
+                relationship: {
+                    style: '你在关系中倾向于保持一定的距离，可能让伴侣感到被冷落或被推开。当关系变得过于亲密时，你可能会本能地退缩。这并非因为你不在乎，而是亲密感让你感到不安全。',
+                    tips: ['尝试逐步向伴侣敞开心扉，分享内心想法', '认识到需要他人并非软弱的表现', '在感到想退缩时，试着留下来面对', '学会识别和表达自己的情感需求'],
+                    compatibility: { high: ['安全型'], medium: ['回避型', '恐惧型'], low: ['焦虑型'] }
+                },
+                growth: [
+                    { title: '情感觉察', desc: '学会识别和接纳自己的情感，不要习惯性地压抑或忽视它们。' },
+                    { title: '练习脆弱', desc: '尝试向信任的人展示脆弱的一面，体验被接纳的感觉。' },
+                    { title: '亲密练习', desc: '逐步增加与伴侣的情感交流，从小的分享开始，慢慢建立亲密感。' },
+                    { title: '重新定义独立', desc: '认识到真正的独立包括有能力选择何时依赖他人，而非拒绝一切依赖。' }
+                ]
+            },
+            fearful: {
+                name: '恐惧型依恋',
+                icon: '🌊',
+                desc: '你在亲密关系中经历着内心的矛盾：既渴望亲密，又害怕受伤。你可能同时表现出焦虑型和回避型的特征——在想要靠近时又害怕被伤害，在想要远离时又害怕孤独。这种矛盾让你在关系中感到纠结和痛苦。',
+                traits: [
+                    { icon: '⚡', name: '内心矛盾', desc: '渴望亲密又害怕受伤' },
+                    { icon: '🔄', name: '反复无常', desc: '在亲近与疏远间摇摆' },
+                    { icon: '💔', name: '害怕受伤', desc: '对情感伤害高度敏感' },
+                    { icon: '🌀', name: '自我怀疑', desc: '不确定自己值得被爱' }
+                ],
+                strengths: ['情感丰富', '善于反思', '同理心强', '直觉敏锐', '深度思考', '真实感受'],
+                weaknesses: ['内心冲突', '难以信任', '情绪波动', '自我怀疑', '关系不稳定'],
+                relationship: {
+                    style: '你在关系中经历着推拉的循环：当伴侣靠近时，你可能会因为害怕受伤而推开对方；当伴侣远离时，你又会因为焦虑而想要抓住对方。这种模式让双方都感到疲惫。',
+                    tips: ['认识到自己的矛盾感受是正常的，不要因此自责', '在感到想推开伴侣时，先停下来感受背后的恐惧', '寻找一个安全型伴侣，稳定的体验有助于改变模式', '考虑寻求专业心理咨询的帮助'],
+                    compatibility: { high: ['安全型'], medium: ['恐惧型', '焦虑型'], low: ['回避型'] }
+                },
+                growth: [
+                    { title: '接纳矛盾', desc: '承认自己同时渴望亲密和害怕受伤是正常的，不要因为矛盾而否定自己。' },
+                    { title: '建立安全锚', desc: '在关系中建立稳定的日常仪式，作为安全感的基础锚点。' },
+                    { title: '渐进信任', desc: '从小事开始练习信任，逐步扩大信任的范围和深度。' },
+                    { title: '专业支持', desc: '恐惧型依恋的改变可能需要专业帮助，心理咨询是有效的途径。' }
+                ]
+            }
+        };
+
+        var currentQuestion = 0;
+        var answers = [];
+
+        function saveProgress() {
+            try {
+                var data = {
+                    currentQuestion: currentQuestion,
+                    answers: answers,
+                    timestamp: Date.now()
+                };
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+            } catch(e) {}
+        }
+
+        function loadProgress() {
+            try {
+                var saved = localStorage.getItem(STORAGE_KEY);
+                if (saved) {
+                    var data = JSON.parse(saved);
+                    if (data && typeof data.currentQuestion === 'number' && Array.isArray(data.answers)) {
+                        if (data.answers.length > questions.length) {
+                            return null;
+                        }
+                        for (var i = 0; i < data.answers.length; i++) {
+                            if (data.answers[i] !== undefined && (data.answers[i] < 0 || data.answers[i] > 3)) {
+                                return null;
+                            }
+                        }
+                        if (data.currentQuestion < 0 || data.currentQuestion >= questions.length) {
+                            data.currentQuestion = 0;
+                        }
+                        var age = Date.now() - (data.timestamp || 0);
+                        if (age > 7 * 24 * 60 * 60 * 1000) {
+                            clearProgress();
+                            return null;
+                        }
+                        return data;
+                    }
+                }
+            } catch(e) {
+                clearProgress();
+            }
+            return null;
+        }
+
+        function clearProgress() {
+            try {
+                localStorage.removeItem(STORAGE_KEY);
+            } catch(e) {}
+        }
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(function(p) {
+                p.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.startTest = function() {
+            var saved = loadProgress();
+            if (saved && saved.answers && saved.answers.length > 0) {
+                currentQuestion = saved.currentQuestion || 0;
+                answers = saved.answers.slice();
+                if (currentQuestion >= questions.length) {
+                    currentQuestion = 0;
+                    answers = [];
+                    clearProgress();
+                }
+            } else {
+                currentQuestion = 0;
+                answers = [];
+            }
+            showPage('page-question');
+            renderQuestion();
+        };
+
+        function renderQuestion() {
+            var q = questions[currentQuestion];
+            document.getElementById('question-text').textContent = q.q;
+            document.getElementById('question-current').textContent = (currentQuestion + 1) + '/' + questions.length;
+
+            var progress = ((currentQuestion + 1) / questions.length) * 100;
+            document.getElementById('progress-fill').style.width = progress + '%';
+            document.getElementById('question-percent').textContent = Math.round(progress) + '%';
+
+            var optionsList = document.getElementById('options-list');
+            var html = '';
+            for (var i = 0; i < q.options.length; i++) {
+                var selected = (answers[currentQuestion] === i) ? ' selected' : '';
+                html += '<div class="option-item' + selected + '" role="button" tabindex="0" onclick="selectOption(' + i + ')" onkeydown="if(event.key===\'Enter\'||event.key===\' \')selectOption(' + i + ')">';
+                html += '<span class="option-label">' + optionLabels[i] + '</span>';
+                html += '<span class="option-text">' + q.options[i] + '</span>';
+                html += '</div>';
+            }
+            optionsList.innerHTML = html;
+
+            document.getElementById('btn-prev').disabled = (currentQuestion === 0);
+            updateNextButton();
+        }
+
+        function updateNextButton() {
+            var btnNext = document.getElementById('btn-next');
+            if (answers[currentQuestion] !== undefined) {
+                btnNext.disabled = false;
+                btnNext.textContent = (currentQuestion === questions.length - 1) ? '查看结果' : '下一题';
+            } else {
+                btnNext.disabled = true;
+                btnNext.textContent = (currentQuestion === questions.length - 1) ? '查看结果' : '下一题';
+            }
+        }
+
+        window.selectOption = function(index) {
+            answers[currentQuestion] = index;
+            var items = document.querySelectorAll('.option-item');
+            items.forEach(function(item, i) {
+                item.classList.toggle('selected', i === index);
+            });
+            updateNextButton();
+            saveProgress();
+        };
+
+        window.prevQuestion = function() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                renderQuestion();
+            }
+        };
+
+        window.nextQuestion = function() {
+            if (answers[currentQuestion] === undefined) {
+                showToast('请选择一个选项');
+                return;
+            }
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                renderQuestion();
+                saveProgress();
+            } else {
+                showResult();
+                clearProgress();
+            }
+        };
+
+        function calculateScores() {
+            var counts = { secure: 0, anxious: 0, avoidant: 0, fearful: 0 };
+            var typeMap = ['secure', 'anxious', 'avoidant', 'fearful'];
+
+            for (var i = 0; i < answers.length; i++) {
+                if (answers[i] !== undefined) {
+                    counts[typeMap[answers[i]]]++;
+                }
+            }
+
+            var total = answers.filter(function(a) { return a !== undefined; }).length;
+            if (total === 0) return { anxiety: 0, avoidance: 0, type: 'secure', counts: counts, total: 0 };
+
+            var type = 'secure';
+            var maxCount = counts.secure;
+            if (counts.anxious > maxCount) { type = 'anxious'; maxCount = counts.anxious; }
+            if (counts.avoidant > maxCount) { type = 'avoidant'; maxCount = counts.avoidant; }
+            if (counts.fearful > maxCount) { type = 'fearful'; }
+
+            var anxietyPercent = Math.round(((counts.anxious + counts.fearful) / total) * 100);
+            var avoidancePercent = Math.round(((counts.avoidant + counts.fearful) / total) * 100);
+
+            var typeDistribution = {};
+            for (var k in counts) {
+                typeDistribution[k] = Math.round((counts[k] / total) * 100);
+            }
+
+            return {
+                anxiety: anxietyPercent,
+                avoidance: avoidancePercent,
+                type: type,
+                counts: counts,
+                total: total,
+                distribution: typeDistribution
+            };
+        }
+
+        function showResult() {
+            showPage('page-result');
+            var scores = calculateScores();
+            var typeData = attachmentTypes[scores.type];
+
+            document.getElementById('result-icon').textContent = typeData.icon;
+            document.getElementById('result-type').textContent = typeData.name;
+            document.getElementById('result-title').textContent = typeData.icon + ' ' + typeData.name;
+            document.getElementById('result-desc').textContent = typeData.desc;
+
+            setTimeout(function() {
+                document.getElementById('anxiety-bar').style.width = scores.anxiety + '%';
+                document.getElementById('anxiety-percent').textContent = scores.anxiety + '%';
+                document.getElementById('avoidance-bar').style.width = scores.avoidance + '%';
+                document.getElementById('avoidance-percent').textContent = scores.avoidance + '%';
+            }, 300);
+
+            var distEl = document.getElementById('type-distribution');
+            var typeNames = { secure: '安全型', anxious: '焦虑型', avoidant: '回避型', fearful: '恐惧型' };
+            var typeIcons = { secure: '🌟', anxious: '💗', avoidant: '🏔️', fearful: '🌊' };
+            var distHtml = '<p style="font-size:0.85rem;color:var(--text-muted);text-align:center;margin-bottom:12px;">各类型选择占比</p>';
+            distHtml += '<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">';
+            for (var tKey in typeNames) {
+                var isCurrent = (tKey === scores.type);
+                var bg = isCurrent ? 'rgba(78,205,196,0.2)' : 'rgba(255,255,255,0.05)';
+                var border = isCurrent ? '1px solid rgba(78,205,196,0.5)' : '1px solid rgba(255,255,255,0.1)';
+                var color = isCurrent ? '#4ECDC4' : 'var(--text-muted)';
+                distHtml += '<span style="padding:6px 12px;border-radius:16px;font-size:0.8rem;background:' + bg + ';border:' + border + ';color:' + color + ';">' + typeIcons[tKey] + ' ' + typeNames[tKey] + ' ' + scores.distribution[tKey] + '%</span>';
+            }
+            distHtml += '</div>';
+            distEl.innerHTML = distHtml;
+
+            var traitGrid = document.getElementById('trait-grid');
+            traitGrid.innerHTML = typeData.traits.map(function(t) {
+                return '<div class="trait-item">' +
+                    '<div class="trait-icon">' + t.icon + '</div>' +
+                    '<div class="trait-name">' + t.name + '</div>' +
+                    '<div class="trait-desc">' + t.desc + '</div>' +
+                    '</div>';
+            }).join('');
+
+            var strengthsList = document.getElementById('strengths-list');
+            strengthsList.innerHTML = typeData.strengths.map(function(s) {
+                return '<div class="strength-item">' + s + '</div>';
+            }).join('');
+
+            var weaknessesList = document.getElementById('weaknesses-list');
+            weaknessesList.innerHTML = typeData.weaknesses.map(function(w) {
+                return '<div class="weakness-item">' + w + '</div>';
+            }).join('');
+
+            var relContent = document.getElementById('relationship-content');
+            var rel = typeData.relationship;
+            relContent.innerHTML = '<p class="relationship-advice">' + rel.style + '</p>' +
+                '<p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:12px;">💡 关系建议：</p>' +
+                '<ul style="list-style:none;padding:0;">' +
+                rel.tips.map(function(t) { return '<li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:var(--text-secondary);font-size:0.95rem;display:flex;align-items:flex-start;gap:10px;"><span style="color:#4ECDC4;">•</span>' + t + '</li>'; }).join('') +
+                '</ul>' +
+                '<div class="compatibility-list">' +
+                '<span class="compatibility-tag compatibility-high">高匹配：' + rel.compatibility.high.join('、') + '</span>' +
+                '<span class="compatibility-tag compatibility-medium">中匹配：' + rel.compatibility.medium.join('、') + '</span>' +
+                '<span class="compatibility-tag compatibility-low">低匹配：' + rel.compatibility.low.join('、') + '</span>' +
+                '</div>';
+
+            var growthTips = document.getElementById('growth-tips');
+            growthTips.innerHTML = typeData.growth.map(function(g) {
+                return '<div class="growth-tip">' +
+                    '<div class="growth-tip-title">' + g.title + '</div>' +
+                    '<div class="growth-tip-desc">' + g.desc + '</div>' +
+                    '</div>';
+            }).join('');
+        }
+
+        window.restartTest = function() {
+            currentQuestion = 0;
+            answers = [];
+            clearProgress();
+            showPage('page-intro');
+            document.getElementById('resume-hint').classList.remove('show');
+        };
+
+        window.shareTo = function(platform) {
+            var url = encodeURIComponent('https://quweiceshi.com/attachment.html');
+            var shareTitle = encodeURIComponent('💞 依恋类型测试 - 了解你的亲密关系模式！');
+
+            switch(platform) {
+                case 'wechat':
+                    showToast('请复制链接分享到微信');
+                    copyToClipboard('https://quweiceshi.com/attachment.html');
+                    break;
+                case 'weibo':
+                    window.open('https://service.weibo.com/share/share.php?url=' + url + '&title=' + shareTitle, '_blank');
+                    break;
+                case 'qq':
+                    window.open('https://connect.qq.com/widget/shareqq/index.html?url=' + url + '&title=' + shareTitle, '_blank');
+                    break;
+                case 'link':
+                    copyToClipboard('https://quweiceshi.com/attachment.html');
+                    showToast('链接已复制到剪贴板');
+                    break;
+            }
+        };
+
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {}).catch(function() {
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        }
+
+        function fallbackCopy(text) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch(e) {}
+            document.body.removeChild(ta);
+        }
+
+        function showToast(message) {
+            var toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            setTimeout(function() {
+                toast.classList.add('show');
+            }, 100);
+
+            setTimeout(function() {
+                toast.classList.remove('show');
+                setTimeout(function() {
+                    if (toast.parentNode) {
+                        document.body.removeChild(toast);
+                    }
+                }, 300);
+            }, 2000);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var navToggle = document.getElementById('nav-toggle');
+            var navLinks = document.getElementById('nav-links');
+
+            navToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+
+            var saved = loadProgress();
+            if (saved && saved.answers && saved.answers.length > 0) {
+                document.getElementById('resume-hint').classList.add('show');
+            }
+        });
+    })();
+    </script>
+</body>
+</html>
