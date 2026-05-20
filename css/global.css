@@ -257,7 +257,9 @@ body {
         margin-top: 70px;
     }
 }
-
+.ad-slot{margin:16px auto;max-width:600px;text-align:center;min-height:50px;border-radius:12px;overflow:hidden}
+.ad-slot-banner{padding:8px;background:rgba(255,255,255,.02);border:1px dashed rgba(255,255,255,.08)}
+.ad-slot-interstitial{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;z-index:999}
 /* 主内容 */
 .main-content {
     margin-top: 70px;

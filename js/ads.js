@@ -16,11 +16,11 @@ const AdState = {
 
 // 广告配置
 const AdConfig = {
-    cooldownSeconds: 180, // 两次广告间隔3分钟
-    dailyMaxCount: 10, // 每日最多10次
-    sessionMaxCount: 3, // 单次会话最多3次
-    newUserFreePlays: 3, // 新用户前3局免广告
-    adTimeout: 30000 // 广告加载超时30秒
+    cooldownSeconds: 120,
+    dailyMaxCount: 15,
+    sessionMaxCount: 4,
+    newUserFreePlays: 2,
+    adTimeout: 30000
 };
 
 /**

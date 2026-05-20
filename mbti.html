@@ -823,6 +823,48 @@
             margin-top: 32px;
             padding-bottom: 32px;
         }
+        .paywall-lock{position:relative;margin-top:20px}
+        .paywall-blur{filter:blur(6px);pointer-events:none;user-select:none;opacity:.5}
+        .paywall-overlay{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;z-index:10}
+        .paywall-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:20px;padding:32px 24px;text-align:center;max-width:340px;width:90%;box-shadow:0 8px 40px rgba(0,0,0,.4)}
+        .paywall-icon{font-size:2.5rem;margin-bottom:12px}
+        .paywall-title{font-size:1.2rem;font-weight:700;margin-bottom:8px;color:var(--text-primary)}
+        .paywall-desc{font-size:.85rem;color:var(--text-secondary);line-height:1.6;margin-bottom:16px}
+        .paywall-features{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;text-align:left}
+        .paywall-feature{font-size:.8rem;color:var(--text-secondary);padding:6px 8px;border-radius:8px;background:rgba(255,255,255,.03)}
+        .paywall-feature span{margin-right:4px}
+        .paywall-btn{display:block;width:100%;padding:12px;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;transition:all .2s;margin-bottom:8px}
+        .paywall-btn-primary{background:linear-gradient(135deg,#4ECDC4,#44B09E);color:#fff;box-shadow:0 4px 15px rgba(78,205,196,.4)}
+        .paywall-btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(78,205,196,.5)}
+        .paywall-btn-ad{background:rgba(255,255,255,.08);color:var(--text-secondary);border:1px solid var(--border-color)}
+        .paywall-btn-ad:hover{background:rgba(255,255,255,.12)}
+        .paywall-note{font-size:.75rem;color:var(--text-muted);margin-top:4px}
+        .paywall-unlocked{margin-top:20px}
+        .payment-modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;z-index:1000;opacity:0;visibility:hidden;transition:all .3s}
+        .payment-modal.active{opacity:1;visibility:visible}
+        .payment-modal-content{background:var(--bg-card);border:1px solid var(--border-color);border-radius:20px;padding:28px 24px;max-width:360px;width:90%;text-align:center}
+        .payment-modal-title{font-size:1.2rem;font-weight:700;margin-bottom:4px}
+        .payment-modal-price{font-size:2rem;font-weight:800;background:var(--primary-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:12px 0}
+        .payment-modal-price small{font-size:.9rem;-webkit-text-fill-color:var(--text-muted)}
+        .payment-methods{display:flex;gap:12px;margin:16px 0}
+        .payment-method{flex:1;padding:14px 8px;border-radius:12px;border:2px solid var(--border-color);background:rgba(255,255,255,.03);cursor:pointer;transition:all .2s;text-align:center}
+        .payment-method:hover,.payment-method.selected{border-color:#4ECDC4;background:rgba(78,205,196,.08)}
+        .payment-method-icon{font-size:1.8rem;margin-bottom:4px}
+        .payment-method-name{font-size:.8rem;color:var(--text-secondary)}
+        .payment-confirm-btn{display:block;width:100%;padding:14px;background:linear-gradient(135deg,#4ECDC4,#44B09E);color:#fff;border:none;border-radius:12px;font-size:1.05rem;font-weight:600;cursor:pointer;transition:all .2s;margin-top:12px}
+        .payment-confirm-btn:hover{transform:translateY(-1px);box-shadow:0 4px 15px rgba(78,205,196,.4)}
+        .payment-confirm-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+        .payment-close{position:absolute;top:12px;right:16px;font-size:1.5rem;cursor:pointer;color:var(--text-muted);background:none;border:none}
+        .payment-modal-content{position:relative}
+        .payment-qr{margin:16px auto;padding:16px;background:#fff;border-radius:12px;width:180px;height:180px;display:flex;align-items:center;justify-content:center}
+        .payment-qr-placeholder{color:#999;font-size:.85rem;text-align:center}
+        .payment-timer{font-size:.85rem;color:var(--text-muted);margin-top:8px}
+        .ad-reward-modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;z-index:1000;opacity:0;visibility:hidden;transition:all .3s}
+        .ad-reward-modal.active{opacity:1;visibility:visible}
+        .ad-reward-content{background:var(--bg-card);border:1px solid var(--border-color);border-radius:20px;padding:28px 24px;max-width:320px;width:90%;text-align:center}
+        .ad-reward-progress{width:100%;height:6px;background:rgba(255,255,255,.1);border-radius:3px;margin:16px 0;overflow:hidden}
+        .ad-reward-progress-bar{height:100%;background:linear-gradient(90deg,#4ECDC4,#44B09E);border-radius:3px;transition:width .3s;width:0}
+        .ad-reward-countdown{font-size:2rem;font-weight:700;color:#4ECDC4;margin:8px 0}
     </style>
     <script type="application/ld+json">
     {
@@ -969,37 +1011,45 @@
                         <div class="dimension-title">📊 维度得分</div>
                         <div class="dimension-bars" id="dimension-bars"></div>
                     </div>
-                    
-                    <div class="cognitive-functions">
-                        <div class="cognitive-title">🧠 认知功能</div>
-                        <div class="cognitive-grid" id="cognitive-grid"></div>
+
+                    <div id="paywall-lock" class="paywall-lock" style="display:none;">
+                        <div class="paywall-blur">
+                            <div class="cognitive-functions"><div class="cognitive-title">🧠 认知功能</div><div class="cognitive-grid" id="cognitive-grid"></div></div>
+                            <div id="trait-grid" class="trait-grid"></div>
+                            <div class="strengths-section"><div class="strengths-title">✨ 你的优势</div><div class="strengths-list" id="strengths-list"></div></div>
+                            <div class="weaknesses-section"><div class="weaknesses-title">⚠️ 需要注意</div><div class="weaknesses-list" id="weaknesses-list"></div></div>
+                            <div class="career-section"><div class="career-title">💼 适合的职业方向</div><div id="career-tags" class="career-tags"></div></div>
+                            <div class="relationship-section"><div class="relationship-title">❤️ 人际关系建议</div><div class="relationship-content" id="relationship-content"></div></div>
+                            <div class="growth-section"><div class="growth-title">📈 个人成长建议</div><div class="growth-tips" id="growth-tips"></div></div>
+                        </div>
+                        <div class="paywall-overlay">
+                            <div class="paywall-card">
+                                <div class="paywall-icon">🔒</div>
+                                <h3 class="paywall-title">解锁完整分析报告</h3>
+                                <p class="paywall-desc">包含认知功能、优势劣势、职业方向、关系匹配等8大维度深度分析</p>
+                                <div class="paywall-features">
+                                    <div class="paywall-feature"><span>🧠</span> 认知功能详解</div>
+                                    <div class="paywall-feature"><span>✨</span> 优势与劣势分析</div>
+                                    <div class="paywall-feature"><span>💼</span> 职业方向建议</div>
+                                    <div class="paywall-feature"><span>❤️</span> 人际关系与匹配</div>
+                                    <div class="paywall-feature"><span>📈</span> 个人成长路径</div>
+                                    <div class="paywall-feature"><span>🎨</span> 专属MBTI海报</div>
+                                </div>
+                                <button class="paywall-btn paywall-btn-primary" onclick="showPaymentModal()">¥3.9 立即解锁</button>
+                                <button class="paywall-btn paywall-btn-ad" onclick="unlockByAd()">🎬 看广告免费解锁</button>
+                                <p class="paywall-note">两种方式均可查看完整报告</p>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div id="trait-grid" class="trait-grid"></div>
-                    
-                    <div class="strengths-section">
-                        <div class="strengths-title">✨ 你的优势</div>
-                        <div class="strengths-list" id="strengths-list"></div>
-                    </div>
-                    
-                    <div class="weaknesses-section">
-                        <div class="weaknesses-title">⚠️ 需要注意</div>
-                        <div class="weaknesses-list" id="weaknesses-list"></div>
-                    </div>
-                    
-                    <div class="career-section">
-                        <div class="career-title">💼 适合的职业方向</div>
-                        <div id="career-tags" class="career-tags"></div>
-                    </div>
-                    
-                    <div class="relationship-section">
-                        <div class="relationship-title">❤️ 人际关系建议</div>
-                        <div class="relationship-content" id="relationship-content"></div>
-                    </div>
-                    
-                    <div class="growth-section">
-                        <div class="growth-title">📈 个人成长建议</div>
-                        <div class="growth-tips" id="growth-tips"></div>
+
+                    <div id="paywall-unlocked" class="paywall-unlocked" style="display:none;">
+                        <div class="cognitive-functions"><div class="cognitive-title">🧠 认知功能</div><div class="cognitive-grid" id="cognitive-grid-full"></div></div>
+                        <div id="trait-grid-full" class="trait-grid"></div>
+                        <div class="strengths-section"><div class="strengths-title">✨ 你的优势</div><div class="strengths-list" id="strengths-list-full"></div></div>
+                        <div class="weaknesses-section"><div class="weaknesses-title">⚠️ 需要注意</div><div class="weaknesses-list" id="weaknesses-list-full"></div></div>
+                        <div class="career-section"><div class="career-title">💼 适合的职业方向</div><div id="career-tags-full" class="career-tags"></div></div>
+                        <div class="relationship-section"><div class="relationship-title">❤️ 人际关系建议</div><div class="relationship-content" id="relationship-content-full"></div></div>
+                        <div class="growth-section"><div class="growth-title">📈 个人成长建议</div><div class="growth-tips" id="growth-tips-full"></div></div>
                     </div>
                     
                     <button class="btn btn-secondary" onclick="restartTest()" style="margin-top: 12px;">重新测试</button>
@@ -1036,6 +1086,7 @@
                 </div>
                 
                 <div class="footer-text">MBTI测试仅供参考，真正的自我了解需要持续探索</div>
+                <div class="ad-slot ad-slot-banner" id="ad-slot-mbti-result" data-ad-type="banner" data-ad-position="mbti-result-bottom"></div>
             </div>
         </div>
     </main>
@@ -1749,15 +1800,218 @@
             document.getElementById('result-desc').textContent = type.desc;
 
             renderDimensionBars(result.scores);
-            renderCognitiveFunctions(type.cognitive);
-            renderTraits(type.traits);
-            renderStrengths(type.strengths);
-            renderWeaknesses(type.weaknesses);
-            renderCareers(type.careers);
-            renderRelationship(type.relationship);
-            renderGrowth(type.growth);
+
+            const isStandardVersion = currentQuestions.length > 30;
+            const alreadyUnlocked = localStorage.getItem('mbti_report_unlocked') === 'true';
+
+            if (isStandardVersion && !alreadyUnlocked) {
+                renderCognitiveFunctions(type.cognitive, 'cognitive-grid');
+                renderTraits(type.traits, 'trait-grid');
+                renderStrengths(type.strengths, 'strengths-list');
+                renderWeaknesses(type.weaknesses, 'weaknesses-list');
+                renderCareers(type.careers, 'career-tags');
+                renderRelationship(type.relationship, 'relationship-content');
+                renderGrowth(type.growth, 'growth-tips');
+                document.getElementById('paywall-lock').style.display = 'block';
+                document.getElementById('paywall-unlocked').style.display = 'none';
+            } else {
+                renderCognitiveFunctions(type.cognitive, 'cognitive-grid-full');
+                renderTraits(type.traits, 'trait-grid-full');
+                renderStrengths(type.strengths, 'strengths-list-full');
+                renderWeaknesses(type.weaknesses, 'weaknesses-list-full');
+                renderCareers(type.careers, 'career-tags-full');
+                renderRelationship(type.relationship, 'relationship-content-full');
+                renderGrowth(type.growth, 'growth-tips-full');
+                document.getElementById('paywall-lock').style.display = 'none';
+                document.getElementById('paywall-unlocked').style.display = 'block';
+            }
 
             saveTestResult(result.type, result.scores);
+        }
+
+        function renderTraits(traits, containerId) {
+            const icons = ['🎯', '💡', '⭐', '🔥'];
+            const container = document.getElementById(containerId);
+            container.innerHTML = traits.map((trait, idx) => `
+                <div class="trait-item">
+                    <div class="trait-icon">${icons[idx % icons.length]}</div>
+                    <div class="trait-name">${trait}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderStrengths(strengths, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = strengths.map(s => `<div class="strength-item">${s}</div>`).join('');
+        }
+
+        function renderWeaknesses(weaknesses, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = weaknesses.map(w => `<div class="weakness-item">${w}</div>`).join('');
+        }
+
+        function renderCareers(careers, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = careers.map(c => `<div class="career-tag">${c}</div>`).join('');
+        }
+
+        function renderRelationship(relationship, containerId) {
+            let html = `
+                <p class="relationship-advice">${relationship.style}</p>
+                <div style="margin-top: 16px;">
+                    <strong style="color: #4ECDC4;">💡 相处建议：</strong>
+                    <ul style="color: var(--text-secondary); margin-top: 8px; padding-left: 20px;">
+                        ${relationship.tips.map(t => `<li>${t}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+            html += '<div class="compatibility-list">';
+            relationship.compatibility.high.forEach(t => { html += `<span class="compatibility-tag compatibility-high">${t}</span>`; });
+            relationship.compatibility.medium.forEach(t => { html += `<span class="compatibility-tag compatibility-medium">${t}</span>`; });
+            relationship.compatibility.low.forEach(t => { html += `<span class="compatibility-tag compatibility-low">${t}</span>`; });
+            html += '</div>';
+            document.getElementById(containerId).innerHTML = html;
+        }
+
+        function renderGrowth(growth, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = growth.map(g => `
+                <div class="growth-tip">
+                    <div class="growth-tip-title">📈 ${g.title}</div>
+                    <div class="growth-tip-desc">${g.desc}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderCognitiveFunctions(cognitive, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = cognitive.map(c => `
+                <div class="cognitive-item">
+                    <div class="cognitive-name">${c.name}</div>
+                    <div class="cognitive-desc">${c.desc}</div>
+                    <div class="cognitive-role">${c.role}</div>
+                </div>
+            `).join('');
+        }
+
+        let selectedPaymentMethod = null;
+
+        function showPaymentModal() {
+            const modal = document.getElementById('payment-modal');
+            modal.classList.add('active');
+        }
+
+        function closePaymentModal() {
+            const modal = document.getElementById('payment-modal');
+            modal.classList.remove('active');
+        }
+
+        function selectPaymentMethod(method) {
+            selectedPaymentMethod = method;
+            document.querySelectorAll('.payment-method').forEach(el => el.classList.remove('selected'));
+            event.currentTarget.classList.add('selected');
+            document.getElementById('payment-confirm-btn').disabled = false;
+        }
+
+        function confirmPayment() {
+            if (!selectedPaymentMethod) return;
+            const btn = document.getElementById('payment-confirm-btn');
+            btn.textContent = '正在生成支付二维码...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                document.querySelector('.payment-methods').style.display = 'none';
+                document.querySelector('.payment-qr').style.display = 'flex';
+                document.querySelector('.payment-timer').style.display = 'block';
+                btn.textContent = '我已完成支付';
+                btn.disabled = false;
+                btn.onclick = verifyPayment;
+                startPaymentTimer();
+            }, 1500);
+        }
+
+        let paymentTimerInterval = null;
+        let paymentTimeLeft = 300;
+
+        function startPaymentTimer() {
+            paymentTimeLeft = 300;
+            updateTimerDisplay();
+            paymentTimerInterval = setInterval(() => {
+                paymentTimeLeft--;
+                updateTimerDisplay();
+                if (paymentTimeLeft <= 0) {
+                    clearInterval(paymentTimerInterval);
+                    closePaymentModal();
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const min = Math.floor(paymentTimeLeft / 60);
+            const sec = paymentTimeLeft % 60;
+            const timerEl = document.querySelector('.payment-timer');
+            if (timerEl) timerEl.textContent = `支付二维码有效期 ${min}:${sec.toString().padStart(2, '0')}`;
+        }
+
+        function verifyPayment() {
+            const btn = document.getElementById('payment-confirm-btn');
+            btn.textContent = '验证中...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                clearInterval(paymentTimerInterval);
+                localStorage.setItem('mbti_report_unlocked', 'true');
+                closePaymentModal();
+                unlockReport();
+                showToast('🎉 解锁成功！完整报告已展示');
+            }, 1500);
+        }
+
+        function unlockByAd() {
+            const modal = document.getElementById('ad-reward-modal');
+            modal.classList.add('active');
+            startAdCountdown();
+        }
+
+        function closeAdRewardModal() {
+            const modal = document.getElementById('ad-reward-modal');
+            modal.classList.remove('active');
+        }
+
+        function startAdCountdown() {
+            let timeLeft = 15;
+            const countdownEl = document.getElementById('ad-countdown');
+            const progressBar = document.getElementById('ad-progress-bar');
+
+            const interval = setInterval(() => {
+                timeLeft--;
+                countdownEl.textContent = timeLeft;
+                progressBar.style.width = ((15 - timeLeft) / 15 * 100) + '%';
+
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    closeAdRewardModal();
+                    localStorage.setItem('mbti_report_unlocked', 'true');
+                    unlockReport();
+                    showToast('🎉 解锁成功！完整报告已展示');
+                }
+            }, 1000);
+        }
+
+        function unlockReport() {
+            const result = calculateMBTI();
+            const type = mbtiTypes[result.type];
+
+            document.getElementById('paywall-lock').style.display = 'none';
+            document.getElementById('paywall-unlocked').style.display = 'block';
+
+            renderCognitiveFunctions(type.cognitive, 'cognitive-grid-full');
+            renderTraits(type.traits, 'trait-grid-full');
+            renderStrengths(type.strengths, 'strengths-list-full');
+            renderWeaknesses(type.weaknesses, 'weaknesses-list-full');
+            renderCareers(type.careers, 'career-tags-full');
+            renderRelationship(type.relationship, 'relationship-content-full');
+            renderGrowth(type.growth, 'growth-tips-full');
         }
 
         function saveTestResult(type, scores) {
@@ -1825,91 +2079,6 @@
                     ${marginalNote}
                 `;
             }).join('');
-        }
-
-        function renderCognitiveFunctions(cognitive) {
-            const html = cognitive.map(c => `
-                <div class="cognitive-item">
-                    <div class="cognitive-name">${c.name}</div>
-                    <div class="cognitive-desc">${c.desc}</div>
-                    <div class="cognitive-role">${c.role}</div>
-                </div>
-            `).join('');
-
-            document.getElementById('cognitive-grid').innerHTML = html;
-        }
-
-        function renderTraits(traits) {
-            const icons = ['🎯', '💡', '⭐', '🔥'];
-            const html = traits.map((trait, idx) => `
-                <div class="trait-item">
-                    <div class="trait-icon">${icons[idx % icons.length]}</div>
-                    <div class="trait-name">${trait}</div>
-                </div>
-            `).join('');
-
-            document.getElementById('trait-grid').innerHTML = html;
-        }
-
-        function renderStrengths(strengths) {
-            const html = strengths.map(s => `
-                <div class="strength-item">${s}</div>
-            `).join('');
-
-            document.getElementById('strengths-list').innerHTML = html;
-        }
-
-        function renderWeaknesses(weaknesses) {
-            const html = weaknesses.map(w => `
-                <div class="weakness-item">${w}</div>
-            `).join('');
-
-            document.getElementById('weaknesses-list').innerHTML = html;
-        }
-
-        function renderCareers(careers) {
-            const html = careers.map(c => `
-                <div class="career-tag">${c}</div>
-            `).join('');
-
-            document.getElementById('career-tags').innerHTML = html;
-        }
-
-        function renderRelationship(relationship) {
-            let html = `
-                <p class="relationship-advice">${relationship.style}</p>
-                <div style="margin-top: 16px;">
-                    <strong style="color: #4ECDC4;">💡 相处建议：</strong>
-                    <ul style="color: var(--text-secondary); margin-top: 8px; padding-left: 20px;">
-                        ${relationship.tips.map(t => `<li>${t}</li>`).join('')}
-                    </ul>
-                </div>
-            `;
-
-            html += '<div class="compatibility-list">';
-            relationship.compatibility.high.forEach(t => {
-                html += `<span class="compatibility-tag compatibility-high">${t}</span>`;
-            });
-            relationship.compatibility.medium.forEach(t => {
-                html += `<span class="compatibility-tag compatibility-medium">${t}</span>`;
-            });
-            relationship.compatibility.low.forEach(t => {
-                html += `<span class="compatibility-tag compatibility-low">${t}</span>`;
-            });
-            html += '</div>';
-
-            document.getElementById('relationship-content').innerHTML = html;
-        }
-
-        function renderGrowth(growth) {
-            const html = growth.map(g => `
-                <div class="growth-tip">
-                    <div class="growth-tip-title">📈 ${g.title}</div>
-                    <div class="growth-tip-desc">${g.desc}</div>
-                </div>
-            `).join('');
-
-            document.getElementById('growth-tips').innerHTML = html;
         }
 
         function shareResult() {
@@ -1998,6 +2167,39 @@
         });
     </script>
 
+    <div class="payment-modal" id="payment-modal">
+        <div class="payment-modal-content">
+            <button class="payment-close" onclick="closePaymentModal()">&times;</button>
+            <div class="payment-modal-title">解锁完整MBTI分析报告</div>
+            <div class="payment-modal-price">¥3.9 <small>原价¥19.9</small></div>
+            <div class="payment-methods">
+                <div class="payment-method" onclick="selectPaymentMethod('wechat')">
+                    <div class="payment-method-icon">💚</div>
+                    <div class="payment-method-name">微信支付</div>
+                </div>
+                <div class="payment-method" onclick="selectPaymentMethod('alipay')">
+                    <div class="payment-method-icon">🔵</div>
+                    <div class="payment-method-name">支付宝</div>
+                </div>
+            </div>
+            <div class="payment-qr" style="display:none">
+                <div class="payment-qr-placeholder">扫码支付<br>¥3.9</div>
+            </div>
+            <div class="payment-timer" style="display:none"></div>
+            <button class="payment-confirm-btn" id="payment-confirm-btn" disabled onclick="confirmPayment()">确认支付</button>
+        </div>
+    </div>
+
+    <div class="ad-reward-modal" id="ad-reward-modal">
+        <div class="ad-reward-content">
+            <div style="font-size:2rem;margin-bottom:8px">🎬</div>
+            <div style="font-size:1.1rem;font-weight:700;margin-bottom:4px">观看广告解锁报告</div>
+            <div style="font-size:.85rem;color:var(--text-secondary)">观看完成后自动解锁完整分析报告</div>
+            <div class="ad-reward-progress"><div class="ad-reward-progress-bar" id="ad-progress-bar"></div></div>
+            <div class="ad-reward-countdown" id="ad-countdown">15</div>
+            <div style="font-size:.8rem;color:var(--text-muted)">秒后自动解锁</div>
+        </div>
+    </div>
 
 <footer class="site-footer" style="max-width:600px;margin:40px auto 0;padding:20px;text-align:center;border-top:1px solid rgba(255,255,255,0.1);">
     <nav aria-label="网站导航" style="margin-bottom:16px;">
