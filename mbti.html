@@ -1801,7 +1801,7 @@
 
             renderDimensionBars(result.scores);
 
-            const isStandardVersion = currentQuestions.length > 30;
+            const isStandardVersion = currentVersion === 'standard';
             const alreadyUnlocked = localStorage.getItem('mbti_report_unlocked') === 'true';
 
             if (isStandardVersion && !alreadyUnlocked) {
@@ -2154,6 +2154,9 @@
         function restartTest() {
             document.getElementById('page-result').classList.remove('active');
             document.getElementById('page-intro').classList.add('active');
+            document.getElementById('paywall-lock').style.display = 'none';
+            document.getElementById('paywall-unlocked').style.display = 'none';
+            currentVersion = 'quick';
         }
 
         document.getElementById('next-btn').addEventListener('click', nextQuestion);
