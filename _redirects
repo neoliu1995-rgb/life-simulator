@@ -1,11 +1,2 @@
 # www -> non-www redirect
 https://www.quweiceshi.com/* https://quweiceshi.com/:splat 301!
-
-# Static assets - serve directly, don't rewrite to index.html
-/css/* /css/:splat 200
-/js/* /js/:splat 200
-/images/* /images/:splat 200
-/data/* /data/:splat 200
-
-# SPA fallback - only for HTML pages and API-like routes
-/* /index.html 200
