@@ -1,2 +1,0 @@
-# www -> non-www redirect
-https://www.quweiceshi.com/* https://quweiceshi.com/:splat 301!
