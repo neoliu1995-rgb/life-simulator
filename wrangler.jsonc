@@ -1,1 +1,25 @@
-{"name": "ads-txt", "compatibility_date": "2026-05-22", "main": "worker/index.js"}
+{
+  "name": "quweiceshi-api",
+  "compatibility_date": "2026-05-22",
+  "main": "worker/index.js",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "quweiceshi-db",
+      "database_id": "PLACEHOLDER_WILL_CREATE"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "SESSIONS",
+      "id": "PLACEHOLDER_WILL_CREATE"
+    },
+    {
+      "binding": "SHARE_LINKS",
+      "id": "PLACEHOLDER_WILL_CREATE"
+    }
+  ],
+  "vars": {
+    "ENVIRONMENT": "production"
+  }
+}
