@@ -162,7 +162,7 @@ async function interpretPremium(request, env) {
 
     await env.DB.prepare(
       'INSERT INTO ai_reports (user_id, test_result_id, report_level, content_json, model_used, tokens_used, payment_id, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, datetime(\'now\'))'
-    ).bind(session.userId, testResultId, 'premium', content, 'gpt-4o-mini', tokensUsed, paymentId || null).run();
+    ).bind(session.userId, testResultId, 'premium', content, 'deepseek-chat', tokensUsed, paymentId || null).run();
 
     return jsonResponse({
       level: 'premium',
@@ -178,7 +178,8 @@ async function interpretPremium(request, env) {
 
 async function callOpenAI(env, systemPrompt, userPrompt, maxTokens) {
   const apiKey = env.OPENAI_API_KEY;
-  const baseUrl = env.OPENAI_BASE_URL || 'https://api.openai.com/v1';
+  const baseUrl = env.OPENAI_BASE_URL || 'https://api.deepseek.com/v1';
+  const model = env.AI_MODEL || 'deepseek-chat';
 
   const response = await fetch(`${baseUrl}/chat/completions`, {
     method: 'POST',
@@ -187,7 +188,7 @@ async function callOpenAI(env, systemPrompt, userPrompt, maxTokens) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'gpt-4o-mini',
+      model,
       messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userPrompt },
@@ -199,7 +200,7 @@ async function callOpenAI(env, systemPrompt, userPrompt, maxTokens) {
 
   if (!response.ok) {
     const error = await response.text();
-    throw new Error(`OpenAI API error: ${response.status} - ${error}`);
+    throw new Error(`AI API error: ${response.status} - ${error}`);
   }
 
   return response.json();

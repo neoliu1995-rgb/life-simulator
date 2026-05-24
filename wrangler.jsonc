@@ -6,17 +6,31 @@
     {
       "binding": "DB",
       "database_name": "quweiceshi-db",
-      "database_id": "PLACEHOLDER_WILL_CREATE"
+      "database_id": "dbd92eea-1e20-4aec-92c4-e5779bb6fa56"
     }
   ],
   "kv_namespaces": [
     {
       "binding": "SESSIONS",
-      "id": "PLACEHOLDER_WILL_CREATE"
+      "id": "3b5328d1a2c348f58ec6199e92dd929c"
     },
     {
       "binding": "SHARE_LINKS",
-      "id": "PLACEHOLDER_WILL_CREATE"
+      "id": "934cf09a43694336a62b63fa1878d0fb"
+    }
+  ],
+  "routes": [
+    {
+      "pattern": "quweiceshi.com/api/*",
+      "zone_name": "quweiceshi.com"
+    },
+    {
+      "pattern": "quweiceshi.com/ads.txt",
+      "zone_name": "quweiceshi.com"
+    },
+    {
+      "pattern": "quweiceshi.com/s/*",
+      "zone_name": "quweiceshi.com"
     }
   ],
   "vars": {
