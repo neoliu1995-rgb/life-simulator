@@ -12,8 +12,50 @@
     <meta property="og:description" content="塔罗牌世界正位与逆位含义详解">
     <meta property="og:url" content="https://quweiceshi.com/tarot/world.html">
     <meta property="og:type" content="article">
-    <link rel="preconnect" href="https://fonts.loli.net">
-    <link href="https://fonts.loli.net/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- 字体优化：使用多源策略确保可靠性 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://api.qrserver.com">
+<link rel="dns-prefetch" href="https://hm.baidu.com">
+
+<!-- 主要字体源：Google Fonts (全球稳定) -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" id="google-fonts">
+
+<!-- 字体加载失败自动回退脚本 -->
+<script>
+    (function() {
+        var fontLink = document.getElementById('google-fonts');
+        var fallbackTriggered = false;
+
+        // 监听字体加载失败
+        fontLink.onerror = function() {
+            if (!fallbackTriggered) {
+                fallbackTriggered = true;
+                console.log('Google Fonts 加载失败，尝试备用源...');
+                loadFallbackFont();
+            }
+        };
+
+        // 5秒超时检测
+        setTimeout(function() {
+            if (!document.fonts || !document.fonts.check('12px Inter')) {
+                if (!fallbackTriggered) {
+                    fallbackTriggered = true;
+                    loadFallbackFont();
+                }
+            }
+        }, 5000);
+
+        function loadFallbackFont() {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://fonts.font.im/css2?family=Inter:wght@400;600;700&display=swap';
+            document.head.appendChild(link);
+            console.log('已切换到备用字体源');
+        }
+    })();
+</script>
+    
     <link rel="stylesheet" href="/css/global.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"塔罗牌世界(XXI)解读 - 正位与逆位含义","description":"深入了解塔罗牌世界的含义。正位：完成、圆满、成就、整合。逆位：未完成、缺乏闭合、延迟。世界牌代表完成和圆满。舞者在花环中自由起舞，象征着一个周期的完成和新的开始。","url":"https://quweiceshi.com/tarot/world.html","author":{"@type":"Organization","name":"趣味测试"},"publisher":{"@type":"Organization","name":"趣味测试"},"datePublished":"2026-05-20","dateModified":"2026-05-20"}</script>
     <style>

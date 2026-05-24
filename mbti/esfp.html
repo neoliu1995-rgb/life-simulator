@@ -19,9 +19,51 @@
     <meta property="og:locale" content="zh_CN">
     <meta property="og:image" content="https://quweiceshi.com/images/og-mbti.png">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="preconnect" href="https://fonts.loli.net">
+    <!-- 字体优化：使用多源策略确保可靠性 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://api.qrserver.com">
+<link rel="dns-prefetch" href="https://hm.baidu.com">
+
+<!-- 主要字体源：Google Fonts (全球稳定) -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" id="google-fonts">
+
+<!-- 字体加载失败自动回退脚本 -->
+<script>
+    (function() {
+        var fontLink = document.getElementById('google-fonts');
+        var fallbackTriggered = false;
+
+        // 监听字体加载失败
+        fontLink.onerror = function() {
+            if (!fallbackTriggered) {
+                fallbackTriggered = true;
+                console.log('Google Fonts 加载失败，尝试备用源...');
+                loadFallbackFont();
+            }
+        };
+
+        // 5秒超时检测
+        setTimeout(function() {
+            if (!document.fonts || !document.fonts.check('12px Inter')) {
+                if (!fallbackTriggered) {
+                    fallbackTriggered = true;
+                    loadFallbackFont();
+                }
+            }
+        }, 5000);
+
+        function loadFallbackFont() {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://fonts.font.im/css2?family=Inter:wght@400;600;700&display=swap';
+            document.head.appendChild(link);
+            console.log('已切换到备用字体源');
+        }
+    })();
+</script>
     <link rel="preconnect" href="https://gstatic.loli.net" crossorigin>
-    <link href="https://fonts.loli.net/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="/css/global.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ESFP表演者型人格深度解读 - 性格特点、职业方向与人际关系","description":"深入了解MBTI ESFP表演者型人格的性格特点、认知功能、职业方向、人际关系和个人成长建议。免费在线测试你的MBTI类型。","url":"https://quweiceshi.com/mbti/esfp.html","image":"https://quweiceshi.com/images/og-mbti.png","author":{"@type":"Organization","name":"趣味测试"},"publisher":{"@type":"Organization","name":"趣味测试","logo":{"@type":"ImageObject","url":"https://quweiceshi.com/images/og-home.png"}},"datePublished":"2026-05-20","dateModified":"2026-05-20"}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ESFP表演者型人格适合什么职业？","acceptedAnswer":{"@type":"Answer","text":"ESFP表演者型人格适合从事表演、销售、公关、娱乐等领域。这些职业方向与ESFP的性格特质高度匹配，更容易取得成就和满足感。"}},{"@type":"Question","name":"ESFP表演者型人格和什么类型最配？","acceptedAnswer":{"@type":"Answer","text":"ESFP表演者型人格与ESTP、ISFP、ESFJ、ESTJ类型最为匹配，与ENFP、ENTP、INFJ类型匹配度中等。"}},{"@type":"Question","name":"如何判断自己是不是ESFP表演者型人格？","acceptedAnswer":{"@type":"Answer","text":"可以通过专业的MBTI测试来判断。ESFP型人格的核心特征是热情活泼、善于社交、享受生活、善于表达。如果你认同这些特质，建议做一次完整的MBTI测试来确认。"}}]}</script>
