@@ -219,6 +219,102 @@
             <p style="color:var(--text-secondary);margin-top:8px">免费MBTI性格测试，快速版20题/标准版93题，测出你的16型人格</p>
             <a href="/mbti.html" class="cta-btn">立即测试我的MBTI类型</a>
         </div>
+
+        <!-- AI智能解读 -->
+        <div id="ai-section" class="mbti-section ai-section-container" style="margin-top:24px;border-color:rgba(255,215,0,.3);background:linear-gradient(135deg,rgba(255,215,0,.05),rgba(78,205,196,.05))">
+            <h2>🔮 AI 智能深度解读</h2>
+            <p style="color:var(--text-secondary)">基于DeepSeek AI大模型，为你生成专属的个性化解读报告</p>
+
+            <div id="ai-login-prompt" style="margin-top:16px;padding:20px;background:rgba(255,255,255,.03);border-radius:12px;text-align:center;display:none">
+                <p style="color:var(--text-secondary);margin-bottom:12px">请先登录后使用AI解读功能</p>
+                <button onclick="UserAuth.guestLogin()" class="cta-btn" style="font-size:.9rem;padding:10px 28px">一键登录（访客）</button>
+            </div>
+
+            <div id="ai-actions" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;justify-content:center">
+                <button id="btn-ai-basic" onclick="startAIBasic()" class="ai-action-btn ai-basic-btn">
+                    <span class="ai-btn-icon">🧠</span>
+                    <span class="ai-btn-text">免费基础解读</span>
+                    <span class="ai-btn-desc">200字摘要</span>
+                </button>
+                <button id="btn-ai-premium" onclick="startAIPremium()" class="ai-action-btn ai-premium-btn">
+                    <span class="ai-btn-icon">✨</span>
+                    <span class="ai-btn-text">深度报告 ¥4.9</span>
+                    <span class="ai-btn-desc">2000字完整分析</span>
+                </button>
+            </div>
+
+            <div id="ai-loading" style="display:none;text-align:center;padding:32px">
+                <div class="ai-loading-spinner"></div>
+                <p style="color:var(--text-secondary);margin-top:12px">AI正在分析你的性格特征...</p>
+            </div>
+
+            <div id="ai-result"></div>
+        </div>
     </main>
+
+    <script>
+        const TEST_TYPE = 'mbti';
+        const RESULT_KEY = 'ESTP';
+        const TEST_ANSWERS = [];
+
+        function startAIBasic() {
+            if (!UserAuth.isLoggedIn()) {
+                document.getElementById('ai-login-prompt').style.display = 'block';
+                return;
+            }
+            showAILoading();
+            window.currentTestAnswers = TEST_ANSWERS;
+            AIInterpreter.getBasicReport(TEST_TYPE, TEST_ANSWERS, RESULT_KEY).then(result => {
+                hideAILoading();
+                if (result.success) {
+                    displayAIResult(result.content, 'basic');
+                } else {
+                    showAIError(result.error);
+                }
+            });
+        }
+
+        function startAIPremium() {
+            if (!UserAuth.isLoggedIn()) {
+                document.getElementById('ai-login-prompt').style.display = 'block';
+                return;
+            }
+            window.currentTestAnswers = TEST_ANSWERS;
+            AIInterpreter.showPaywall(TEST_TYPE, RESULT_KEY);
+        }
+
+        function showAILoading() {
+            document.getElementById('ai-actions').style.display = 'none';
+            document.getElementById('ai-loading').style.display = 'block';
+            document.getElementById('ai-result').innerHTML = '';
+        }
+
+        function hideAILoading() {
+            document.getElementById('ai-loading').style.display = 'none';
+            document.getElementById('ai-actions').style.display = 'flex';
+        }
+
+        function displayAIResult(content, level) {
+            const container = document.getElementById('ai-result');
+            container.innerHTML = '';
+            container.appendChild(AIInterpreter.renderReport(content, level));
+            container.style.display = 'block';
+            container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function showAIError(msg) {
+            hideAILoading();
+            document.getElementById('ai-result').innerHTML = '<p style="color:#FF6B6B;text-align:center;padding:16px">⚠️ ' + msg + '</p>';
+            document.getElementById('ai-result').style.display = 'block';
+        }
+    </script>
+
+    <link rel="stylesheet" href="/css/ai-report.css">
+    <script src="/js/user-auth.js"></script>
+    <script src="/js/ai-interpreter.js"></script>
+    <script src="/js/share-card.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() { UserAuth.init(); });
+    </script>
 </body>
 </html>
