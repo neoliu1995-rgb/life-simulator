@@ -1,0 +1,158 @@
+/* 塔羅抽牌頁專用樣式（第三批新增，僅 /tw/tarot/draw.html 使用） */
+
+.tarot-panel {
+    background: rgba(24, 20, 38, 0.72);
+    border: 1px solid rgba(155, 127, 212, 0.28);
+    border-radius: 18px;
+    padding: 22px;
+    margin: 22px 0;
+}
+
+.tarot-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: flex-end;
+}
+
+.tarot-controls .tool-field {
+    margin-bottom: 0;
+    min-width: 190px;
+}
+
+.tarot-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 22px 0 6px;
+}
+
+.tarot-card-grid.is-single {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tarot-slot {
+    position: relative;
+    min-height: 236px;
+    padding: 18px 14px;
+    border-radius: 16px;
+    border: 1px solid rgba(155, 127, 212, 0.3);
+    background: linear-gradient(160deg, rgba(52, 40, 82, 0.9), rgba(28, 22, 44, 0.95));
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.tarot-slot:hover {
+    transform: translateY(-3px);
+    border-color: rgba(200, 170, 255, 0.65);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+
+.tarot-slot .slot-label {
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    color: #b9a7d9;
+    text-transform: uppercase;
+}
+
+.tarot-back {
+    font-size: 2.8rem;
+    line-height: 1;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+}
+
+.tarot-hint {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.tarot-face {
+    display: none;
+    width: 100%;
+}
+
+.tarot-slot.is-flipped {
+    cursor: default;
+    border-color: rgba(200, 170, 255, 0.55);
+}
+
+.tarot-slot.is-flipped .tarot-back,
+.tarot-slot.is-flipped .tarot-hint {
+    display: none;
+}
+
+.tarot-slot.is-flipped .tarot-face {
+    display: block;
+}
+
+.tarot-icon {
+    font-size: 2rem;
+    line-height: 1.2;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.tarot-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #f3ecff;
+}
+
+.tarot-numeral {
+    font-size: 0.76rem;
+    letter-spacing: 0.16em;
+    color: #b9a7d9;
+    margin-bottom: 6px;
+}
+
+.orientation-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 2px 9px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(155, 127, 212, 0.5);
+    color: #d9c9ff;
+}
+
+.orientation-badge.is-reversed {
+    border-color: rgba(233, 150, 150, 0.55);
+    color: #f0b9b9;
+}
+
+.tarot-meaning {
+    font-size: 0.84rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.78);
+    text-align: left;
+    margin-top: 4px;
+}
+
+.tarot-result-note {
+    margin-top: 14px;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.55);
+    text-align: center;
+}
+
+@media (max-width: 720px) {
+    .tarot-card-grid {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tarot-slot {
+        min-height: 190px;
+    }
+}
