@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>紫微斗數排盤：線上排出12宮命盤｜趣味測試</title>
+    <meta name="description" content="線上輸入出生資料，自動排出紫微斗數12宮命盤與主星位置，附排盤說明與注意事項。">
+    <link rel="canonical" href="https://quweiceshi.com/tw/ziwei/chart.html">
+
+    <meta property="og:title" content="紫微斗數排盤：線上排出12宮命盤">
+    <meta property="og:description" content="線上輸入出生資料，自動排出紫微斗數12宮命盤與主星位置，附排盤說明與注意事項。">
+    <meta property="og:url" content="https://quweiceshi.com/tw/ziwei/chart.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="趣味測試">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:image" content="https://quweiceshi.com/images/og-bazi.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="紫微斗數12宮命盤排列示意">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/tw/tw-article.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "紫微斗數排盤：線上排出12宮命盤",
+      "description": "線上輸入出生資料，自動排出紫微斗數12宮命盤與主星位置，附排盤說明與注意事項。",
+      "url": "https://quweiceshi.com/tw/ziwei/chart.html",
+      "image": "https://quweiceshi.com/images/og-bazi.png",
+      "inLanguage": "zh-Hant-TW",
+      "author": {"@type": "Organization", "name": "趣味測試"},
+      "publisher": {"@type": "Organization", "name": "趣味測試", "logo": {"@type": "ImageObject", "url": "https://quweiceshi.com/images/og-home.png"}},
+      "datePublished": "2026-11-10",
+      "dateModified": "2026-11-10",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://quweiceshi.com/tw/ziwei/chart.html"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "這個排盤工具為什麼要輸入農曆生日？", "acceptedAnswer": {"@type": "Answer", "text": "紫微斗數的安星規則以農曆月、農曆日與時辰為基準，例如命宮由生月與生時決定，紫微星由農曆日除以五行局數決定。本頁不內建國曆換算農曆的曆表，因此請直接填農曆資料，避免換算誤差。"}},
+        {"@type": "Question", "name": "排出來的命盤為什麼只有14主星？", "acceptedAnswer": {"@type": "Answer", "text": "本頁只實作十四主星的安星規則，因為這部分的定位完全由五行局與生日決定，可重複驗算。輔星、雜曜、神煞的安放另有口訣，部分規則各家版本不一，本頁不列出，以免給出看似完整卻無法核對的命盤。"}},
+        {"@type": "Question", "name": "閏月出生怎麼算？", "acceptedAnswer": {"@type": "Answer", "text": "閏月的處理有流派差異：有一派視同下一個月，有一派視同前一個月，也有折半計算的說法。本頁採「閏月按實際月序、不另做折半」的簡單口徑，並在結果中提醒。若你的老師採其他口徑，宮位可能相差一宮，屬正常差異。"}},
+        {"@type": "Question", "name": "早子時和晚子時有差別嗎？", "acceptedAnswer": {"@type": "Answer", "text": "有爭議。一派把23時至24時算作次日的早子時，另一派算作當日的晚子時，兩者會影響日柱與部分安星。本頁把23時至1時一律視為子時，並以使用者填寫的農曆日為準，不做跨日調整，因此跨日邊界出生者需自行確認日期。"}},
+        {"@type": "Question", "name": "排出來的命盤可以直接拿來判斷吉凶嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不建議。本頁只提供位置計算，沒有納入輔星、四化疊宮、大限流年的完整互動，也沒有判斷吉凶的機制。命盤的正確用法是先確認結構，再搭配完整資料與可靠的方法論解讀，而不是看到某顆星就下結論。"}}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://quweiceshi.com/"},
+        {"@type": "ListItem", "position": 2, "name": "紫微斗數", "item": "https://quweiceshi.com/tw/ziwei/index.html"},
+        {"@type": "ListItem", "position": 3, "name": "紫微斗數排盤", "item": "https://quweiceshi.com/tw/ziwei/chart.html"}
+      ]
+    }
+    </script>
+
+    <style>
+        .zw-form { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-top: 8px; }
+        .zw-field { display: flex; flex-direction: column; gap: 6px; }
+        .zw-field label { font-size: 0.85rem; color: #9aa4b2; }
+        .zw-field input, .zw-field select {
+            padding: 10px 12px; border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.16);
+            background: rgba(255,255,255,0.05); color: inherit; font-size: 0.95rem;
+        }
+        .zw-actions { grid-column: 1 / -1; display: flex; gap: 10px; flex-wrap: wrap; }
+        .zw-btn { padding: 11px 20px; border-radius: 10px; border: 0; cursor: pointer; font-weight: 600; }
+        .zw-btn-main { background: linear-gradient(135deg, #c9a227, #8a6d1f); color: #1a1205; }
+        .zw-btn-ghost { background: rgba(255,255,255,0.08); color: inherit; border: 1px solid rgba(255,255,255,0.16); }
+        .zw-summary { margin-top: 18px; padding: 14px 16px; border-radius: 12px; background: rgba(201,162,39,0.08); border: 1px solid rgba(201,162,39,0.28); line-height: 1.9; }
+        .zw-summary b { color: #e5c65a; }
+        .zw-note { font-size: 0.85rem; color: #9aa4b2; margin-top: 10px; line-height: 1.7; }
+        .zw-table td:first-child { white-space: nowrap; font-weight: 600; }
+        .zw-star { color: #e5c65a; }
+        .zw-hua { font-size: 0.78rem; padding: 1px 6px; border-radius: 6px; margin-left: 4px; display: inline-block; }
+        .zw-hua-lu { background: rgba(78,205,196,0.18); color: #4ecdc4; }
+        .zw-hua-quan { background: rgba(255,215,0,0.18); color: #ffd700; }
+        .zw-hua-ke { background: rgba(116,185,255,0.18); color: #74b9ff; }
+        .zw-hua-ji { background: rgba(255,107,107,0.18); color: #ff8f8f; }
+        @media (max-width: 560px) { .zw-form { grid-template-columns: 1fr 1fr; } }
+    </style>
+
+    <meta name="google-adsense-account" content="ca-pub-4849808315998185">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4849808315998185" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="bg-gradient"></div>
+        <div class="bg-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+    </div>
+
+    <header class="nav-header">
+        <div class="nav-container">
+            <a href="/index.html" class="nav-logo">
+                <span class="nav-logo-icon">🎲</span>
+                <span>趣味測試</span>
+            </a>
+            <nav>
+                <button class="nav-toggle" id="nav-toggle">☰</button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="/index.html">首頁</a></li>
+                    <li><a href="/life/index.html">人生重開</a></li>
+                    <li><a href="/mbti.html">MBTI測驗</a></li>
+                    <li><a href="/bazi.html">八字運勢</a></li>
+                    <li><a href="/love.html">愛情配對</a></li>
+                    <li><a href="/constellation.html">星座運勢</a></li>
+                    <li><a href="/tarot.html">塔羅占卜</a></li>
+                    <li><a href="/zodiac.html">生肖運勢</a></li>
+                    <li><a href="/dream.html">解夢</a></li>
+                    <li><a href="/namestat.html">姓名測試</a></li>
+                    <li><a href="/psychology.html">心理測驗</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="tw-page">
+            <nav class="breadcrumb" aria-label="麵包屑">
+                <a href="/index.html">首頁</a> › <a href="/tw/ziwei/index.html">紫微斗數</a> › 排盤
+            </nav>
+
+            <article>
+                <header class="tw-hero">
+                    <div class="tw-hero-icon">✨</div>
+                    <h1>紫微斗數排盤：線上排出12宮命盤</h1>
+                    <p class="tw-lead">這個工具只做一件事：把「農曆生日＋時辰」依紫微斗數的安星規則，換算成 12 宮、五行局與 14 顆主星的位置。它不判斷吉凶、不給分數，也不補上無法核對的輔星。如果你要的是一張能自己驗算的骨架圖，這裡剛好；如果你要的是「老師幫你看」，那需要的是完整的資料與解讀方法，不是一個計算器。</p>
+                    <div class="tw-meta">
+                        <span>更新時間：2026-11-10</span>
+                        <span>閱讀時間：約 9 分鐘</span>
+                        <span>主題：紫微斗數基礎</span>
+                    </div>
+                    <nav class="tw-toc" aria-label="頁內目錄">
+                        <a href="#limits">先講口徑與限制</a>
+                        <a href="#tool">線上排盤</a>
+                        <a href="#steps">五步推導</a>
+                        <a href="#example">手算示範</a>
+                        <a href="#read">怎麼讀這張表</a>
+                        <a href="#faq">常見問題</a>
+                    </nav>
+                </header>
+
+                <section class="key-points">
+                    <h2>先看重點</h2>
+                    <ul>
+                        <li>只實作可重複驗算的部分：命宮、身宮、五行局、紫微起例、14 主星、生年四化、大限起運。</li>
+                        <li>不輸出輔星、雜曜、神煞，也不做吉凶判讀。</li>
+                        <li>輸入是農曆月、日、時辰，本頁不做國曆換算，避免曆表誤差。</li>
+                        <li>閏月與早晚子時有流派爭議，本頁採單一口徑並在結果中標明。</li>
+                        <li>附一個可完全手算複核的示範案例。</li>
+                    </ul>
+                </section>
+
+                <section class="article-section" id="limits">
+                    <h2>先講清楚：這個工具算什麼、不算什麼</h2>
+                    <p>紫微斗數的排盤可以拆成兩層。第一層是<strong>位置計算</strong>：命宮在哪、身宮在哪、五行局是幾局、紫微星落在哪一宮、14 顆主星怎麼分佈、生年四化貼在哪。這一層有明確口訣，同一個輸入在任何一本正統教材上都該得到同一個答案，所以適合寫成程式，也適合被驗算。</p>
+                    <p>第二層是<strong>輸入與解讀</strong>：出生時刻要不要校正真太陽時、閏月算哪一個月、23 時出生算今天還是明天、輔星與神煞用哪一派的安法、四化的庚干要用哪一組。這一層沒有唯一答案，各派說法不同。如果把這一層也包裝成「精確結果」，那張命盤看起來很完整，實際上卻無法被檢驗。</p>
+                    <p>所以本頁的界線是：<strong>第一層真算，第二層講明口徑並保留爭議</strong>。具體而言，本頁輸出 12 宮的宮位、宮干、14 主星、生年四化與大限區間；不輸出輔星（左輔右弼、文昌文曲、天魁天鉞、祿存、擎羊陀羅、火星鈴星、地空地劫）、不輸出雜曜與神煞、不做任何吉凶評分。這樣的命盤不完整，但每一格都可以被查證。</p>
+                    <div class="tool-box">
+                        <p><strong>三個已知限制，請先確認：</strong></p>
+                        <p>一、<strong>閏月</strong>：本頁按你填的農曆月直接計算，不另做「視同下月」或「折半」的調整。若你出生於閏月，宮位可能與採其他口徑的老師相差一宮。</p>
+                        <p>二、<strong>子時</strong>：本頁把 23:00–01:00 一律視為子時，並以你填的農曆日為準，不做「晚子時算次日」的跨日調整。</p>
+                        <p>三、<strong>時區與經度</strong>：本頁不校正真太陽時。出生地經度與時區差異較大者，時辰可能有前後一個時辰的偏移。</p>
+                    </div>
+                </section>
+
+                <section class="article-section" id="tool">
+                    <h2>線上排盤：輸入農曆資料</h2>
+                    <p>年份請填「農曆所屬的年份」（以農曆正月初一為界，不是國曆一月一日）。例如國曆二月出生、但還沒過農曆新年的人，農曆年份要填前一年。</p>
+                    <div class="tool-box">
+                        <div class="zw-form">
+                            <div class="zw-field">
+                                <label for="zw-year">農曆年份（西元）</label>
+                                <input type="number" id="zw-year" min="1900" max="2100" value="1991" step="1">
+                            </div>
+                            <div class="zw-field">
+                                <label for="zw-month">農曆月</label>
+                                <select id="zw-month">
+                                    <option value="1">正月</option>
+                                    <option value="2">二月</option>
+                                    <option value="3">三月</option>
+                                    <option value="4">四月</option>
+                                    <option value="5" selected>五月</option>
+                                    <option value="6">六月</option>
+                                    <option value="7">七月</option>
+                                    <option value="8">八月</option>
+                                    <option value="9">九月</option>
+                                    <option value="10">十月</option>
+                                    <option value="11">十一月</option>
+                                    <option value="12">十二月</option>
+                                </select>
+                            </div>
+                            <div class="zw-field">
+                                <label for="zw-day">農曆日</label>
+                                <input type="number" id="zw-day" min="1" max="30" value="5" step="1">
+                            </div>
+                            <div class="zw-field">
+                                <label for="zw-hour">時辰</label>
+                                <select id="zw-hour">
+                                    <option value="0">子時（23–01）</option>
+                                    <option value="1">丑時（01–03）</option>
+                                    <option value="2">寅時（03–05）</option>
+                                    <option value="3">卯時（05–07）</option>
+                                    <option value="4">辰時（07–09）</option>
+                                    <option value="5" selected>巳時（09–11）</option>
+                                    <option value="6">午時（11–13）</option>
+                                    <option value="7">未時（13–15）</option>
+                                    <option value="8">申時（15–17）</option>
+                                    <option value="9">酉時（17–19）</option>
+                                    <option value="10">戌時（19–21）</option>
+                                    <option value="11">亥時（21–23）</option>
+                                </select>
+                            </div>
+                            <div class="zw-field">
+                                <label for="zw-gender">性別（用於大限方向）</label>
+                                <select id="zw-gender">
+                                    <option value="m">男</option>
+                                    <option value="f">女</option>
+                                </select>
+                            </div>
+                            <div class="zw-actions">
+                                <button type="button" class="zw-btn zw-btn-main" id="zw-run">排出命盤</button>
+                                <button type="button" class="zw-btn zw-btn-ghost" id="zw-demo">載入示範案例</button>
+                            </div>
+                        </div>
+                        <div id="zw-output" aria-live="polite"></div>
+                        <p class="zw-note">本工具僅計算主星位置，不構成任何吉凶判斷或決策建議。</p>
+                    </div>
+                </section>
+
+                <section class="article-section" id="steps">
+                    <h2>五步推導：每個數字都說得出理由</h2>
+                    <p>排盤不是背表格，而是五個可驗算的步驟。以下順序與本頁程式完全一致。</p>
+
+                    <h3>第一步：定命宮與身宮</h3>
+                    <p>口訣是「寅起正月，順數至生月；再從該宮起子時，命宮逆行、身宮順行至生時」。</p>
+                    <p>換句話說：先從寅宮當正月，順時針數到你的生月，得到一個起點；命宮從這個起點<strong>逆</strong>數到生時，身宮從同一個起點<strong>順</strong>數到生時。因為一個順一個逆，子時與午時出生的人命宮與身宮必定同宮，這也是「命身同宮」最常見的來源。</p>
+
+                    <h3>第二步：由命宮宮干定五行局</h3>
+                    <p>宮干不是固定的，要用年干配合五虎遁推：甲己之年丙作首、乙庚之歲戊為頭、丙辛必定尋庚起、丁壬壬位順行流、戊癸何方發，甲寅之上好追求。也就是說，寅宮的天干由年干決定，之後十二宮順排。</p>
+                    <p>有了命宮的天干地支，查六十甲子納音，就能得到五行局：納音水為水二局、木為木三局、金為金四局、土為土五局、火為火六局。局數同時決定大限的起運歲數。</p>
+
+                    <h3>第三步：紫微星起例</h3>
+                    <p>紫微的位置由「農曆日 ÷ 局數」決定，但除法有借數。可用的等價寫法是：先取<strong>商（無條件進位）</strong>，再算<strong>借數＝商×局數−生日</strong>。從寅宮起算第「商」宮，若借數為偶數就順行借數宮，若為奇數就逆行借數宮。</p>
+                    <p>這個寫法可以用傳統口訣反向驗證：生日初一時，水二局應落丑、木三局落辰、金四局落亥、土五局落午、火六局落酉。代入公式，五個結果完全吻合，這也是本頁敢把它寫成程式的原因。</p>
+
+                    <h3>第四步：安十四主星</h3>
+                    <p>紫微系逆行：天機退一位、太陽退三位、武曲退四位、天同退五位、廉貞退八位。天府的位置與紫微相對（以寅申為軸對稱），天府系順行：太陰進一位、貪狼進二位、巨門進三位、天相進四位、天梁進五位、七殺進六位、破軍進十位。</p>
+                    <p>十四顆星分佈在十二宮，必然有兩宮各落兩顆、其餘十宮各落一顆。如果你排出來的十四主星不是「2＋2＋10」（不含文昌、文曲），那一定有一步算錯。</p>
+
+                    <h3>第五步：貼生年四化與大限</h3>
+                    <p>四化依出生年的天干決定，例如辛年為巨門化祿、太陽化權、文曲化科、文昌化忌。大限則由五行局決定起運歲數（水二局二歲起、木三局三歲起、金四局四歲起、土五局五歲起、火六局六歲起），每宮十年；陽男陰女順行、陰男陽女逆行。</p>
+                    <p>要注意，四化的庚干有兩種常見版本（太陰化科或天府化科、天同化忌或天相化忌），本頁採「太陽化祿、武曲化權、太陰化科、天同化忌」這一組，並在結果中標明。這不是唯一答案。</p>
+                </section>
+
+                <section class="article-section" id="example">
+                    <h2>手算示範：一組可以完全複核的案例</h2>
+                    <p>以下每一步都只用到上面五條規則，你可以拿紙筆跟著算一次，結果應該完全一樣。<strong>這是示範用的設定，不是任何真實個案的命盤。</strong></p>
+                    <div class="table-wrap">
+                        <table class="data-table">
+                            <thead><tr><th>步驟</th><th>計算</th><th>結果</th></tr></thead>
+                            <tbody>
+                                <tr><td>輸入</td><td>農曆辛未年、五月初五、巳時</td><td>年干辛（陰年）</td></tr>
+                                <tr><td>命宮</td><td>寅起正月順數至五月＝午宮；午起子時逆數至巳時（退五位）</td><td>命宮在丑</td></tr>
+                                <tr><td>身宮</td><td>同一起點午宮，順數五位</td><td>身宮在亥（落夫妻宮）</td></tr>
+                                <tr><td>宮干</td><td>丙辛尋庚起 → 寅宮為庚寅，順排</td><td>丑宮為辛丑</td></tr>
+                                <tr><td>五行局</td><td>辛丑納音為壁上土</td><td>土五局</td></tr>
+                                <tr><td>紫微</td><td>初五 ÷ 五局＝商 1、餘 0、借數 0</td><td>紫微在寅</td></tr>
+                                <tr><td>主星</td><td>紫微逆行系統＋天府順行系統</td><td>見下表</td></tr>
+                                <tr><td>四化</td><td>辛年：巨門祿、太陽權、文曲科、文昌忌</td><td>巳宮雙化、酉宮化科</td></tr>
+                                <tr><td>大限</td><td>土五局五歲起，陰年男逆行</td><td>命宮 5–14 歲，之後逆推</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-wrap">
+                        <table class="data-table zw-table">
+                            <thead><tr><th>宮位</th><th>宮干</th><th>主星</th><th>備註</th></tr></thead>
+                            <tbody>
+                                <tr><td>寅</td><td>庚寅</td><td class="zw-star">紫微、天府</td><td>父母宮</td></tr>
+                                <tr><td>卯</td><td>辛卯</td><td class="zw-star">太陰</td><td>福德宮</td></tr>
+                                <tr><td>辰</td><td>壬辰</td><td class="zw-star">貪狼</td><td>田宅宮</td></tr>
+                                <tr><td>巳</td><td>癸巳</td><td class="zw-star">巨門<span class="zw-hua zw-hua-lu">祿</span>、文昌<span class="zw-hua zw-hua-ji">忌</span></td><td>官祿宮</td></tr>
+                                <tr><td>午</td><td>甲午</td><td class="zw-star">廉貞、天相</td><td>交友宮</td></tr>
+                                <tr><td>未</td><td>乙未</td><td class="zw-star">天梁</td><td>遷移宮</td></tr>
+                                <tr><td>申</td><td>丙申</td><td class="zw-star">七殺</td><td>疾厄宮</td></tr>
+                                <tr><td>酉</td><td>丁酉</td><td class="zw-star">天同</td><td>財帛宮；文曲化科亦在此</td></tr>
+                                <tr><td>戌</td><td>戊戌</td><td class="zw-star">武曲</td><td>子女宮</td></tr>
+                                <tr><td>亥</td><td>己亥</td><td class="zw-star">太陽<span class="zw-hua zw-hua-quan">權</span></td><td>夫妻宮，身宮所在</td></tr>
+                                <tr><td>子</td><td>庚子</td><td class="zw-star">破軍</td><td>兄弟宮</td></tr>
+                                <tr><td>丑</td><td>辛丑</td><td class="zw-star">天機</td><td>命宮</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>驗算重點有三個：第一，主星總數必須是 14；第二，命宮逆時針依序是兄弟、夫妻、子女、財帛、疾厄、遷移、交友、官祿、田宅、福德、父母，十二個名稱不重不漏；第三，寅宮同時有紫微與天府，代表紫微落在寅申軸上，這是初五、土五局的必然結果，不是巧合。</p>
+                    <p>把這組資料填進上面的工具，輸出的宮位與主星應該與這張表逐格相同。若不同，先檢查是不是把農曆月填成了國曆月。</p>
+                </section>
+
+                <section class="article-section" id="read">
+                    <h2>怎麼讀這張表：三個不要</h2>
+                    <p><strong>不要看到單一星就下結論。</strong>十四主星只是骨架，同一顆星在不同宮位、不同宮干、有無四化的情況下意義差很多。看到「七殺在疾厄」就說身體不好，是把位置當成判決。</p>
+                    <p><strong>不要把宮位名稱當成人生分類。</strong>「財帛宮」談的是你處理資源的方式，不是存款數字；「夫妻宮」談的是親密關係的模式，不是婚姻保證。宮位是觀察角度，不是命運欄位。</p>
+                    <p><strong>不要忽略輸入誤差。</strong>如果時辰錯了，命宮、身宮、紫微全部會位移，整張盤就換了一張。與其糾結某顆星的解釋，不如先把出生時刻確認清楚——這也是本頁把限制寫在最前面的原因。</p>
+                </section>
+
+                <section class="article-section" id="faq">
+                    <h2>常見問題</h2>
+                    <div class="faq-item">
+                        <details>
+                            <summary>這個排盤工具為什麼要輸入農曆生日？</summary>
+                            <div class="faq-answer">紫微斗數的安星規則以農曆月、農曆日與時辰為基準，例如命宮由生月與生時決定，紫微星由農曆日除以五行局數決定。本頁不內建國曆換算農曆的曆表，因此請直接填農曆資料，避免換算誤差。</div>
+                        </details>
+                    </div>
+                    <div class="faq-item">
+                        <details>
+                            <summary>排出來的命盤為什麼只有14主星？</summary>
+                            <div class="faq-answer">本頁只實作十四主星的安星規則，因為這部分的定位完全由五行局與生日決定，可重複驗算。輔星、雜曜、神煞的安放另有口訣，部分規則各家版本不一，本頁不列出，以免給出看似完整卻無法核對的命盤。</div>
+                        </details>
+                    </div>
+                    <div class="faq-item">
+                        <details>
+                            <summary>閏月出生怎麼算？</summary>
+                            <div class="faq-answer">閏月的處理有流派差異：有一派視同下一個月，有一派視同前一個月，也有折半計算的說法。本頁採「閏月按實際月序、不另做折半」的簡單口徑，並在結果中提醒。若你的老師採其他口徑，宮位可能相差一宮，屬正常差異。</div>
+                        </details>
+                    </div>
+                    <div class="faq-item">
+                        <details>
+                            <summary>早子時和晚子時有差別嗎？</summary>
+                            <div class="faq-answer">有爭議。一派把23時至24時算作次日的早子時，另一派算作當日的晚子時，兩者會影響日柱與部分安星。本頁把23時至1時一律視為子時，並以使用者填寫的農曆日為準，不做跨日調整，因此跨日邊界出生者需自行確認日期。</div>
+                        </details>
+                    </div>
+                    <div class="faq-item">
+                        <details>
+                            <summary>排出來的命盤可以直接拿來判斷吉凶嗎？</summary>
+                            <div class="faq-answer">不建議。本頁只提供位置計算，沒有納入輔星、四化疊宮、大限流年的完整互動，也沒有判斷吉凶的機制。命盤的正確用法是先確認結構，再搭配完整資料與可靠的方法論解讀，而不是看到某顆星就下結論。</div>
+                        </details>
+                    </div>
+                </section>
+
+                <section class="article-section">
+                    <h2>延伸閱讀</h2>
+                    <div class="related-grid">
+                        <a class="related-card" href="/tw/ziwei/index.html">紫微斗數入門總覽</a>
+                        <a class="related-card" href="/tw/ziwei/mingong.html">命宮與身宮怎麼定</a>
+                        <a class="related-card" href="/tw/ziwei/14-stars.html">十四主星一次看懂</a>
+                        <a class="related-card" href="/tw/ziwei/12-palaces.html">十二宮的意義</a>
+                        <a class="related-card" href="/tw/ziwei/sihua.html">四化與十年大限</a>
+                        <a class="related-card" href="/tw/bazi/basics.html">八字入門對照</a>
+                    </div>
+                </section>
+
+                <div class="cta-box">
+                    <h2>想先理解宮位再看盤？</h2>
+                    <p>十二宮是紫微斗數的座標系。先知道每一宮在看什麼，排出來的表才有意義。</p>
+                    <a class="cta-btn" href="/tw/ziwei/12-palaces.html">了解十二宮</a>
+                </div>
+
+                <p class="disclaimer"><strong>方法說明與免責聲明：</strong>本頁僅依公開的紫微斗數安星口訣計算命宮、身宮、五行局、十四主星與生年四化位置，不涉及吉凶判斷，也不構成醫療、投資、婚姻或任何決策依據。閏月、子時、真太陽時與四化版本存在流派差異，本頁採單一口徑並已標明，結果可能與其他流派相差一宮或不同四化。內容僅供文化理解與娛樂參考。</p>
+            </article>
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            var toggle = document.getElementById('nav-toggle');
+            var links = document.getElementById('nav-links');
+            if (toggle && links) {
+                toggle.addEventListener('click', function () {
+                    links.classList.toggle('active');
+                });
+            }
+        })();
+
+        (function () {
+            var ZHI = ['寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥', '子', '丑'];
+            var ZHI_STD = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
+            var GAN = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
+            var PALACES = ['命宮', '兄弟', '夫妻', '子女', '財帛', '疾厄', '遷移', '交友', '官祿', '田宅', '福德', '父母'];
+            // 六十甲子納音五行（每兩柱一組，共 30 組）
+            var NAYIN = ['金', '火', '木', '土', '金', '火', '水', '土', '金', '木',
+                         '水', '土', '火', '木', '水', '金', '火', '木', '土', '金',
+                         '火', '水', '土', '金', '木', '水', '土', '火', '木', '水'];
+            var JU = { '水': 2, '木': 3, '金': 4, '土': 5, '火': 6 };
+            var JU_NAME = { 2: '水二局', 3: '木三局', 4: '金四局', 5: '土五局', 6: '火六局' };
+            var HUA = {
+                '甲': ['廉貞', '破軍', '武曲', '太陽'],
+                '乙': ['天機', '天梁', '紫微', '太陰'],
+                '丙': ['天同', '天機', '文昌', '廉貞'],
+                '丁': ['太陰', '天同', '天機', '巨門'],
+                '戊': ['貪狼', '太陰', '右弼', '天機'],
+                '己': ['武曲', '貪狼', '天梁', '文曲'],
+                '庚': ['太陽', '武曲', '太陰', '天同'],
+                '辛': ['巨門', '太陽', '文曲', '文昌'],
+                '壬': ['天梁', '紫微', '左輔', '武曲'],
+                '癸': ['破軍', '巨門', '太陰', '貪狼']
+            };
+
+            function mod(n, m) { return ((n % m) + m) % m; }
+
+            // 六十甲子索引：找 i 使 i%10==g 且 i%12==z
+            function jiaziIndex(g, z) {
+                for (var i = 0; i < 60; i++) {
+                    if (i % 10 === g && i % 12 === z) { return i; }
+                }
+                return 0;
+            }
+
+            function build(data) {
+                var year = data.year;
+                var yearGanIdx = mod(year - 4, 10);
+                var yearGan = GAN[yearGanIdx];
+
+                var monthPalace = mod(data.month - 1, 12);          // 寅起正月
+                var hourIdx = data.hour;                             // 子=0
+                var mingIdx = mod(monthPalace - hourIdx, 12);        // 命宮逆行
+                var shenIdx = mod(monthPalace + hourIdx, 12);        // 身宮順行
+
+                // 五虎遁：寅宮幹
+                var startGan = [2, 4, 6, 8, 0][yearGanIdx % 5];
+                var palaceGan = [];
+                for (var i = 0; i < 12; i++) { palaceGan.push(mod(startGan + i, 10)); }
+
+                var mingGan = palaceGan[mingIdx];
+                var mingZhi = ZHI[mingIdx];
+                var nayin = NAYIN[Math.floor(jiaziIndex(mingGan, mod(mingIdx + 2, 12)) / 2)];
+                var bureau = JU[nayin];
+
+                // 紫微起例
+                var day = data.day;
+                var shang = Math.ceil(day / bureau);
+                var borrow = shang * bureau - day;
+                var base = mod(shang - 1, 12);
+                var ziwei = (borrow % 2 === 0) ? mod(base + borrow, 12) : mod(base - borrow, 12);
+
+                var stars = {};
+                function put(idx, name) {
+                    idx = mod(idx, 12);
+                    if (!stars[idx]) { stars[idx] = []; }
+                    stars[idx].push(name);
+                }
+                put(ziwei, '紫微');
+                put(ziwei - 1, '天機');
+                put(ziwei - 3, '太陽');
+                put(ziwei - 4, '武曲');
+                put(ziwei - 5, '天同');
+                put(ziwei - 8, '廉貞');
+
+                var tianfu = mod(12 - ziwei, 12);
+                put(tianfu, '天府');
+                put(tianfu + 1, '太陰');
+                put(tianfu + 2, '貪狼');
+                put(tianfu + 3, '巨門');
+                put(tianfu + 4, '天相');
+                put(tianfu + 5, '天梁');
+                put(tianfu + 6, '七殺');
+                put(tianfu + 10, '破軍');
+
+                put(mod(8 - hourIdx, 12), '文昌');
+                put(mod(2 + hourIdx, 12), '文曲');
+
+                var huaList = HUA[yearGan];
+                var huaNames = ['化祿', '化權', '化科', '化忌'];
+                var huaMap = {};
+                huaList.forEach(function (s, k) { huaMap[s] = huaNames[k]; });
+
+                // 大限：局數起運，陽男陰女順行，陰男陽女逆行
+                var yangYear = yearGanIdx % 2 === 0;
+                var forward = (yangYear && data.gender === 'm') || (!yangYear && data.gender === 'f');
+                var startAge = bureau;
+                var ages = {};
+                for (var k2 = 0; k2 < 12; k2++) {
+                    var pIdx = forward ? mod(mingIdx + k2, 12) : mod(mingIdx - k2, 12);
+                    ages[pIdx] = (startAge + k2 * 10) + '–' + (startAge + k2 * 10 + 9);
+                }
+
+                var rows = [];
+                for (var p = 0; p < 12; p++) {
+                    var palName = PALACES[mod(p - mingIdx, 12)];
+                    var palStars = stars[p] || [];
+                    rows.push({
+                        zhi: ZHI[p],
+                        gan: GAN[palaceGan[p]],
+                        palace: palName + (p === mingIdx ? '（命）' : '') + (p === shenIdx ? '（身）' : ''),
+                        stars: palStars,
+                        age: ages[p],
+                        isMing: p === mingIdx
+                    });
+                }
+
+                return {
+                    yearGan: yearGan,
+                    mingZhi: mingZhi,
+                    mingGanZhi: GAN[mingGan] + mingZhi,
+                    nayin: nayin,
+                    bureau: bureau,
+                    ziweiZhi: ZHI[ziwei],
+                    tianfuZhi: ZHI[tianfu],
+                    huaList: huaList,
+                    huaMap: huaMap,
+                    forward: forward,
+                    startAge: startAge,
+                    rows: rows
+                };
+            }
+
+            function render(r) {
+                var huaClass = { '化祿': 'zw-hua-lu', '化權': 'zw-hua-quan', '化科': 'zw-hua-ke', '化忌': 'zw-hua-ji' };
+                var html = '';
+                html += '<div class="zw-summary">';
+                html += '出生年干：<b>' + r.yearGan + '</b>　命宮：<b>' + r.mingGanZhi + '</b>　納音：<b>' + r.nayin + '</b>　五行局：<b>' + JU_NAME[r.bureau] + '</b><br>';
+                html += '紫微在<b>' + r.ziweiZhi + '</b>宮　天府在<b>' + r.tianfuZhi + '</b>宮　大限：<b>' + (r.forward ? '順行' : '逆行') + '</b>，<b>' + r.startAge + '</b>歲起運<br>';
+                html += '生年四化：';
+                ['化祿', '化權', '化科', '化忌'].forEach(function (h, i) {
+                    html += r.huaList[i] + '<span class="zw-hua ' + huaClass[h] + '">' + h + '</span>　';
+                });
+                html += '</div>';
+
+                html += '<div class="table-wrap"><table class="data-table zw-table"><thead><tr><th>宮位</th><th>宮干支</th><th>宮位名</th><th>主星／輔星</th><th>大限</th></tr></thead><tbody>';
+                r.rows.forEach(function (row) {
+                    var starCell = row.stars.length ? row.stars.map(function (s) {
+                        var h = r.huaMap[s];
+                        return '<span class="zw-star">' + s + '</span>' + (h ? '<span class="zw-hua ' + huaClass[h] + '">' + h.replace('化', '') + '</span>' : '');
+                    }).join('、') : '<span style="opacity:.4">—</span>';
+                    html += '<tr><td>' + row.zhi + '</td><td>' + row.gan + row.zhi + '</td><td>' + row.palace + '</td><td>' + starCell + '</td><td>' + row.age + '</td></tr>';
+                });
+                html += '</tbody></table></div>';
+                html += '<p class="zw-note">僅列十四主星與文昌、文曲。未含左輔、右弼、天魁、天鉞、祿存、擎羊、陀羅、火星、鈴星、地空、地劫等輔星與雜曜；四化僅標示生年四化，庚干採「太陽祿、武曲權、太陰科、天同忌」版本。</p>';
+                document.getElementById('zw-output').innerHTML = html;
+            }
+
+            function readForm() {
+                return {
+                    year: parseInt(document.getElementById('zw-year').value, 10) || 1991,
+                    month: parseInt(document.getElementById('zw-month').value, 10) || 1,
+                    day: Math.min(30, Math.max(1, parseInt(document.getElementById('zw-day').value, 10) || 1)),
+                    hour: parseInt(document.getElementById('zw-hour').value, 10) || 0,
+                    gender: document.getElementById('zw-gender').value
+                };
+            }
+
+            document.getElementById('zw-run').addEventListener('click', function () {
+                render(build(readForm()));
+            });
+            document.getElementById('zw-demo').addEventListener('click', function () {
+                document.getElementById('zw-year').value = 1991;
+                document.getElementById('zw-month').value = 5;
+                document.getElementById('zw-day').value = 5;
+                document.getElementById('zw-hour').value = 5;
+                document.getElementById('zw-gender').value = 'm';
+                render(build(readForm()));
+            });
+        })();
+    </script>
+</body>
+</html>
