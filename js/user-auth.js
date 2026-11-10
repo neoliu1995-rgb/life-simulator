@@ -1,4 +1,4 @@
-const API_BASE = '/api';
+window.API_BASE = window.API_BASE || '/api';
 
 const UserAuth = {
   token: null,

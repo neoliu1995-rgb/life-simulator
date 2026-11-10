@@ -1,4 +1,4 @@
-const API_BASE = '/api';
+var API_BASE = window.API_BASE || '/api';
 
 const AIInterpreter = {
   async getBasicReport(testType, answers, resultKey) {
