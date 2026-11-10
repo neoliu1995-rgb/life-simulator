@@ -1,4 +1,4 @@
-import { jsonResponse, errorResponse, authenticateRequest, generateShortCode, corsHeaders } from '../utils/cors.js';
+import { jsonResponse, errorResponse, authenticateRequest, generateShortCode } from '../utils/cors.js';
 
 export async function handleShare(request, env, path) {
   if (path === '/api/share/generate' && request.method === 'POST') {

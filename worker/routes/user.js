@@ -1,4 +1,4 @@
-import { jsonResponse, errorResponse, authenticateRequest, corsHeaders } from '../utils/cors.js';
+import { jsonResponse, errorResponse, authenticateRequest } from '../utils/cors.js';
 
 export async function handleUser(request, env, path) {
   if (path === '/api/user/profile' && request.method === 'GET') {

@@ -1,4 +1,4 @@
-import { jsonResponse, errorResponse, generateId, corsHeaders } from '../utils/cors.js';
+import { jsonResponse, errorResponse, generateId } from '../utils/cors.js';
 
 export async function handleAuth(request, env, path) {
   if (path === '/api/auth/wechat' && request.method === 'POST') {

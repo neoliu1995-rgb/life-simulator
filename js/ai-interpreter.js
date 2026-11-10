@@ -118,11 +118,11 @@ const AIInterpreter = {
   async startPayment(testType, resultKey) {
     const token = localStorage.getItem('qc_auth_token');
     if (!token) {
-      showToast('请先登录', 'error');
+      if (typeof showToast === 'function') showToast('请先登录', 'error');
       return;
     }
 
-    const channel = window.innerWidth < 768 ? 'wechat' : 'alipay';
+    const returnUrl = window.location.href.split('?')[0];
 
     try {
       const res = await fetch(`${API_BASE}/payment/create`, {
@@ -131,16 +131,28 @@ const AIInterpreter = {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ channel, testType, resultKey }),
+        body: JSON.stringify({ testType, resultKey, returnUrl }),
       });
 
       const data = await res.json();
+
+      if (data.error) {
+        if (typeof showToast === 'function') showToast(data.error, 'error');
+        return;
+      }
+
       if (data.paymentId) {
+        if (data.payUrl && window.innerWidth < 768) {
+          this._activePayment = { paymentId: data.paymentId, testType, resultKey };
+          localStorage.setItem('qc_pending_payment', JSON.stringify(this._activePayment));
+          window.location.href = data.payUrl;
+          return;
+        }
         this.showPaymentQR(data);
         this.pollPaymentStatus(data.paymentId, testType, resultKey);
       }
     } catch {
-      showToast('支付创建失败，请稍后重试', 'error');
+      if (typeof showToast === 'function') showToast('支付创建失败，请稍后重试', 'error');
     }
   },
 
@@ -148,16 +160,20 @@ const AIInterpreter = {
     const overlay = document.getElementById('ai-paywall');
     if (!overlay) return;
 
+    const qrSrc = paymentData.qrCodeUrl
+      ? `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(paymentData.qrCodeUrl)}`
+      : '';
+
     const card = overlay.querySelector('.ai-paywall-card');
     card.innerHTML = `
-      <button class="ai-paywall-close" onclick="this.closest('.ai-paywall-overlay').remove()">×</button>
+      <button class="ai-paywall-close" onclick="AIInterpreter.cancelPayment()">×</button>
       
       <div class="ai-paywall-icon">💳</div>
       <h2 class="ai-paywall-title">扫码支付</h2>
-      <p class="ai-paywall-desc">请使用${paymentData.channel === 'wechat' ? '微信' : '支付宝'}扫描下方二维码</p>
+      <p class="ai-paywall-desc">使用微信或支付宝扫描下方二维码完成支付</p>
       
       <div class="ai-paywall-qr">
-        <img src="${paymentData.qrCodeUrl || ''}" alt="支付二维码" onerror="this.parentElement.innerHTML='<div class=\\'ai-paywall-qr-placeholder\\'>二维码加载中...</div>'">
+        ${qrSrc ? `<img src="${qrSrc}" alt="支付二维码" onerror="this.parentElement.innerHTML='<div class=\\'ai-paywall-qr-placeholder\\'>二维码加载中...</div>'">` : '<div class="ai-paywall-qr-placeholder">正在生成二维码...</div>'}
       </div>
       
       <div class="ai-paywall-amount">¥${paymentData.amountYuan}</div>
@@ -167,22 +183,66 @@ const AIInterpreter = {
         <span>等待支付中...</span>
       </div>
       
+      <button class="ai-paywall-check-btn" onclick="AIInterpreter.manualCheckPayment()">
+        我已完成支付
+      </button>
+      
       <p class="ai-paywall-note">支付完成后将自动解锁</p>
     `;
   },
 
-  async pollPaymentStatus(paymentId, testType, resultKey) {
-    const token = localStorage.getItem('qc_auth_token');
-    let attempts = 0;
-    const maxAttempts = 60;
+  cancelPayment() {
+    if (this._pollTimer) {
+      clearInterval(this._pollTimer);
+      this._pollTimer = null;
+    }
+    const overlay = document.getElementById('ai-paywall');
+    if (overlay) overlay.remove();
+  },
 
-    const interval = setInterval(async () => {
+  async manualCheckPayment() {
+    if (!this._activePaymentId) return;
+
+    const token = localStorage.getItem('qc_auth_token');
+    if (!token) return;
+
+    try {
+      const res = await fetch(`${API_BASE}/payment/status?paymentId=${this._activePaymentId}`, {
+        headers: { 'Authorization': `Bearer ${token}` },
+      });
+      const data = await res.json();
+
+      if (data.status === 'paid') {
+        this.onPaymentSuccess(this._activePaymentId, this._activeTestType, this._activeResultKey);
+      } else {
+        if (typeof showToast === 'function') showToast('尚未检测到支付，请稍后再试', 'info');
+      }
+    } catch {
+      if (typeof showToast === 'function') showToast('查询失败，请稍后重试', 'error');
+    }
+  },
+
+  pollPaymentStatus(paymentId, testType, resultKey) {
+    this._activePaymentId = paymentId;
+    this._activeTestType = testType;
+    this._activeResultKey = resultKey;
+
+    if (this._pollTimer) clearInterval(this._pollTimer);
+
+    let attempts = 0;
+    const maxAttempts = 100;
+
+    this._pollTimer = setInterval(async () => {
       attempts++;
       if (attempts > maxAttempts) {
-        clearInterval(interval);
-        showToast('支付超时，请重试', 'error');
+        clearInterval(this._pollTimer);
+        this._pollTimer = null;
+        if (typeof showToast === 'function') showToast('支付超时，请重新尝试', 'error');
         return;
       }
+
+      const token = localStorage.getItem('qc_auth_token');
+      if (!token) return;
 
       try {
         const res = await fetch(`${API_BASE}/payment/status?paymentId=${paymentId}`, {
@@ -191,25 +251,35 @@ const AIInterpreter = {
         const data = await res.json();
 
         if (data.status === 'paid') {
-          clearInterval(interval);
-          const overlay = document.getElementById('ai-paywall');
-          if (overlay) overlay.remove();
-
-          showToast('🎉 支付成功！正在生成报告...', 'success');
-
-          if (window.currentTestAnswers) {
-            const result = await this.getPremiumReport(
-              testType, window.currentTestAnswers, resultKey, paymentId
-            );
-            if (result.success) {
-              this.displayPremiumReport(result.content);
-            }
-          }
+          this.onPaymentSuccess(paymentId, testType, resultKey);
         }
       } catch {
         // continue polling
       }
     }, 3000);
+  },
+
+  async onPaymentSuccess(paymentId, testType, resultKey) {
+    if (this._pollTimer) {
+      clearInterval(this._pollTimer);
+      this._pollTimer = null;
+    }
+
+    const overlay = document.getElementById('ai-paywall');
+    if (overlay) overlay.remove();
+
+    localStorage.removeItem('qc_pending_payment');
+
+    if (typeof showToast === 'function') showToast('🎉 支付成功！正在生成报告...', 'success');
+
+    if (window.currentTestAnswers) {
+      const result = await this.getPremiumReport(
+        testType, window.currentTestAnswers, resultKey, paymentId
+      );
+      if (result.success) {
+        this.displayPremiumReport(result.content);
+      }
+    }
   },
 
   displayPremiumReport(content) {
@@ -221,6 +291,54 @@ const AIInterpreter = {
     reportContainer.style.display = 'block';
     reportContainer.scrollIntoView({ behavior: 'smooth' });
   },
+
+  async checkPendingPayment() {
+    const pending = localStorage.getItem('qc_pending_payment');
+    if (!pending) return;
+
+    try {
+      const { paymentId, testType, resultKey } = JSON.parse(pending);
+      const token = localStorage.getItem('qc_auth_token');
+      if (!token || !paymentId) {
+        localStorage.removeItem('qc_pending_payment');
+        return;
+      }
+
+      const res = await fetch(`${API_BASE}/payment/status?paymentId=${paymentId}`, {
+        headers: { 'Authorization': `Bearer ${token}` },
+      });
+      const data = await res.json();
+
+      if (data.status === 'paid') {
+        localStorage.removeItem('qc_pending_payment');
+        if (typeof showToast === 'function') showToast('🎉 支付成功！正在生成报告...', 'success');
+        if (window.currentTestAnswers) {
+          const result = await this.getPremiumReport(testType, window.currentTestAnswers, resultKey, paymentId);
+          if (result.success) {
+            this.displayPremiumReport(result.content);
+          }
+        }
+      } else {
+        localStorage.removeItem('qc_pending_payment');
+      }
+    } catch {
+      localStorage.removeItem('qc_pending_payment');
+    }
+  },
+
+  init() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const paymentId = urlParams.get('payment_id');
+
+    if (paymentId) {
+      window.history.replaceState({}, '', window.location.pathname);
+      this.checkPendingPayment();
+    }
+  },
 };
 
 window.AIInterpreter = AIInterpreter;
+
+document.addEventListener('DOMContentLoaded', () => {
+  AIInterpreter.init();
+});

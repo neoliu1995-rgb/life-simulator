@@ -1,4 +1,4 @@
-import { jsonResponse, errorResponse, authenticateRequest, corsHeaders } from '../utils/cors.js';
+import { jsonResponse, errorResponse, authenticateRequest } from '../utils/cors.js';
 
 const SYSTEM_PROMPTS = {
   mbti: `你是一位拥有20年经验的心理学专家和职业规划师，擅长MBTI性格分析。

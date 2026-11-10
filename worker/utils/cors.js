@@ -1,20 +1,54 @@
-export const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-  'Access-Control-Max-Age': '86400',
-};
+const ALLOWED_ORIGINS = [
+  'https://quweiceshi.com',
+  'https://www.quweiceshi.com',
+  'https://life-simulatorlife-simulator-web-v2life-simulator-web-v2li.pages.dev',
+];
+
+function getCorsHeaders(request) {
+  const origin = request.headers.get('Origin') || '';
+  const allowedOrigin = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+  return {
+    'Access-Control-Allow-Origin': allowedOrigin,
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    'Access-Control-Max-Age': '86400',
+    'Vary': 'Origin',
+  };
+}
 
 export function handleCORS(request) {
-  return new Response(null, { status: 204, headers: corsHeaders });
+  return new Response(null, { status: 204, headers: getCorsHeaders(request) });
 }
 
-export function jsonResponse(data, status = 200) {
-  return Response.json(data, { status, headers: corsHeaders });
+export function jsonResponse(data, status = 200, request) {
+  return Response.json(data, { status, headers: getCorsHeaders(request || { headers: { get: () => '' } }) });
 }
 
-export function errorResponse(message, status = 400) {
-  return Response.json({ error: message }, { status, headers: corsHeaders });
+export function errorResponse(message, status = 400, request) {
+  return Response.json({ error: message }, { status, headers: getCorsHeaders(request || { headers: { get: () => '' } }) });
+}
+
+const rateLimitMap = new Map();
+
+export function checkRateLimit(key, limit, windowMs) {
+  const now = Date.now();
+  const record = rateLimitMap.get(key);
+
+  if (!record || now - record.startTime > windowMs) {
+    rateLimitMap.set(key, { count: 1, startTime: now });
+    return { allowed: true, remaining: limit - 1 };
+  }
+
+  if (record.count >= limit) {
+    return { allowed: false, remaining: 0 };
+  }
+
+  record.count++;
+  return { allowed: true, remaining: limit - record.count };
+}
+
+export function getClientIP(request) {
+  return request.headers.get('CF-Connecting-IP') || request.headers.get('X-Forwarded-For') || 'unknown';
 }
 
 export async function authenticateRequest(request, env) {

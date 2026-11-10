@@ -330,4 +330,33 @@
     .price-current {
         font-size: 1.6rem;
     }
+
+    .ai-paywall-qr {
+        width: 160px;
+        height: 160px;
+    }
+
+    .ai-paywall-qr img {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+.ai-paywall-check-btn {
+    width: 100%;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 8px;
+}
+
+.ai-paywall-check-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(78, 205, 196, 0.4);
+    color: #fff;
 }
