@@ -1407,49 +1407,102 @@
             showResult(bazi, year);
         }
         
+        function mod(n, m) {
+            return ((n % m) + m) % m;
+        }
+        
+        // 太阳视黄经（度），utcMs 为 UTC 毫秒时间戳
+        function sunApparentLongitude(utcMs) {
+            const jd = utcMs / 86400000 + 2440587.5;
+            const T = (jd - 2451545) / 36525;
+            const L0 = 280.46646 + 36000.76983 * T + 0.0003032 * T * T;
+            const M = (357.52911 + 35999.05029 * T - 0.0001537 * T * T) * Math.PI / 180;
+            const C = (1.914602 - 0.004817 * T - 0.000014 * T * T) * Math.sin(M)
+                    + (0.019993 - 0.000101 * T) * Math.sin(2 * M)
+                    + 0.000289 * Math.sin(3 * M);
+            const omega = (125.04 - 1934.136 * T) * Math.PI / 180;
+            const lambda = L0 + C - 0.00569 - 0.00478 * Math.sin(omega);
+            return mod(lambda, 360);
+        }
+        
+        function angleDiff(lon, target) {
+            return ((lon - target + 540) % 360) - 180;
+        }
+        
+        const solarTermCache = {};
+        
+        // 求某年太阳视黄经达到 target 度的精确时刻（UTC 毫秒），即节气交接时刻
+        function getSolarTermInstant(year, target) {
+            const key = year + '_' + target;
+            if (solarTermCache[key] !== undefined) return solarTermCache[key];
+            
+            const start = Date.UTC(year, 0, 1);
+            let prevDiff = angleDiff(sunApparentLongitude(start), target);
+            let found = null;
+            for (let i = 1; i <= 370; i++) {
+                const t = start + i * 86400000;
+                const diff = angleDiff(sunApparentLongitude(t), target);
+                if (prevDiff < 0 && diff >= 0) {
+                    let lo = t - 86400000;
+                    let hi = t;
+                    for (let k = 0; k < 42; k++) {
+                        const mid = Math.floor((lo + hi) / 2);
+                        if (angleDiff(sunApparentLongitude(mid), target) < 0) lo = mid;
+                        else hi = mid;
+                    }
+                    found = hi;
+                    break;
+                }
+                prevDiff = diff;
+            }
+            solarTermCache[key] = found;
+            return found;
+        }
+        
+        // 节气月边界：立春(寅)起，经惊蛰、清明……至次年小寒(丑)
+        const MONTH_TERM_LONGITUDES = [315, 345, 15, 45, 75, 105, 135, 165, 195, 225, 255, 285];
+        const MONTH_BRANCH_INDICES = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 1];
+        
+        function getMonthBranchIndex(birthMs, effectiveYear) {
+            let idx = 0;
+            for (let i = 0; i < MONTH_TERM_LONGITUDES.length; i++) {
+                const lon = MONTH_TERM_LONGITUDES[i];
+                const termYear = lon === 285 ? effectiveYear + 1 : effectiveYear;
+                if (birthMs >= getSolarTermInstant(termYear, lon)) idx = i;
+            }
+            return MONTH_BRANCH_INDICES[idx];
+        }
+        
         function generateBazi(year, month, day, time) {
-            const yearTG = tianGan[(year - 4) % 10];
-            const yearDZ = diZhi[(year - 4) % 12];
+            const hourMap = { '23-1': 0, '1-3': 1, '3-5': 2, '5-7': 3, '7-9': 4, '9-11': 5, '11-13': 6, '13-15': 7, '15-17': 8, '17-19': 9, '19-21': 10, '21-23': 11 };
+            const hourStartMap = { '23-1': 23, '1-3': 1, '3-5': 3, '5-7': 5, '7-9': 7, '9-11': 9, '11-13': 11, '13-15': 13, '15-17': 15, '17-19': 17, '19-21': 19, '21-23': 21 };
+            const hourIndex = hourMap[time] !== undefined ? hourMap[time] : 11;
+            const hourStart = hourStartMap[time] !== undefined ? hourStartMap[time] : 13;
             
-            const solarTerm = getSolarTerm(year, month, day);
-            const monthDZIndex = Math.floor(solarTerm / 2);
-            const monthDZ = diZhi[monthDZIndex];
+            // 按北京时间（UTC+8）构造出生时刻，用于判断节气交接
+            const birthMs = Date.UTC(year, month - 1, day, hourStart) - 8 * 3600000;
+            const lichunMs = getSolarTermInstant(year, 315);
+            const effectiveYear = birthMs < lichunMs ? year - 1 : year;
             
-            const yearTGIndex = (year - 4) % 10;
-            const monthTGIndex = (yearTGIndex * 2 + monthDZIndex) % 10;
-            const monthTG = tianGan[monthTGIndex];
+            const yearTGIndex = mod(effectiveYear - 4, 10);
+            const yearDZIndex = mod(effectiveYear - 4, 12);
+            
+            const monthDZIndex = getMonthBranchIndex(birthMs, effectiveYear);
+            const monthOrder = mod(monthDZIndex - 2, 12);
+            const monthTGIndex = mod(yearTGIndex * 2 + 2 + monthOrder, 10);
             
             const dayInfo = getDayGanZhi(year, month, day);
-            
-            const hourMap = { '23-1': 0, '1-3': 1, '3-5': 2, '5-7': 3, '7-9': 4, '9-11': 5, '11-13': 6, '13-15': 7, '15-17': 8, '17-19': 9, '19-21': 10, '21-23': 11 };
-            const hourIndex = hourMap[time] || 11;
             const dayTGIndex = tianGan.indexOf(dayInfo.tg);
-            const hourTGIndex = (dayTGIndex * 2 + hourIndex) % 10;
+            const hourTGIndex = mod(dayTGIndex * 2 + hourIndex, 10);
             const hourTG = tianGan[hourTGIndex];
             const hourDZ = diZhi[hourIndex];
             
             return [
-                { tg: yearTG, dz: yearDZ, label: '年柱' },
-                { tg: monthTG, dz: monthDZ, label: '月柱' },
+                { tg: tianGan[yearTGIndex], dz: diZhi[yearDZIndex], label: '年柱' },
+                { tg: tianGan[monthTGIndex], dz: diZhi[monthDZIndex], label: '月柱' },
                 { tg: dayInfo.tg, dz: dayInfo.dz, label: '日柱' },
                 { tg: hourTG, dz: hourDZ, label: '时柱' }
             ];
-        }
-        
-        function getSolarTerm(year, month, day) {
-            const terms = [
-                [4, 4], [4, 19], [5, 5], [5, 20], [6, 5], [6, 21],
-                [7, 7], [7, 22], [8, 7], [8, 23], [9, 7], [9, 23],
-                [10, 8], [10, 23], [11, 7], [11, 22], [12, 7], [12, 21],
-                [1, 5], [1, 20], [2, 4], [2, 18], [3, 5], [3, 20]
-            ];
-            
-            for (let i = 0; i < terms.length; i++) {
-                const [tm, td] = terms[i];
-                if (month < tm || (month === tm && day < td)) return i;
-            }
-            
-            return 23;
         }
         
         function getDayGanZhi(year, month, day) {
@@ -1457,6 +1510,11 @@
             const baseTG = 0;
             const baseDZ = 10;
             let days = 0;
+            
+            for (let y = year; y < baseYear; y++) {
+                const isLeap = y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0);
+                days -= isLeap ? 366 : 365;
+            }
             
             for (let y = baseYear; y < year; y++) {
                 const isLeap = y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0);
