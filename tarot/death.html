@@ -84,7 +84,7 @@
 <body>
     <div class="bg-animation"><div class="bg-gradient"></div><div class="bg-blobs"></div></div>
     <main class="t-page">
-        <nav class="breadcrumb"><a href="/">首页</a> ? <a href="/tarot.html">塔罗占卜</a> ? 死神</nav>
+        <nav class="breadcrumb"><a href="/">首页</a> › <a href="/tarot.html">塔罗占卜</a> › 死神</nav>
         <div class="t-hero">
             <div class="t-hero-number">大阿尔卡纳 · 第XIII张</div>
             <div class="t-hero-name">死神</div>
@@ -94,32 +94,32 @@
             </div>
         </div>
         <section class="t-section">
-            <h2>?? 死神牌面概述</h2>
+            <h2>死神牌面概述</h2>
             <p>死神牌代表转变和重生。它并非字面上的死亡，而是象征旧事物的结束和新事物的开始。</p>
         </section>
         <section class="t-section">
-            <h2>? 死神正位含义</h2>
+            <h2>死神正位含义</h2>
             <div class="t-upright">
                 <p><strong>关键词：</strong>结束、转变、重生、蜕变</p>
                 <p>死神正位预示着重要的转变即将到来。某些事物需要结束，才能为新的开始腾出空间。拥抱变化，这是成长的必经之路。结束并不意味着失败，而是蜕变的开始。</p>
             </div>
         </section>
         <section class="t-section">
-            <h2>?? 死神逆位含义</h2>
+            <h2>死神逆位含义</h2>
             <div class="t-reversed">
                 <p><strong>关键词：</strong>抗拒改变、停滞、恐惧结束</p>
                 <p>死神逆位暗示你正在抗拒必要的改变。放下过去，接受转变，才能迎来新生。</p>
             </div>
         </section>
         <div class="cta-box">
-            <h2>?? 想体验塔罗占卜？</h2>
+            <h2>想体验塔罗占卜？</h2>
             <p style="color:var(--text-secondary);margin-top:8px">三牌阵、凯尔特十字、是非牌阵，塔罗牌为你揭示命运的启示</p>
             <a href="/tarot.html" class="cta-btn">开始塔罗占卜</a>
         </div>
     </main>
     <!-- AI智能解读 + 分享 -->
     <div id="ai-section" style="margin:24px auto;max-width:800px;padding:24px;border:1px solid rgba(255,215,0,.3);border-radius:16px;background:linear-gradient(135deg,rgba(255,215,0,.05),rgba(78,205,196,.05))">
-        <h2 style="text-align:center;color:#fff">?? AI 智能深度解读</h2>
+        <h2 style="text-align:center;color:#fff">AI 智能深度解读</h2>
         <p style="color:rgba(255,255,255,.6);text-align:center">基于DeepSeek AI大模型，为你生成专属的个性化解读报告</p>
 
         <div id="ai-login-prompt" style="margin-top:16px;padding:20px;background:rgba(255,255,255,.03);border-radius:12px;text-align:center;display:none">
@@ -129,17 +129,17 @@
 
         <div id="ai-actions" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;justify-content:center">
             <button id="btn-ai-basic" onclick="startAIBasic()" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:20px 28px;border-radius:16px;border:1px solid rgba(78,205,196,.3);background:rgba(78,205,196,.05);cursor:pointer;min-width:140px;transition:all .3s">
-                <span style="font-size:2rem">??</span>
+                <span style="font-size:2rem"></span>
                 <span style="font-size:1rem;font-weight:700;color:#fff">免费基础解读</span>
                 <span style="font-size:.78rem;color:rgba(255,255,255,.5)">200字摘要</span>
             </button>
             <button id="btn-ai-premium" onclick="startAIPremium()" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:20px 28px;border-radius:16px;border:1px solid rgba(255,215,0,.3);background:rgba(255,215,0,.05);cursor:pointer;min-width:140px;transition:all .3s">
-                <span style="font-size:2rem">?</span>
+                <span style="font-size:2rem"></span>
                 <span style="font-size:1rem;font-weight:700;background:linear-gradient(135deg,#FFD700,#FFA500);-webkit-background-clip:text;-webkit-text-fill-color:transparent">深度报告 ￥4.9</span>
                 <span style="font-size:.78rem;color:rgba(255,255,255,.5)">2000字完整分析</span>
             </button>
             <button id="btn-share" onclick="shareResult()" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:20px 28px;border-radius:16px;border:1px solid rgba(255,107,107,.3);background:rgba(255,107,107,.05);cursor:pointer;min-width:140px;transition:all .3s">
-                <span style="font-size:2rem">??</span>
+                <span style="font-size:2rem"></span>
                 <span style="font-size:1rem;font-weight:700;color:#fff">分享给好友</span>
                 <span style="font-size:.78rem;color:rgba(255,255,255,.5)">生成精美卡片</span>
             </button>
@@ -166,7 +166,7 @@
                 document.getElementById('ai-loading').style.display='none';
                 document.getElementById('ai-actions').style.display='flex';
                 if (r.success) { const c=document.getElementById('ai-result'); c.innerHTML=''; c.appendChild(AIInterpreter.renderReport(r.content,'basic')); c.style.display='block'; c.scrollIntoView({behavior:'smooth'}); }
-                else { document.getElementById('ai-result').innerHTML='<p style="color:#FF6B6B;text-align:center;padding:16px">?? '+r.error+'</p>'; document.getElementById('ai-result').style.display='block'; }
+                else { document.getElementById('ai-result').innerHTML='<p style="color:#FF6B6B;text-align:center;padding:16px">'+r.error+'</p>'; document.getElementById('ai-result').style.display='block'; }
             });
         }
 
