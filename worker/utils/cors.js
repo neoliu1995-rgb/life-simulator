@@ -51,21 +51,38 @@ export function getClientIP(request) {
   return request.headers.get('CF-Connecting-IP') || request.headers.get('X-Forwarded-For') || 'unknown';
 }
 
+const SESSION_RETRY_DELAYS = [120, 250];
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+// KV 为最终一致：刚写入的会话可能短时间读不到，读到空时短暂重试，避免误判为无效 token
+export async function getSession(env, token) {
+  for (let attempt = 0; ; attempt++) {
+    try {
+      const sessionData = await env.SESSIONS.get(`session:${token}`);
+      if (sessionData) {
+        return JSON.parse(sessionData);
+      }
+    } catch {
+      return null;
+    }
+
+    if (attempt >= SESSION_RETRY_DELAYS.length) {
+      return null;
+    }
+    await sleep(SESSION_RETRY_DELAYS[attempt]);
+  }
+}
+
 export async function authenticateRequest(request, env) {
   const authHeader = request.headers.get('Authorization');
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
     return null;
   }
 
-  const token = authHeader.slice(7);
-  try {
-    const sessionData = await env.SESSIONS.get(`session:${token}`);
-    if (!sessionData) return null;
-    const session = JSON.parse(sessionData);
-    return session;
-  } catch {
-    return null;
-  }
+  return await getSession(env, authHeader.slice(7));
 }
 
 export function generateId() {

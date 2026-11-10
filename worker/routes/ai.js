@@ -102,9 +102,16 @@ async function interpretBasic(request, env) {
     return errorResponse('Unauthorized', 401);
   }
 
-  const { testType, answers, resultKey } = await request.json();
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return errorResponse('Invalid JSON body', 400);
+  }
+
+  const { testType, answers, resultKey } = body;
   if (!testType) {
-    return errorResponse('Missing testType');
+    return errorResponse('Missing testType', 400);
   }
 
   const { system, user } = buildPrompt(testType, answers, 'basic');
@@ -131,9 +138,16 @@ async function interpretPremium(request, env) {
     return errorResponse('Unauthorized', 401);
   }
 
-  const { testType, answers, resultKey, paymentId } = await request.json();
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return errorResponse('Invalid JSON body', 400);
+  }
+
+  const { testType, answers, resultKey, paymentId } = body;
   if (!testType) {
-    return errorResponse('Missing testType');
+    return errorResponse('Missing testType', 400);
   }
 
   if (paymentId) {
@@ -158,6 +172,18 @@ async function interpretPremium(request, env) {
     if (existingResult) {
       testResultId = existingResult.id;
       await env.DB.prepare('UPDATE test_results SET is_premium = 1 WHERE id = ?').bind(testResultId).run();
+    } else {
+      // ai_reports.test_result_id 为 NOT NULL：没有历史结果时先补建一条 test_results，再落报告
+      const created = await env.DB.prepare(
+        'INSERT INTO test_results (user_id, test_type, result_key, answers_json, result_data_json, is_premium, created_at) VALUES (?, ?, ?, ?, ?, 1, datetime(\'now\'))'
+      ).bind(
+        session.userId,
+        testType,
+        resultKey || '',
+        JSON.stringify(answers ?? null),
+        JSON.stringify({ autoCreated: true, testType, resultKey: resultKey || '' })
+      ).run();
+      testResultId = created.meta.last_row_id;
     }
 
     await env.DB.prepare(

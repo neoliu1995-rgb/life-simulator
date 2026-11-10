@@ -1,4 +1,4 @@
-import { jsonResponse, errorResponse, generateId } from '../utils/cors.js';
+import { jsonResponse, errorResponse, generateId, getSession } from '../utils/cors.js';
 
 export async function handleAuth(request, env, path) {
   if (path === '/api/auth/wechat' && request.method === 'POST') {
@@ -110,13 +110,12 @@ async function verifyToken(request, env) {
   }
 
   const token = authHeader.slice(7);
-  const sessionData = await env.SESSIONS.get(`session:${token}`);
+  const session = await getSession(env, token);
 
-  if (!sessionData) {
+  if (!session) {
     return errorResponse('Invalid token', 401);
   }
 
-  const session = JSON.parse(sessionData);
   const user = await env.DB.prepare('SELECT * FROM users WHERE id = ?').bind(session.userId).first();
 
   if (!user) {
