@@ -57,6 +57,11 @@
     box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
 }
 
+.tarot-slot:focus-visible {
+    outline: 2px solid #d9c9ff;
+    outline-offset: 3px;
+}
+
 .tarot-slot .slot-label {
     font-size: 0.76rem;
     letter-spacing: 0.12em;

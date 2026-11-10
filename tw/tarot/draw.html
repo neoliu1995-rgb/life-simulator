@@ -411,7 +411,7 @@
             for (var i = 0; i < currentCards.length; i++) {
                 var item = currentCards[i];
                 var showRev = item.reversed;
-                html += '<div class="tarot-slot" data-index="' + i + '">' +
+                html += '<div class="tarot-slot" role="button" tabindex="0" aria-expanded="false" aria-label="' + slotLabel(item, false) + '" data-index="' + i + '">' +
                     '<span class="slot-label">' + item.position + '</span>' +
                     '<span class="tarot-back">🂠</span>' +
                     '<span class="tarot-hint">點擊翻牌</span>' +
@@ -427,10 +427,34 @@
             grid.innerHTML = html;
         }
 
+        function slotLabel(item, flipped) {
+            if (!flipped) {
+                return '點擊翻牌，位置：' + item.position;
+            }
+            return item.card.name + ' ' + item.card.num + ' ' + (item.reversed ? '逆位' : '正位') + '（' + item.position + '）';
+        }
+
+        function syncSlot(slot) {
+            var idx = parseInt(slot.getAttribute('data-index'), 10);
+            var item = currentCards[idx];
+            if (!item) {
+                return;
+            }
+            var flipped = slot.classList.contains('is-flipped');
+            slot.setAttribute('aria-expanded', flipped ? 'true' : 'false');
+            slot.setAttribute('aria-label', slotLabel(item, flipped));
+        }
+
+        function toggleSlot(slot) {
+            slot.classList.toggle('is-flipped');
+            syncSlot(slot);
+        }
+
         function revealAll() {
             var slots = document.querySelectorAll('#card-grid .tarot-slot');
             for (var i = 0; i < slots.length; i++) {
                 slots[i].classList.add('is-flipped');
+                syncSlot(slots[i]);
             }
         }
 
@@ -440,7 +464,17 @@
         document.getElementById('card-grid').addEventListener('click', function (e) {
             var slot = e.target.closest ? e.target.closest('.tarot-slot') : null;
             if (slot && slot.querySelector('.tarot-face')) {
-                slot.classList.toggle('is-flipped');
+                toggleSlot(slot);
+            }
+        });
+        document.getElementById('card-grid').addEventListener('keydown', function (e) {
+            if (e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') {
+                return;
+            }
+            var slot = e.target.closest ? e.target.closest('.tarot-slot') : null;
+            if (slot && slot.querySelector('.tarot-face')) {
+                e.preventDefault();
+                toggleSlot(slot);
             }
         });
         renderEmpty();
