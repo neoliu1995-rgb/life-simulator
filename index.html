@@ -397,6 +397,22 @@
             color: var(--text-muted);
         }
 
+        .feature-link {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.25);
+            padding-bottom: 2px;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .feature-link:hover {
+            color: var(--text-primary);
+            border-color: var(--text-primary);
+        }
+
         .hot-tests-section {
             margin-bottom: 40px;
         }
@@ -1161,6 +1177,7 @@
                             <span class="feature-tag">心理分析</span>
                             <span class="feature-tag">梦境解读</span>
                         </div>
+                        <a class="feature-link" href="/tw/dream/snake.html" onclick="event.stopPropagation()">解梦词条库：梦见蛇代表什么？→</a>
                     </article>
 
                     <article class="feature-card namestat card-hover fade-in-up" onclick="navigateTo('namestat.html')">
