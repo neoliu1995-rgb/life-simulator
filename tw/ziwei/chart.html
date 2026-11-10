@@ -391,7 +391,7 @@
             var ZHI = ['寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥', '子', '丑'];
             var ZHI_STD = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
             var GAN = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
-            var PALACES = ['命宮', '兄弟', '夫妻', '子女', '財帛', '疾厄', '遷移', '交友', '官祿', '田宅', '福德', '父母'];
+            var PALACES = ['命宮', '兄弟宮', '夫妻宮', '子女宮', '財帛宮', '疾厄宮', '遷移宮', '交友宮', '官祿宮', '田宅宮', '福德宮', '父母宮'];
             // 六十甲子納音五行（每兩柱一組，共 30 組）
             var NAYIN = ['金', '火', '木', '土', '金', '火', '水', '土', '金', '木',
                          '水', '土', '火', '木', '水', '金', '火', '木', '土', '金',
@@ -491,12 +491,12 @@
 
                 var rows = [];
                 for (var p = 0; p < 12; p++) {
-                    var palName = PALACES[mod(p - mingIdx, 12)];
+                    var palName = PALACES[mod(mingIdx - p, 12)];
                     var palStars = stars[p] || [];
                     rows.push({
                         zhi: ZHI[p],
                         gan: GAN[palaceGan[p]],
-                        palace: palName + (p === mingIdx ? '（命）' : '') + (p === shenIdx ? '（身）' : ''),
+                        palace: palName + (p === shenIdx ? '（身宮）' : ''),
                         stars: palStars,
                         age: ages[p],
                         isMing: p === mingIdx
