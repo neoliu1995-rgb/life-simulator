@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -84,7 +84,7 @@
 <body>
     <div class="bg-animation"><div class="bg-gradient"></div><div class="bg-blobs"></div></div>
     <main class="t-page">
-        <nav class="breadcrumb"><a href="/">首页</a> › <a href="/tarot.html">塔罗占卜</a> › 高塔</nav>
+        <nav class="breadcrumb"><a href="/">首页</a> ? <a href="/tarot.html">塔罗占卜</a> ? 高塔</nav>
         <div class="t-hero">
             <div class="t-hero-number">大阿尔卡纳 · 第XVI张</div>
             <div class="t-hero-name">高塔</div>
@@ -94,28 +94,98 @@
             </div>
         </div>
         <section class="t-section">
-            <h2>📖 高塔牌面概述</h2>
+            <h2>?? 高塔牌面概述</h2>
             <p>高塔牌代表突变和觉醒。闪电击碎高塔，象征着虚假的结构被打破，真相被揭露。</p>
         </section>
         <section class="t-section">
-            <h2>✨ 高塔正位含义</h2>
+            <h2>? 高塔正位含义</h2>
             <div class="t-upright">
                 <p><strong>关键词：</strong>突变、崩塌、觉醒、真相揭露</p>
                 <p>高塔正位预示着突如其来的变化。虽然这可能令人不安，但它打破了不再服务于你的虚假结构。在废墟中，你将找到重建的基石。相信这个过程，黎明终将到来。</p>
             </div>
         </section>
         <section class="t-section">
-            <h2>🔄 高塔逆位含义</h2>
+            <h2>?? 高塔逆位含义</h2>
             <div class="t-reversed">
                 <p><strong>关键词：</strong>逃避灾难、恐惧改变、缓慢崩塌</p>
                 <p>高塔逆位暗示你可能正在逃避必要的变化或恐惧未知。接受改变，它可能没有你想象的那么可怕。</p>
             </div>
         </section>
         <div class="cta-box">
-            <h2>🔮 想体验塔罗占卜？</h2>
+            <h2>?? 想体验塔罗占卜？</h2>
             <p style="color:var(--text-secondary);margin-top:8px">三牌阵、凯尔特十字、是非牌阵，塔罗牌为你揭示命运的启示</p>
             <a href="/tarot.html" class="cta-btn">开始塔罗占卜</a>
         </div>
     </main>
+    <!-- AI智能解读 + 分享 -->
+    <div id="ai-section" style="margin:24px auto;max-width:800px;padding:24px;border:1px solid rgba(255,215,0,.3);border-radius:16px;background:linear-gradient(135deg,rgba(255,215,0,.05),rgba(78,205,196,.05))">
+        <h2 style="text-align:center;color:#fff">?? AI 智能深度解读</h2>
+        <p style="color:rgba(255,255,255,.6);text-align:center">基于DeepSeek AI大模型，为你生成专属的个性化解读报告</p>
+
+        <div id="ai-login-prompt" style="margin-top:16px;padding:20px;background:rgba(255,255,255,.03);border-radius:12px;text-align:center;display:none">
+            <p style="color:rgba(255,255,255,.6);margin-bottom:12px">请先登录后使用AI解读功能</p>
+            <button onclick="UserAuth.guestLogin()" style="padding:10px 28px;background:linear-gradient(135deg,#4ECDC4,#45B7D1);border:none;border-radius:8px;color:#fff;font-size:.9rem;cursor:pointer">一键登录（访客）</button>
+        </div>
+
+        <div id="ai-actions" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;justify-content:center">
+            <button id="btn-ai-basic" onclick="startAIBasic()" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:20px 28px;border-radius:16px;border:1px solid rgba(78,205,196,.3);background:rgba(78,205,196,.05);cursor:pointer;min-width:140px;transition:all .3s">
+                <span style="font-size:2rem">??</span>
+                <span style="font-size:1rem;font-weight:700;color:#fff">免费基础解读</span>
+                <span style="font-size:.78rem;color:rgba(255,255,255,.5)">200字摘要</span>
+            </button>
+            <button id="btn-ai-premium" onclick="startAIPremium()" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:20px 28px;border-radius:16px;border:1px solid rgba(255,215,0,.3);background:rgba(255,215,0,.05);cursor:pointer;min-width:140px;transition:all .3s">
+                <span style="font-size:2rem">?</span>
+                <span style="font-size:1rem;font-weight:700;background:linear-gradient(135deg,#FFD700,#FFA500);-webkit-background-clip:text;-webkit-text-fill-color:transparent">深度报告 ￥4.9</span>
+                <span style="font-size:.78rem;color:rgba(255,255,255,.5)">2000字完整分析</span>
+            </button>
+            <button id="btn-share" onclick="shareResult()" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:20px 28px;border-radius:16px;border:1px solid rgba(255,107,107,.3);background:rgba(255,107,107,.05);cursor:pointer;min-width:140px;transition:all .3s">
+                <span style="font-size:2rem">??</span>
+                <span style="font-size:1rem;font-weight:700;color:#fff">分享给好友</span>
+                <span style="font-size:.78rem;color:rgba(255,255,255,.5)">生成精美卡片</span>
+            </button>
+        </div>
+
+        <div id="ai-loading" style="display:none;text-align:center;padding:32px">
+            <div style="width:40px;height:40px;border:3px solid rgba(78,205,196,.2);border-top-color:#4ECDC4;border-radius:50%;margin:0 auto;animation:ai-spin 1s linear infinite"></div>
+            <p style="color:rgba(255,255,255,.6);margin-top:12px">AI正在分析中...</p>
+        </div>
+        <div id="ai-result"></div>
+    </div>
+
+    <script>
+        const TEST_TYPE = 'tarot';
+        const RESULT_KEY = '高塔';
+        const TEST_ANSWERS = [];
+
+        function startAIBasic() {
+            if (!UserAuth.isLoggedIn()) { document.getElementById('ai-login-prompt').style.display='block'; return; }
+            document.getElementById('ai-actions').style.display='none';
+            document.getElementById('ai-loading').style.display='block';
+            window.currentTestAnswers = TEST_ANSWERS;
+            AIInterpreter.getBasicReport(TEST_TYPE, TEST_ANSWERS, RESULT_KEY).then(r => {
+                document.getElementById('ai-loading').style.display='none';
+                document.getElementById('ai-actions').style.display='flex';
+                if (r.success) { const c=document.getElementById('ai-result'); c.innerHTML=''; c.appendChild(AIInterpreter.renderReport(r.content,'basic')); c.style.display='block'; c.scrollIntoView({behavior:'smooth'}); }
+                else { document.getElementById('ai-result').innerHTML='<p style="color:#FF6B6B;text-align:center;padding:16px">?? '+r.error+'</p>'; document.getElementById('ai-result').style.display='block'; }
+            });
+        }
+
+        function startAIPremium() {
+            if (!UserAuth.isLoggedIn()) { document.getElementById('ai-login-prompt').style.display='block'; return; }
+            window.currentTestAnswers = TEST_ANSWERS;
+            AIInterpreter.showPaywall(TEST_TYPE, RESULT_KEY);
+        }
+
+        function shareResult() {
+            const resultData = { type: RESULT_KEY, title: document.title.split(' - ')[0] || RESULT_KEY, description: '', stats: [] };
+            ShareCard.downloadCard(TEST_TYPE, resultData);
+        }
+    </script>
+
+    <link rel="stylesheet" href="/css/ai-report.css">
+    <script src="/js/user-auth.js"></script>
+    <script src="/js/ai-interpreter.js"></script>
+    <script src="/js/share-card.js"></script>
+    <script>document.addEventListener('DOMContentLoaded',function(){UserAuth.init()});</script>
 </body>
 </html>
